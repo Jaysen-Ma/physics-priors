@@ -1,4 +1,4 @@
-# Exploring variation in the exponential metalaw of physics
+# Operator statistics and expression priors for symbolic regression in physics
 
 <div align="center">
 
