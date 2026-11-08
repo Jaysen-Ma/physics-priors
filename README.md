@@ -7,93 +7,72 @@
 
 </div>
 
-An ongoing personal research project asking whether the mathematical structures used in physics equations vary across domains, and whether those differences could eventually help guide symbolic regression.
+An ongoing personal research project examining variation in operator usage across physics collections and whether that variation can inform priors for symbolic regression.
 
-> **Work in progress.** The analysis, [write-up](writeup/main.pdf), and [formula ledger](https://jaysen-ma.github.io/physics-metalaw/data/catalog/index.html) are still being updated. Reported numbers and wording may change.
+> **Work in progress.** The symbolic regression study below is planned. The linked write-up covers the operator-frequency analysis and is still being revised.
 
-## Motivation
+## Research question
 
-Symbolic regression searches over mathematical expressions that fit observed data. The operators and functional forms worth exploring are often domain-dependent: an expression familiar in one branch of science may be an unusual candidate in another. Quantifying these preferences could provide a statistical prior that directs more of the search towards structures typical of the relevant domain.
+Previous work reported a different fitted operator-frequency decay rate for inflationary expressions than for broader physics collections. We reassess this gap and examine operator usage across physics branches. This motivates asking whether knowledge of a problem's branch can help symbolic regression find its equation.
 
-Previous work found that, after mathematical operator types are ranked from most to least frequent, their frequencies in several physics collections decline approximately exponentially:
+We ask two questions:
 
-$$p_r(\beta)=\frac{e^{-\beta r}}{\sum_s e^{-\beta s}}.$$
+1. **Does a physics prior help?** Compare a prior learned from the available physics branches with a generic baseline that uses no corpus information.
+2. **Does knowing the branch help further?** Compare the pooled physics prior with one that gives greater influence to expressions from the relevant branch.
 
-The decay rate $\beta$ describes how concentrated the distribution is among the most frequent operator types. That work reported a lower rate for Encyclopaedia Inflationaris than for three broader physics collections. This project uses that difference as a starting point for asking whether operator statistics vary across physical domains.
+## Planned experiment
 
-**This project has not yet produced or validated a symbolic-regression prior.** Its current contribution is an exploratory analysis of corpus-level and per-expression patterns, together with the limitations that would need to be addressed before those patterns could be used as search guidance.
+Choose a branch, such as thermodynamics. Hold out some equation families as test problems and use the remaining expressions to construct the priors:
 
-## What the project does
+| Prior | Training information and use |
+|---|---|
+| **Generic baseline** | Use no learned corpus information. |
+| **A. Base** | Learn from the other physics branches. |
+| **B. Pooled** | Learn from all available training expressions, ignoring branch labels. |
+| **C. Branch-informed** | Use the same expressions as B, giving those from the target branch greater influence. |
 
-1. Re-estimates decay rates using one fitting procedure and whole-equation resampling.
-2. Reconsiders proposed explanations for the earlier inflationary result by changing representation conventions and constructing a comparison collection with similar scope.
-3. Expands the Feynman benchmark with expressions from all three volumes of the Feynman Lectures and compares seven physics branches.
-4. Fits each expression separately and examines its decay rate against expression-tree complexity, including a random-tree baseline.
+B and C use exactly the same training expressions. Their difference is how much influence the relevant branch has on the learned prior.
 
-The expanded Feynman collection contains 1,016 expressions after deduplication, of which 968 are assigned to the seven branches. The project also maintains sourced catalogues for the original comparison collections, 35 additional Wikipedia expressions, 61 Leemis probability distributions and 37 proposed $f(R)$ curvature functions.
+**C versus B** tests whether knowing the branch helps. **B versus the generic baseline** tests whether learning a physics prior helps. **B versus A** measures the benefit of adding examples from the target branch.
 
-## Estimation
+Repeat the experiment with different branches as the target.
 
-| Collection | Expressions | Fitted β | Nominal individual 95% interval |
-|---|---:|---:|---|
-| Feynman benchmark | 100 | 0.342 | [0.319, 0.371] |
-| Feynman benchmark + Lectures | 1,016 | 0.354 | [0.333, 0.366] |
-| Wikipedia | 76 | 0.315 | [0.284, 0.346] |
-| Encyclopaedia Inflationaris | 70 | 0.269 | [0.253, 0.293] |
-| Leemis probability distributions | 61 | 0.269 | [0.250, 0.304] |
-| f(R) gravity | 37 | 0.270 | [0.264, 0.347] |
+### Evaluation
 
-For each collection or branch, positive operator counts are ranked and a normalised exponential is fitted by **log least squares**. Every observed rank receives equal weight. Uncertainty is estimated from **10,000 whole-equation bootstrap resamples** using seed `20261013`; every resample is recounted, reranked and refitted. A separate chapter bootstrap examines dependence among expressions from the same source chapter.
+We intend to construct a custom loss for PySR that incorporates the learned expression preferences. The loss and the method for giving the target branch greater influence remain to be determined.
 
-## Current findings
+All comparisons will use the same search settings and computational budgets. Test equations and related forms will be excluded from prior construction. Settings will be chosen using separate validation expressions.
 
-- The selected collections and branches have different fitted rates, but the comparisons do not isolate one physical explanation for that variation.
-- The lower inflationary estimate is reproduced. The tested representation conventions account for little of its difference from the Feynman benchmark, while a comparison collection with similar scope has a close point estimate.
-- Within the expanded Feynman collection, quantum mechanics, electromagnetism, waves and optics, and classical mechanics form a lower-rate group in the main specification; thermodynamics and fluid mechanics have higher estimates.
-- This grouping is suggestive rather than definitive. Some estimates depend strongly on branch classification, and the reported intervals are less reliable than their nominal 95% label implies.
+We will compare equation recovery, prediction accuracy on new inputs, and search effort. Repeated datasets and search runs will measure variability, with results reported for each branch.
 
-| Branch | Expressions | Fitted β | Nominal individual 95% interval |
-|---|---:|---:|---|
-| Special relativity | 89 | 0.382 | [0.322, 0.432] |
-| Quantum mechanics | 221 | 0.327 | [0.286, 0.349] |
-| Electromagnetism | 312 | 0.325 | [0.313, 0.353] |
-| Waves and optics | 126 | 0.346 | [0.303, 0.367] |
-| Classical mechanics | 105 | 0.360 | [0.297, 0.377] |
-| Thermodynamics and kinetic theory | 73 | 0.403 | [0.371, 0.452] |
-| Fluid and continuum mechanics | 42 | 0.422 | [0.377, 0.483] |
+## Starting point: variation in operator frequencies
 
-![Feynman branch estimates and five comparison collections, with individual bootstrap intervals](writeup/figures/beta_by_branch.png)
+Ranked operator frequencies can be described approximately by an exponential law. Its decay rate $\beta$ measures how concentrated usage is among the most frequent operators. We fit this rate using **log least squares** and estimate individual intervals from **10,000 whole-equation bootstrap resamples**.
 
-The figure shows seven branches as circles and five comparison collections as diamonds: the Feynman benchmark, expanded Feynman collection, f(R) gravity, Encyclopaedia Inflationaris and Wikipedia. These comparisons overlap in their source expressions; they are not all independent datasets.
+![Fitted exponential decay rates for seven Feynman branches and five comparison collections, with individual bootstrap intervals](writeup/figures/beta_by_branch.png)
 
-## Important limitations
+Circles show seven physics branches; diamonds show five comparison collections. Some collections share expressions.
 
-- **Restricted equation forms.** The additional Feynman collection contains explicit algebraic expressions. Differential and integral forms, sums, limits, operator hats and complex conjugates are excluded, so the results do not describe the full mathematical language of each branch.
-- **Imperfect exponential model.** Rare operator types produce flat steps in the observed tail, whereas a positive-rate exponential declines continuously. Equal-weight log least squares allows these rare ranks to influence the fit despite their few occurrences.
-- **Dependence on corpus construction.** Algebraic representation, branch labels and related model variants affect the counts. Removing or reassigning ambiguous chapters moves the special-relativity estimate from 0.382 to 0.231.
-- **Approximate intervals.** The bootstrap captures variation from resampling the selected expressions, not uncertainty from omitted equation formats, systematic selection or transcription.
+The lower inflationary estimate is reproduced. Changes to constants and amplitude prefactors leave much of its difference from the Feynman benchmark intact, while the $f(R)$ collection has a similar fitted rate. Fitted rates also vary across the Feynman branches. These observations motivate the SR study; they do not establish that a learned prior improves search.
 
-The interval calibration check makes the last limitation concrete. In artificial collections where the true rate is known, an interval labelled 95% should contain that rate about 190 times out of 200. It did so 170–189 times when equations were resampled and only 149–169 times when dependent equations were grouped by chapter. The intervals are therefore often too short. These checks use invented operator counts rather than real expression trees and do not provide corrected intervals for the observed collections.
+The analysis covers selected algebraic expressions and omits differential and integral forms. Representation, branch assignments and corpus selection affect the fits. Rare operators produce flat tails that the exponential model captures poorly, and the bootstrap intervals provide only approximate uncertainty.
 
-The write-up presents descriptive comparisons and does not report a formal test that all branch rates are equal.
+## Data and formula ledger
 
-## Per-expression patterns and symbolic regression
+The expanded Feynman collection contains 1,016 expressions after deduplication, with 968 assigned to seven branches. Other catalogues include Wikipedia equations, Encyclopaedia Inflationaris, 61 Leemis probability distributions and 37 proposed $f(R)$ curvature functions.
 
-The [formula ledger](https://jaysen-ma.github.io/physics-metalaw/data/catalog/index.html?page=beta) also fits each expression on its own and plots its decay rate $\hat\beta_g$ against its expression-tree complexity $k_g$. The apparent concentration of expressions in parts of this plane suggests a possible expression-level statistic for symbolic regression:
+The [formula ledger](https://jaysen-ma.github.io/physics-metalaw/data/catalog/index.html) shows expressions, sources, counted trees and operator totals, including [per-expression statistics](https://jaysen-ma.github.io/physics-metalaw/data/catalog/index.html?page=beta).
 
-$$\mathcal{L}(g)=\mathcal{L}_{\mathrm{data}}(g)+\lambda\,\mathcal{R}_{d}(\hat\beta_g,k_g).$$
+## Using the repository
 
-Here, $\mathcal{R}_{d}$ would penalise combinations of decay rate and complexity that are unusual in domain $d$. Conditioning on complexity avoids requiring a short candidate and a long candidate to have the same preferred rate.
+Run commands from the repository root. To prepare the environment for the catalogue and descriptive analysis:
 
-The visible regions may partly be combinatorial artefacts: short expressions allow only a limited set of integer operator counts. The ledger therefore includes random expression trees matched to the Feynman complexity distribution as a baseline. More analysis is needed to determine whether the observed regions contain domain information beyond complexity, operator vocabulary and tree structure.
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt matplotlib
+```
 
-**The proposed penalty has not been implemented or evaluated.** A proper test would learn it from one set of expressions and compare equation-recovery rates and computational effort on separate symbolic-regression problems, with and without the penalty.
-
-## Formula ledger
-
-The public ledger shows every catalogued expression with its source, counted tree and operator totals. Its *β of each expression* page contains corpus, branch and random-tree complexity plots.
-
-To serve it locally:
+Serve the formula ledger locally:
 
 ```bash
 .venv/bin/python -m physics_metalaw.catalog --serve --port 8766
@@ -101,45 +80,20 @@ To serve it locally:
 
 Then open `http://127.0.0.1:8766/`.
 
-## Reproduce the analysis
-
-Run commands from the repository root. To prepare a Python environment:
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt matplotlib
-```
-
-Run the fitting pipeline and the separate calibration analysis:
+Run the exponential-fitting pipeline and its separate interval-calibration analysis:
 
 ```bash
 .venv/bin/python scripts/exponential_bootstrap.py
 .venv/bin/python scripts/exponential_coverage_check.py
 ```
 
-The primary pipeline uses 10,000 equation resamples and joint stratified chapter resampling. It writes `results/exponential_fit/summary.json`, bootstrap draws, generated LaTeX tables and manuscript figures. The calibration defaults are 200 datasets per scenario, 400 bootstrap samples and three workers. Smaller diagnostic runs write to separate subdirectories.
-
-To refresh Figures 1 and 2 from the saved results **without refitting or resampling**:
-
-```bash
-.venv/bin/python scripts/exponential_bootstrap.py --corpus-plot-only
-.venv/bin/python scripts/exponential_bootstrap.py --branch-plot-only
-```
-
-These commands update both PDF and PNG figure files; they do not compile the manuscript. Figure 2 includes the seven branches and all five comparison collections listed above.
-
-The existing test suite can be run separately:
-
-```bash
-.venv/bin/python -m unittest discover -s tests -t .
-```
+SR reproduction instructions will follow once the experimental procedure is fixed.
 
 ## Data sources and attribution
 
-- **The Feynman Lectures on Physics**, Vol. I–III, R. P. Feynman, R. B. Leighton and M. Sands, New Millennium Edition, © California Institute of Technology, [feynmanlectures.caltech.edu](https://www.feynmanlectures.caltech.edu/). Each extracted expression links to its equation (e.g. `https://www.feynmanlectures.caltech.edu/I_11.html#Eq:I:11:6`) and records volume, chapter, section and equation number.
+- **The Feynman Lectures on Physics**, Vol. I–III, R. P. Feynman, R. B. Leighton and M. Sands, New Millennium Edition, © California Institute of Technology, [feynmanlectures.caltech.edu](https://www.feynmanlectures.caltech.edu/). Extracted expressions record their source equation, volume, chapter and section.
 - **AI Feynman benchmark**: S.-M. Udrescu and M. Tegmark, *AI Feynman: a physics-inspired method for symbolic regression*, Science Advances 6, eaay2631 (2020), as distributed with [arXiv:2408.11065](https://arxiv.org/abs/2408.11065).
 - **Wikipedia**, [List of scientific equations named after people](https://en.wikipedia.org/wiki/List_of_scientific_equations_named_after_people) (CC BY-SA 4.0); each expression links to its article.
 - **Encyclopaedia Inflationaris**: J. Martin, C. Ringeval and V. Vennin, Phys. Dark Univ. 5–6, 75 (2014), [arXiv:1303.3787](https://arxiv.org/abs/1303.3787).
 - **Leemis**: L. M. Leemis and J. T. McQueston, *Univariate distribution relationships*, The American Statistician 62, 45 (2008); [chart](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html).
 - **f(R)**: T. P. Sotiriou and V. Faraoni, *f(R) theories of gravity*, Rev. Mod. Phys. 82, 451 (2010), [arXiv:0805.1726](https://arxiv.org/abs/0805.1726), and papers cited per expression in the ledger.
-
