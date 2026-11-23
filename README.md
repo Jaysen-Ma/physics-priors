@@ -4,7 +4,7 @@
 <a href="writeup/main.pdf"><img src="https://img.shields.io/badge/Write--up-PDF-red" alt="Write-up PDF"></a>
 <a href="https://jaysen-ma.github.io/physics-priors/data/catalog/index.html"><img src="https://img.shields.io/badge/Formula-ledger-blue" alt="Formula ledger"></a>
 
-<p><em>The draft write-up covers the operator-frequency analysis. Held-out formula scoring is complete, and the paired PySR benchmark is in progress.</em></p>
+<p><strong>Work in progress.</strong> The write-up is a draft. The paired PySR benchmark is underway, and its equation-recovery results are pending.</p>
 </div>
 
 ## Overview

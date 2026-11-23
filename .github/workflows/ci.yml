@@ -52,21 +52,42 @@ jobs:
       - name: Install the pinned analysis dependencies
         run: |
           python -m pip install -r requirements.txt
+
+      - name: Build and install the package wheel
+        run: |
+          wheel_dir="$RUNNER_TEMP/physics-priors-wheel"
+          python -m pip wheel --no-deps --wheel-dir "$wheel_dir" .
+          python -m pip install --no-deps "$wheel_dir"/physics_priors-*.whl
           python -m pip check
+
+      - name: Check the installed package outside the checkout
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -c 'from physics_priors import metalaw; assert metalaw.complexity("x+y") == 3'
+          for command in physics-priors-catalog physics-priors-fit physics-priors-calibrate; do
+            "$command" --help
+            if "$command" > missing-checkout.log 2>&1; then
+              echo "Expected a missing-checkout error from $command"
+              exit 1
+            fi
+            grep -F "needs a physics-priors repository checkout" missing-checkout.log
+          done
 
       - name: Run tests
         run: python -m unittest discover -s tests -v
 
       - name: Check analysis entry points
         run: |
-          python -m physics_metalaw.catalog --help
+          python -m physics_priors.catalog --help
+          python scripts/analysis/exponential_bootstrap.py --help
+          python scripts/analysis/exponential_coverage_check.py --help
           python scripts/exponential_bootstrap.py --help
           python scripts/exponential_coverage_check.py --help
 
       - name: Run small analysis jobs
         run: |
-          python scripts/exponential_bootstrap.py --boot 32
-          python scripts/exponential_coverage_check.py --datasets 2 --boot 8 --workers 1
+          physics-priors-fit --boot 32
+          physics-priors-calibrate --datasets 2 --boot 8 --workers 1
           test -s results/exponential_fit/diagnostics/boot_32/summary.json
           test -s results/exponential_fit/diagnostics/coverage_2_8/coverage_check.json
           git diff --exit-code

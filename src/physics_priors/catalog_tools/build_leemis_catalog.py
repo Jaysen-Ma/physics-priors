@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 """Build ``data/catalog/leemis.json`` from ``leemis_appendix.py``.
 
-Run: .venv/bin/python scripts/build_leemis_catalog.py
+Run: .venv/bin/python scripts/catalog/build_leemis_catalog.py
 """
 from __future__ import annotations
 
 import json
 import sys
 from dataclasses import asdict
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from physics_metalaw import metalaw as M
-from physics_metalaw.catalog import CATALOG_DIR, FormulaRecord, attach_counts, apply_constants
-from physics_metalaw.leemis_appendix import LAWS, LeemisLaw
+from physics_priors import metalaw as M
+from physics_priors.catalog import CATALOG_DIR, FormulaRecord, attach_counts, apply_constants
+from physics_priors.leemis_appendix import LAWS, LeemisLaw
+from physics_priors.paths import require_checkout
 
 SOURCE_PDF = (
     "https://www.stat.rice.edu/~dobelman/courses/texts/"
@@ -118,6 +116,7 @@ def record_to_json(rec: FormulaRecord) -> dict:
 
 
 def main() -> int:
+    require_checkout()
     errors: list[str] = []
     records: list[FormulaRecord] = []
     for law in LAWS:

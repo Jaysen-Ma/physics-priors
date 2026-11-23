@@ -1,14 +1,14 @@
-"""Draw the figures of the README and writeup, and the ledger's expression-beta.json.
+"""Reproduce the earlier figures and the ledger's expression-beta.json.
 
-Run from the repository root, after scripts/branch_test.py:
+Run from the repository root:
 
-    .venv/bin/python scripts/make_plots.py
+    .venv/bin/python scripts/legacy/make_plots.py
 
-Every number drawn here is read from results/branch_test.json (written by
-scripts/branch_test.py), except the Encyclopaedia Inflationaris subsample histogram,
-which is recomputed with seed physics_metalaw.sampling.SAMPLE_SEED.
+Every number drawn here is read from results/legacy/branch_test.json, except
+the Encyclopaedia Inflationaris subsample histogram,
+which is recomputed with seed physics_priors.sampling.SAMPLE_SEED.
 
-Outputs (PNG for the README, PDF for LaTeX), in results/legacy_figures/:
+Outputs (PNG and PDF) in results/legacy/figures/:
   beta_by_branch          β by branch, Feynman corpus (main figure)
   rank_frequency_branches rank-frequency of operator counts per branch, with the fitted exponential
   beta_by_corpus          β by corpus
@@ -19,8 +19,6 @@ and data/catalog/expression-beta.json (the ledger's "β of each expression" page
 from __future__ import annotations
 
 import json
-import sys
-from pathlib import Path
 
 import matplotlib
 
@@ -28,14 +26,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from physics_priors.catalog import CATALOG_DIR, expression_scatter, record_as_entry, scatter_records  # noqa: E402
+from physics_priors.paths import ROOT, require_checkout  # noqa: E402
+from physics_priors.sampling import N_DRAWS, SAMPLE_SEED, SAMPLE_SIZE, inflation_sample_betas  # noqa: E402
 
-from physics_metalaw.catalog import CATALOG_DIR, expression_scatter, record_as_entry, scatter_records  # noqa: E402
-from physics_metalaw.sampling import N_DRAWS, SAMPLE_SEED, SAMPLE_SIZE, inflation_sample_betas  # noqa: E402
-
-RESULTS = ROOT / "results" / "branch_test.json"
-FIG = ROOT / "results" / "legacy_figures"
+RESULTS = ROOT / "results" / "legacy"
+FIG = RESULTS / "figures"
 LONG = {"SR": "Special relativity", "QM": "Quantum mechanics", "EM": "Electromagnetism",
         "Waves+optics": "Waves and optics", "Classical": "Classical mechanics",
         "Thermo": "Thermodynamics", "Fluid+continuum": "Fluid + continuum"}
@@ -157,7 +153,8 @@ def ei_sample():
 
 
 def main() -> int:
-    res = json.loads(RESULTS.read_text())
+    require_checkout()
+    res = json.loads((RESULTS / "branch_test.json").read_text())
     if res.get("quick"):
         print("warning: results come from a --quick run")
     (CATALOG_DIR / "expression-beta.json").write_text(json.dumps(expression_scatter()) + "\n")
@@ -168,7 +165,7 @@ def main() -> int:
     sensitivity(res)
     ei = ei_sample()
     print("EI subsample:", {k: round(v, 3) for k, v in ei.items()})
-    (ROOT / "results" / "ei_sample10.json").write_text(json.dumps(ei, indent=1) + "\n")
+    (RESULTS / "ei_sample10.json").write_text(json.dumps(ei, indent=1) + "\n")
     return 0
 
 

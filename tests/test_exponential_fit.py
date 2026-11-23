@@ -6,7 +6,7 @@ import unittest
 
 import numpy as np
 
-from physics_metalaw.exponential_fit import (
+from physics_priors.exponential_fit import (
     BOOTSTRAP_SEED,
     QUANTILE_METHOD,
     STATUS_DEGENERATE,
@@ -214,7 +214,7 @@ class UntrimmedRegressionTests(unittest.TestCase):
         self.assertEqual(a.beta,b.beta)
 
     def test_cluster_multiplicity_is_shared_across_rows(self):
-        from physics_metalaw.exponential_fit import stratified_cluster_weights
+        from physics_priors.exponential_fit import stratified_cluster_weights
         class PickFirst:
             def integers(self, low, high, size):
                 return np.zeros(size,dtype=int)
@@ -225,13 +225,13 @@ class UntrimmedRegressionTests(unittest.TestCase):
         np.testing.assert_array_equal(weights,[2,0,2,1,1])
 
     def test_coverage_generator_has_known_exponential_marginals(self):
-        from scripts.exponential_coverage_check import exponential_probabilities
+        from physics_priors.analysis.exponential_coverage_check import exponential_probabilities
         p=exponential_probabilities(12)
         self.assertAlmostEqual(p.sum(),1.0)
         np.testing.assert_allclose(p[1:]/p[:-1],np.exp(-.35))
 
     def test_monte_carlo_summary_counts_unresolved_datasets(self):
-        from scripts.exponential_coverage_check import binomial_summary
+        from physics_priors.analysis.exponential_coverage_check import binomial_summary
         result=binomial_summary([True,False,None])
         self.assertEqual(result['n'],2)
         self.assertEqual(result['n_missing'],1)

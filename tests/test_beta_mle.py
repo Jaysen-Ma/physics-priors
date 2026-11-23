@@ -2,8 +2,8 @@ import unittest
 
 import numpy as np
 
-from physics_metalaw import metalaw as M
-from physics_metalaw.beta import expression_beta
+from physics_priors import metalaw as M
+from physics_priors.beta import expression_beta
 
 
 class MultinomialMLETest(unittest.TestCase):
@@ -41,7 +41,7 @@ class MultinomialMLETest(unittest.TestCase):
         self.assertAlmostEqual(M.fit_beta_logls([2, 1])[0], np.log(2), places=6)
 
     def test_bootstrap_deterministic_and_bracketing(self):
-        from physics_metalaw.catalog import record_as_entry, scatter_records
+        from physics_priors.catalog import record_as_entry, scatter_records
         e = [record_as_entry(r) for r in scatter_records("feynman")]
         a = M.beta_with_errors(e, reps=300)
         b = M.beta_with_errors(e, reps=300)

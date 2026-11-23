@@ -9,17 +9,15 @@ from __future__ import annotations
 
 import json
 import sys
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from physics_metalaw.catalog import (
+from physics_priors.catalog import (
     CATALOG_DIR,
     FormulaRecord,
     _name_occurrences,
     apply_constants,
     attach_counts,
 )
+from physics_priors.paths import require_checkout
 
 ABS = "https://arxiv.org/abs/0805.1726"
 HTML = "https://arxiv.org/html/0805.1726"
@@ -277,6 +275,7 @@ def one(slug: str, name: str, formula: str, locator: str, anchor: str, notes: st
 
 
 def main() -> int:
+    require_checkout()
     records = [one(*row) for row in FORMS]
     payload = {
         "corpus": "fr",

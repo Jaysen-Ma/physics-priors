@@ -16,23 +16,21 @@ writes copies without formula text.
 Records that are one of the 100 AI-Feynman benchmark expressions
 (``feynman.json``) carry ``benchmark_overlap`` so they are not counted twice.
 
-Run: .venv/bin/python scripts/build_feynman_lectures_catalog.py [--counts-only DIR]
+Run: .venv/bin/python scripts/catalog/build_feynman_lectures_catalog.py [--counts-only DIR]
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+from physics_priors import metalaw as M
+from physics_priors.catalog import CATALOG_DIR, FormulaRecord, apply_constants, attach_counts
+from physics_priors.paths import ROOT, require_checkout
 
-from physics_metalaw import metalaw as M
-from physics_metalaw.catalog import CATALOG_DIR, ROOT, FormulaRecord, apply_constants, attach_counts
-from symbol_tex import symbol_tex
+from .symbol_tex import symbol_tex
 
 PUBLIC = True  # decided by the user (2026-10-13): show expressions with per-expression source links
 PRIVATE_FIELDS = ("formula", "original_formula", "tree", "latex", "notes", "name",
@@ -192,6 +190,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--counts-only", type=Path, help="also write counts+refs-only copies (no formula text) into this directory")
     args = ap.parse_args()
+    require_checkout()
     bench = benchmark_index()
     fixes = load_fixes()
     for vol, n in VOLS.items():

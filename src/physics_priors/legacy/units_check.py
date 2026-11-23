@@ -4,22 +4,17 @@
 β (log least squares, bootstrap 2000, seed 20261013) of
   * the Feynman benchmark and Wikipedia as written, and with c = 1 and ħ = 1;
   * Encyclopaedia Inflationaris as written, and with the amplitude M set to 1 in every potential.
-Rewritten formulas are recounted. Writes results/units_check.json.
+Rewritten formulas are recounted. Writes results/legacy/units_check.json.
 
-    .venv/bin/python scripts/units_check.py
+    .venv/bin/python scripts/legacy/units_check.py
 """
 from __future__ import annotations
 
 import json
-import sys
 from collections import Counter
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from physics_metalaw import catalog as C  # noqa: E402
-from physics_metalaw import metalaw as M  # noqa: E402
+from physics_priors import catalog as C
+from physics_priors import metalaw as M
+from physics_priors.paths import ROOT, require_checkout
 
 
 def entry(record, formula):
@@ -41,6 +36,7 @@ def fit(entries):
 
 
 def main() -> int:
+    require_checkout()
     out = {}
     for key in ("feynman", "wiki"):
         recs = C.scatter_records(key)
@@ -54,7 +50,9 @@ def main() -> int:
                             M1=fit([entry(r, f) for r, f in zip(recs, rew)]),
                             n_changed=sum(f != r.formula for r, f in zip(recs, rew)))
     print(json.dumps(out, indent=1))
-    (ROOT / "results" / "units_check.json").write_text(json.dumps(out, indent=1) + "\n")
+    output = ROOT / "results" / "legacy" / "units_check.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(out, indent=1) + "\n")
     return 0
 
 

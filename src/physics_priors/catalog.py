@@ -2,7 +2,7 @@
 
 The Constantin release lives at
 `.scratch/physics-formulae-patterns/data/` and is never edited.
-`python -m physics_metalaw.catalog --seed` rebuilds
+`python -m physics_priors.catalog --seed` rebuilds
 `data/catalog/{feynman,wiki,inflation}.json` from those CSVs.
 
 Source URLs, by corpus:
@@ -10,7 +10,7 @@ Source URLs, by corpus:
   wiki      — per-equation Wikipedia page once identified; until then the named-equations list
   inflation — one PDF for every model, arXiv:1303.3787; locator is the model acronym
   feynman_lectures_v1/v2/v3 — Feynman Lectures chapter HTML, one link per equation
-              ((c) Caltech; shown with source links; scripts/build_feynman_lectures_catalog.py)
+              ((c) Caltech; shown with source links; scripts/catalog/build_feynman_lectures_catalog.py)
 """
 from __future__ import annotations
 
@@ -24,8 +24,8 @@ from pathlib import Path
 from typing import Callable, Iterable
 
 from . import metalaw as M
+from .paths import ROOT, require_checkout
 
-ROOT = Path(__file__).resolve().parents[1]
 CATALOG_DIR = ROOT / "data" / "catalog"
 RELEASED_CLONE = ROOT / ".scratch" / "physics-formulae-patterns"
 RELEASED_DIR = RELEASED_CLONE / "data"
@@ -1296,7 +1296,7 @@ SCATTER_CORPORA = (
 
 # Feynman Lectures Vol. I-III catalogs. Shown on the Formulas page of the ledger
 # (corpus button "Feynman Lectures"); not in the per-expression scatter, which keeps
-# the five corpora above. The branch test (scripts/branch_test.py) pools them with the
+# the five corpora above. The branch test pools them with the
 # 100 benchmark expressions after deduplication.
 FEYNMAN_LECTURES = ("feynman_lectures_v1", "feynman_lectures_v2", "feynman_lectures_v3")
 
@@ -1493,14 +1493,8 @@ def branch_scatters() -> list[dict]:
     Expressions are the deduplicated benchmark plus the Lectures, in the
     seven analysis branches.
     """
-    import importlib.util
-
     from .beta import expression_beta
-
-    path = Path(__file__).resolve().parents[1] / "scripts" / "branch_test.py"
-    spec = importlib.util.spec_from_file_location("branch_test_scatter", path)
-    bt = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(bt)
+    from .legacy import branch_test as bt
     rows, _dedupe, _added = bt.feynman_corpus()
     groups = bt.groups_of(rows)
     plots = []
@@ -1664,7 +1658,7 @@ def serve_catalog(host: str = "0.0.0.0", port: int = 8765) -> None:
     httpd.serve_forever()
 
 
-if __name__ == "__main__":
+def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument("--seed", action="store_true",
@@ -1675,6 +1669,7 @@ if __name__ == "__main__":
     p.add_argument("--host", default="0.0.0.0",
                    help="bind address for --serve (default 0.0.0.0)")
     args = p.parse_args()
+    require_checkout()
     if args.seed:
         seeds = [
             ("feynman", seed_feynman(), feynman_path(), {
@@ -1720,3 +1715,8 @@ if __name__ == "__main__":
             for pol in POLICIES:
                 sel = select(recs, pol)
                 print(f"  {pol:10s} n={len(sel):3d}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

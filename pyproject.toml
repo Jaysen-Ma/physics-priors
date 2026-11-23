@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-priors"
+version = "0.1.0"
+description = "Operator statistics and expression priors for physics equations"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "scipy",
+    "sympy",
+]
+
+[project.urls]
+Repository = "https://github.com/Jaysen-Ma/physics-priors"
+
+[project.scripts]
+physics-priors-catalog = "physics_priors.catalog:main"
+physics-priors-fit = "physics_priors.analysis.exponential_bootstrap:main"
+physics-priors-calibrate = "physics_priors.analysis.exponential_coverage_check:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools]
+include-package-data = false

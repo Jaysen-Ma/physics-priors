@@ -1,12 +1,7 @@
-"""The Feynman corpus of scripts/branch_test.py: deduplication, branch sizes, β (no bootstrap)."""
-import importlib.util
+"""Check Feynman corpus deduplication, branch sizes, and fitted rates."""
 import unittest
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-_spec = importlib.util.spec_from_file_location("branch_test", ROOT / "scripts" / "branch_test.py")
-BT = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(BT)
+from physics_priors.legacy import branch_test as BT
 
 
 class FeynmanCorpusTests(unittest.TestCase):
@@ -24,7 +19,7 @@ class FeynmanCorpusTests(unittest.TestCase):
 
     def test_fixes_applied(self):
         import csv, json
-        from physics_metalaw.catalog import CATALOG_DIR
+        from physics_priors.catalog import CATALOG_DIR
         with open(BT.ROOT / "data" / "feynman_lectures_fixes.csv", newline="") as f:
             fixes = {r["id"]: r for r in csv.DictReader(f)}
         recs = {d["id"]: d for v in (1, 2, 3)

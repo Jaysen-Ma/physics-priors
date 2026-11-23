@@ -7,13 +7,16 @@ Run these commands from the repository root with Python 3.12 on Linux.
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip install --no-deps -e .
 .venv/bin/python -m pip check
 ```
+
+The installed commands use the catalogues in this checkout. The data, ledger files and saved results stay in the repository.
 
 ## View the formula ledger locally
 
 ```bash
-.venv/bin/python -m physics_metalaw.catalog --serve --port 8766
+.venv/bin/physics-priors-catalog --serve --port 8766
 ```
 
 Then open [the local formula ledger](http://127.0.0.1:8766/).
@@ -25,11 +28,11 @@ The full analysis regenerates saved results and write-up figures. Use a separate
 Fit the exponential decay rates and compute their bootstrap intervals.
 
 ```bash
-.venv/bin/python scripts/exponential_bootstrap.py
+.venv/bin/physics-priors-fit
 ```
 
 Run the separate interval-calibration analysis.
 
 ```bash
-.venv/bin/python scripts/exponential_coverage_check.py
+.venv/bin/physics-priors-calibrate
 ```

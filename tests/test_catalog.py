@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import unittest
 
-from physics_metalaw import catalog as C
-from physics_metalaw import metalaw as M
+from physics_priors import catalog as C
+from physics_priors import metalaw as M
 
 
 class FeynmanCatalogTests(unittest.TestCase):

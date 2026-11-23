@@ -1,6 +1,6 @@
 """LaTeX for the identifiers produced by the LaTeX-to-sympy extraction (x' -> xp, <c> -> avgc, ...).
 
-Used by scripts/build_feynman_lectures_catalog.py to render the `latex` field of each record.
+Used by the Feynman Lectures catalogue builder to render the `latex` field of each record.
 """
 from __future__ import annotations
 
