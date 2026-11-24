@@ -233,8 +233,12 @@ FORMS = [
 ]
 
 
+PN_TEMPLATE_FAMILY = "fr.perez_romero_nesseris_eq24"
+
+
 def one(slug: str, name: str, formula: str, locator: str, anchor: str, notes: str) -> FormulaRecord:
     rid = f"fr.{slug}"
+    template_variant = slug.startswith("pn_") and slug != "pn_hypergeometric"
     rec = FormulaRecord(
         corpus="fr",
         original_id=rid,
@@ -251,9 +255,9 @@ def one(slug: str, name: str, formula: str, locator: str, anchor: str, notes: st
         original_n_constants=0,
         original_complexity=0,
         status="extension",
-        family=None,
-        family_role=None,
-        representative=True,
+        family=PN_TEMPLATE_FAMILY if template_variant else None,
+        family_role="template_variant" if template_variant else None,
+        representative=not template_variant or slug == "pn_sqrt",
         in_released=False,
         source_kind="compiled",
         source_url=anchor if anchor.startswith("http") else f"{HTML}#{anchor}",

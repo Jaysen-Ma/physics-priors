@@ -1,6 +1,6 @@
 {
   "corpus": "leemis",
-  "citation": "Leemis, L. M., & McQueston, J. T. (2008). Univariate distribution relationships. The American Statistician, 62(1), 39\u201344.",
+  "citation": "Leemis, L. M., & McQueston, J. T. (2008). Univariate distribution relationships. The American Statistician, 62(1), 39–44.",
   "source_kind": "pdf",
   "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
   "chart_url": "https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
@@ -35,7 +35,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 1, \u2026, 9",
+      "notes": "support: x = 1, …, 9",
       "name": "Benford",
       "constant_names": [],
       "variable_names": [
@@ -232,7 +232,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Equivalent to appendix rising-factorial form; support: x = 0, \u2026, n",
+      "notes": "Equivalent to appendix rising-factorial form; support: x = 0, …, n",
       "name": "Beta-binomial",
       "constant_names": [],
       "variable_names": [
@@ -378,7 +378,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, 1, \u2026; aliases: Beta-Pascal (factorial)",
+      "notes": "support: x = 0, 1, …; aliases: Beta-Pascal (factorial)",
       "name": "Beta-Pascal",
       "constant_names": [],
       "variable_names": [
@@ -537,7 +537,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, \u2026, n",
+      "notes": "support: x = 0, …, n",
       "name": "Binomial",
       "constant_names": [],
       "variable_names": [
@@ -669,7 +669,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = a, \u2026, b",
+      "notes": "support: x = a, …, b",
       "name": "Discrete uniform",
       "constant_names": [],
       "variable_names": [
@@ -749,7 +749,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, 1, \u2026",
+      "notes": "support: x = 0, 1, …",
       "name": "Discrete Weibull",
       "constant_names": [],
       "variable_names": [
@@ -894,7 +894,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Appendix \u0393(x+\u03b2) \u03b1^x / (\u0393(\u03b2) (1+\u03b1)^{\u03b2+x} x!); support: x = 0, 1, \u2026",
+      "notes": "Appendix Γ(x+β) α^x / (Γ(β) (1+α)^{β+x} x!); support: x = 0, 1, …",
       "name": "Gamma-Poisson",
       "constant_names": [],
       "variable_names": [
@@ -1073,7 +1073,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, 1, \u2026",
+      "notes": "support: x = 0, 1, …",
       "name": "Geometric",
       "constant_names": [],
       "variable_names": [
@@ -1152,7 +1152,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = max(0, n1+n2-n3), \u2026, min(n1, n2)",
+      "notes": "support: x = max(0, n1+n2-n3), …, min(n1, n2)",
       "name": "Hypergeometric",
       "constant_names": [],
       "variable_names": [
@@ -1285,7 +1285,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "0 < c < 1; support: x = 1, 2, \u2026; aliases: Logarithmic series",
+      "notes": "0 < c < 1; support: x = 1, 2, …; aliases: Logarithmic series",
       "name": "Logarithm",
       "constant_names": [],
       "variable_names": [
@@ -1391,7 +1391,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = max(0, n1+n2-n3), \u2026, n2",
+      "notes": "support: x = max(0, n1+n2-n3), …, n2",
       "name": "Negative hypergeometric",
       "constant_names": [],
       "variable_names": [
@@ -1615,7 +1615,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, 1, \u2026; aliases: Negative binomial",
+      "notes": "support: x = 0, 1, …; aliases: Negative binomial",
       "name": "Pascal",
       "constant_names": [],
       "variable_names": [
@@ -1760,7 +1760,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03bc > 0 in paper; support: x = 0, 1, \u2026",
+      "notes": "μ > 0 in paper; support: x = 0, 1, …",
       "name": "Poisson",
       "constant_names": [],
       "variable_names": [
@@ -1860,7 +1860,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: indexed product, not a finite expression tree; support: x = 0, \u2026, n",
+      "notes": "Not under consideration: indexed product, not a finite expression tree; support: x = 0, …, n",
       "name": "Polya",
       "constant_names": [],
       "variable_names": [
@@ -1894,7 +1894,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: normalizing sum A(c) = \u03a3 a_x c^x; support: x = 0, 1, \u2026",
+      "notes": "Not under consideration: normalizing sum A(c) = Σ a_x c^x; support: x = 0, 1, …",
       "name": "Power series",
       "constant_names": [],
       "variable_names": [
@@ -1928,7 +1928,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 0, \u2026, n; aliases: Discrete uniform (n)",
+      "notes": "support: x = 0, …, n; aliases: Discrete uniform (n)",
       "name": "Rectangular",
       "constant_names": [],
       "variable_names": [
@@ -1994,7 +1994,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x = 1, 2, \u2026",
+      "notes": "support: x = 1, 2, …",
       "name": "Zeta",
       "constant_names": [],
       "variable_names": [
@@ -2074,7 +2074,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (discrete); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: partial sum \u03a3_{i=1}^{n} i^{-\u03b1} in the denominator; support: x = 1, \u2026, n",
+      "notes": "Not under consideration: partial sum Σ_{i=1}^{n} i^{-α} in the denominator; support: x = 1, …, n",
       "name": "Zipf",
       "constant_names": [],
       "variable_names": [
@@ -2206,7 +2206,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03c6 location; paper gives survival-style support x\u22650; support: x \u2265 0",
+      "notes": "φ location; paper gives survival-style support x≥0; support: x ≥ 0",
       "name": "Arctangent",
       "constant_names": [],
       "variable_names": [
@@ -2564,7 +2564,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e; aliases: Lorentz, Breit-Wigner",
+      "notes": "support: −∞ < x < ∞; aliases: Lorentz, Breit-Wigner",
       "name": "Cauchy",
       "constant_names": [],
       "variable_names": [
@@ -3113,7 +3113,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: no closed form in the appendix; support: \u2212\u221e < x < \u221e",
+      "notes": "Not under consideration: no closed form in the appendix; support: −∞ < x < ∞",
       "name": "Doubly noncentral t",
       "constant_names": [],
       "variable_names": [
@@ -3313,7 +3313,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e; aliases: Exponential power (general error)",
+      "notes": "support: −∞ < x < ∞; aliases: Exponential power (general error)",
       "name": "Error",
       "constant_names": [],
       "variable_names": [
@@ -3818,8 +3818,8 @@
       "corpus": "leemis",
       "original_id": "leemis.extreme_value",
       "id": "leemis.extreme_value",
-      "formula": "(beta/alpha)*exp(x**beta-(exp(x**beta))/alpha)",
-      "original_formula": "(beta/alpha)*exp(x**beta-(exp(x**beta))/alpha)",
+      "formula": "(beta/alpha)*exp(x*beta-exp(x*beta)/alpha)",
+      "original_formula": "(beta/alpha)*exp(x*beta-exp(x*beta)/alpha)",
       "output": "f",
       "n_variables": 7,
       "n_numbers": 0,
@@ -3837,7 +3837,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e; aliases: Gumbel",
+      "notes": "support: −∞ < x < ∞; aliases: Gumbel",
       "name": "Extreme value",
       "constant_names": [],
       "variable_names": [
@@ -3881,7 +3881,7 @@
                 "kind": "op",
                 "children": [
                   {
-                    "label": "Pow",
+                    "label": "Mult",
                     "arity": "binary",
                     "kind": "op",
                     "children": [
@@ -3910,7 +3910,7 @@
                         "kind": "op",
                         "children": [
                           {
-                            "label": "Pow",
+                            "label": "Mult",
                             "arity": "binary",
                             "kind": "op",
                             "children": [
@@ -3944,8 +3944,10 @@
           }
         ]
       },
-      "latex": "\\frac{\\beta}{\\alpha} e^{x^{\\beta} - \\frac{e^{x^{\\beta}}}{\\alpha}}",
-      "csv_disagreements": {}
+      "latex": "\\frac{\\beta}{\\alpha} e^{x \\beta - \\frac{e^{x \\beta}}{\\alpha}}",
+      "csv_disagreements": {},
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "leemis",
@@ -4458,7 +4460,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: no closed form in the appendix; support: \u2014",
+      "notes": "Not under consideration: no closed form in the appendix; support: —",
       "name": "Gamma-normal",
       "constant_names": [],
       "variable_names": [
@@ -4885,7 +4887,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03ba > 1; support: x > 0",
+      "notes": "κ > 1; support: x > 0",
       "name": "Gompertz",
       "constant_names": [],
       "variable_names": [
@@ -5038,7 +5040,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e",
+      "notes": "support: −∞ < x < ∞",
       "name": "Hyperbolic-secant",
       "constant_names": [],
       "variable_names": [
@@ -5165,7 +5167,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03b3 \u2265 0; support: x > 0",
+      "notes": "γ ≥ 0; support: x > 0",
       "name": "IDB",
       "constant_names": [],
       "variable_names": [
@@ -5410,7 +5412,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03bc > 0; support: x > 0; aliases: Wald",
+      "notes": "μ > 0; support: x > 0; aliases: Wald",
       "name": "Inverse Gaussian",
       "constant_names": [],
       "variable_names": [
@@ -5610,7 +5612,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03b2>1, \u03b3>1; support: x > 0",
+      "notes": "β>1, γ>1; support: x > 0",
       "name": "Inverted beta",
       "constant_names": [],
       "variable_names": [
@@ -5935,7 +5937,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: no closed form in the appendix; support: \u2014",
+      "notes": "Not under consideration: no closed form in the appendix; support: —",
       "name": "Kolmogorov-Smirnov",
       "constant_names": [],
       "variable_names": [
@@ -5969,7 +5971,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: piecewise in the two scale parameters; support: \u2212\u221e < x < \u221e; aliases: Double exponential",
+      "notes": "Not under consideration: piecewise in the two scale parameters; support: −∞ < x < ∞; aliases: Double exponential",
       "name": "Laplace",
       "constant_names": [],
       "variable_names": [
@@ -6003,7 +6005,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Appendix [1/(\u03b1^\u03b2 \u0393(\u03b2))] exp(\u03b2x) exp(\u2212e^x/\u03b1); support: \u2212\u221e < x < \u221e",
+      "notes": "Appendix [1/(α^β Γ(β))] exp(βx) exp(−e^x/α); support: −∞ < x < ∞",
       "name": "Log gamma",
       "constant_names": [],
       "variable_names": [
@@ -6456,17 +6458,17 @@
       "corpus": "leemis",
       "original_id": "leemis.logistic",
       "id": "leemis.logistic",
-      "formula": "lambda*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
-      "original_formula": "lambda*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
+      "formula": "lambda**kappa*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
+      "original_formula": "lambda**kappa*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
       "output": "f",
-      "n_variables": 7,
+      "n_variables": 8,
       "n_numbers": 1,
       "n_constants": 0,
-      "complexity": 18,
-      "original_n_variables": 7,
+      "complexity": 20,
+      "original_n_variables": 8,
       "original_n_numbers": 1,
       "original_n_constants": 0,
-      "original_complexity": 18,
+      "original_complexity": 20,
       "status": "extension",
       "family": null,
       "family_role": null,
@@ -6475,7 +6477,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e",
+      "notes": "support: −∞ < x < ∞",
       "name": "Logistic",
       "constant_names": [],
       "variable_names": [
@@ -6500,10 +6502,23 @@
                 "kind": "op",
                 "children": [
                   {
-                    "label": "lambda",
-                    "arity": "nullary",
-                    "kind": "variable",
-                    "children": []
+                    "label": "Pow",
+                    "arity": "binary",
+                    "kind": "op",
+                    "children": [
+                      {
+                        "label": "lambda",
+                        "arity": "nullary",
+                        "kind": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "kappa",
+                        "arity": "nullary",
+                        "kind": "variable",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "label": "kappa",
@@ -6602,8 +6617,10 @@
           }
         ]
       },
-      "latex": "\\frac{\\lambda \\kappa e^{\\kappa x}}{\\left(1 + \\left(\\lambda e^{x}\\right)^{\\kappa}\\right)^{2}}",
-      "csv_disagreements": {}
+      "latex": "\\frac{\\lambda^{\\kappa} \\kappa e^{\\kappa x}}{\\left(1 + \\left(\\lambda e^{x}\\right)^{\\kappa}\\right)^{2}}",
+      "csv_disagreements": {},
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "leemis",
@@ -6985,7 +7002,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "\u03ba > 1; support: x > 0",
+      "notes": "κ > 1; support: x > 0",
       "name": "Makeham",
       "constant_names": [],
       "variable_names": [
@@ -7623,7 +7640,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: infinite series; support: \u2212\u221e < x < \u221e",
+      "notes": "Not under consideration: infinite series; support: −∞ < x < ∞",
       "name": "Noncentral t",
       "constant_names": [],
       "variable_names": [
@@ -7657,7 +7674,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e; aliases: Gaussian",
+      "notes": "support: −∞ < x < ∞; aliases: Gaussian",
       "name": "Normal",
       "constant_names": [],
       "variable_names": [
@@ -7804,7 +7821,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: x > \u03bb",
+      "notes": "support: x > λ",
       "name": "Pareto",
       "constant_names": [],
       "variable_names": [
@@ -7910,7 +7927,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: 0 < x < \u03b1",
+      "notes": "support: 0 < x < α",
       "name": "Power",
       "constant_names": [],
       "variable_names": [
@@ -8129,7 +8146,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e",
+      "notes": "support: −∞ < x < ∞",
       "name": "Standard Cauchy",
       "constant_names": [],
       "variable_names": [
@@ -8214,7 +8231,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e",
+      "notes": "support: −∞ < x < ∞",
       "name": "Standard normal",
       "constant_names": [],
       "variable_names": [
@@ -8399,7 +8416,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Not under consideration: piecewise (x+1 on (\u22121,0), 1\u2212x on [0,1)); support: \u22121 < x < 1",
+      "notes": "Not under consideration: piecewise (x+1 on (−1,0), 1−x on [0,1)); support: −1 < x < 1",
       "name": "Standard triangular",
       "constant_names": [],
       "variable_names": [
@@ -8472,7 +8489,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: \u2212\u221e < x < \u221e; aliases: Student's t",
+      "notes": "support: −∞ < x < ∞; aliases: Student's t",
       "name": "t",
       "constant_names": [],
       "variable_names": [
@@ -8696,7 +8713,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Upper branch m\u2264x<b omitted; Leemis piecewise on (a,b); support: a < x < m",
+      "notes": "Upper branch m≤x<b omitted; Leemis piecewise on (a,b); support: a < x < m",
       "name": "Triangular",
       "constant_names": [],
       "variable_names": [
@@ -8816,7 +8833,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "Lower branch only; upper uses (b-x)/(b-m); support: a < x \u2264 m; aliases: Two-sided power",
+      "notes": "Lower branch only; upper uses (b-x)/(b-m); support: a < x ≤ m; aliases: Two-sided power",
       "name": "TSP",
       "constant_names": [],
       "variable_names": [
@@ -9030,7 +9047,7 @@
       "source_kind": "pdf",
       "source_url": "https://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf",
       "source_locator": "Appendix A (continuous); chart https://www.math.wm.edu/~leemis/chart/UDR/UDR.html",
-      "notes": "support: 0 < x < 2\u03c0",
+      "notes": "support: 0 < x < 2π",
       "name": "von Mises",
       "constant_names": [],
       "variable_names": [

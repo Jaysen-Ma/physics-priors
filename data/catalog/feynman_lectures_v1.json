@@ -10218,7 +10218,6 @@
       "variable_names": [
         "F_x",
         "F_y",
-        "t",
         "theta",
         "x",
         "y"
@@ -16045,8 +16044,7 @@
       "variable_names": [
         "a_x",
         "q",
-        "r",
-        "t"
+        "r"
       ],
       "consideration": "in",
       "branch": "Electromagnetism",
@@ -16302,7 +16300,6 @@
         "a",
         "q",
         "r",
-        "t",
         "theta"
       ],
       "consideration": "in",
@@ -18664,7 +18661,6 @@
       "constant_names": [],
       "variable_names": [
         "alpha",
-        "dsin",
         "k",
         "theta"
       ],
@@ -18780,10 +18776,7 @@
         "pi"
       ],
       "variable_names": [
-        "dsin",
-        "lambd",
-        "theta_i_n",
-        "theta_o__t_u_"
+        "lambd"
       ],
       "consideration": "in",
       "branch": "Waves and optics",
@@ -21378,8 +21371,8 @@
       "original_n_constants": 1,
       "original_complexity": 18,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.undamped_refractive_index",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -21663,7 +21656,6 @@
         "Delta_z",
         "N",
         "q_e",
-        "retbyzc",
         "v"
       ],
       "consideration": "in",

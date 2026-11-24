@@ -858,13 +858,13 @@
       "corpus": "wiki",
       "original_id": "Wiki_10",
       "id": "Wiki_10",
-      "formula": "(kb*T/h)*exp(dG/(R*T))",
+      "formula": "(kb*T/h)*exp(-dG/(R*T))",
       "original_formula": "(kB*T/h)*exp(dG/(R*T))",
       "output": null,
       "n_variables": 3,
       "n_numbers": 0,
       "n_constants": 3,
-      "complexity": 12,
+      "complexity": 13,
       "original_n_variables": 3,
       "original_n_numbers": 0,
       "original_n_constants": 3,
@@ -877,7 +877,7 @@
       "source_kind": "html",
       "source_url": "https://en.wikipedia.org/wiki/Eyring_equation",
       "source_locator": "Eyring equation",
-      "notes": "Eyring. CSV `kB` is Boltzmann's constant; catalog uses Feynman `kb` (k_b). R is the gas constant.",
+      "notes": "The Gibbs energy of activation has a negative sign in the Eyring exponent (IUPAC Gold Book T06470). R is the gas constant.",
       "name": "Eyring rate",
       "constant_names": [
         "R",
@@ -934,10 +934,17 @@
                 "kind": "op",
                 "children": [
                   {
-                    "label": "dG",
-                    "arity": "nullary",
-                    "kind": "variable",
-                    "children": []
+                    "label": "Neg",
+                    "arity": "unary",
+                    "kind": "op",
+                    "children": [
+                      {
+                        "label": "dG",
+                        "arity": "nullary",
+                        "kind": "variable",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "label": "Mult",
@@ -964,11 +971,16 @@
           }
         ]
       },
-      "latex": "\\frac{k_{b} T}{h} e^{\\frac{dG}{R T}}",
-      "csv_disagreements": {},
+      "latex": "\\frac{k_{b} T}{h} e^{\\frac{-dG}{R T}}",
+      "csv_disagreements": {
+        "complexity": {
+          "csv": 12,
+          "catalog": 13
+        }
+      },
       "hbar1": {
-        "formula": "kb*T/(2*pi)*exp(dG/(R*T))",
-        "latex": "\\frac{k_{b} T}{2 \\pi} e^{\\frac{dG}{R T}}",
+        "formula": "kb*T/(2*pi)*exp(-dG/(R*T))",
+        "latex": "\\frac{k_{b} T}{2 \\pi} e^{\\frac{-dG}{R T}}",
         "tree": {
           "label": "Mult",
           "arity": "binary",
@@ -1030,10 +1042,17 @@
                   "kind": "op",
                   "children": [
                     {
-                      "label": "dG",
-                      "arity": "nullary",
-                      "kind": "variable",
-                      "children": []
+                      "label": "Neg",
+                      "arity": "unary",
+                      "kind": "op",
+                      "children": [
+                        {
+                          "label": "dG",
+                          "arity": "nullary",
+                          "kind": "variable",
+                          "children": []
+                        }
+                      ]
                     },
                     {
                       "label": "Mult",
@@ -1063,13 +1082,14 @@
         "n_variables": 3,
         "n_numbers": 1,
         "n_constants": 3,
-        "complexity": 14,
+        "complexity": 15,
         "constant_names": [
           "R",
           "kb"
         ]
       },
-      "branch": "chemical kinetics"
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "wiki",

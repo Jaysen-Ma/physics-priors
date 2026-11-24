@@ -6,8 +6,6 @@ exponential, retaining every positive-count operator rank.
 Uncertainty: 10,000 equation-level bootstrap replicates, seed 20261013.
 Branch differences: 21 pairwise contrasts with centred simultaneous nominal 95% intervals.
 
-The previous log-least-squares permutation results are in results/legacy/.
-
 Run from the repository root:
 
     .venv/bin/python scripts/analysis/exponential_bootstrap.py
@@ -25,7 +23,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import shutil
 import time
 import subprocess
 import platform
@@ -39,8 +36,8 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 
 from physics_priors import metalaw as M  # noqa: E402
-from physics_priors.catalog import record_as_entry, scatter_records  # noqa: E402
-from physics_priors.legacy import branch_test as BT, units_check as UNITS  # noqa: E402
+from physics_priors.catalog import entry_from_formula, record_as_entry, rewrite_units, scatter_records  # noqa: E402
+from physics_priors.catalog_tools import feynman as FY  # noqa: E402
 from physics_priors.paths import PACKAGE_DIR, ROOT, code_hashes, require_checkout  # noqa: E402
 from physics_priors.exponential_fit import (  # noqa: E402
     BOOTSTRAP_SEED,
@@ -54,12 +51,10 @@ from physics_priors.exponential_fit import (  # noqa: E402
 )
 
 OUT = ROOT / "results" / "exponential_fit"
-LEGACY = ROOT / "results" / "legacy"
-PREV = LEGACY / "previous_unweighted_logls"
 FIG = ROOT / "writeup" / "figures"
 GEN = ROOT / "writeup" / "generated"
-ORDER = list(BT.ORDER)
-LONG = dict(BT.LONG)
+ORDER = list(FY.ORDER)
+LONG = dict(FY.LONG)
 COLORS = {
     "SR": "#d62728", "QM": "#9467bd", "EM": "#1f77b4", "Waves+optics": "#17becf",
     "Classical": "#7f7f7f", "Thermo": "#ff7f0e", "Fluid+continuum": "#2ca02c",
@@ -82,26 +77,6 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def archive_previous() -> None:
-    if PREV.exists():
-        return
-    PREV.mkdir(parents=True)
-    for name in ("branch_test.json", "branch_beta.csv", "branch_tests.csv",
-                 "units_check.json", "ei_sample10.json"):
-        src = LEGACY / name
-        if src.exists():
-            shutil.copy2(src, PREV / name)
-    (PREV / "generated").mkdir()
-    if GEN.exists():
-        for path in GEN.glob("*.tex"):
-            shutil.copy2(path, PREV / "generated" / path.name)
-    (PREV / "figures").mkdir()
-    if FIG.exists():
-        for path in FIG.glob("*"):
-            if path.is_file():
-                shutil.copy2(path, PREV / "figures" / path.name)
-
-
 def matrix_from_entries(entries) -> np.ndarray:
     per = [M.rank_counts([entry]) for entry in entries]
     keys = sorted({key for counts in per for key in counts})
@@ -113,7 +88,7 @@ def matrix_from_entries(entries) -> np.ndarray:
 def chapter_key(record, meta) -> tuple[str, int] | None:
     if meta.get("volume") and meta.get("chapter"):
         return (str(meta["volume"]), int(meta["chapter"]))
-    return BT._vc(record.source_url)
+    return FY.chapter_from_url(record.source_url)
 
 
 def clusters_for(rows, indices: np.ndarray) -> tuple[list[np.ndarray], dict]:
@@ -454,12 +429,11 @@ def main() -> int:
     if args.boot != 10000:
         OUT = OUT / "diagnostics" / f"boot_{args.boot}"
     t0 = time.time()
-    archive_previous()
     OUT.mkdir(parents=True, exist_ok=True)
-    rows, dedupe, added = BT.feynman_corpus()
+    rows, dedupe, added = FY.feynman_corpus()
     records = [record for record, _branch, _meta in rows]
     full_matrix = matrix_from_entries([record_as_entry(record) for record in records])
-    groups = BT.groups_of(rows)
+    groups = FY.groups_of(rows)
     labelled = np.concatenate([groups[key] for key in ORDER])
     n_boot = args.boot
     seed_seq = np.random.SeedSequence(BOOTSTRAP_SEED)
@@ -568,14 +542,14 @@ def main() -> int:
     scenarios = [
         ("ambiguous_dropped", None, lambda meta, branch: meta["ambiguous"]),
         ("ambiguous_reassigned",
-         lambda meta, branch: (BT.ALT.get((meta["volume"], meta["chapter"]), branch) if meta["ambiguous"] else branch),
-         lambda meta, branch: meta["ambiguous"] and (meta["volume"], meta["chapter"]) in BT.ALT and BT.ALT[(meta["volume"], meta["chapter"])] is None),
+         lambda meta, branch: (FY.ALT.get((meta["volume"], meta["chapter"]), branch) if meta["ambiguous"] else branch),
+         lambda meta, branch: meta["ambiguous"] and (meta["volume"], meta["chapter"]) in FY.ALT and FY.ALT[(meta["volume"], meta["chapter"])] is None),
         ("notation_dropped", None, lambda meta, branch: meta["notation"]),
         ("volume_iii_dropped", None, lambda meta, branch: meta["volume"] == "III"),
     ]
     ablations = {}
     for name, relabel, drop in scenarios:
-        grouped = BT.groups_of(rows, relabel, drop)
+        grouped = FY.groups_of(rows, relabel, drop)
         summaries = {}
         local_draws = {}
         for key in ORDER:
@@ -594,12 +568,12 @@ def main() -> int:
     units = {}
     for key in ("feynman", "wiki"):
         records_c = scatter_records(key)
-        rewritten = [UNITS.C.rewrite_units(record, "c1_hbar1") for record in records_c]
+        rewritten = [rewrite_units(record, "c1_hbar1") for record in records_c]
         units[key] = {
             "as_written": corpora["none"][key],
             "c1_hbar1": one(
                 f"units__{key}__c1",
-                matrix_from_entries([UNITS.entry(record, formula) for record, formula in zip(records_c, rewritten)]),
+                matrix_from_entries([entry_from_formula(record, formula) for record, formula in zip(records_c, rewritten)]),
                 PRIMARY_THRESHOLD),
             "n_changed": int(sum(formula != record.formula for record, formula in zip(records_c, rewritten))),
         }
@@ -609,7 +583,7 @@ def main() -> int:
         "as_written": corpora["none"]["inflation"],
         "M1": one(
             "units__inflation__M1",
-            matrix_from_entries([UNITS.entry(record, formula) for record, formula in zip(inflation_records, rewritten)]),
+            matrix_from_entries([entry_from_formula(record, formula) for record, formula in zip(inflation_records, rewritten)]),
             PRIMARY_THRESHOLD),
         "n_changed": int(sum(formula != record.formula for record, formula in zip(inflation_records, rewritten))),
     }
@@ -667,9 +641,8 @@ def main() -> int:
         "catalog.py",
         "paths.py",
         "analysis/exponential_bootstrap.py",
-        "legacy/branch_test.py",
+        "catalog_tools/feynman.py",
         "catalog_tools/build_feynman_lectures_catalog.py",
-        "legacy/units_check.py",
     ]
     data_files = [
         "data/catalog/feynman.json",

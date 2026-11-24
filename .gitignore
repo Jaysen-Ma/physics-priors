@@ -235,8 +235,5 @@ writeup/*.log
 # Local snapshots of superseded analyses
 /results/previous_trimmed_bootstrap/
 /results/previous_unweighted_logls/
-/results/legacy/previous_unweighted_logls/
-/results/legacy/figures/
-/results/legacy/generated/
-/results/legacy/branch_test_quick.json
 /results/exponential_fit/diagnostics/
+/results/prior_scoring/run/

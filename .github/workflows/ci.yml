@@ -64,7 +64,7 @@ jobs:
         working-directory: ${{ runner.temp }}
         run: |
           python -c 'from physics_priors import metalaw; assert metalaw.complexity("x+y") == 3'
-          for command in physics-priors-catalog physics-priors-fit physics-priors-calibrate; do
+          for command in physics-priors-catalog physics-priors-fit physics-priors-calibrate physics-priors-compare; do
             "$command" --help
             if "$command" > missing-checkout.log 2>&1; then
               echo "Expected a missing-checkout error from $command"
@@ -84,10 +84,24 @@ jobs:
           python scripts/exponential_bootstrap.py --help
           python scripts/exponential_coverage_check.py --help
 
-      - name: Run small analysis jobs
+      - name: Exercise the analysis workflows
         run: |
           physics-priors-fit --boot 32
           physics-priors-calibrate --datasets 2 --boot 8 --workers 1
           test -s results/exponential_fit/diagnostics/boot_32/summary.json
           test -s results/exponential_fit/diagnostics/coverage_2_8/coverage_check.json
+          physics-priors-compare
+          test -s results/prior_scoring/run/scores.csv
+          python - <<'PY'
+          import json
+          from math import isclose
+          from pathlib import Path
+
+          saved = json.loads(Path("results/prior_scoring/summary.json").read_text())["overall"]
+          actual = json.loads(Path("results/prior_scoring/run/summary.json").read_text())["overall"]
+          assert actual["n_scores"] == saved["n_scores"]
+          assert actual["by_branch"].keys() == saved["by_branch"].keys()
+          for branch, expected in saved["by_branch"].items():
+              assert isclose(actual["by_branch"][branch], expected, rel_tol=0, abs_tol=1e-5), branch
+          PY
           git diff --exit-code

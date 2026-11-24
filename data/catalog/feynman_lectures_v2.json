@@ -55,7 +55,8 @@
   "n_records": 487,
   "n_fixes": {
     "reject": 15,
-    "replace": 12
+    "replace": 12,
+    "exclude": 2
   },
   "fixes_file": "data/feynman_lectures_fixes.csv",
   "n_benchmark_overlap": 25,
@@ -102,7 +103,7 @@
     "II.13.34",
     "II.15.4",
     "II.15.5",
-    "II.34.2",
+    "II.34.29a",
     "II.34.29b",
     "II.37.1"
   ],
@@ -3403,7 +3404,7 @@
         "P",
         "alpha"
       ],
-      "consideration": "in",
+      "consideration": "out",
       "branch": "Electromagnetism",
       "public": true,
       "tree": {
@@ -3510,6 +3511,12 @@
         "variable": 4,
         "number": 1,
         "constant": 2
+      },
+      "fix": {
+        "action": "exclude",
+        "error_type": "implicit_equation",
+        "reason": "Polarization P occurs on both sides; equation 11.27 supplies the explicit form.",
+        "previous_formula": "N*(alpha*(epsilon_0*(E + P/((3*epsilon_0)))))"
       }
     },
     {
@@ -15843,9 +15850,7 @@
       "name": "",
       "constant_names": [],
       "variable_names": [
-        "f",
-        "phi",
-        "underline"
+        "f"
       ],
       "consideration": "in",
       "branch": "Classical mechanics",
@@ -16665,9 +16670,7 @@
         "epsilon_0"
       ],
       "variable_names": [
-        "J",
-        "t",
-        "x"
+        "J"
       ],
       "consideration": "in",
       "branch": "Electromagnetism",
@@ -17506,8 +17509,7 @@
       ],
       "variable_names": [
         "S",
-        "r",
-        "t"
+        "r"
       ],
       "consideration": "in",
       "branch": "Electromagnetism",
@@ -24637,11 +24639,9 @@
       ],
       "variable_names": [
         "E_0",
-        "kern",
         "omega",
         "r",
-        "t",
-        "x"
+        "t"
       ],
       "consideration": "in",
       "branch": "Electromagnetism",
@@ -41750,8 +41750,8 @@
       "original_n_constants": 1,
       "original_complexity": 19,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.undamped_refractive_index",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -42271,7 +42271,7 @@
         "P",
         "alpha"
       ],
-      "consideration": "in",
+      "consideration": "out",
       "branch": "Waves and optics",
       "public": true,
       "tree": {
@@ -42378,6 +42378,12 @@
         "variable": 4,
         "number": 1,
         "constant": 2
+      },
+      "fix": {
+        "action": "exclude",
+        "error_type": "implicit_equation",
+        "reason": "Polarization P occurs on both sides; this repeats the implicit relation in equation II.11.26.",
+        "previous_formula": "epsilon_0*(N*(alpha*(E + P/((3*epsilon_0)))))"
       }
     },
     {
@@ -47552,8 +47558,8 @@
       "feynman_latex": "I=q \\frac{v}{2\\pi r}",
       "source_file": "The Feynman Lectures on Physics Vol. II Ch. 34_ The Magnetism of Matter.htm",
       "ambiguous_chapter": true,
-      "benchmark_overlap": null,
-      "benchmark_overlap_rule": null,
+      "benchmark_overlap": "II.34.2a",
+      "benchmark_overlap_rule": "source-verified output",
       "operator_counts": {
         "Mult": 3,
         "Div": 1,
@@ -47652,8 +47658,8 @@
       "feynman_latex": "\\mu=\\frac{qvr}{2}",
       "source_file": "The Feynman Lectures on Physics Vol. II Ch. 34_ The Magnetism of Matter.htm",
       "ambiguous_chapter": true,
-      "benchmark_overlap": "II.34.2a",
-      "benchmark_overlap_rule": "same equation number",
+      "benchmark_overlap": "II.34.2",
+      "benchmark_overlap_rule": "source-verified output",
       "operator_counts": {
         "Div": 1,
         "Mult": 2,
@@ -48188,8 +48194,8 @@
       "feynman_latex": "U_{\\text{mag}}=-\\mu_zB",
       "source_file": "The Feynman Lectures on Physics Vol. II Ch. 34_ The Magnetism of Matter.htm",
       "ambiguous_chapter": true,
-      "benchmark_overlap": "II.34.29a",
-      "benchmark_overlap_rule": "same equation number",
+      "benchmark_overlap": null,
+      "benchmark_overlap_rule": null,
       "operator_counts": {
         "Mult": 1,
         "Neg": 1,
@@ -51534,9 +51540,7 @@
       "notes": "LaTeX: \\mu_z=\\frac{q\\hbar}{2m}=0.928\\times10^{-23}\\text{ amp$\\cdot$m$^2$}; RHS used: 0.928\\times10^{-23}\\text{ amp$\\cdot$m$^2$}",
       "name": "",
       "constant_names": [],
-      "variable_names": [
-        "ampcdotm2"
-      ],
+      "variable_names": [],
       "consideration": "in",
       "branch": "Electromagnetism",
       "public": true,
@@ -64981,9 +64985,7 @@
       "notes": "LaTeX: e^2=\\frac{q_e^2}{4\\pi\\epsilon_0}= 2.3068\\times10^{-28}\\text{ newton$\\cdot$meter$^2$}; RHS used: 2.3068\\times10^{-28}\\text{ newton$\\cdot$meter$^2$}",
       "name": "",
       "constant_names": [],
-      "variable_names": [
-        "newtoncdotmeter2"
-      ],
+      "variable_names": [],
       "consideration": "in",
       "branch": "Electromagnetism",
       "public": true,
@@ -68895,7 +68897,6 @@
       "name": "",
       "constant_names": [],
       "variable_names": [
-        "phi",
         "q_1",
         "q_2"
       ],
