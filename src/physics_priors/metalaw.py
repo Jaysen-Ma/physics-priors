@@ -725,33 +725,6 @@ def fit_beta_logls(counts) -> tuple[float, float]:
     return beta, _logls_sigma(beta, obs)
 
 
-def logls_compare(obs_list) -> tuple:
-    """Shared versus separate log-least-squares fits.
-
-    Each group keeps its own ranks. The shared fit uses one β; the separate
-    fit uses one β per group. Residuals are the log-frequency residuals, and
-    both fits share one residual variance. Returns
-    (Λ, β_shared, β_separate, RSS_shared, RSS_separate, n_ranks, n_instances),
-    where Λ = n log(RSS_shared / RSS_separate) and n is the number of ranks.
-    """
-    from scipy.optimize import minimize_scalar
-
-    groups = [np.asarray(obs, dtype=float) for obs in obs_list]
-    res = minimize_scalar(lambda beta: sum(_rss(beta, obs) for obs in groups),
-                          bounds=MLE_BOUNDS, method="bounded", options={"xatol": 1e-12})
-    beta_shared = float(res.x)
-    rss_shared = float(res.fun)
-    betas = [_logls_beta_obs(obs) for obs in groups]
-    rss_sep = float(sum(_rss(beta, obs) for beta, obs in zip(betas, groups)))
-    n_ranks = int(sum(obs.size for obs in groups))
-    n_instances = float(sum(obs.sum() for obs in groups))
-    if rss_sep <= 0 or rss_shared <= rss_sep:
-        stat = 0.0
-    else:
-        stat = n_ranks * float(np.log(rss_shared / rss_sep))
-    return stat, beta_shared, betas, rss_shared, rss_sep, n_ranks, n_instances
-
-
 # Six Encyclopaedia Inflationaris entries in the authors' CSV have unbalanced
 # brackets and cannot be parsed. The repairs below are the minimal bracket
 # insertions/deletions that make each parse; none changes the intended model.

@@ -11837,13 +11837,13 @@
       "corpus": "feynman",
       "original_id": "III.9.52",
       "id": "III.9.52",
-      "formula": "(p_d*Ef*t/(h/(2*pi)))*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
+      "formula": "(p_d*Ef*t/(h/(2*pi)))**2*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
       "original_formula": "(p_d*Ef*t/(h/(2*pi)))*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
       "output": "prob",
       "n_variables": 9,
       "n_numbers": 3,
       "n_constants": 2,
-      "complexity": 30,
+      "complexity": 31,
       "original_n_variables": 10,
       "original_n_numbers": 3,
       "original_n_constants": 1,
@@ -11856,7 +11856,7 @@
       "source_kind": "html",
       "source_url": "https://www.feynmanlectures.caltech.edu/III_09.html",
       "source_locator": "(9.52)",
-      "notes": "",
+      "notes": "Lecture Eq. (9.52) squares the transition-amplitude prefactor. The released formula omitted that square.",
       "name": "",
       "constant_names": [
         "h"
@@ -11873,12 +11873,12 @@
             "kind": "op",
             "children": [
               {
-                "label": "Div",
-                "arity": "binary",
+                "label": "Pow2",
+                "arity": "unary",
                 "kind": "op",
                 "children": [
                   {
-                    "label": "Mult",
+                    "label": "Div",
                     "arity": "binary",
                     "kind": "op",
                     "children": [
@@ -11888,13 +11888,26 @@
                         "kind": "op",
                         "children": [
                           {
-                            "label": "p_d",
-                            "arity": "nullary",
-                            "kind": "variable",
-                            "children": []
+                            "label": "Mult",
+                            "arity": "binary",
+                            "kind": "op",
+                            "children": [
+                              {
+                                "label": "p_d",
+                                "arity": "nullary",
+                                "kind": "variable",
+                                "children": []
+                              },
+                              {
+                                "label": "Ef",
+                                "arity": "nullary",
+                                "kind": "variable",
+                                "children": []
+                              }
+                            ]
                           },
                           {
-                            "label": "Ef",
+                            "label": "t",
                             "arity": "nullary",
                             "kind": "variable",
                             "children": []
@@ -11902,40 +11915,34 @@
                         ]
                       },
                       {
-                        "label": "t",
-                        "arity": "nullary",
-                        "kind": "variable",
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "label": "Div",
-                    "arity": "binary",
-                    "kind": "op",
-                    "children": [
-                      {
-                        "label": "h",
-                        "arity": "nullary",
-                        "kind": "constant",
-                        "children": []
-                      },
-                      {
-                        "label": "Mult",
+                        "label": "Div",
                         "arity": "binary",
                         "kind": "op",
                         "children": [
                           {
-                            "label": "2",
-                            "arity": "nullary",
-                            "kind": "number",
-                            "children": []
-                          },
-                          {
-                            "label": "pi",
+                            "label": "h",
                             "arity": "nullary",
                             "kind": "constant",
                             "children": []
+                          },
+                          {
+                            "label": "Mult",
+                            "arity": "binary",
+                            "kind": "op",
+                            "children": [
+                              {
+                                "label": "2",
+                                "arity": "nullary",
+                                "kind": "number",
+                                "children": []
+                              },
+                              {
+                                "label": "pi",
+                                "arity": "nullary",
+                                "kind": "constant",
+                                "children": []
+                              }
+                            ]
                           }
                         ]
                       }
@@ -12058,7 +12065,7 @@
           }
         ]
       },
-      "latex": "\\frac{\\frac{p_{d} E_{f} t}{\\frac{h}{2 \\pi}} \\sin\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}{\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}",
+      "latex": "\\frac{\\left(\\frac{p_{d} E_{f} t}{\\frac{h}{2 \\pi}}\\right)^{2} \\sin\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}{\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}",
       "csv_disagreements": {
         "variables": {
           "csv": 10,
@@ -12067,11 +12074,15 @@
         "constants": {
           "csv": 1,
           "catalog": 2
+        },
+        "complexity": {
+          "csv": 30,
+          "catalog": 31
         }
       },
       "hbar1": {
-        "formula": "p_d*Ef*t*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
-        "latex": "\\frac{p_{d} E_{f} t \\sin\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}{\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}",
+        "formula": "(p_d*Ef*t)**2*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
+        "latex": "\\frac{\\left(p_{d} E_{f} t\\right)^{2} \\sin\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}{\\left(\\frac{\\left(\\omega - \\omega_{0}\\right) t}{2}\\right)^{2}}",
         "tree": {
           "label": "Div",
           "arity": "binary",
@@ -12083,8 +12094,8 @@
               "kind": "op",
               "children": [
                 {
-                  "label": "Mult",
-                  "arity": "binary",
+                  "label": "Pow2",
+                  "arity": "unary",
                   "kind": "op",
                   "children": [
                     {
@@ -12093,24 +12104,31 @@
                       "kind": "op",
                       "children": [
                         {
-                          "label": "p_d",
-                          "arity": "nullary",
-                          "kind": "variable",
-                          "children": []
+                          "label": "Mult",
+                          "arity": "binary",
+                          "kind": "op",
+                          "children": [
+                            {
+                              "label": "p_d",
+                              "arity": "nullary",
+                              "kind": "variable",
+                              "children": []
+                            },
+                            {
+                              "label": "Ef",
+                              "arity": "nullary",
+                              "kind": "variable",
+                              "children": []
+                            }
+                          ]
                         },
                         {
-                          "label": "Ef",
+                          "label": "t",
                           "arity": "nullary",
                           "kind": "variable",
                           "children": []
                         }
                       ]
-                    },
-                    {
-                      "label": "t",
-                      "arity": "nullary",
-                      "kind": "variable",
-                      "children": []
                     }
                   ]
                 },
@@ -12232,10 +12250,12 @@
         "n_variables": 9,
         "n_numbers": 2,
         "n_constants": 0,
-        "complexity": 24,
+        "complexity": 25,
         "constant_names": []
       },
-      "branch": "Quantum mechanics"
+      "branch": "Quantum mechanics",
+      "consideration": "",
+      "public": true
     },
     {
       "corpus": "feynman",

@@ -87,8 +87,8 @@
       "original_n_constants": 0,
       "original_complexity": 17,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.two_state_eigenvalues",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -258,8 +258,8 @@
       "original_n_constants": 0,
       "original_complexity": 17,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.two_state_eigenvalues",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -4174,8 +4174,7 @@
       "constant_names": [],
       "variable_names": [
         "A",
-        "B",
-        "mu"
+        "B"
       ],
       "consideration": "in",
       "branch": "Quantum mechanics",
@@ -4371,8 +4370,7 @@
       "constant_names": [],
       "variable_names": [
         "A",
-        "B",
-        "mu"
+        "B"
       ],
       "consideration": "in",
       "branch": "Quantum mechanics",
@@ -21456,9 +21454,7 @@
       "notes": "LaTeX: \\lambda'=\\frac{\\lambda}{2}-\\frac{\\mu}{2}=-\\mu'; RHS used: -\\mu'",
       "name": "",
       "constant_names": [],
-      "variable_names": [
-        "mu"
-      ],
+      "variable_names": [],
       "consideration": "in",
       "branch": "Quantum mechanics",
       "public": true,
@@ -27287,8 +27283,8 @@
       "original_n_constants": 0,
       "original_complexity": 17,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.two_state_eigenvalues",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -27458,8 +27454,8 @@
       "original_n_constants": 0,
       "original_complexity": 17,
       "status": "extension",
-      "family": null,
-      "family_role": null,
+      "family": "feynman.two_state_eigenvalues",
+      "family_role": "lecture_variant",
       "representative": true,
       "in_released": false,
       "source_kind": "html",
@@ -27780,7 +27776,6 @@
         "i"
       ],
       "variable_names": [
-        "gamma_Upsilon_962",
         "t"
       ],
       "consideration": "in",
@@ -27913,9 +27908,7 @@
       "notes": "LaTeX: P_{\\mathit{I}}=|{\\gamma_{\\mathit{I}}}|^2= \\cos^2 \\frac{\\mu\\mathcal{E}_0}{\\hbar}t; RHS used: |{\\gamma_{\\mathit{I}}}|^2",
       "name": "",
       "constant_names": [],
-      "variable_names": [
-        "gamma_I"
-      ],
+      "variable_names": [],
       "consideration": "in",
       "branch": "Quantum mechanics",
       "public": true,
@@ -28033,9 +28026,7 @@
       "notes": "LaTeX: P_{\\mathit{II}}=|{\\gamma_{\\mathit{II}}}|^2= \\sin^2 \\frac{\\mu\\mathcal{E}_0}{\\hbar}t; RHS used: |{\\gamma_{\\mathit{II}}}|^2",
       "name": "",
       "constant_names": [],
-      "variable_names": [
-        "gamma_Upsilon_962"
-      ],
+      "variable_names": [],
       "consideration": "in",
       "branch": "Quantum mechanics",
       "public": true,

@@ -22,6 +22,7 @@ Repository = "https://github.com/Jaysen-Ma/physics-priors"
 physics-priors-catalog = "physics_priors.catalog:main"
 physics-priors-fit = "physics_priors.analysis.exponential_bootstrap:main"
 physics-priors-calibrate = "physics_priors.analysis.exponential_coverage_check:main"
+physics-priors-compare = "physics_priors.analysis.prior_comparison:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -29,3 +30,6 @@ namespaces = false
 
 [tool.setuptools]
 include-package-data = false
+
+[tool.setuptools.package-data]
+"physics_priors.priors._katz" = ["LICENSE"]

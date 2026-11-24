@@ -49,6 +49,20 @@ FIXES = ROOT / "data" / "feynman_lectures_fixes.csv"
 # special relativity. The chapters stay flagged ambiguous; the sensitivity analysis reassigns them to EM.
 BRANCH_OVERRIDE = {("I", 34): "Special relativity", ("II", 25): "Special relativity",
                    ("II", 26): "Special relativity", ("II", 28): "Special relativity"}
+REVIEWED_BENCHMARK_OVERLAPS = {
+    "flp2.34.u2": "II.34.2a",  # Orbital current, the unnumbered display.
+    "flp2.34.2": "II.34.2",  # Orbital magnetic moment.
+    "flp2.34.29": None,  # Magnetic energy, distinct from the Bohr magneton.
+}
+REVIEWED_FAMILIES = {
+    "feynman.two_state_eigenvalues": (
+        "flp3.9.26", "flp3.9.27", "flp3.10.3.r1", "flp3.10.3.r2",
+    ),
+    "feynman.undamped_refractive_index": ("flp1.31.19", "flp2.32.26"),
+}
+_REVIEWED_FAMILY_BY_ID = {
+    key: family for family, ids in REVIEWED_FAMILIES.items() for key in ids
+}
 
 
 def load_fixes() -> dict:
@@ -70,11 +84,17 @@ def apply_fixes(recs: list, rows: list, vol: str, fixes: dict) -> list:
         row = dict(row)
         if fx["action"] == "replace":
             row["py"] = fx["new_formula"]
+            symbols = {k[5:] for k in M.count_operators(row["py"]) if k.startswith("name:")}
+            row["variable_names"] = [v for v in row.get("variable_names", []) if v in symbols]
         elif fx["action"] == "constants":
             row["constant_names"] = sorted(set(row.get("constant_names", [])) | set(fx["add_constants"].split(";")))
             row["variable_names"] = [v for v in row.get("variable_names", []) if v not in row["constant_names"]]
         new = row_to_json(row, vol)
         new["id"] = rec["id"]
+        if fx["action"] == "exclude":
+            new["consideration"] = "out"
+        elif fx["action"] not in {"replace", "constants"}:
+            raise ValueError(f"Unknown catalog fix: {fx['action']}")
         new["fix"] = {k: fx[k] for k in ("action", "error_type", "reason")} | {"previous_formula": rec["formula"]}
         out.append(new)
     return out
@@ -161,12 +181,24 @@ def assign_overlap(recs: list, vol: str, bench: dict) -> list:
     """Each benchmark expression is matched to at most one kept record: its equation number first,
     else the record in the same chapter with the same operator signature (closest equation number).
     Returns benchmark ids of this volume with no kept record (rejected or never displayed)."""
+    matched = set()
+    for record in recs:
+        key = record["id"]
+        if key in REVIEWED_BENCHMARK_OVERLAPS:
+            target = REVIEWED_BENCHMARK_OVERLAPS[key]
+            record["benchmark_overlap"] = target
+            record["benchmark_overlap_rule"] = "source-verified output" if target else None
+            if target:
+                matched.add(target)
     unmatched = []
     for (v, ch), bs in sorted(bench.items()):
         if v != vol:
             continue
-        cand = [r for r in recs if r["chapter"] == ch and not r["benchmark_overlap"]]
+        cand = [r for r in recs if r["chapter"] == ch and r["consideration"] == "in"
+                and r["id"] not in REVIEWED_BENCHMARK_OVERLAPS and not r["benchmark_overlap"]]
         for b in bs:
+            if b["id"] in matched:
+                continue
             hit = next((r for r in cand if r["equation"] and r["equation"] in b["eqs"] and not r["benchmark_overlap"]), None)
             rule = "same equation number"
             if hit is None:
@@ -188,15 +220,19 @@ def assign_overlap(recs: list, vol: str, bench: dict) -> list:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--inputs", type=Path, default=SCRATCH,
+                    help="directory containing rows_I.json, rows_II.json and rows_III.json")
     ap.add_argument("--counts-only", type=Path, help="also write counts+refs-only copies (no formula text) into this directory")
     args = ap.parse_args()
     require_checkout()
+    input_paths = {vol: args.inputs / f"rows_{vol}.json" for vol in VOLS}
+    missing = [str(path) for path in input_paths.values() if not path.is_file()]
+    if missing:
+        ap.error("Missing lecture extraction inputs: " + ", ".join(missing))
     bench = benchmark_index()
     fixes = load_fixes()
-    for vol, n in VOLS.items():
-        path = SCRATCH / f"rows_{vol}.json"
-        if not path.exists():
-            continue
+    for vol, path in input_paths.items():
+        n = VOLS[vol]
         rows = json.loads(path.read_text())["rows"]
         keep = [r for r in rows if r["status"] == "kept"]
         recs = [row_to_json(r, vol) for r in keep]
@@ -211,6 +247,10 @@ def main() -> int:
                 r["id"] = f"{r['id']}.r{k2[r['id']]}"
         n_extracted = len(recs)
         recs = apply_fixes(recs, keep, vol, fixes)
+        for record in recs:
+            family = _REVIEWED_FAMILY_BY_ID.get(record["id"])
+            if family:
+                record.update(family=family, family_role="lecture_variant")
         unmatched = assign_overlap(recs, vol, bench)
         bench_eqs = {e for (v, _), bs in bench.items() if v == vol for b in bs for e in b["eqs"]}
         payload = {

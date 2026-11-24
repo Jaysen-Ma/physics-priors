@@ -3475,13 +3475,13 @@
       "corpus": "inflation",
       "original_id": "CCSI",
       "id": "CCSI",
-      "formula": "(M**4)*((1-exp(-sqrt(2/3)*x/M_Pl))**2*(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/M_Pl)-1))**(-3))*(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/M_Pl)-1))+2*a0*(exp(sqrt(2/3)*x/M_Pl)-1)))",
+      "formula": "(M**4)*((1-exp(-sqrt(2/3)*x/M_Pl))**2*(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/M_Pl)-1))+2*a0*(exp(sqrt(2/3)*x/M_Pl)-1))/(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/M_Pl)-1)))**3)",
       "original_formula": "(M**4)*((1-exp(-sqrt(2/3)*x/c))**2*(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/c)-1))**(-3))*(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/c)-1))+2*a0*(exp(sqrt(2/3)*x/c)-1)))",
       "output": "V",
       "n_variables": 8,
-      "n_numbers": 20,
+      "n_numbers": 19,
       "n_constants": 4,
-      "complexity": 77,
+      "complexity": 75,
       "original_n_variables": 8,
       "original_n_numbers": 20,
       "original_n_constants": 4,
@@ -3494,7 +3494,7 @@
       "source_kind": "pdf",
       "source_url": "https://arxiv.org/pdf/1303.3787",
       "source_locator": "CCSI (CSV #25)",
-      "notes": "",
+      "notes": "Catalog formula follows Martin arXiv:1303.3787; original_formula is the CSV string. Status original.",
       "name": "Cubicly Corrected Starobinsky Inflation",
       "constant_names": [
         "M_Pl"
@@ -3519,7 +3519,7 @@
             ]
           },
           {
-            "label": "Mult",
+            "label": "Div",
             "arity": "binary",
             "kind": "op",
             "children": [
@@ -3620,16 +3620,16 @@
                     "kind": "op",
                     "children": [
                       {
-                        "label": "1",
-                        "arity": "nullary",
-                        "kind": "number",
-                        "children": []
-                      },
-                      {
-                        "label": "Pow",
+                        "label": "Add",
                         "arity": "binary",
                         "kind": "op",
                         "children": [
+                          {
+                            "label": "1",
+                            "arity": "nullary",
+                            "kind": "number",
+                            "children": []
+                          },
                           {
                             "label": "sqrt",
                             "arity": "unary",
@@ -3747,14 +3747,99 @@
                                 ]
                               }
                             ]
-                          },
+                          }
+                        ]
+                      },
+                      {
+                        "label": "Mult",
+                        "arity": "binary",
+                        "kind": "op",
+                        "children": [
                           {
-                            "label": "Neg",
-                            "arity": "unary",
+                            "label": "Mult",
+                            "arity": "binary",
                             "kind": "op",
                             "children": [
                               {
-                                "label": "3",
+                                "label": "2",
+                                "arity": "nullary",
+                                "kind": "number",
+                                "children": []
+                              },
+                              {
+                                "label": "a0",
+                                "arity": "nullary",
+                                "kind": "variable",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Subtract",
+                            "arity": "binary",
+                            "kind": "op",
+                            "children": [
+                              {
+                                "label": "exp",
+                                "arity": "unary",
+                                "kind": "op",
+                                "children": [
+                                  {
+                                    "label": "Div",
+                                    "arity": "binary",
+                                    "kind": "op",
+                                    "children": [
+                                      {
+                                        "label": "Mult",
+                                        "arity": "binary",
+                                        "kind": "op",
+                                        "children": [
+                                          {
+                                            "label": "sqrt",
+                                            "arity": "unary",
+                                            "kind": "op",
+                                            "children": [
+                                              {
+                                                "label": "Div",
+                                                "arity": "binary",
+                                                "kind": "op",
+                                                "children": [
+                                                  {
+                                                    "label": "2",
+                                                    "arity": "nullary",
+                                                    "kind": "number",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "3",
+                                                    "arity": "nullary",
+                                                    "kind": "number",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "x",
+                                            "arity": "nullary",
+                                            "kind": "variable",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "M_Pl",
+                                        "arity": "nullary",
+                                        "kind": "constant",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "1",
                                 "arity": "nullary",
                                 "kind": "number",
                                 "children": []
@@ -3768,8 +3853,8 @@
                 ]
               },
               {
-                "label": "Add",
-                "arity": "binary",
+                "label": "Pow3",
+                "arity": "unary",
                 "kind": "op",
                 "children": [
                   {
@@ -3902,104 +3987,6 @@
                         ]
                       }
                     ]
-                  },
-                  {
-                    "label": "Mult",
-                    "arity": "binary",
-                    "kind": "op",
-                    "children": [
-                      {
-                        "label": "Mult",
-                        "arity": "binary",
-                        "kind": "op",
-                        "children": [
-                          {
-                            "label": "2",
-                            "arity": "nullary",
-                            "kind": "number",
-                            "children": []
-                          },
-                          {
-                            "label": "a0",
-                            "arity": "nullary",
-                            "kind": "variable",
-                            "children": []
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Subtract",
-                        "arity": "binary",
-                        "kind": "op",
-                        "children": [
-                          {
-                            "label": "exp",
-                            "arity": "unary",
-                            "kind": "op",
-                            "children": [
-                              {
-                                "label": "Div",
-                                "arity": "binary",
-                                "kind": "op",
-                                "children": [
-                                  {
-                                    "label": "Mult",
-                                    "arity": "binary",
-                                    "kind": "op",
-                                    "children": [
-                                      {
-                                        "label": "sqrt",
-                                        "arity": "unary",
-                                        "kind": "op",
-                                        "children": [
-                                          {
-                                            "label": "Div",
-                                            "arity": "binary",
-                                            "kind": "op",
-                                            "children": [
-                                              {
-                                                "label": "2",
-                                                "arity": "nullary",
-                                                "kind": "number",
-                                                "children": []
-                                              },
-                                              {
-                                                "label": "3",
-                                                "arity": "nullary",
-                                                "kind": "number",
-                                                "children": []
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "label": "x",
-                                        "arity": "nullary",
-                                        "kind": "variable",
-                                        "children": []
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "label": "M_Pl",
-                                    "arity": "nullary",
-                                    "kind": "constant",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "1",
-                            "arity": "nullary",
-                            "kind": "number",
-                            "children": []
-                          }
-                        ]
-                      }
-                    ]
                   }
                 ]
               }
@@ -4007,8 +3994,20 @@
           }
         ]
       },
-      "latex": "M^{4} \\left(1 - e^{\\frac{-\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}}\\right)^{2} \\left(1 + \\sqrt{1 + 3 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)}^{-3}\\right) \\left(1 + \\sqrt{1 + 3 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)} + 2 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)\\right)",
-      "csv_disagreements": {}
+      "latex": "M^{4} \\frac{\\left(1 - e^{\\frac{-\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}}\\right)^{2} \\left(1 + \\sqrt{1 + 3 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)} + 2 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)\\right)}{\\left(1 + \\sqrt{1 + 3 a_{0} \\left(e^{\\frac{\\sqrt{\\frac{2}{3}} x}{M_{\\mathrm{Pl}}}} - 1\\right)}\\right)^{3}}",
+      "csv_disagreements": {
+        "numbers": {
+          "csv": 20,
+          "catalog": 19
+        },
+        "complexity": {
+          "csv": 77,
+          "catalog": 75
+        }
+      },
+      "consideration": "",
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "inflation",
@@ -4612,7 +4611,7 @@
       "corpus": "inflation",
       "original_id": "TMI",
       "id": "TMI",
-      "formula": "(M**4)*(tanh(x/M_Pl*sqrt(6))**(4*a0))",
+      "formula": "(M**4)*(tanh(x/(M_Pl*sqrt(6)))**(2*a0))",
       "original_formula": "(M**4)*((tanh(x/c*sqrt(6))**(4*a0))",
       "output": "V",
       "n_variables": 3,
@@ -4631,7 +4630,7 @@
       "source_kind": "pdf",
       "source_url": "https://arxiv.org/pdf/1303.3787",
       "source_locator": "TMI (CSV #29)",
-      "notes": "CSV has unbalanced brackets; catalog formula is metalaw.EI_BRACKET_REPAIRS. Inflation.csv is not edited.",
+      "notes": "Catalog formula follows Martin arXiv:1303.3787; original_formula is the CSV string. Status original.",
       "name": "T-Model Inflation",
       "constant_names": [
         "M_Pl"
@@ -4666,39 +4665,39 @@
                 "kind": "op",
                 "children": [
                   {
-                    "label": "Mult",
+                    "label": "Div",
                     "arity": "binary",
                     "kind": "op",
                     "children": [
                       {
-                        "label": "Div",
+                        "label": "x",
+                        "arity": "nullary",
+                        "kind": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "Mult",
                         "arity": "binary",
                         "kind": "op",
                         "children": [
-                          {
-                            "label": "x",
-                            "arity": "nullary",
-                            "kind": "variable",
-                            "children": []
-                          },
                           {
                             "label": "M_Pl",
                             "arity": "nullary",
                             "kind": "constant",
                             "children": []
-                          }
-                        ]
-                      },
-                      {
-                        "label": "sqrt",
-                        "arity": "unary",
-                        "kind": "op",
-                        "children": [
+                          },
                           {
-                            "label": "6",
-                            "arity": "nullary",
-                            "kind": "number",
-                            "children": []
+                            "label": "sqrt",
+                            "arity": "unary",
+                            "kind": "op",
+                            "children": [
+                              {
+                                "label": "6",
+                                "arity": "nullary",
+                                "kind": "number",
+                                "children": []
+                              }
+                            ]
                           }
                         ]
                       }
@@ -4712,7 +4711,7 @@
                 "kind": "op",
                 "children": [
                   {
-                    "label": "4",
+                    "label": "2",
                     "arity": "nullary",
                     "kind": "number",
                     "children": []
@@ -4729,8 +4728,11 @@
           }
         ]
       },
-      "latex": "M^{4} \\tanh\\left(\\frac{x}{M_{\\mathrm{Pl}}} \\sqrt{6}\\right)^{\\left(4 a_{0}\\right)}",
-      "csv_disagreements": {}
+      "latex": "M^{4} \\tanh\\left(\\frac{x}{M_{\\mathrm{Pl}} \\sqrt{6}}\\right)^{\\left(2 a_{0}\\right)}",
+      "csv_disagreements": {},
+      "consideration": "",
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "inflation",
@@ -10882,12 +10884,12 @@
       "corpus": "inflation",
       "original_id": "HNI",
       "id": "HNI",
-      "formula": "(M**4)*(1+a0*cos(x/M_Pl))",
+      "formula": "(M**4)*(1+a0*cos(x/f))",
       "original_formula": "(M**4)*(1+a0*cos(x/c))",
       "output": "V",
-      "n_variables": 3,
+      "n_variables": 4,
       "n_numbers": 1,
-      "n_constants": 1,
+      "n_constants": 0,
       "complexity": 11,
       "original_n_variables": 3,
       "original_n_numbers": 1,
@@ -10901,11 +10903,9 @@
       "source_kind": "pdf",
       "source_url": "https://arxiv.org/pdf/1303.3787",
       "source_locator": "HNI (CSV #67)",
-      "notes": "",
+      "notes": "Catalog formula follows Martin arXiv:1303.3787; original_formula is the CSV string. Status original.",
       "name": "Hybrid Natural Inflation",
-      "constant_names": [
-        "M_Pl"
-      ],
+      "constant_names": [],
       "variable_names": [],
       "tree": {
         "label": "Mult",
@@ -10964,9 +10964,9 @@
                             "children": []
                           },
                           {
-                            "label": "M_Pl",
+                            "label": "f",
                             "arity": "nullary",
-                            "kind": "constant",
+                            "kind": "variable",
                             "children": []
                           }
                         ]
@@ -10979,8 +10979,20 @@
           }
         ]
       },
-      "latex": "M^{4} \\left(1 + a_{0} \\cos\\left(\\frac{x}{M_{\\mathrm{Pl}}}\\right)\\right)",
-      "csv_disagreements": {}
+      "latex": "M^{4} \\left(1 + a_{0} \\cos\\left(\\frac{x}{f}\\right)\\right)",
+      "csv_disagreements": {
+        "variables": {
+          "csv": 3,
+          "catalog": 4
+        },
+        "constants": {
+          "csv": 1,
+          "catalog": 0
+        }
+      },
+      "consideration": "",
+      "branch": "",
+      "public": true
     },
     {
       "corpus": "inflation",

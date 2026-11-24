@@ -282,7 +282,7 @@ LAWS: tuple[LeemisLaw, ...] = (
         "extreme_value",
         "Extreme value",
         "continuous",
-        "(beta/alpha)*exp(x**beta-(exp(x**beta))/alpha)",
+        "(beta/alpha)*exp(x*beta-exp(x*beta)/alpha)",
         "−∞ < x < ∞",
         aliases=("Gumbel",),
     ),
@@ -440,7 +440,7 @@ LAWS: tuple[LeemisLaw, ...] = (
         "logistic",
         "Logistic",
         "continuous",
-        "lambda*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
+        "lambda**kappa*kappa*exp(kappa*x)/(1+(lambda*exp(x))**kappa)**2",
         "−∞ < x < ∞",
     ),
     LeemisLaw(

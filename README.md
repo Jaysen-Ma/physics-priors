@@ -4,7 +4,7 @@
 <a href="writeup/main.pdf"><img src="https://img.shields.io/badge/Write--up-PDF-red" alt="Write-up PDF"></a>
 <a href="https://jaysen-ma.github.io/physics-priors/data/catalog/index.html"><img src="https://img.shields.io/badge/Formula-ledger-blue" alt="Formula ledger"></a>
 
-<p><strong>Work in progress.</strong> The write-up is a draft. The paired PySR benchmark is underway, and its equation-recovery results are pending.</p>
+<p><strong>Work in progress.</strong> The write-up is a draft.</p>
 </div>
 
 ## Overview
@@ -15,7 +15,7 @@ Guimerà et al. (2020) built an expression prior from operator counts in 4,080 m
 
 Constantin et al. found that operator frequencies decline approximately exponentially with rank, with a slower decline for proposed inflationary potentials than for three broader physics collections. This raises the question we investigate. **When we know which branch of physics a problem comes from, can equations from that branch help us recover its form?** [Constantin et al. (2026)](https://arxiv.org/html/2408.11065v2)
 
-We re-examine the inflationary gap and expand the Feynman corpus to compare operator usage across seven branches. We then compare two priors built from the same training equations. One pools the branches, while the other gives greater weight to patterns from the relevant branch. We test whether knowing the branch improves the scores assigned to held-out equations and whether it helps PySR recover their form from numerical data.
+We re-examine the inflationary gap and expand the Feynman corpus to compare operator usage across seven branches. We then compare two priors built from the same training equations. One pools the branches, while the other gives greater weight to patterns from the relevant branch. We test whether knowing the branch improves the scores assigned to held-out equations.
 
 ### Operator frequencies across physics collections
 
@@ -27,29 +27,22 @@ We fit exponential decay rates by least squares on the log frequencies and repro
 
 ### Scoring held-out equations
 
-A decay rate describes operator usage across a collection. To score individual equations, we use a Katz back-off model that learns how operators are arranged in expression trees. The pooled prior learns from 775 Feynman equations. At each node in the tree, the branch-informed prior averages the pooled model’s operator probabilities with those from a model trained on the relevant branch’s subset of those same equations.
+A decay rate summarizes operator use across a collection. To score individual equations, we use a Katz back-off model that learns which operators tend to occur near each other in expression trees. The branch-informed prior mixes two whole-equation probabilities. It assigns 75% weight to a learned mixture of structure models and 25% to a model that adjusts the pooled probabilities using the target branch’s operator patterns.
 
-**The branch-informed prior improved held-out formula scores by 0.33 nats per equation on average.** This comparison covers 193 formulas across seven equally weighted branches, with a descriptive 95% interval of 0.08 to 0.59 nats. The clearest gains were in electromagnetism and quantum mechanics.
+**The branch-informed prior gained 0.2725 nats per equation over the pooled prior, giving each branch equal weight.** Averaged across four five-fold repetitions, the gain was positive in all seven branches. The comparison covers 968 expressions, with equivalent and related formulas kept together in 172 groups.
 
-On the same split, blending once per equation gave a similar gain of 0.36 nats. Adding 34 equation families from other sources improved the pooled score and narrowed the branch-informed advantage in both adaptations we tested.
-
-### Recovering equations from numerical data
-
-The PySR benchmark compares the pooled prior with the original node-by-node blend. Both arms use the same data and search settings. The 177 held-out equations each have 1,000 noiseless observations and ten paired search seeds at 100 iterations per run, for 3,540 searches in total.
-
-A run counts as successful when one of its three highest-ranked distinct candidates recovers the generating equation’s form. Algebraic equivalents count, and designated fitted coefficients may differ. The final comparison will report cases the symbolic checker cannot resolve separately.
+An earlier PySR experiment used a node-by-node blend and showed no clear equation-recovery gain. The whole-equation comparison measures the scores assigned to known formulas.
 
 ## Limitations
 
 - The operator-frequency analysis covers selected algebraic expressions and omits differential and integral forms. The fitted decay rates depend on the corpus and how expressions are represented. Rare operators produce flat tails that the exponential fit captures poorly.
-- The held-out scores apply to this Feynman split. Follow-up comparisons reused the same test set and are exploratory.
-- The numerical benchmark uses noiseless data, so recovery under measurement noise remains open.
+- We selected the prior design through exploratory comparisons on the Feynman corpus. The held-out score gain describes performance on those formulas. An independent corpus would test whether it generalizes.
 
 ## Evaluation
 
 The expanded Feynman collection contains 1,016 expressions after deduplication, with 968 assigned to seven branches. The public formula ledger records the expressions, sources, counted trees and operator totals. [Formula ledger](https://jaysen-ma.github.io/physics-priors/data/catalog/index.html) · [Per-expression statistics](https://jaysen-ma.github.io/physics-priors/data/catalog/index.html?page=beta)
 
-See the [reproduction guide](docs/reproduction.md) to run the operator-frequency analysis or view the formula ledger locally. The [development guide](docs/development.md) covers local tests and continuous integration.
+See the [reproduction guide](docs/reproduction.md) to build the catalogs, fit and plot decay rates, or reproduce the prior comparison. The [development guide](docs/development.md) covers local tests and continuous integration.
 
 ## Acknowledgements
 

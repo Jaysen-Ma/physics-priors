@@ -3,7 +3,7 @@
 The Constantin release lives at
 `.scratch/physics-formulae-patterns/data/` and is never edited.
 `python -m physics_priors.catalog --seed` rebuilds
-`data/catalog/{feynman,wiki,inflation}.json` from those CSVs.
+`data/catalog/{feynman,wiki,inflation}.json` from those CSVs using the branch annotations in `data/catalog_branches.json`.
 
 Source URLs, by corpus:
   feynman   — one HTML chapter per id, `https://www.feynmanlectures.caltech.edu/{I,II,III}_{cc}.html`
@@ -27,6 +27,7 @@ from . import metalaw as M
 from .paths import ROOT, require_checkout
 
 CATALOG_DIR = ROOT / "data" / "catalog"
+CATALOG_BRANCHES = ROOT / "data" / "catalog_branches.json"
 RELEASED_CLONE = ROOT / ".scratch" / "physics-formulae-patterns"
 RELEASED_DIR = RELEASED_CLONE / "data"
 RELEASED_REPO_URL = "https://github.com/andrei-const/physics-formulae-patterns"
@@ -218,7 +219,11 @@ def rewrite_units(record: FormulaRecord, mode: str) -> str:
 
 def record_as_entry(record: FormulaRecord, mode: str = "as_written") -> M.EIEntry:
     """Catalog row as a metalaw entry, under a unit-rewrite mode."""
-    formula = rewrite_units(record, mode)
+    return entry_from_formula(record, rewrite_units(record, mode))
+
+
+def entry_from_formula(record: FormulaRecord, formula: str) -> M.EIEntry:
+    """Reuse cached counts for the original formula and recount rewritten formulas."""
     if formula == record.formula:
         ops = record.operator_counts
         return M.EIEntry(
@@ -479,6 +484,11 @@ _FEYNMAN_PATCHES: dict[str, dict] = {
         "notes": ("Dipole field in polar form; also in FLP II.6. Working "
                   "default for this family."),
     },
+    "III.9.52": {
+        "formula": "(p_d*Ef*t/(h/(2*pi)))**2*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2",
+        "notes": ("Lecture Eq. (9.52) squares the transition-amplitude prefactor. "
+                  "The released formula omitted that square."),
+    },
 }
 
 
@@ -558,10 +568,10 @@ _WIKI_PATCHES: dict[str, dict] = {
         "notes": "Stretched Arrhenius. R is the gas constant.",
     },
     "Wiki_10": {
-        "formula": "(kb*T/h)*exp(dG/(R*T))",
+        "formula": "(kb*T/h)*exp(-dG/(R*T))",
         "constant_names": ["R"],
-        "notes": ("Eyring. CSV `kB` is Boltzmann's constant; catalog uses "
-                  "Feynman `kb` (k_b). R is the gas constant."),
+        "notes": ("The Gibbs energy of activation has a negative sign in the "
+                  "Eyring exponent (IUPAC Gold Book T06470). R is the gas constant."),
     },
     "Wiki_11": {
         "formula": "-kb*T*log(Zn)",
@@ -1038,6 +1048,13 @@ _EI_FORMULA_PATCHES = {
         "(M**4)*(1-b*(2*(1+(2-a)/(2*sqrt(3)*b)*(x/c)))**(-1))*exp("
         "3*b/(1-a)*((1+(2-a)/(2*sqrt(3)*b)*(x/c))**(2*(1-a)/(2-a))-1))"
     ),
+    "CCSI": (
+        "(M**4)*((1-exp(-sqrt(2/3)*x/c))**2*"
+        "(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/c)-1))+2*a0*(exp(sqrt(2/3)*x/c)-1))"
+        "/(1+sqrt(1+3*a0*(exp(sqrt(2/3)*x/c)-1)))**3)"
+    ),
+    "TMI": "(M**4)*(tanh(x/(c*sqrt(6)))**(2*a0))",
+    "HNI": "(M**4)*(1+a0*cos(x/f))",
 }
 # Per-row catalog fields (kinds, not the Python string). Applied in
 # seed_inflation before apply_constants.
@@ -1057,8 +1074,8 @@ def seed_inflation(csv_path: Path | None = None) -> list[FormulaRecord]:
 
     Catalog id is the CSV Filename. The blank Filename is VFMI. Six
     unbalanced-bracket rows get `metalaw.EI_BRACKET_REPAIRS` as `formula`;
-    RCHI and VFMI get `_EI_FORMULA_PATCHES` (Martin's 16/√6; VFMI
-    x/M_Pl inside both 1+(…) factors). RCHI's A is a constant.
+    Source-checked formulas in `_EI_FORMULA_PATCHES` take precedence.
+    RCHI's A is a constant.
     `original_formula` stays the CSV string. Status stays original.
     CSV `c` is renamed `M_Pl`.
     """
@@ -1209,6 +1226,16 @@ def _extra_feynman() -> list[FormulaRecord]:
             constant_names=["epsilon"],
         ),
     ]
+
+
+def apply_curated_branches(records: list[FormulaRecord], labels: dict[str, str]) -> None:
+    """Apply persisted branch annotations by the final catalogue record ID."""
+    unknown = labels.keys() - {record.id for record in records}
+    if unknown:
+        raise ValueError(f"Branch annotations refer to unknown record IDs: {', '.join(sorted(unknown))}")
+    for record in records:
+        if record.id in labels:
+            record.branch = labels[record.id]
 
 
 def save_catalog(path: Path, records: list[FormulaRecord],
@@ -1494,11 +1521,11 @@ def branch_scatters() -> list[dict]:
     seven analysis branches.
     """
     from .beta import expression_beta
-    from .legacy import branch_test as bt
-    rows, _dedupe, _added = bt.feynman_corpus()
-    groups = bt.groups_of(rows)
+    from .catalog_tools import feynman
+    rows, _dedupe, _added = feynman.feynman_corpus()
+    groups = feynman.groups_of(rows)
     plots = []
-    for key in bt.ORDER:
+    for key in feynman.ORDER:
         idx = groups.get(key)
         if idx is None:
             continue
@@ -1523,7 +1550,7 @@ def branch_scatters() -> list[dict]:
         fit = M.beta_with_errors(entries)
         plots.append({
             "id": "branch-" + key,
-            "label": bt.LONG[key],
+            "label": feynman.LONG[key],
             "n": len(points) + len(omitted),
             "n_fit": len(points),
             "omitted": omitted,
@@ -1663,6 +1690,8 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--seed", action="store_true",
                    help="rebuild data/catalog/{feynman,wiki,inflation}.json from the released CSVs")
+    p.add_argument("--refresh-expression-beta", action="store_true",
+                   help="rebuild the public ledger's cached per-expression statistics")
     p.add_argument("--serve", action="store_true",
                    help="serve data/catalog/ on 0.0.0.0:8765 for the HTML ledger")
     p.add_argument("--port", type=int, default=8765)
@@ -1696,14 +1725,22 @@ def main() -> int:
                 "M_is": "amplitude parameter (variable)",
             }),
         ]
+        branches = json.loads(CATALOG_BRANCHES.read_text())
+        for name, recs, _path, _meta in seeds:
+            apply_curated_branches(recs, branches.get(name, {}))
         for name, recs, path, meta in seeds:
             save_catalog(path, recs, name, extra_meta=meta)
             print(f"wrote {path} ({len(recs)} records)")
             for pol in POLICIES:
                 print(f"  {pol:10s} n={len(select(recs, pol)):3d}")
+    if args.refresh_expression_beta:
+        payload = json.dumps(expression_scatter()) + "\n"
+        path = CATALOG_DIR / "expression-beta.json"
+        path.write_text(payload)
+        print(f"wrote {path}")
     if args.serve:
         serve_catalog(host=args.host, port=args.port)
-    elif not args.seed:
+    elif not (args.seed or args.refresh_expression_beta):
         for name, loader in (("feynman", load_feynman),
                              ("wiki", load_wiki),
                              ("inflation", load_inflation)):

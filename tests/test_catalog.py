@@ -1,6 +1,7 @@
 """Sanity checks for the working Feynman catalog."""
 from __future__ import annotations
 
+import json
 import unittest
 
 from physics_priors import catalog as C
@@ -16,6 +17,14 @@ class FeynmanCatalogTests(unittest.TestCase):
     def test_released_keeps_all_hundred(self):
         self.assertEqual(len(self.recs), 103)
         self.assertEqual(len(C.select(self.recs, "released")), 100)
+
+    def test_maser_probability_squares_prefactor_and_preserves_released_formula(self):
+        record = self.by_orig["III.9.52"]
+        original = "(p_d*Ef*t/(h/(2*pi)))*sin((omega-omega_0)*t/2)**2/((omega-omega_0)*t/2)**2"
+        self.assertEqual(record.original_formula, original)
+        self.assertEqual(record.formula, original.replace(")))*sin", ")))**2*sin", 1))
+        checked_in = C.load_feynman()
+        self.assertEqual(next(r.formula for r in checked_in if r.id == record.id), record.formula)
 
     def test_primary_uses_gaussian_generalization(self):
         primary = C.select(self.recs, "primary")
@@ -399,6 +408,21 @@ class FeynmanCatalogTests(unittest.TestCase):
         self.assertIn(r"\left(\frac", tex)
 
 
+class CatalogBranchTests(unittest.TestCase):
+    def test_rebuilt_catalogues_keep_curated_branch_labels(self):
+        annotations = json.loads(C.CATALOG_BRANCHES.read_text())
+        for corpus, builder in (("feynman", C.seed_feynman), ("wiki", C.seed_wiki)):
+            with self.subTest(corpus=corpus):
+                records = builder()
+                expected = C.load_catalog(C.CATALOG_DIR / f"{corpus}.json")
+                C.apply_curated_branches(records, annotations[corpus])
+                self.assertEqual({r.id: r.branch for r in records}, {r.id: r.branch for r in expected})
+
+    def test_unknown_annotation_id_is_an_error(self):
+        with self.assertRaisesRegex(ValueError, "unknown ID"):
+            C.apply_curated_branches([], {"unknown ID": "Classical mechanics"})
+
+
 class ReleasedCsvTests(unittest.TestCase):
     def test_clone_head_is_stamped_into_catalog_meta(self):
         sha = C.released_clone_commit()
@@ -507,7 +531,7 @@ class WikiCatalogTests(unittest.TestCase):
 
     def test_Wiki10_kb_h_and_R_are_constants(self):
         rec = self.by_id["Wiki_10"]
-        self.assertEqual(rec.formula, "(kb*T/h)*exp(dG/(R*T))")
+        self.assertEqual(rec.formula, "(kb*T/h)*exp(-dG/(R*T))")
         self.assertEqual(rec.original_formula, "(kB*T/h)*exp(dG/(R*T))")
         self.assertIn("kb", rec.constant_names)
         self.assertNotIn("kB", rec.constant_names)
@@ -525,7 +549,7 @@ class WikiCatalogTests(unittest.TestCase):
         self.assertNotIn("kB", tex)
         self.assertNotIn(r"k_{B}", tex)
         self.assertEqual(rec.to_json()["hbar1"]["formula"],
-                         "kb*T/(2*pi)*exp(dG/(R*T))")
+                         "kb*T/(2*pi)*exp(-dG/(R*T))")
 
     def test_Wiki11_k_is_boltzmann_kb(self):
         rec = self.by_id["Wiki_11"]
@@ -730,9 +754,11 @@ class InflationCatalogTests(unittest.TestCase):
                          {"CNAI", "CNBI", "TMI", "CNCI", "HBI", "SATI"})
         for acr, repaired in M.EI_BRACKET_REPAIRS.items():
             rec = self.by_id[acr]
-            self.assertEqual(rec.formula, C.rename_ei_c(repaired), acr)
+            expected = "(M**4)*(tanh(x/(M_Pl*sqrt(6)))**(2*a0))" if acr == "TMI" else C.rename_ei_c(repaired)
+            self.assertEqual(rec.formula, expected, acr)
             self.assertNotEqual(rec.original_formula, rec.formula, acr)
-            self.assertIn("EI_BRACKET_REPAIRS", rec.notes, acr)
+            note = "follows Martin" if acr == "TMI" else "EI_BRACKET_REPAIRS"
+            self.assertIn(note, rec.notes, acr)
             M.expression_tree(rec.formula)
             with self.assertRaises(SyntaxError):
                 M.expression_tree(rec.original_formula)
@@ -800,13 +826,13 @@ class InflationCatalogTests(unittest.TestCase):
         self.assertEqual(rec.n_variables, 3)
         self.assertEqual(rec.n_constants, 4)
 
-    def test_csv_count_mismatches_are_the_eleven(self):
+    def test_csv_count_mismatches_are_documented(self):
         flagged = {r.id: C.csv_disagreements(r) for r in self.recs
                    if C.csv_disagreements(r)}
-        self.assertEqual(set(flagged), set(C._EI_COUNT_NOTES))
+        self.assertEqual(set(flagged), set(C._EI_COUNT_NOTES) | {"CCSI", "HNI"})
         self.assertEqual(set(flagged), {
             "HF1I", "CNAI", "SFI", "II", "SAII",
-            "VFMI", "FI", "DEI", "SABI", "VHI", "DSI",
+            "VFMI", "FI", "DEI", "SABI", "VHI", "DSI", "CCSI", "HNI",
         })
         self.assertNotIn("RCHI", flagged)
         self.assertFalse(C.csv_disagreements(self.by_id["RCHI"]))
@@ -943,7 +969,9 @@ class FeynmanLecturesCatalogTests(unittest.TestCase):
             self.assertTrue(all(r["source_url"].startswith("https://www.feynmanlectures.caltech.edu/")
                                 for r in payload["records"]))
             recs = C.scatter_records(key)
-            self.assertEqual(len(recs), payload["n_records"])
+            self.assertEqual(len(payload["records"]), payload["n_records"])
+            self.assertEqual({r.id for r in recs}, {r["id"] for r in payload["records"]
+                                                   if r["consideration"] == "in"})
             ids = [r.id for r in recs]
             self.assertEqual(len(ids), len(set(ids)))
             for r in recs:
@@ -953,3 +981,19 @@ class FeynmanLecturesCatalogTests(unittest.TestCase):
 
     def test_not_in_expression_scatter(self):
         self.assertFalse(set(C.FEYNMAN_LECTURES) & {k for k, _ in C.SCATTER_CORPORA})
+
+    def test_reviewed_relations_and_families(self):
+        from physics_priors.catalog_tools.feynman import feynman_corpus
+
+        combined = {r.id: (r, meta) for r, _branch, meta in feynman_corpus()[0]}
+        self.assertEqual(combined["III.9.52"][1]["volume"], "III")
+        self.assertIn("flp2.34.29", combined)
+        self.assertIn("flp3.15.20", combined)
+        self.assertNotIn("flp2.11.26", combined)
+        self.assertNotIn("flp2.32.u51", combined)
+        eigenvalues = [combined[key][0].family
+                       for key in ("flp3.9.26", "flp3.9.27", "flp3.10.3.r1", "flp3.10.3.r2")]
+        self.assertEqual(set(eigenvalues), {"feynman.two_state_eigenvalues"})
+        variants = [r for r in C.scatter_records("fr") if r.family == "fr.perez_romero_nesseris_eq24"]
+        self.assertEqual(len(variants), 16)
+        self.assertEqual([r.id for r in variants if r.representative], ["fr.pn_sqrt"])

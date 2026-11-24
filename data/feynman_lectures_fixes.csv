@@ -82,3 +82,5 @@ flp2.36.28,II,replace,numeric_value_with_units,q*hbar/(2*m),,parser took the num
 flp2.7.26,II,replace,numeric_value_with_units,q_e**2/(4*pi*epsilon_0),,parser took the numerical value with units; use the symbolic RHS
 flp2.8.29,II,replace,function_application,(q_1*phi_1 + q_2*phi_2)/2,,"phi(1), phi(2) are potential values at the charges, parsed as phi*1, phi*2"
 flp2.31.8,II,replace,symbol_name,(alpha_x_x*E_x**2 + (alpha_x_y + alpha_y_x)*E_x*E_y + alpha_y_y*E_y**2)/2,,"index order lost: alpha_yx became alpha_xy, which sympy would merge"
+flp2.11.26,II,exclude,implicit_equation,,,Polarization P occurs on both sides; equation 11.27 supplies the explicit form.
+flp2.32.u51,II,exclude,implicit_equation,,,Polarization P occurs on both sides; this repeats the implicit relation in equation II.11.26.
