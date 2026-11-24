@@ -14,7 +14,7 @@
 % \input is not expandable inside tabular; the TeX primitive is.
 \makeatletter\newcommand{\tabinput}[1]{\@@input #1 }\makeatother
 
-\title{Exploring variation in the exponential metalaw of physics}
+\title{Branch-Dependent Priors for Symbolic Regression in Physics}
 % TODO(author): author name and affiliation (Chun Hin Ma?). Not filled in on purpose.
 \author{}
 \date{}
@@ -23,55 +23,39 @@
 \maketitle
 
 \begin{center}
-\small\itshape Work in progress: this writeup is still being updated.
+\small\itshape Work in progress. This write-up is still being updated.
 \end{center}
 
 \begin{abstract}
-The choice of operators and functional forms in scientific modelling is often informed by the domain. Quantifying these preferences might help construct priors that guide symbolic regression. Previous work found that ranked operator frequencies in physics equations approximately follow exponential laws, with a lower fitted decay rate for Encyclopaedia Inflationaris than for three broader physics collections. We revisit this difference as a starting point for exploring whether operator statistics vary across physical domains. Using log least squares and whole-equation bootstrap resampling, we compare equation collections and seven branches within an expanded Feynman corpus. We test proposed explanations for the earlier difference by changing representation conventions, constructing a comparison collection with similar scope, and examining variation across physics branches. The results show variation in fitted rates across the selected collections and branches, but do not isolate a single physical explanation; some estimates are sensitive to how equations are classified. The analysis is limited by its selection of algebraic expressions, the exponential model's imperfect description of rare-operator tails, and approximate uncertainty estimates. We discuss how these observations, together with per-expression patterns of decay rate and complexity, could inform domain-dependent penalties for symbolic regression. Their ability to improve equation recovery or search efficiency remains to be evaluated.
+Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 968 assigned to seven branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula ledger for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using grouped six-fold cross-validation on 968 branch-labelled Feynman formulas. The pooled prior learns operator arrangements from training formulas across all branches, and the branch-dependent prior adjusts those probabilities using the subset of those training formulas from the relevant branch. We compare the probabilities the two priors assign to each held-out expression tree. The branch-dependent prior assigns 1.26 times as much probability as the pooled prior on a geometric-average basis. It also assigns higher probabilities on average in all seven branches, suggesting that branch information helps describe equation forms within the fields studied.
 \end{abstract}
 
 \section{Introduction}
-When fitting equations to scientific data, the choice of candidate operators is often informed by the domain. Dilogarithms, for example, may be a natural choice in particle physics, whereas they would be a less usual starting point for modelling biological systems. Expectations also extend to how operators are combined. Expressions in special relativity often involve the Lorentz factor, while there is no comparable general expectation for thermodynamic equations. Such differences suggest that scientific domains may exhibit characteristic patterns in both operator usage and the structure of expression trees.
+Scientific discovery involves finding equations that explain observations and make testable predictions. Symbolic regression can help by proposing equations directly from data. A Bayesian expression prior expresses a preference for some equation forms before considering how well they fit the data. Guimer\`a et al.~\citep{guimera2020} learned these preferences from operator counts in a collection of mathematical expressions. Bartlett et al.~\citep{bartlett2023} used a language model trained on scientific equations that could also learn how operators are arranged.
 
-Quantifying these patterns could help inform priors for symbolic regression. A prior adapted to the relevant domain could favour candidate expressions with structures commonly encountered in that domain, while allowing less familiar forms. Such information might constrain the search space or guide the search more efficiently towards the Pareto front of predictive accuracy and expression complexity. This motivates the study of statistical patterns in existing equations and how those patterns vary across branches of science.
+How much should these preferences depend on the branch of physics? One reason to expect a difference is that particular structures recur in particular domains. For example, a prior for special relativity might favour expressions with an inverse square root like the one in the Lorentz factor, $\gamma=(1-v^2/c^2)^{-1/2}$. Constantin et al.~\citep{constantin2026} gave a statistical reason to investigate the question. They found that the ranked frequencies of operators were approximately exponential in four collections, with a slower decline for Encyclopaedia Inflationaris than for the Feynman benchmark, the Wikipedia equations and the Cambridge Handbook of Physics Formulas.
 
-Previous work~\citep{constantin2024} has shown that the ranked frequencies of mathematical operators in collections of physics equations can be described approximately by exponential laws, in contrast to Zipf's power law for word frequencies in natural language. Each equation is represented as an expression tree, and occurrences of each operator type are counted across the collection. The types are then ranked from most to least frequent. The counting convention includes variables, constants and numerical literals alongside arithmetic operations and named functions.
+We first revisit the inflationary gap. We ask how much it changes under different constant conventions and compare the inflationary potentials with proposed $f(R)$ gravity models. Both collections centre on one physical quantity and contain proposed models. The suggestion that the original gap may reflect different energy scales also motivates comparing seven physics branches in an expanded collection drawn from the publicly accessible Feynman Lectures. The branch comparison measures variation across fields that differ in their subject matter as well as in their typical energy scales.
 
-The normalised exponential model takes the form
-\begin{equation}
-p_r(\beta)=\frac{e^{-\beta r}}{\sum_{s=1}^{R}e^{-\beta s}},
-\qquad r=1,\ldots,R,
-\label{eq:law}
-\end{equation}
-where $R$ is the number of observed operator types. The decay rate $\beta$ describes how rapidly frequency decreases with rank. A larger value corresponds to a distribution more concentrated among the most frequent types.
+A decay rate describes how strongly operator counts are concentrated in the highest ranks. An expression prior can use more detailed information, such as which operators occur and how they are combined within an equation. To evaluate whether that information is useful, we compare a prior trained across the Feynman branches with a prior that starts from the same training equations and gives more influence to the relevant branch. We score formulas withheld from both priors, keeping equivalent and related formulas together when dividing the data.
 
-The original study found similar fitted decay rates for the Feynman benchmark, Wikipedia equations and the Cambridge Handbook of Physics Formulas, but a lower rate for Encyclopaedia Inflationaris~\citep{constantin2024}. Understanding this difference is relevant to the construction of priors for symbolic regression. A common statistical description across physics could support a shared component of such a prior, whereas systematic variation with physical domain could motivate conditioning it on the branch under study.
-
-We therefore begin by revisiting the inflationary difference before comparing individual branches of physics. The proposed explanations for the gap concern the treatment of physical constants, the inflationary collection's focus on one physical concept, the hypothetical nature of its models, and the energy scales involved~\citep{constantin2024}. We estimate decay rates using log least squares and obtain individual uncertainty intervals by resampling whole equations. Applying the same procedure across the collections allows us to examine how the estimates change under the comparisons.
-
-First, we investigate constant conventions by setting $c=\hbar=1$ in textbook expressions and removing the common amplitude prefactor $M^4$ from the inflationary potentials. These changes alter the expression trees and their operator counts. We examine whether they account for the difference in fitted rates.
-
-Second, we compare the inflationary collection with proposed models from modified gravity. Encyclopaedia Inflationaris assembles forms of the inflaton potential in single-field slow-roll inflation~\citep{martin2014}. It therefore concerns one physical quantity and contains hypothetical models proposed to describe inflation. Our comparison collection contains proposed curvature functions from $f(R)$ gravity, in which the gravitational action depends on a function of the scalar curvature $R$~\citep{sotiriou2010}. This collection shares both features, allowing us to ask whether another collection of hypothetical models centred on one physical concept has a similar fitted rate. The comparison does not separate the effects of those two features. Section~\ref{sec:data} and Appendix~\ref{app:catalogue} identify the source papers and expressions.
-
-Third, the proposed energy-scale explanation motivates a broader comparison across physics branches. We expand the 100-expression AI Feynman benchmark~\citep{udrescu2020} using expressions from all three volumes of the publicly accessible Feynman Lectures~\citep{feynman}. We compare seven branches and examine alternative assignments for chapters spanning more than one branch. These comparisons explore variation with physical domain, although branch labels do not isolate energy scale from other differences between the equations.
-
-This project makes three contributions. First, it reassesses the inflationary difference using a consistent fitting procedure and individual bootstrap uncertainty estimates. Second, it assembles an expanded Feynman collection with source references and branch labels, together with a catalogue of \nfR{} modified-gravity expressions. Third, it examines variation in fitted rates under changes to constant conventions, collection scope and branch assignment. These analyses provide an exploratory basis for considering domain-dependent priors; their effect on symbolic-regression performance remains to be evaluated.
-
-Section~\ref{sec:data} describes the collections, operator counting, fitting procedure and uncertainty estimates. Section~\ref{sec:ei} revisits the inflationary difference through the constant-convention and modified-gravity comparisons. Section~\ref{sec:results} examines variation across physics branches. Section~\ref{sec:discussion} discusses the findings, their limitations and the prospect of using expression statistics to guide symbolic regression. The appendices document catalogue sources, sensitivity checks, bootstrap calibration and the exponential limit of the Zipf--Mandelbrot distribution.
+Section~\ref{sec:data} describes the catalogues and decay-rate fits. Sections~\ref{sec:ei} and~\ref{sec:results} revisit the inflationary gap and compare the Feynman branches. Section~\ref{sec:priors} presents the priors and the held-out comparison. Section~\ref{sec:discussion} discusses the limits of both analyses and their implications for symbolic regression.
 
 \section{Data and methods}\label{sec:data}
 
 \subsection{Equation collections}
-We begin with three collections released with the original study~\citep{constantin2024}: 100 expressions from the AI Feynman benchmark, 41 equations from Wikipedia's list of scientific equations named after people~\citep{wikinamed}, and 70 inflaton potentials from Encyclopaedia Inflationaris~\citep{martin2014}. We extend the Wikipedia collection with 35 algebraic expressions, bringing its total to \nWiki{}. As a mathematical comparison, we also include \nLeemis{} probability density or mass functions from Leemis and McQueston~\citep{leemis2008}.
+We begin with three collections released with the original study~\citep{constantin2026}: 100 expressions from the AI Feynman benchmark, 41 equations from Wikipedia's list of scientific equations named after people~\citep{wikinamed}, and 70 inflaton potentials from Encyclopaedia Inflationaris~\citep{martin2014}. We extend the Wikipedia collection with 35 algebraic expressions, bringing its total to \nWiki{}. As a mathematical comparison, we also include \nLeemis{} probability density or mass functions from Leemis and McQueston~\citep{leemis2008}.
 
 For the comparison across physics branches, we expand the Feynman benchmark using expressions from all three volumes of the Feynman Lectures~\citep{feynman}. After selection and deduplication, this adds \nLectAdded{} expressions. The combined collection contains \nFeynAll{} expressions, of which \nLabelled{} are assigned to the seven branches considered here. Because the original benchmark is part of the expanded collection, the two collections overlap.
 
-The modified-gravity collection contains \nfR{} proposed curvature functions from the review and model papers listed in Appendix~\ref{app:catalogue}. These expressions include related variants: 17 come from the model families examined by P\'erez-Romero and Nesseris~\citep{perezromero2018}. The collection therefore contains \nfR{} expressions, which should not be interpreted as \nfR{} independent model families. Each catalogue entry records its expression and source, and Appendix~\ref{app:catalogue} provides the corresponding source table.
+The modified-gravity collection contains \nfR{} proposed curvature functions from the review and model papers listed in Appendix~\ref{app:catalogue}. It includes 16 variants of a single template from P\'erez-Romero and Nesseris~\citep{perezromero2018}. The catalogue groups these variants under one family. Each expression contributes its own operator counts to the collection fit.
+
+The decay-rate estimates and figures use the saved analysis snapshot that preceded the latest catalogue review. The prior comparison uses the reviewed Feynman catalogue and family assignments. The catalogue and formula ledger document the current transcriptions and selections.
 
 \subsection{Equation selection and operator counting}
 For the additional Feynman Lectures expressions, we select equations that give one quantity as an explicit algebraic expression. We count operators on the right-hand side. We exclude expressions consisting of a single symbol or number, as well as those containing derivatives, integrals, sums, limits, operator hats or complex conjugates.
 
-Each expression is represented as a tree, following the counting conventions of the original study~\citep{constantin2024}. Arithmetic operations and named functions contribute operator occurrences. Variables, physical constants and numerical literals are also counted, each as a separate category of tree leaves. Powers $x^2$, $x^3$ and $x^4$ are represented by distinct unary operators. Appendix~\ref{app:catalogue} gives further transcription and counting conventions.
+Each expression is represented as a tree, following the counting conventions of the original study~\citep{constantin2026}. Arithmetic operations and named functions contribute operator occurrences. Variables, physical constants and numerical literals are also counted, each as a separate category of tree leaves. Powers $x^2$, $x^3$ and $x^4$ are represented by distinct unary operators. Appendix~\ref{app:catalogue} gives further transcription and counting conventions.
 
 We assign expressions from the Lectures to physics branches according to their source chapters. Benchmark expressions retain their existing labels, apart from the relativistic-electrodynamics adjustment described in Appendix~\ref{app:catalogue}. Combining fluid and continuum mechanics gives seven branches: classical mechanics, special relativity, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics.
 
@@ -87,7 +71,12 @@ The observed frequency at rank $r$ is
 f_r=\frac{n_r}{N},
 \qquad N=\sum_{r=1}^{R}n_r.
 \]
-We fit the normalised exponential model introduced in Eq.~\eqref{eq:law} by minimising the squared differences between observed and model log frequencies:
+We model the frequencies by a normalised exponential with decay rate $\beta$:
+\begin{equation}
+p_r(\beta)=\frac{e^{-\beta r}}{\sum_{s=1}^{R} e^{-\beta s}}.
+\label{eq:law}
+\end{equation}
+Larger values of $\beta$ correspond to frequencies more concentrated at the highest ranks. This model arises as a limit of the two-parameter Zipf--Mandelbrot distribution, as shown in Appendix~\ref{app:zipf-limit}. We fit the exponential directly to each collection, including the Leemis comparison, by minimising the squared differences between observed and model log frequencies:
 \begin{equation}
 Q(\beta)=\sum_{r=1}^{R}\left[\log f_r-\log p_r(\beta)\right]^2.
 \label{eq:logls}
@@ -105,7 +94,7 @@ For each sample, we recount the operators, determine which types are present, ra
 
 Resampling whole equations keeps together the operators that occur within each expression. Interpreting the resulting intervals as sampling uncertainty assumes that the equations are sufficiently independent and represent a wider collection of comparable expressions. Related equations or variants of the same model can limit this assumption. The intervals also do not account for systematic omissions or transcription errors in the collections.
 
-The 95\% label is approximate. Appendix~\ref{app:calibration} repeats the procedure on artificial collections whose true decay rate is known. The resulting interval contains that rate less often than the label suggests. We report each interval individually and do not widen the intervals in the tables to compensate.
+The reported intervals have a nominal level of 95\%. Appendix~\ref{app:calibration} repeats the procedure on artificial collections with a known decay rate and finds that the resulting intervals contain it less often than 95\% of the time in the cases studied.
 
 We also resample whole source chapters to examine dependence among equations from the same chapter. This check, together with alternative branch assignments and selection rules, is described in Appendix~\ref{app:sensitivity}.
 
@@ -118,7 +107,7 @@ We first examine whether the lower decay rate reported for Encyclopaedia Inflati
 
 The Feynman benchmark gives a fitted rate of $\hat\beta=\betaFeynBench$, with an individual 95\% bootstrap interval of $[\loFeynBench,\hiFeynBench]$. Encyclopaedia Inflationaris gives $\hat\beta=\betaEI$, with an interval of $[\loEI,\hiEI]$. The point estimates differ by 0.073, and their individual intervals do not overlap. The lower inflationary estimate is therefore reproduced with log least squares and equation resampling.
 
-A lower decay rate corresponds to a slower decline in frequency with rank. Under the fitted exponential model, operator occurrences are therefore less concentrated among the most frequent types in the inflationary collection than in the Feynman benchmark. This describes a difference between their ranked distributions, without identifying its physical origin.
+A lower decay rate corresponds to a slower decline in frequency with rank. Under the fitted exponential model, operator occurrences are therefore less concentrated among the most frequent types in the inflationary collection than in the Feynman benchmark. The Leemis collection of probability distributions also gives a fitted rate of $\betaLeemis$. The decay rate is a summary that can be compared across both mathematical and physical collections.
 
 \begin{table}[H]\centering\small
 \resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
@@ -152,7 +141,7 @@ Together, the comparisons reproduce the lower inflationary estimate and show tha
 
 \section{Variation across physics branches}\label{sec:results}
 
-The original study proposed differences in energy scale as one possible explanation for the lower inflationary decay rate~\citep{constantin2024}. Inflation also concerns a different branch of physics from much of the material in the broader equation collections. This motivates us to examine whether fitted decay rates vary across physics branches. We use the expanded Feynman collection because the expressions in the Feynman Lectures are publicly accessible~\citep{feynman}. Branch labels provide a way to explore variation with physical domain, although they do not isolate the effect of energy scale.
+The original study proposed differences in energy scale as one possible explanation for the lower inflationary decay rate~\citep{constantin2026}. Inflation also concerns a different branch of physics from much of the material in the broader equation collections. This motivates us to examine whether fitted decay rates vary across physics branches. We use the expanded Feynman collection because the expressions in the Feynman Lectures are publicly accessible~\citep{feynman}. Branch labels provide a way to explore variation with physical domain, although they do not isolate the effect of energy scale.
 
 The fitted rates show a pattern suggestive of two broad groups (Table~\ref{tab:branch} and Figure~\ref{fig:main}). Quantum mechanics, electromagnetism, waves and optics, and classical mechanics have estimates between 0.325 and 0.360, with overlapping individual bootstrap intervals. Thermodynamics and kinetic theory and fluid and continuum mechanics have higher estimates, at 0.403 and 0.422, and their intervals also overlap.
 
@@ -178,44 +167,65 @@ Figure~\ref{fig:rf} shows the distributions underlying these estimates. Each bra
 
 Additional checks examine the effects of branch classification and relationships between equations from the same chapter. The special-relativity estimate changes substantially when ambiguously classified chapters are removed or reassigned. Resampling whole chapters widens the quantum- and fluid-mechanics intervals, while leaving them separated. Appendix~\ref{app:sensitivity} gives the procedures and results. These checks help distinguish patterns in the selected expressions from conclusions that would require broader evidence about each physics branch.
 
-\section{Discussion}\label{sec:discussion}
+\section{Branch-informed expression priors}\label{sec:priors}
 
-\subsection{Interpretation of the comparisons}
-This study reproduces the lower fitted decay rate of Encyclopaedia Inflationaris relative to the Feynman benchmark. Setting $c=\hbar=1$ in the textbook expressions and removing the inflationary amplitude prefactor leave most of the difference intact. These particular conventions therefore account for little of the observed gap.
-
-The modified-gravity collection gives a rate close to the inflationary value. Both collections contain proposed models centred on one physical concept. Their similar rates are consistent with explanations involving these features, although the comparison cannot distinguish their effects or establish either as the cause.
-
-Within the expanded Feynman collection, the estimates suggest a broad grouping. Quantum mechanics, electromagnetism, waves and optics, and classical mechanics have lower fitted rates than thermodynamics and fluid mechanics. This pattern motivates further investigation of how mathematical structure varies across physical domains. It does not directly establish an energy-scale explanation, because the branches also differ in their subject matter, quantities of interest and equation forms.
-
-\subsection{Limitations of the analysis}
-A major limitation is the restricted form of the expressions considered. In particular, the additional Feynman collection includes equations that give one quantity as an explicit algebraic expression. Differential and integral forms are excluded, together with expressions containing sums, limits, operator hats or complex conjugates. These restrictions omit substantial parts of the mathematical language used in physics. The resulting operator statistics therefore describe the selected algebraic expressions rather than the full range of equations used in each branch.
-
-The exponential model also does not capture the flat tail of the observed distributions well. When several operator types occur only once or twice, their ranked frequencies form plateaus, whereas an exponential with positive decay rate decreases continuously. Because log least squares gives each rank equal weight, these rare types can influence the fitted rate despite accounting for few operator occurrences. Adding or removing equations can change which rare operators appear and how often they occur, thereby changing both the tail and the fitted value. The estimated rate consequently depends on the composition of the collection as well as the adequacy of the exponential approximation.
-
-Other choices, including algebraic representation, branch assignment and the number of variants retained from a model family, also affect the counts. The substantial change in the special-relativity estimate under alternative classifications illustrates this sensitivity.
-
-The bootstrap intervals describe variation under resampling of the selected expressions. They do not capture uncertainty arising from omitted equation formats, systematic selection choices or transcription errors. Related equations and model variants can also limit the assumption that equations provide independent sampling units. Chapter resampling examines some of this dependence, although certain branches contain few chapters.
-
-We also checked whether an interval labelled 95\% deserves that label. Appendix~\ref{app:calibration} builds artificial collections in which every operator frequency follows an exponential with true rate 0.35. For each collection we calculate the same interval reported in the tables and record whether 0.35 lies inside it. In 200 collections, a genuine 95\% interval would contain the true rate about 190 times. In the simplest collections it did so 170 to 187 times. When equations from the same chapter were tied together and whole chapters were resampled, it did so only 149 to 169 times. The interval is therefore often too short, and two intervals that fail to overlap are weaker evidence of a difference than the label suggests. The check uses invented operator counts rather than real equations, and the intervals reported above have not been widened to match it.
-
-\subsection{Per-expression patterns and symbolic regression}
-The expression catalogue provides a complementary view by fitting a decay rate to each expression individually and plotting it against expression complexity. For an expression $g$, the fitted value $\hat\beta_g$ is calculated from its own ranked operator frequencies, while its complexity $k_g$ is the number of nodes in its expression tree. These values describe individual expressions, whereas the corpus rate is obtained by pooling operator counts across the collection.
-
-The apparent concentration of expressions in particular regions of the $\beta$--complexity plot suggests a possible way to guide symbolic regression. Rather than requiring a candidate expression to resemble the pooled distribution of an entire corpus, we could assess whether its combination of fitted rate and complexity is typical of expressions in the relevant domain.
-
-One possible objective would take the form
+\subsection{Pooled and branch-informed models}
+We follow Bartlett et al.~\citep{bartlett2023} in treating an expression tree as a sequence of choices about which token occupies each node. We map the selected formulae to a common set of operators and anonymise the leaves, while preserving whether adjacent sibling leaves are identical. For an encoded formula $g$, a model assigns a conditional probability to the token $t_v$ at each node $v$ given its context $h_v$. The score of the whole tree is
 \begin{equation}
-\mathcal{L}(g)
-=
-\mathcal{L}_{\mathrm{data}}(g)
-+
-\lambda\,\mathcal{R}_{d}(\hat\beta_g,k_g),
+P(g)=\prod_{v\in g} p(t_v\mid h_v).
+\label{eq:tree-score}
 \end{equation}
-where $\mathcal{R}_{d}$ penalises combinations of fitted rate and complexity that are unusual in domain $d$. Conditioning on complexity would allow the preferred range of $\beta$ to vary with expression size. This could provide an initial structural preference that can be evaluated directly for each candidate expression.
+For example, a context can describe the parent operator and which side of it the node occupies. The Katz back-off model uses shorter contexts when more specific ones have insufficient observations. The pooled prior $P_{\mathrm{pool}}$ fits this model across all training branches and blends its probabilities with pooled counts from deeper tree contexts.
 
-Before constructing such a penalty, the origin of the apparent regions needs to be examined. Short expressions contain few operator occurrences, and their integer counts permit only a limited set of frequency patterns. Some bands or concentrations may therefore arise from expression size and tree structure alone. The catalogue's comparison with random expression trees of the same complexities provides a starting point for investigating this possibility. Further comparisons could examine whether the observed patterns persist after accounting for complexity, operator vocabulary and the number of distinct types.
+For a formula from branch $d$, we start from the pooled prior and fit adjustments using the training expressions in that branch. The components include adjustments to how often operators with different numbers of children occur, which operator occurs within an arity, and how preferences change with depth or parent operator. One component, $P_{\mathrm{geom},d}$, takes the ratio of the shallow branch and pooled probabilities, raises it to the power $0.15$, and uses it to adjust the deeper pooled probabilities before normalising within each context. We combine the component scores at the level of whole equations:
+\begin{equation}
+P_d(g)
+=0.75\sum_{m} w_{d,m}P_{d,m}(g)+0.25P_{\mathrm{geom},d}(g).
+\label{eq:branch-prior}
+\end{equation}
+The sum includes the pooled model among its components. The nonnegative mixture weights $w_{d,m}$ sum to one. We estimate them on validation predictions within the training set, giving each training family equal weight in the validation objective and regularising toward the pooled model. The fixed 25\% share comes from exploratory comparisons on this corpus.
 
-The usefulness of this information remains to be tested. A penalty learned from one set of expressions could be evaluated on separate symbolic-regression problems with known generating equations, comparing recovery rates and computational effort with an unmodified search. This would establish whether the per-expression patterns provide useful guidance beyond a conventional preference for simpler expressions.
+\subsection{Held-out evaluation}
+The comparison uses 968 branch-labelled Feynman expressions in 172 groups of equivalent or related formulas. We assign each group to a single fold. We hold out each of the six folds in turn and fit both priors on exactly the same formulas from the other five, so each formula is evaluated once. In each outer training set, three further group-based folds supply the validation predictions used to fit the mixture weights. The branch label of each test equation is supplied to the branch-informed prior.
+
+For a held-out formula $g$ from branch $d$, we report the probability ratio
+\begin{equation}
+R(g)=\frac{P_d(g)}{P_{\mathrm{pool}}(g)}.
+\label{eq:prior-ratio}
+\end{equation}
+A ratio above one means the branch-informed prior assigns the formula a higher probability. We report the geometric mean of the ratios over all held-out formulas, giving each formula equal weight. We also report the geometric mean within each branch.
+
+\subsection{Results}
+The branch-informed prior assigned held-out formulas 1.26 times as much probability as the pooled prior overall. All seven branches had a geometric mean ratio above one. Special relativity had the largest ratio at 2.45, and classical mechanics had a ratio of 1.06 (Table~\ref{tab:prior-ratios}).
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lrr}
+\toprule
+Branch & Formulas & Geometric mean probability ratio \\
+\midrule
+Classical mechanics & 105 & $1.06$ \\
+Electromagnetism & 312 & $1.19$ \\
+Fluid and continuum mechanics & 42 & $1.11$ \\
+Quantum mechanics & 222 & $1.32$ \\
+Special relativity & 89 & $2.45$ \\
+Thermodynamics and kinetic theory & 73 & $1.19$ \\
+Waves and optics & 125 & $1.05$ \\
+\midrule
+Overall (equal formula weights) & 968 & $1.26$ \\
+\bottomrule
+\end{tabular}
+\caption{Geometric mean of held-out probability ratios for the branch-informed prior relative to the pooled prior. Each formula was held out once.}
+\label{tab:prior-ratios}
+\end{table}
+
+A three-part split of the same catalogue gave an overall ratio of 1.27. For classical mechanics, the ratio was 0.99 with three parts and 1.06 with six parts. We adopted the six-part split after comparing both results. The direction of the change in probability for classical mechanics depends on the split.
+
+\section{Discussion}\label{sec:discussion}
+The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The seven-branch comparison shows variation among the selected Feynman expressions. Its interpretation depends on how equations are assigned to branches, particularly in special relativity.
+
+The catalogue is limited to selected explicit expressions and excludes differential and integral forms. The exponential curve also captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. Equation resampling describes variability under repeated selection from the observed collection, and chapter resampling addresses some of the dependence among related formulas. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
+
+The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-informed model assigned higher probabilities to the held-out Feynman formulas on average. The gains varied substantially across branches, and the estimates describe this particular division of the catalogue. We chose the model design through exploratory comparisons on the same corpus. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
 
 \bibliographystyle{unsrtnat}
 \bibliography{refs}
@@ -287,6 +297,8 @@ Catalogue entry & Source \\\midrule
 
 \section{Sensitivity checks}\label{app:sensitivity}
 
+These checks ask how the decay-rate results change under alternative analysis choices. Resampling by chapter tests how much the uncertainty intervals depend on treating equations from the same chapter as a group. Changing branch assignments or equation-selection rules tests how much the fitted rates depend on which equations each branch contains.
+
 \subsection{Source-chapter resampling}
 We resample whole chapters jointly across branches. Each chapter is assigned to a stratum corresponding to the branch containing most of its retained equations, with ties resolved using the recorded branch order. Within each stratum, we sample the original number of chapters with replacement. Every equation from a selected chapter receives the same multiplicity, including equations assigned to other branches. This preserves dependence induced by the 11 chapters represented in more than one branch; the number of equations per branch can vary between replicates.
 
@@ -297,7 +309,7 @@ The individual chapter-bootstrap interval is [0.375, 0.523] for fluid and contin
 \end{figure}
 
 \subsection{Branch assignments and selection}
-The alternative specifications remove chapters with ambiguous assignments, reassign those chapters, remove expressions flagged for averages or imaginary units, or remove Volume~III. They use the same log-least-squares fitting procedure. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals; the original branch assignment remains the main analysis.
+The alternative specifications remove chapters with ambiguous assignments, reassign those chapters, remove expressions flagged for averages or imaginary units, or remove the Volume~III lecture additions. The saved Volume~III comparison retains the benchmark equations, including those sourced from Volume~III. Each specification uses the same log-least-squares fitting procedure. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals. The original assignments are used in the main analysis.
 
 \begin{table}[H]\centering\scriptsize
 \begin{tabular}{llrrl}\toprule
@@ -326,7 +338,7 @@ Notation-flagged expressions removed & SR & 88 & 0.395 & [0.314, 0.437] \\
  & Thermo & 69 & 0.400 & [0.368, 0.449] \\
  & Fluid & 39 & 0.422 & [0.380, 0.500] \\
 \midrule
-Volume III removed & SR & 89 & 0.382 & [0.321, 0.431] \\
+Volume III lecture additions removed & SR & 89 & 0.382 & [0.321, 0.431] \\
  & QM & 26 & 0.349 & [0.319, 0.426] \\
  & EM & 312 & 0.325 & [0.313, 0.353] \\
  & Waves & 126 & 0.346 & [0.303, 0.368] \\
@@ -338,9 +350,9 @@ Volume III removed & SR & 89 & 0.382 & [0.321, 0.431] \\
 \end{table}
 
 \section{Bootstrap calibration}\label{app:calibration}
-We examine interval coverage using 200 synthetic datasets in each of three scenarios, each with seven branches and 400 bootstrap replicates. All scenarios have population marginal operator frequencies following an exponential with rate $\beta=0.35$. The first uses identical distributions and independent equation count vectors. The second varies equation counts, operator vocabularies and expression lengths, with dependence within an equation introduced through a shared random probability vector. The third introduces a shared random probability vector within each chapter and resamples whole chapters, including a branch with only four chapters.
+A 95\% interval should contain the true decay rate about 95 times in 100 repetitions. To check this, we generate data with a known rate, fit each dataset, and count how often the bootstrap interval includes that rate. We generate 200 datasets in each of three scenarios. Each dataset has seven groups of equations, and we use 400 bootstrap replicates to calculate the intervals. All scenarios have population marginal operator frequencies following an exponential with rate $\beta=0.35$. The first uses identical distributions and independent equation count vectors. The second varies equation counts, operator vocabularies and expression lengths, with dependence within an equation introduced through a shared random probability vector. The third introduces a shared random probability vector within each chapter and resamples whole chapters, including a branch with only four chapters.
 
-For each branch, we record whether the individual interval contains the known rate 0.35. Out of 200 collections, it does so between 170 and 189 times when equations are resampled, and between 149 and 169 times when whole chapters are resampled. A 95\% interval would contain the true rate about 190 times, so these intervals are often too short. The shortfall is largest in the chapter-dependent scenario. We also record failed fits. The artificial counts are not expression trees. The check identifies the shortfall; it does not replace the intervals reported for the observed collections.
+Across the seven groups, the intervals included the true rate between 170 and 189 times out of 200 when we resampled equations, and between 149 and 169 times when we resampled chapters. Coverage fell below the nominal 95\% level, with the largest shortfall in the chapter-dependent scenario. We also recorded failed fits. These results describe simulations of operator counts and give an indication of how the reported intervals can behave.
 
 \section{Exponential limit of the Zipf--Mandelbrot distribution}\label{app:zipf-limit}
 For a fixed set of ranks $r=1,\ldots,R$, the normalised Zipf--Mandelbrot distribution is

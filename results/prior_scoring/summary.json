@@ -1,8 +1,8 @@
 {
   "catalogue_sha256": "769c510e48338447560399296d3f0c38f3f5878871b65895ae14dbfe59752777",
-  "fold_plan_sha256": "7c765fb3629f74a48a82bf9653dddbdc86f77eb287b7f9c361e8bb6900fd03e3",
+  "fold_plan_sha256": "f8386ddb88ccf52e29b028e951077b7a2b94c48422dbe7525741f5ba38b2a101",
   "code_sha256": {
-    "src/physics_priors/analysis/prior_comparison.py": "15d14cad84de6db05372b18a9fd2765e7296176594d6a53646274c9ff5d57a5e",
+    "src/physics_priors/analysis/prior_comparison.py": "69696cdb949eaf856c26b51b9573b8c8505bce828650bcde8557e1b17082c356",
     "src/physics_priors/catalog.py": "4607689852fa998548d38dc905801c525634ae2a51a439f5aa26d09624f6cbb7",
     "src/physics_priors/catalog_tools/feynman.py": "a14b5bdf2ab5100798110080cccd9d2fddec019866b55fc59ace8bc02d70e9b2",
     "src/physics_priors/catalog_tools/build_feynman_lectures_catalog.py": "50a64ca89aaede645771cc597ac460652129f4bbf6e5aa35b11981b88256771c",
@@ -28,121 +28,29 @@
     "Fluid+continuum": "Fluid and continuum mechanics"
   },
   "geometric_share": 0.25,
-  "repetitions": {
-    "7361": {
-      "n_scores": 968,
-      "by_branch": {
-        "Classical": 0.012824500109065868,
-        "EM": 0.22472077483804498,
-        "Fluid+continuum": 0.061391063426774244,
-        "QM": 0.36221778798648663,
-        "SR": 1.0037414858259341,
-        "Thermo": 0.23580045268198918,
-        "Waves+optics": -0.03298374860686681
-      },
-      "equal_branch_gain_nats": 0.266816045180204
-    },
-    "7362": {
-      "n_scores": 968,
-      "by_branch": {
-        "Classical": 0.03497439890558875,
-        "EM": 0.1662915390117413,
-        "Fluid+continuum": 0.08702849572328546,
-        "QM": 0.3263129819878763,
-        "SR": 1.0394039914624205,
-        "Thermo": 0.28598744992238107,
-        "Waves+optics": 0.05047154784968864
-      },
-      "equal_branch_gain_nats": 0.284352914980426
-    },
-    "7363": {
-      "n_scores": 968,
-      "by_branch": {
-        "Classical": 0.013175657621502366,
-        "EM": 0.25358266135639596,
-        "Fluid+continuum": 0.09339061984464059,
-        "QM": 0.23511783438251926,
-        "SR": 1.1195048010504751,
-        "Thermo": 0.2584796043754412,
-        "Waves+optics": 0.07947917761033117
-      },
-      "equal_branch_gain_nats": 0.29324719374875796
-    },
-    "7364": {
-      "n_scores": 968,
-      "by_branch": {
-        "Classical": 0.021311389731993417,
-        "EM": 0.19533846829281692,
-        "Fluid+continuum": 0.04194754097429446,
-        "QM": 0.2696390652133822,
-        "SR": 0.9805854714464586,
-        "Thermo": 0.15970881328210162,
-        "Waves+optics": 0.05049992980736528
-      },
-      "equal_branch_gain_nats": 0.2455758112497732
-    }
-  },
+  "partition_seed": 7361,
   "overall": {
-    "n_scores": 3872,
+    "n_scores": 968,
     "by_branch": {
-      "Classical": 0.0205714865920376,
-      "EM": 0.20998336087474978,
-      "Fluid+continuum": 0.07093942999224868,
-      "QM": 0.2983219173925661,
-      "SR": 1.0358089374463222,
-      "Thermo": 0.23499408006547828,
-      "Waves+optics": 0.03686672666512957
+      "Classical": 0.062144729971127785,
+      "EM": 0.17783122044497157,
+      "Fluid+continuum": 0.1040958309453572,
+      "QM": 0.2765189337795258,
+      "SR": 0.894203598496646,
+      "Thermo": 0.17760016034658582,
+      "Waves+optics": 0.04621687783670906
     },
-    "equal_branch_gain_nats": 0.2724979912897903
+    "equal_formula_gain_nats": 0.233567982774432,
+    "equal_branch_gain_nats": 0.2483730502601319
   },
   "upstream_katz_warnings": {
-    "7361:0": {
-      "divide by zero encountered in scalar divide": 33,
-      "invalid value encountered in scalar multiply": 33
-    },
     "7361:1": {
-      "divide by zero encountered in scalar divide": 12,
-      "invalid value encountered in scalar multiply": 12
-    },
-    "7361:2": {
-      "divide by zero encountered in scalar divide": 12,
-      "invalid value encountered in scalar multiply": 12
-    },
-    "7361:3": {
-      "divide by zero encountered in scalar divide": 462,
-      "invalid value encountered in scalar multiply": 462
+      "divide by zero encountered in scalar divide": 66,
+      "invalid value encountered in scalar multiply": 66
     },
     "7361:4": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
-    },
-    "7362:1": {
-      "divide by zero encountered in scalar divide": 132,
-      "invalid value encountered in scalar multiply": 132
-    },
-    "7362:2": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
-    },
-    "7362:4": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
-    },
-    "7363:1": {
-      "divide by zero encountered in scalar divide": 110,
-      "invalid value encountered in scalar multiply": 110
-    },
-    "7363:2": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
-    },
-    "7364:1": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
-    },
-    "7364:2": {
-      "divide by zero encountered in scalar divide": 66,
-      "invalid value encountered in scalar multiply": 66
+      "divide by zero encountered in scalar divide": 198,
+      "invalid value encountered in scalar multiply": 198
     }
   }
 }
