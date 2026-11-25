@@ -25,7 +25,7 @@ We use grouped six-fold cross-validation on 943 Feynman formulas to compare a po
 
 ![Fitted exponential decay rates for seven Feynman branches and five comparison collections, with individual bootstrap intervals](writeup/figures/beta_by_branch.png)
 
-*The bars show nominal 95% bootstrap intervals for individual fits. The figure uses the decay-rate analysis snapshot that preceded the latest catalogue review.*
+*The bars show nominal 95% bootstrap intervals for individual fits. The branch estimates use the Codex labels.*
 
 ## Explore and reproduce
 

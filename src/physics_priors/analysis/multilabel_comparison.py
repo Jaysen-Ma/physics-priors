@@ -1,4 +1,4 @@
-"""Reproduce the matched Feynman comparison of three branch labelling schemes."""
+"""Reproduce the Feynman prior comparison using Codex branch labels."""
 
 from collections import Counter, defaultdict
 import hashlib
@@ -26,7 +26,7 @@ KATZ_WARNINGS = {
 }
 FOLDS = ROOT / 'data' / 'priors' / 'feynman_multilabel_folds.json'
 DOMAINS = sorted(feynman.ORDER)
-SCHEMES = ('earlier', 'fresh_single', 'multilabel')
+SCHEMES = ('multilabel', 'primary_only')
 
 
 def load_design(labels_path=feynman.LABELS, fold_path=FOLDS):
@@ -38,24 +38,22 @@ def load_design(labels_path=feynman.LABELS, fold_path=FOLDS):
         raise ValueError('The label file or prior mixture differs from the frozen multilabel study.')
 
     assignments = [(ident, group) for group, ids in plan['groups'].items() for ident in ids]
-    earlier = plan['historical_control']
-    if Counter(ident for ident, _ in assignments) != Counter(earlier.keys()):
-        raise ValueError('The frozen groups and historical control must cover the same roster once.')
     by_id = dict(assignments)
+    if len(assignments) != len(by_id):
+        raise ValueError('A formula can belong to only one frozen group.')
     # Keep the label-file order used in the original experiment's floating-point reductions.
     formulas = {record.id: record.formula for record, _ in catalogue}
     records = labels.values()
     eligible = {row['id'] for row in records if row['primary']}
-    if earlier.keys() - eligible or set(earlier.values()) - set(DOMAINS):
-        raise ValueError('The historical control must provide a valid label for each matched formula.')
+    if by_id.keys() - eligible:
+        raise ValueError('Each formula in the fold plan must have a Codex branch label.')
     rows = []
     for row in records:
         ident, primary, tags = row['id'], row['primary'], row['branches']
         if ident in by_id:
             prefix = prefix_labels(normalized_tree(formulas[ident]))
             rows.append({'id': ident, 'group': by_id[ident], 'prefix': prefix,
-                         'shape': tuple(tree_events(prefix)), 'earlier': [earlier[ident]],
-                         'fresh_single': [primary], 'multilabel': tags})
+                         'shape': tuple(tree_events(prefix)), 'primary_only': [primary], 'multilabel': tags})
     provenance = {
         'n_catalogue_formulas': len(records),
         'n_labelled': sum(bool(row['branches']) for row in records),

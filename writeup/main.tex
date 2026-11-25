@@ -27,7 +27,7 @@
 \end{center}
 
 \begin{abstract}
-Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 968 assigned to seven branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula ledger for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using grouped six-fold cross-validation on 968 branch-labelled Feynman formulas. The pooled prior learns operator arrangements from training formulas across all branches, and the branch-dependent prior adjusts those probabilities using the subset of those training formulas from the relevant branch. We compare the probabilities the two priors assign to each held-out expression tree. The branch-dependent prior assigns 1.26 times as much probability as the pooled prior on a geometric-average basis. It also assigns higher probabilities on average in all seven branches, suggesting that branch information helps describe equation forms within the fields studied.
+Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 967 assigned to seven branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula ledger for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using grouped six-fold cross-validation on 943 branch-labelled Feynman formulas. The pooled prior learns operator arrangements from training formulas across all branches, and the branch-dependent prior adjusts those probabilities using the subset of those training formulas from the relevant branch. We compare the probabilities the two priors assign to each held-out expression tree. The branch-dependent prior assigns 1.34 times as much probability as the pooled prior on a geometric-average basis. It assigns higher probabilities on average in six of the seven branches, suggesting that branch information helps describe equation forms within the fields studied.
 \end{abstract}
 
 \section{Introduction}
@@ -43,7 +43,7 @@ At $\beta=0$, all operator types in the fit have the same frequency. At large $\
 
 We revisit the gap to examine whether a common decay rate can describe equations across physics, a question that informs whether we should build one prior for physics or adapt it to individual branches. We estimate the decay rate by least squares on the log frequencies and estimate uncertainty by resampling whole equations. This computationally simpler procedure gives rates close to the published simulation-based estimates for the Feynman benchmark and the inflationary potentials and reproduces the gap between them~\citep{constantin2026}.
 
-To make the comparisons reproducible and support further analysis, we curate a catalogue that includes the 100-expression Feynman benchmark, 76 equations from Wikipedia, 70 inflationary potentials and 37 expressions for proposed $f(R)$ gravity models. We expand the Feynman benchmark with formulas from all three volumes of \textit{The Feynman Lectures on Physics}, bringing the collection to about 1,000 expressions, of which 968 are assigned to seven physics branches~\citep{udrescu2020,feynman}. We make the catalogue available in a \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula ledger} where readers can search expressions, trace their sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity.
+To make the comparisons reproducible and support further analysis, we curate a catalogue that includes the 100-expression Feynman benchmark, 76 equations from Wikipedia, 70 inflationary potentials and 37 expressions for proposed $f(R)$ gravity models. We expand the Feynman benchmark with formulas from all three volumes of \textit{The Feynman Lectures on Physics}, bringing the collection to about 1,000 expressions, of which 967 are assigned to seven physics branches~\citep{udrescu2020,feynman}. We make the catalogue available in a \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula ledger} where readers can search expressions, trace their sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity.
 
 We first examine whether the gap is sensitive to constant conventions. Setting $c=\hbar=1$ where applicable and removing the common amplitude prefactor from the inflationary potentials changes the gap with the Feynman benchmark very little. The $f(R)$ collection, another set of proposed forms for a single physical quantity, gives a similarly low fitted rate~\citep{sotiriou2010}. With 37 expressions, its bootstrap interval is wide enough to span both the inflationary and Feynman benchmark estimates. The comparison leaves the cause of the gap open.
 
@@ -51,7 +51,7 @@ Constantin et al. also suggested that $\beta$ could vary with energy scale~\cite
 
 This variation motivates building a prior for a new symbolic regression task that is adapted to its known physics branch. We compare a pooled prior that learns operator arrangements across all training branches with a branch-dependent prior that adjusts those probabilities using the relevant branch's subset of the same training formulas.
 
-We evaluate both priors on 968 branch-labelled Feynman formulas using grouped six-fold cross-validation. We keep equivalent and related formulas together and compare the probabilities the two priors assign to each held-out expression tree. On a geometric-average basis, the branch-dependent prior assigns 1.26 times as much probability as the pooled prior. The ratio exceeds one within each of the seven branches, suggesting that branch information helps describe equation forms in the Feynman collection.
+We evaluate both priors on 943 branch-labelled Feynman formulas using grouped six-fold cross-validation. We keep equivalent and related formulas together and compare the probabilities the two priors assign to each held-out expression tree. On a geometric-average basis, the branch-dependent prior assigns 1.34 times as much probability as the pooled prior. The ratio exceeds one in six of the seven branches, suggesting that branch information helps describe equation forms in the Feynman collection.
 
 Section~\ref{sec:data} describes the sources of the equation catalogues and how we selected expressions. It explains how we assigned Feynman formulas to physics branches and what the public formula ledger records. Section~\ref{sec:decay} explains how we estimate exponential decay rates and their uncertainty. We revisit the inflationary gap and compare the fitted rates across the seven Feynman branches. Section~\ref{sec:priors} describes how a pooled prior learns operator arrangements in expression trees. We then use the relevant branch's subset of the same training formulas to adapt that prior. Section~\ref{sec:prior-evaluation} describes the grouped six-fold evaluation on held-out formulas. It reports how much probability the branch-dependent prior assigns relative to the pooled prior, both overall and within each branch. Section~\ref{sec:discussion} discusses what the decay-rate and prior comparisons tell us about the structure of physics equations. It considers how these findings might inform symbolic regression and what remains to be tested.
 
@@ -76,8 +76,8 @@ After extracting expressions from the three volumes of \textit{The Feynman Lectu
 
 We consider seven physics branches covering classical mechanics, special relativity, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics. We record separate categories for expressions outside these branches and flag unresolved cases. Of the \nFeynAll{} expressions, 967 receive at least one of the seven branch labels and 221 receive more than one. The collection-wide decay-rate fit counts each expression once. Each branch fit includes every expression carrying that branch's label.
 
-\subsection{Formula ledger and analysis inputs}
-The \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula ledger} lets readers search the catalogues, follow links to the sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity. Lecture entries identify the volume, chapter and equation where available. The analysis inputs record the formulas, branch labels and groups of related expressions used in the prior comparison.
+\subsection{Formula ledger}
+The \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula ledger} lets readers search the catalogues, follow links to the sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity. Lecture entries identify the volume, chapter and equation where available. We also release the formula catalogue, the Codex branch labels and the fold assignments used to keep related formulas together in the prior evaluation.
 
 \section{Variation in operator-frequency decay rates}\label{sec:decay}
 
@@ -108,7 +108,7 @@ The ranking is constructed separately for each collection or branch. Consequentl
 We constrain the numerical optimisation to $0\leq\beta\leq5$ and flag fits near either boundary. Calculating this fitted summary does not require operator occurrences within an equation to be independent. The assumptions needed to interpret its uncertainty enter through the resampling procedure below.
 
 \subsubsection{Uncertainty from equation resampling}
-We estimate uncertainty by resampling whole equations within each collection or branch. Each bootstrap sample contains the same number of equations as the original group, drawn with replacement. An equation can therefore appear more than once in a sample, while another may be absent.
+We estimate uncertainty by resampling whole equations. For a collection-wide fit, we draw as many equations as the collection contains, with replacement. For the branch fits, we draw from the 967 branch-labelled formulas. Each selected formula contributes to all branches it belongs to, so the same draw is shared across branches. The number of formulas in each branch can vary between replicates.
 
 For each sample, we recount the operators, determine which types are present, rank their frequencies and refit $\beta$. Repeating this procedure \bootN{} times gives a distribution of fitted rates. We report the fit to the original collection, the standard deviation of the bootstrap estimates as a standard error, and their 2.5th and 97.5th percentiles as an individual 95\% bootstrap interval.
 
@@ -125,18 +125,18 @@ For reproducibility, we use random seed \bootSeed{} and calculate percentiles by
 \subsubsection{Comparison with the published estimates}
 We first examine whether the lower decay rate reported for Encyclopaedia Inflationaris is reproduced using the procedure above. Figure~\ref{fig:main} places the Feynman benchmark and inflationary estimates alongside the other physics comparisons. Appendix~\ref{app:sensitivity} gives the complete set of estimates.
 
-The Feynman benchmark gives a fitted rate of $\hat\beta=\betaFeynBench$, with an individual 95\% bootstrap interval of $[\loFeynBench,\hiFeynBench]$. Encyclopaedia Inflationaris gives $\hat\beta=\betaEI$, with an interval of $[\loEI,\hiEI]$. The point estimates differ by 0.073, and their individual intervals do not overlap. The lower inflationary estimate is therefore reproduced with log least squares and equation resampling.
+The Feynman benchmark gives a fitted rate of $\hat\beta=\betaFeynBench$, with an individual 95\% bootstrap interval of $[\loFeynBench,\hiFeynBench]$. Encyclopaedia Inflationaris gives $\hat\beta=\betaEI$, with an interval of $[\loEI,\hiEI]$. The point estimates differ by 0.075, and their individual intervals do not overlap. The lower inflationary estimate is therefore reproduced with log least squares and equation resampling.
 
 A lower decay rate corresponds to a slower decline in frequency with rank. Under the fitted exponential model, operator occurrences are therefore less concentrated among the most frequent types in the inflationary collection than in the Feynman benchmark. The Leemis collection of probability distributions also gives a fitted rate of $\betaLeemis$. The decay rate is a summary that can be compared across both mathematical and physical collections.
 
 \subsubsection{Changes to constant conventions}\label{sec:units}
 One proposed explanation concerns the conventions used to write the equations. Physical constants and amplitude prefactors contribute to the expression trees, so removing them can change the operator counts and the fitted decay rate. We examine two such changes.
 
-First, we set $c=\hbar=1$ in the textbook expressions. This affects 32 expressions in the Feynman benchmark and lowers its fitted rate from 0.342 to 0.332. Only two expressions in the Wikipedia collection are affected; its rate rounds to 0.315 both before and after the change.
+First, we set $c=\hbar=1$ in the textbook expressions. This affects 32 expressions in the Feynman benchmark and lowers its fitted rate from 0.342 to 0.332. Two expressions in the Wikipedia collection are affected, and its rate changes by less than 0.001.
 
-Second, we remove the common amplitude prefactor $M^4$ from the inflationary potentials by setting $M=1$. This affects all 70 potentials and lowers the fitted rate from 0.269 to 0.261.
+Second, we remove the common amplitude prefactor $M^4$ from the inflationary potentials by setting $M=1$. This affects all 70 potentials and lowers the fitted rate from 0.267 to 0.259.
 
-After both changes, the difference between the Feynman benchmark and the inflationary collection is 0.071, compared with 0.073 before the changes. These conventions therefore account for little of the observed difference in point estimates. Other choices of algebraic representation may also affect operator counts, but they are not examined in this comparison.
+After both changes, the difference between the Feynman benchmark and the inflationary collection is 0.072, compared with 0.075 before the changes. These conventions therefore account for little of the observed difference in point estimates. Other choices of algebraic representation may also affect operator counts, but they are not examined in this comparison.
 
 \subsubsection{Comparison with modified gravity}\label{sec:fr}
 We next consider the proposed explanations involving the inflationary collection's focus on one physical concept and its inclusion of hypothetical models. The $f(R)$ gravity collection shares these features: its expressions are proposed forms of a curvature function entering the gravitational action.
@@ -151,16 +151,14 @@ Together, the comparisons reproduce the lower inflationary estimate and show tha
 
 The original study proposed differences in energy scale as one possible explanation for the lower inflationary decay rate~\citep{constantin2026}. Inflation also concerns a different branch of physics from much of the material in the broader equation collections. This motivates us to examine whether fitted decay rates vary across physics branches. We use the expanded Feynman collection because the expressions in the Feynman Lectures are publicly accessible~\citep{feynman}. Branch labels provide a way to explore variation with physical domain, although they do not isolate the effect of energy scale.
 
-The fitted rates show a pattern suggestive of two broad groups (Figure~\ref{fig:main}). Quantum mechanics, electromagnetism, waves and optics, and classical mechanics have estimates between 0.325 and 0.360, with overlapping individual bootstrap intervals. Thermodynamics and kinetic theory and fluid and continuum mechanics have higher estimates, at 0.403 and 0.422, and their intervals also overlap.
-
-The separation between these groups is incomplete. Special relativity has a relatively wide interval that overlaps estimates in both groups. The plot therefore suggests a grouping of the fitted rates, without establishing a sharp division between branches. Figure~\ref{fig:main} also includes the original Feynman benchmark, the full expanded Feynman collection, and the modified-gravity, inflationary and Wikipedia collections for comparison.
+The fitted rates range from 0.333 in quantum mechanics to 0.445 in special relativity (Figure~\ref{fig:main}). Thermodynamics and kinetic theory and fluid and continuum mechanics have fitted rates of 0.399 and 0.406, respectively. Both are above the estimates for electromagnetism, waves and optics, and classical mechanics. The individual bootstrap intervals overlap across several branches, and the interval for special relativity is especially wide. Figure~\ref{fig:main} also shows five comparison collections.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.8\linewidth]{beta_by_branch.pdf}
 \caption{Fitted rates for the seven Feynman branches (circles) and five comparison collections (diamonds, below the dividing line), with nominal individual 95\% equation-bootstrap intervals. The comparison collections are the 100-expression Feynman benchmark, the full expanded Feynman collection, $f(R)$ gravity, Encyclopaedia Inflationaris and Wikipedia. The benchmark is contained in the expanded collection, whose expressions also supply the branch estimates.}\label{fig:main}
 \end{figure}
 
-Additional checks examine the effects of branch classification and relationships between equations from the same chapter. The special-relativity estimate changes substantially when ambiguously classified chapters are removed or reassigned. Resampling whole chapters widens the quantum- and fluid-mechanics intervals, while leaving them separated. Appendix~\ref{app:sensitivity} gives the procedures and results. These checks help distinguish patterns in the selected expressions from conclusions that would require broader evidence about each physics branch.
+Resampling source chapters widens the intervals for some branches, including quantum mechanics and fluid and continuum mechanics. Appendix~\ref{app:sensitivity} also compares the fitted rates when we use only each formula's primary label or change which equations are included.
 
 The variation in operator frequencies motivates testing whether branch labels also help describe the arrangement of operators in individual expressions.
 
@@ -186,7 +184,7 @@ The sum includes the pooled model among its components. The nonnegative mixture 
 \section{Evaluating priors on held-out equations}\label{sec:prior-evaluation}
 
 \subsection{Grouped cross-validation}
-We compare the earlier labels, the fresh single labels and the fresh multiple labels on the 943 Feynman expressions assigned to at least one of the seven branches under both the earlier and fresh schemes. All three schemes use the same six folds. We group expressions using known formula families, identified algebraic matches and source-section information. We assign each group to a single fold before constructing any branch-specific training sets. Every label attached to an expression follows it into the same fold.
+We use a fixed evaluation subset of 943 branch-labelled Feynman expressions and divide them into six folds. We group expressions using known formula families, identified algebraic matches and source-section information. We assign each group to a single fold before constructing any branch-specific training sets. Every label attached to an expression follows it into the same fold.
 
 We hold out each fold in turn. The pooled prior uses each training expression once. Each branch adjustment uses the subset of those expressions carrying its label, so an expression can contribute to more than one branch adjustment. We remove training expressions whose tree encoding is identical to one in the corresponding evaluation set. We apply this check both to the outer test folds and to the three inner validation folds used to learn the mixture weights.
 
@@ -205,29 +203,29 @@ R=\exp\!\left(\frac{1}{N}\sum_{i=1}^{N}\Delta_i\right).
 This gives each expression the same weight in the overall comparison. Within each branch, we take the geometric mean of the ratios from that branch's prior for the held-out expressions carrying its label.
 
 \subsection{Preliminary results}
-On the same 943 held-out expressions, the overall probability ratio is 1.29 for the earlier labels, 1.42 for the fresh single labels and 1.34 for the fresh multiple labels (Table~\ref{tab:prior-ratios}). With multiple labels, the ratio exceeds one in six of the seven branches. The ratio for waves and optics is 0.97. The overall improvement over the earlier labels is concentrated in the largest test fold, and the multiple-label scheme gives a higher mean log probability gain in two of the six folds.
+Across the 943 held-out expressions, the geometric mean probability ratio for the branch-dependent prior relative to the pooled prior is 1.34 (Table~\ref{tab:prior-ratios}). The ratio exceeds one in six of the seven branches. For waves and optics it is 0.97.
 
 \begin{table}[H]\centering\small
-\begin{tabular}{lrrr}
+\begin{tabular}{lr}
 \toprule
-Branch & Earlier labels & Fresh single labels & Fresh multiple labels \\
+Branch & Probability ratio \\
 \midrule
-Classical mechanics & 1.06 & 1.10 & 1.13 \\
-Electromagnetism & 1.20 & 1.13 & 1.15 \\
-Fluid and continuum mechanics & 1.19 & 1.08 & 1.10 \\
-Quantum mechanics & 1.50 & 1.42 & 1.29 \\
-Special relativity & 2.31 & 5.61 & 5.32 \\
-Thermodynamics and kinetic theory & 1.26 & 2.03 & 2.35 \\
-Waves and optics & 0.97 & 1.03 & 0.97 \\
+Classical mechanics & 1.13 \\
+Electromagnetism & 1.15 \\
+Fluid and continuum mechanics & 1.10 \\
+Quantum mechanics & 1.29 \\
+Special relativity & 5.32 \\
+Thermodynamics and kinetic theory & 2.35 \\
+Waves and optics & 0.97 \\
 \midrule
-Overall & 1.29 & 1.42 & 1.34 \\
+Overall & 1.34 \\
 \bottomrule
 \end{tabular}
-\caption{Geometric mean probability ratios relative to the pooled prior on the common set of 943 held-out expressions. The formulas included in each branch reflect the assignments of the corresponding labelling scheme.}
+\caption{Geometric mean probability ratios relative to the pooled prior for the 943 held-out expressions. The branch rows include the expressions carrying each branch label.}
 \label{tab:prior-ratios}
 \end{table}
 
-The earlier single-label evaluation gave an overall ratio of 1.26 using 968 expressions and a separate fold assignment. The comparison above uses the common set of 943 expressions and also keeps identical tree encodings apart during training and evaluation. Appendix~\ref{app:prior-probability-mixture} reports the comparison in which all applicable branch priors are combined before scoring.
+Appendix~\ref{app:prior-probability-mixture} reports the comparison in which all applicable branch priors are combined before scoring.
 
 \section{Discussion}\label{sec:discussion}
 The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The seven-branch comparison shows variation among the selected Feynman expressions. Its interpretation depends on how equations are assigned to branches, particularly in special relativity.
@@ -245,9 +243,6 @@ The expression-prior comparison gives a more direct test of whether branch infor
 The catalogue records the expression and its source reference. Lectures entries include volume, chapter and equation identifiers. The additional Wikipedia entries follow the original release cutoff in the same alphabetical list. The source references and counting metadata are retained with the individual records.
 
 Physical constants such as $c$, $\hbar$ and $G$ are classified as constants. The symbol $q_e$ retains its classification as a variable in the benchmark. Time averages written as $\langle x\rangle$ are represented by a single symbol. In the modified-gravity catalogue, $R$ denotes curvature rather than the gas constant, and model parameters are counted as variables. The catalogue stores the full curvature function: when a source writes $F(R)=R+f(R)$, the correction $f(R)$ is combined with $R$. Optional additional terms proposed later in a source are not included in the defining expression unless that expression itself contains them.
-
-For branch assignment, the benchmark expression from the relativistic-electrodynamics chapter in Volume~I is assigned to special relativity. The corresponding Lectures chapters---Volume~I, Chapter~34, and Volume~II, Chapters~25, 26 and 28---receive the same classification. The catalogue records ambiguous assignments for the sensitivity analysis.
-
 
 Table~\ref{tab:frsources} identifies the source used to transcribe each modified-gravity expression. Where a review is cited, it is the transcription source; the citation does not attribute the original proposal of every model to that review. The entry identifiers match those in the catalogue.
 
@@ -340,53 +335,45 @@ Figure~\ref{fig:rf} shows the distributions underlying these estimates. Each bra
 \end{figure}
 
 \subsection{Source-chapter resampling}
-We resample whole chapters jointly across branches. Each chapter is assigned to a stratum corresponding to the branch containing most of its retained equations, with ties resolved using the recorded branch order. Within each stratum, we sample the original number of chapters with replacement. Every equation from a selected chapter receives the same multiplicity, including equations assigned to other branches. This preserves dependence induced by the 11 chapters represented in more than one branch; the number of equations per branch can vary between replicates.
+We resample whole chapters jointly across branches. For resampling, we place each chapter in a stratum using the most common Codex branch label among its retained equations. Ties follow the recorded branch order. Within each stratum, we sample the original number of chapters with replacement. Every equation from a selected chapter receives the same multiplicity, including equations assigned to other branches. This preserves dependence induced by the 54 chapters represented in more than one branch; the number of equations per branch can vary between replicates.
 
-The individual chapter-bootstrap interval is [0.375, 0.523] for fluid and continuum mechanics and [0.279, 0.356] for quantum mechanics. Both are wider than their equation-bootstrap intervals. The four chapters represented in fluid and continuum mechanics provide a small number of resampling units, so this check gives limited information about its uncertainty.
+The individual chapter-bootstrap intervals are [0.355, 0.473] for fluid and continuum mechanics and [0.287, 0.365] for quantum mechanics. Both are wider than their equation-bootstrap intervals, and they overlap slightly.
 \begin{figure}[H]\centering
 \includegraphics[width=0.85\linewidth]{chapter_bootstrap.pdf}
 \caption{Equation and joint chapter bootstrap intervals at the nominal individual 95\% level. Labels give the number of source chapters represented in each branch.}\label{fig:chapter}
 \end{figure}
 
 \subsection{Branch assignments and selection}
-The alternative specifications remove chapters with ambiguous assignments, reassign those chapters, remove expressions flagged for averages or imaginary units, or remove the Volume~III lecture additions. The saved Volume~III comparison retains the benchmark equations, including those sourced from Volume~III. Each specification uses the same log-least-squares fitting procedure. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals. The original assignments are used in the main analysis.
+We repeat the fits using only each formula's primary Codex label, excluding formulas flagged for averages or imaginary units, or excluding all formulas sourced from Volume~III. The last check uses the source references of both the lecture and benchmark formulas. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals.
 
 \begin{table}[H]\centering\scriptsize
 \begin{tabular}{llrrl}\toprule
 Specification & Branch & Expr. & $\hat\beta$ & Individual interval\\\midrule
-Ambiguous chapters removed & SR & 32 & 0.231 & [0.204, 0.289] \\
- & QM & 151 & 0.320 & [0.284, 0.350] \\
- & EM & 198 & 0.315 & [0.302, 0.351] \\
- & Waves & 48 & 0.291 & [0.265, 0.341] \\
- & Classical & 75 & 0.354 & [0.298, 0.390] \\
- & Thermo & 61 & 0.405 & [0.368, 0.461] \\
- & Fluid & 42 & 0.422 & [0.377, 0.483] \\
+Primary Codex label only & SR & 83 & 0.442 & [0.326, 0.475] \\
+ & QM & 211 & 0.313 & [0.278, 0.342] \\
+ & EM & 296 & 0.336 & [0.323, 0.368] \\
+ & Waves & 127 & 0.336 & [0.305, 0.362] \\
+ & Classical & 113 & 0.367 & [0.306, 0.384] \\
+ & Thermo & 89 & 0.392 & [0.361, 0.429] \\
+ & Fluid & 48 & 0.405 & [0.362, 0.468] \\
 \midrule
-Ambiguous chapters reassigned & SR & 32 & 0.231 & [0.204, 0.289] \\
- & QM & 182 & 0.335 & [0.299, 0.364] \\
- & EM & 343 & 0.336 & [0.315, 0.359] \\
- & Waves & 63 & 0.303 & [0.283, 0.345] \\
- & Classical & 75 & 0.354 & [0.298, 0.388] \\
- & Thermo & 89 & 0.353 & [0.321, 0.388] \\
- & Fluid & 44 & 0.419 & [0.374, 0.478] \\
+Notation-flagged expressions removed & SR & 87 & 0.445 & [0.330, 0.478] \\
+ & QM & 170 & 0.318 & [0.292, 0.347] \\
+ & EM & 379 & 0.355 & [0.336, 0.377] \\
+ & Waves & 140 & 0.374 & [0.336, 0.399] \\
+ & Classical & 108 & 0.373 & [0.322, 0.390] \\
+ & Thermo & 92 & 0.397 & [0.365, 0.433] \\
+ & Fluid & 51 & 0.405 & [0.358, 0.467] \\
 \midrule
-Notation-flagged expressions removed & SR & 88 & 0.395 & [0.314, 0.437] \\
- & QM & 164 & 0.317 & [0.284, 0.341] \\
- & EM & 273 & 0.330 & [0.318, 0.361] \\
- & Waves & 99 & 0.362 & [0.320, 0.393] \\
- & Classical & 97 & 0.365 & [0.309, 0.386] \\
- & Thermo & 69 & 0.400 & [0.368, 0.449] \\
- & Fluid & 39 & 0.422 & [0.380, 0.500] \\
-\midrule
-Volume III lecture additions removed & SR & 89 & 0.382 & [0.321, 0.431] \\
- & QM & 26 & 0.349 & [0.319, 0.426] \\
- & EM & 312 & 0.325 & [0.313, 0.353] \\
- & Waves & 126 & 0.346 & [0.303, 0.368] \\
- & Classical & 105 & 0.360 & [0.296, 0.377] \\
- & Thermo & 73 & 0.403 & [0.370, 0.451] \\
- & Fluid & 42 & 0.422 & [0.378, 0.481] \\
+Volume III expressions removed & SR & 83 & 0.461 & [0.311, 0.480] \\
+ & QM & 43 & 0.377 & [0.341, 0.436] \\
+ & EM & 403 & 0.342 & [0.330, 0.369] \\
+ & Waves & 146 & 0.343 & [0.311, 0.367] \\
+ & Classical & 113 & 0.369 & [0.311, 0.381] \\
+ & Thermo & 92 & 0.394 & [0.363, 0.431] \\
+ & Fluid & 54 & 0.406 & [0.360, 0.458] \\
 \bottomrule\end{tabular}
-\caption{Alternative branch assignments and selection rules. Each entry reports the fitted rate and its nominal individual 95\% equation-bootstrap interval. Waves denotes waves and optics; fluid denotes fluid and continuum mechanics.}\label{tab:assignment}
+\caption{Sensitivity to label selection and formula inclusion. Each entry reports the fitted rate and its nominal individual 95\% equation-bootstrap interval. Waves denotes waves and optics. Fluid denotes fluid and continuum mechanics.}\label{tab:assignment}
 \end{table}
 
 \section{Bootstrap calibration}\label{app:calibration}
@@ -416,11 +403,11 @@ recovering Eq.~\eqref{eq:law}. The scaling of both parameters matters: if $b$ in
 
 This limiting relationship helps interpret comparisons of the Zipf--Mandelbrot and exponential models. Whether fitted parameters for a particular corpus approach this regime requires examining their values relative to the observed rank range. The limiting argument alone makes no claim about the empirical preference between the models.
 
-\section{Prior fitting and split sensitivity}\label{app:prior-fitting}
+\section{Prior fitting and sensitivity checks}\label{app:prior-fitting}
 
 One component, $P_{\mathrm{geom},d}$, takes the ratio of the shallow branch and pooled probabilities, raises it to the power $0.15$, and uses it to adjust the deeper pooled probabilities before normalising within each context. In each outer training set, three further group-based folds supply the validation predictions used to fit the mixture weights. We estimate the weights on validation predictions within the training set, giving each training family equal weight in the validation objective and regularising toward the pooled model. The fixed 25\% share comes from exploratory comparisons on this corpus.
 
-A three-part split of the same catalogue gave an overall ratio of 1.27. For classical mechanics, the ratio was 0.99 with three parts and 1.06 with six parts. We adopted the six-part split after comparing both results. The direction of the change in probability for classical mechanics depends on the split.
+As a sensitivity check, we train and evaluate with only each expression's primary Codex label. On the same 943 formulas and six folds, this gives an overall probability ratio of 1.42.
 
 \subsection{Averaging probabilities across branches}\label{app:prior-probability-mixture}
 When all branch labels of an expression are supplied together, we can average the probabilities from the corresponding priors,

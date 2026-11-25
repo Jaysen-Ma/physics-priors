@@ -53,7 +53,7 @@ To redraw plots from the saved summary or run the separate interval-calibration 
 .venv/bin/physics-priors-calibrate
 ```
 
-The saved decay-rate figures and data under `results/exponential_fit/` correspond to the write-up snapshot. A fresh fit uses the Codex labels. Within each bootstrap replicate, a formula receives one resampling count shared across all of its branches.
+The saved decay-rate figures and data under `results/exponential_fit/` use the Codex labels. Within each bootstrap replicate, a formula receives one resampling count shared across all of its branches.
 
 ## Compare priors on held-out formulas
 
@@ -61,7 +61,7 @@ The saved decay-rate figures and data under `results/exponential_fit/` correspon
 OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare
 ```
 
-The [expression-level labels](../data/catalog/feynman_branches.json) cover all 1,016 benchmark and lecture expressions. The main comparison uses all applicable Codex labels for the same 943 expressions. The scorer also reproduces the two controls on that roster using only the primary Codex label or the frozen historical labels in the fold plan. The [frozen fold plan](../data/priors/feynman_multilabel_folds.json) gives six outer folds and three inner folds for each outer training set. Related formulas and all labels of each formula stay together. Before each fit, the scorer removes training expressions with the same model encoding as an expression in the corresponding evaluation set.
+The [expression-level labels](../data/catalog/feynman_branches.json) cover all 1,016 benchmark and lecture expressions. The main comparison uses all applicable Codex labels for a fixed evaluation subset of 943 expressions. As a sensitivity check, the scorer also repeats the comparison using only the primary Codex label for each formula in that subset. The [frozen fold plan](../data/priors/feynman_multilabel_folds.json) gives six outer folds and three inner folds for each outer training set. Related formulas and all labels of each formula stay together. Before each fit, the scorer removes training expressions with the same model encoding as an expression in the corresponding evaluation set.
 
 The pooled prior uses each training formula once. Each branch adjustment uses the subset carrying its label, with a fixed 25% geometric mixture. The scorer averages the log probability ratios across applicable branches within each formula. It then averages those formula-level log ratios and exponentiates the overall mean. It also reports the alternative that averages the branch probabilities before taking the log.
 

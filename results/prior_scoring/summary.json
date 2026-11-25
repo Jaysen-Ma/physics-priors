@@ -3,138 +3,8 @@
   "n_labelled": 967,
   "n_multilabel": 221,
   "labels_sha256": "a8b635a9f2ad7087486ac23bd0b1f2ef5548d88cb5326b494652df053f852b6c",
-  "fold_plan_sha256": "de66163c1a9fc8fd55a64a899a7dbff4d90fc46df19d8292b30f8b825850a4f9",
+  "fold_plan_sha256": "4e6896165ea8680c129f09ee95f883ec4523a4b375345f2fb5ce72aa7e77c9fc",
   "schemes": {
-    "earlier": {
-      "n_formulae": 943,
-      "n_formula_tag_scores": 943,
-      "overall_probability_ratio": 1.2889134857859859,
-      "equal_mixture_probability_ratio": 1.2889134857859859,
-      "mean_pooled_log_probability": -13.610922298753993,
-      "per_domain_ratio": {
-        "Classical": 1.0635411988906651,
-        "EM": 1.2005605689788825,
-        "Fluid+continuum": 1.19260913155845,
-        "QM": 1.5035215792182421,
-        "SR": 2.3064341801245742,
-        "Thermo": 1.2588039245034106,
-        "Waves+optics": 0.9707552190601398
-      },
-      "per_domain_n": {
-        "Classical": 104,
-        "EM": 306,
-        "Fluid+continuum": 42,
-        "QM": 216,
-        "SR": 82,
-        "Thermo": 72,
-        "Waves+optics": 121
-      },
-      "fold_sizes": {
-        "0": {
-          "train": 602,
-          "test": 130,
-          "purged": 211
-        },
-        "1": {
-          "train": 613,
-          "test": 148,
-          "purged": 182
-        },
-        "2": {
-          "train": 627,
-          "test": 111,
-          "purged": 205
-        },
-        "3": {
-          "train": 469,
-          "test": 267,
-          "purged": 207
-        },
-        "4": {
-          "train": 673,
-          "test": 110,
-          "purged": 160
-        },
-        "5": {
-          "train": 558,
-          "test": 177,
-          "purged": 208
-        }
-      },
-      "katz_notices": {
-        "0": 110,
-        "1": 396,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 506
-      }
-    },
-    "fresh_single": {
-      "n_formulae": 943,
-      "n_formula_tag_scores": 943,
-      "overall_probability_ratio": 1.4191563164071244,
-      "equal_mixture_probability_ratio": 1.4191563164071244,
-      "mean_pooled_log_probability": -13.610922298753993,
-      "per_domain_ratio": {
-        "Classical": 1.0998236051596162,
-        "EM": 1.132019607919647,
-        "Fluid+continuum": 1.0841246506235585,
-        "QM": 1.4222158606712565,
-        "SR": 5.610164587945313,
-        "Thermo": 2.0250049846071536,
-        "Waves+optics": 1.0254308015784408
-      },
-      "per_domain_n": {
-        "Classical": 105,
-        "EM": 288,
-        "Fluid+continuum": 42,
-        "QM": 211,
-        "SR": 82,
-        "Thermo": 88,
-        "Waves+optics": 127
-      },
-      "fold_sizes": {
-        "0": {
-          "train": 602,
-          "test": 130,
-          "purged": 211
-        },
-        "1": {
-          "train": 613,
-          "test": 148,
-          "purged": 182
-        },
-        "2": {
-          "train": 627,
-          "test": 111,
-          "purged": 205
-        },
-        "3": {
-          "train": 469,
-          "test": 267,
-          "purged": 207
-        },
-        "4": {
-          "train": 673,
-          "test": 110,
-          "purged": 160
-        },
-        "5": {
-          "train": 558,
-          "test": 177,
-          "purged": 208
-        }
-      },
-      "katz_notices": {
-        "0": 792,
-        "1": 0,
-        "2": 660,
-        "3": 132,
-        "4": 0,
-        "5": 220
-      }
-    },
     "multilabel": {
       "n_formulae": 943,
       "n_formula_tag_scores": 1170,
@@ -198,6 +68,71 @@
         "3": 352,
         "4": 0,
         "5": 396
+      }
+    },
+    "primary_only": {
+      "n_formulae": 943,
+      "n_formula_tag_scores": 943,
+      "overall_probability_ratio": 1.4191563164071244,
+      "equal_mixture_probability_ratio": 1.4191563164071244,
+      "mean_pooled_log_probability": -13.610922298753993,
+      "per_domain_ratio": {
+        "Classical": 1.0998236051596162,
+        "EM": 1.132019607919647,
+        "Fluid+continuum": 1.0841246506235585,
+        "QM": 1.4222158606712565,
+        "SR": 5.610164587945313,
+        "Thermo": 2.0250049846071536,
+        "Waves+optics": 1.0254308015784408
+      },
+      "per_domain_n": {
+        "Classical": 105,
+        "EM": 288,
+        "Fluid+continuum": 42,
+        "QM": 211,
+        "SR": 82,
+        "Thermo": 88,
+        "Waves+optics": 127
+      },
+      "fold_sizes": {
+        "0": {
+          "train": 602,
+          "test": 130,
+          "purged": 211
+        },
+        "1": {
+          "train": 613,
+          "test": 148,
+          "purged": 182
+        },
+        "2": {
+          "train": 627,
+          "test": 111,
+          "purged": 205
+        },
+        "3": {
+          "train": 469,
+          "test": 267,
+          "purged": 207
+        },
+        "4": {
+          "train": 673,
+          "test": 110,
+          "purged": 160
+        },
+        "5": {
+          "train": 558,
+          "test": 177,
+          "purged": 208
+        }
+      },
+      "katz_notices": {
+        "0": 792,
+        "1": 0,
+        "2": 660,
+        "3": 132,
+        "4": 0,
+        "5": 220
       }
     }
   },

@@ -16,7 +16,7 @@ This folder holds the equation catalogs used by the analysis and the formula led
 | [catalog/expression-beta.json](catalog/expression-beta.json) | Derived decay-rate and complexity values for the ledger plots. |
 | [wiki_branches.json](wiki_branches.json) | Curated branch labels applied when rebuilding the Wikipedia catalogue. |
 | [catalog/feynman_branches.json](catalog/feynman_branches.json) | Primary and applicable branch labels for all 1,016 retained Feynman expressions. |
-| [priors/feynman_multilabel_folds.json](priors/feynman_multilabel_folds.json) | Formula groups and frozen outer and inner folds for the matched 943-expression comparison, including its fixed historical control. |
+| [priors/feynman_multilabel_folds.json](priors/feynman_multilabel_folds.json) | Formula groups and frozen outer and inner folds for the fixed 943-expression evaluation. |
 | [feynman_lectures_fixes.csv](feynman_lectures_fixes.csv) | Manual corrections applied when the three lecture catalogs are built. |
 
 ## Record format
@@ -38,7 +38,7 @@ The Feynman catalogue, ledger and branch analyses use `catalog/feynman_branches.
 
 The branch codes are the analysis identifiers for classical mechanics (`Classical`), special relativity (`SR`), electromagnetism (`EM`), waves and optics (`Waves+optics`), thermodynamics and kinetic theory (`Thermo`), quantum mechanics (`QM`), and fluid and continuum mechanics (`Fluid+continuum`).
 
-The frozen comparison uses a matched roster of 943 formulas. The fold plan stores the historical control labels for those formulas solely to reproduce that comparison. Its outer map assigns whole formula groups to folds. Each inner map covers the groups available for training after filtering out tree encodings present in the outer test set. The label and fold files include fingerprints for checking the exact study inputs. [Reproduction guide](../docs/reproduction.md)
+The prior evaluation uses a fixed subset of 943 of the 967 branch-labelled formulas. The fold plan records the exact formula IDs and their groups. Its outer map assigns whole formula groups to folds. Each inner map covers the groups available for training after filtering out tree encodings present in the outer test set. The label and fold files include fingerprints for checking the exact study inputs. [Reproduction guide](../docs/reproduction.md)
 
 ## Lecture corrections
 
