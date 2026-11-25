@@ -104,7 +104,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -227,7 +226,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{I}} = \\frac{H_{11} +H_{22}}{2} + \\sqrt{( \\frac{H_{11} -H_{22}}{2} )^2 + H_{12}H_{21}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -275,7 +273,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -398,7 +395,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{II}} = \\frac{H_{11} +H_{22}}{2} - \\sqrt{( \\frac{H_{11} -H_{22}}{2} )^2 + H_{12}H_{21}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -445,7 +441,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -509,7 +504,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{I}} =H_{11}+ \\frac{A^2}{(H_{11}-H_{22})}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -554,7 +548,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -618,7 +611,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{II}} =H_{22}- \\frac{A^2}{(H_{11}-H_{22})}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -663,7 +655,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -727,7 +718,6 @@
       "after_equation": "III.10.9",
       "feynman_latex": "p=i\\sqrt{2mW_H}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -771,7 +761,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -898,7 +887,6 @@
       "after_equation": "III.10.13",
       "feynman_latex": "E^2=p^2c^2+m_\\pi^2c^4",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -944,7 +932,6 @@
         "m_pi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1018,7 +1005,6 @@
       "after_equation": "III.10.13",
       "feynman_latex": "p=im_\\pi c",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1061,7 +1047,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1153,7 +1138,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{I}} =-\\mu\\sqrt{B_x^2+B_y^2+B_z^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "III.10.19",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -1200,7 +1184,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1285,7 +1268,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{II}} =+\\mu\\sqrt{B_x^2+B_y^2+B_z^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1328,7 +1310,6 @@
         "H_11"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -1353,7 +1334,6 @@
       "after_equation": "III.10.19",
       "feynman_latex": "H_{22}=-H_{11}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1394,7 +1374,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1432,7 +1411,6 @@
       "after_equation": "III.10.20",
       "feynman_latex": "H_{11} =-\\mu B_z",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1474,7 +1452,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1505,7 +1482,6 @@
       "after_equation": "III.10.20",
       "feynman_latex": "H_{22} =\\mu B_z",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1549,7 +1525,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1606,7 +1581,6 @@
       "after_equation": "III.10.21",
       "feynman_latex": "H_{12}=\\mu(B_x+iB_y)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1648,7 +1622,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1686,7 +1659,6 @@
       "after_equation": "III.10.24",
       "feynman_latex": "B_z =B\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1729,7 +1701,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1787,7 +1758,6 @@
       "after_equation": "III.10.24",
       "feynman_latex": "B_x =B\\sin\\theta\\cos\\phi",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1831,7 +1801,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1889,7 +1858,6 @@
       "after_equation": "III.10.24",
       "feynman_latex": "B_y =B\\sin\\theta\\sin\\phi",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1932,7 +1900,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1990,7 +1957,6 @@
       "after_equation": null,
       "feynman_latex": "H_{11} =-\\mu B\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2037,7 +2003,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2148,7 +2113,6 @@
       "after_equation": null,
       "feynman_latex": "H_{12} =-\\mu B(\\sin \\theta)(\\cos\\phi-i\\sin\\phi)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2197,7 +2161,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2295,7 +2258,6 @@
       "after_equation": null,
       "feynman_latex": "H_{12}=-\\mu B\\sin\\theta e^{-i\\phi}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2344,7 +2306,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2434,7 +2395,6 @@
       "after_equation": "III.10.31",
       "feynman_latex": "C_1=C_1(0)e^{-iE_{\\mathit{I}}t/\\hbar}=C_1(0)e^{+i\\mu Bt/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2482,7 +2442,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2579,7 +2538,6 @@
       "after_equation": "III.10.31",
       "feynman_latex": "C_2=C_2(0)e^{-iE_{\\mathit{II}}t/\\hbar}=C_2(0)e^{-i\\mu Bt/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 10_ Other Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2623,7 +2581,6 @@
         "B_i_j"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -2654,7 +2611,6 @@
       "after_equation": "III.11.11",
       "feynman_latex": "C_{ij}=A_{ij}+B_{ij}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 11_ More Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2694,7 +2650,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "cos",
@@ -2719,7 +2674,6 @@
       "after_equation": "III.11.33",
       "feynman_latex": "\\langle{x} | {x'}\\rangle=\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 11_ More Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2764,7 +2718,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2875,7 +2828,6 @@
       "after_equation": null,
       "feynman_latex": "C_1=C_1(0)e^{-\\beta t}e^{-i\\alpha t}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 11_ More Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2921,7 +2873,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3045,7 +2996,6 @@
       "after_equation": null,
       "feynman_latex": "C_{m}=\\frac{1}{\\sqrt{2}} (C_1-C_2)= \\frac{1}{2}(e^{-\\beta t}e^{-i\\alpha t}-1)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 11_ More Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3094,7 +3044,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3178,7 +3127,6 @@
       "after_equation": null,
       "feynman_latex": "C_i=a_ie^{-(i/\\hbar)Et}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 11_ More Two-State Systems.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3221,7 +3169,6 @@
         "A"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3259,7 +3206,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{IV}} =-3A",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3302,7 +3248,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3346,7 +3291,6 @@
       "after_equation": null,
       "feynman_latex": "f=\\omega/2\\pi=(1{,}420{,}405{,}751.800\\pm0.028)\\text{ cycles per second}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3390,7 +3334,6 @@
         "mu_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -3447,7 +3390,6 @@
       "after_equation": "III.12.31",
       "feynman_latex": "E_{\\mathit{I}} =A-(\\mu_{\\text{e}}+\\mu_{\\text{p}})B",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3492,7 +3434,6 @@
         "mu_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -3549,7 +3490,6 @@
       "after_equation": "III.12.32",
       "feynman_latex": "E_{\\mathit{II}} =A+(\\mu_{\\text{e}}+\\mu_{\\text{p}})B",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3593,7 +3533,6 @@
         "mu_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3750,7 +3689,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{III}} = A\\{-1+2\\sqrt{1+(\\mu_{\\text{e}}-\\mu_{\\text{p}})^2B^2/4A^2}\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3799,7 +3737,6 @@
         "mu_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -3956,7 +3893,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{IV}} = -A\\{1+2\\sqrt{1+(\\mu_{\\text{e}}-\\mu_{\\text{p}})^2B^2/4A^2}\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4004,7 +3940,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -4048,7 +3983,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{I}} =A+\\mu B",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4091,7 +4025,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -4135,7 +4068,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{II}} =A-\\mu B",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4177,7 +4109,6 @@
         "B"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4321,7 +4252,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{III}} =A\\{-1+2\\sqrt{1+\\mu'^2B^2/4A^2}\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4373,7 +4303,6 @@
         "B"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4517,7 +4446,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{IV}} =-A\\{1+2\\sqrt{1+\\mu'^2B^2/4A^2}\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4570,7 +4498,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4601,7 +4528,6 @@
       "after_equation": null,
       "feynman_latex": "J_z=m\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "III.12.43",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -4641,7 +4567,6 @@
         "a"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -4666,7 +4591,6 @@
       "after_equation": "III.12.44",
       "feynman_latex": "\\langle{+' +'} | {+ +}\\rangle=a^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4708,7 +4632,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -4759,7 +4682,6 @@
       "after_equation": "III.12.44",
       "feynman_latex": "a=\\langle{+'} | {+}\\rangle=e^{i\\phi/2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4803,7 +4725,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -4841,7 +4762,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{+T} | {+S}\\rangle=\\langle{+' +'} | {+ +}\\rangle= (e^{i\\phi/2})^2=e^{i\\phi}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4883,7 +4803,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4914,7 +4833,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{+' -'} | {+ +}\\rangle = \\langle{+'} | {+}\\rangle_{\\text{e}}\\langle{-'} | {+}\\rangle_{\\text{p}}= ab",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4954,7 +4872,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -4979,7 +4896,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{-' -'} | {+ +}\\rangle = \\langle{-'} | {+}\\rangle_{\\text{e}}\\langle{-'} | {+}\\rangle_{\\text{p}}= b^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 12_ The Hyperfine Splitting in Hydrogen.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5024,7 +4940,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -5108,7 +5023,6 @@
       "after_equation": null,
       "feynman_latex": "C_n=a_ne^{-iEt/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5156,7 +5070,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -5240,7 +5153,6 @@
       "after_equation": null,
       "feynman_latex": "C_n=ae^{-iEt/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5286,7 +5198,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -5337,7 +5248,6 @@
       "after_equation": null,
       "feynman_latex": "a=e^{ikx_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5383,7 +5293,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -5526,7 +5435,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0-Ae^{ikb}-Ae^{-ikb}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5572,7 +5480,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -5649,7 +5556,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0-2A\\cos kb",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5697,7 +5603,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -5814,7 +5719,6 @@
       "after_equation": null,
       "feynman_latex": "C_n=e^{ikx_n}e^{-(i/\\hbar)Et}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5861,7 +5765,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -5938,7 +5841,6 @@
       "after_equation": "III.13.15",
       "feynman_latex": "a=e^{i(2\\pi/b)x_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5982,7 +5884,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -6040,7 +5941,6 @@
       "after_equation": null,
       "feynman_latex": "E=Ak^2b^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6085,7 +5985,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -6162,7 +6061,6 @@
       "after_equation": null,
       "feynman_latex": "v=\\frac{2Ab^2}{\\hbar} k",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "III.13.18",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -6205,7 +6103,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6256,7 +6153,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\frac{1}{2}m_{\\text{eff}} v^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6301,7 +6197,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6372,7 +6267,6 @@
       "after_equation": null,
       "feynman_latex": "m_{\\text{eff}}=\\frac{\\hbar^2}{2Ab^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6424,7 +6318,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -6593,7 +6486,6 @@
       "after_equation": null,
       "feynman_latex": "C(x,y,z)=e^{-iEt/\\hbar}e^{i(k_xx+k_yy+k_zz)}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6647,7 +6539,6 @@
         "k_z"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -7021,7 +6912,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0 - 2A_x \\cos k_xa - 2A_y \\cos k_yb - 2A_z \\cos k_zc",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7073,7 +6963,6 @@
         "k_z"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -7404,7 +7293,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_{\\text{min}}+A_xa^2k_x^2+A_yb^2k_y^2+A_zc^2k_z^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7451,7 +7339,6 @@
         "k_z"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -7562,7 +7449,6 @@
       "after_equation": "III.13.26",
       "feynman_latex": "E=E_{\\text{min}}+Aa^2(k_x^2+k_y^2+k_z^2)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7607,7 +7493,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -7678,7 +7563,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_{\\text{min}}+Aa^2k^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7723,7 +7607,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -7781,7 +7664,6 @@
       "after_equation": "III.13.28",
       "feynman_latex": "a=e^{-ikx_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7828,7 +7710,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -7958,7 +7839,6 @@
       "after_equation": null,
       "feynman_latex": "a_n=\\alpha e^{ikx_n}+\\beta e^{-ikx_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8001,7 +7881,6 @@
         "beta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -8032,7 +7911,6 @@
       "after_equation": null,
       "feynman_latex": "a_0=1+\\beta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8077,7 +7955,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8187,7 +8064,6 @@
       "after_equation": null,
       "feynman_latex": "\\beta=\\frac{-F}{F-2iA\\sin kb}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8234,7 +8110,6 @@
         "kappa"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -8338,7 +8213,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0-A(e^{\\kappa b}+e^{-\\kappa b})",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8384,7 +8258,6 @@
         "F"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -8462,7 +8335,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0-\\sqrt{4A^2+F^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8511,7 +8383,6 @@
         "F"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8635,7 +8506,6 @@
       "after_equation": null,
       "feynman_latex": "\\beta=\\frac{-F}{F-i\\sqrt{4A^2-(E-E_0)^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8683,7 +8553,6 @@
         "F"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8794,7 +8663,6 @@
       "after_equation": null,
       "feynman_latex": "\\beta=\\frac{-F}{F+\\sqrt{(E-E_0)^2-4A^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 13_ Propagation in a Crystal Lattice.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8842,7 +8710,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -8893,7 +8760,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_{\\text{min}}+\\alpha k^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 14_ Semiconductors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8939,7 +8805,6 @@
         "tau_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9003,7 +8868,6 @@
       "after_equation": null,
       "feynman_latex": "\\sigma=\\frac{N_nq_n^2\\tau_n}{m_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 14_ Semiconductors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9053,7 +8917,6 @@
         "tau_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -9176,7 +9039,6 @@
       "after_equation": null,
       "feynman_latex": "\\sigma=\\frac{N_nq_n^2\\tau_n}{m_n}+\\frac{N_pq_p^2\\tau_p}{m_p}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 14_ Semiconductors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9224,7 +9086,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9301,7 +9162,6 @@
       "after_equation": null,
       "feynman_latex": "I_1=I_0e^{+q\\Delta_{V}/\\kappa T}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 14_ Semiconductors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9354,7 +9214,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9444,7 +9303,6 @@
       "after_equation": null,
       "feynman_latex": "I=I_0(e^{+q\\Delta_{V}/\\kappa T}-1)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 14_ Semiconductors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "III.14.14",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -9493,7 +9351,6 @@
         "A"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9524,7 +9381,6 @@
       "after_equation": null,
       "feynman_latex": "H_{n,n} =2A",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9564,7 +9420,6 @@
         "A"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -9589,7 +9444,6 @@
       "after_equation": null,
       "feynman_latex": "H_{n,n+1} =H_{n,n-1}=-A",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9631,7 +9485,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9708,7 +9561,6 @@
       "after_equation": null,
       "feynman_latex": "E=2A(1-\\cos kb)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "III.15.12",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -9756,7 +9608,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9866,7 +9717,6 @@
       "after_equation": null,
       "feynman_latex": "a_{m,n}=(\\text{const.}) e^{ik_1x_m}e^{ik_2x_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9910,7 +9760,6 @@
         "k_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -10059,7 +9908,6 @@
       "after_equation": null,
       "feynman_latex": "E=4A-2A\\cos k_1b-2A\\cos k_2b",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10103,7 +9951,6 @@
         "k_1"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -10193,7 +10040,6 @@
       "after_equation": "III.15.19",
       "feynman_latex": "E_1 =(2A-2A\\cos k_1b)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10237,7 +10083,6 @@
         "k_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -10327,7 +10172,6 @@
       "after_equation": "III.15.19",
       "feynman_latex": "E_2 =(2A-2A\\cos k_2b)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10370,7 +10214,6 @@
         "E_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -10401,7 +10244,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_1+E_2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10446,7 +10288,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -10563,7 +10404,6 @@
       "after_equation": null,
       "feynman_latex": "a_{m,n}=\\exp[ik_c(x_m+x_n)]\\sin(k|{x_m-x_n}|)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10614,7 +10454,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -10724,7 +10563,6 @@
       "after_equation": null,
       "feynman_latex": "a_{m,n}=Ke^{ik_2x_m}e^{ik_1x_n}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10771,7 +10609,6 @@
         "x_n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -10973,7 +10810,6 @@
       "after_equation": null,
       "feynman_latex": "a_{m,n}=K[e^{ik_1x_m}e^{ik_2x_n}+e^{ik_2x_m}e^{ik_1x_n}]",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11019,7 +10855,6 @@
         "s"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11089,7 +10924,6 @@
       "after_equation": null,
       "feynman_latex": "k_s=\\frac{2\\pi}{Nb} s",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "III.15.27",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -11131,7 +10965,6 @@
         "E_0"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -11188,7 +11021,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\text{ground}} =2(E_0-2A)+4(E_0-A) =6E_0-8A",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11230,7 +11062,6 @@
         "E_0"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -11300,7 +11131,6 @@
       "after_equation": null,
       "feynman_latex": "E=2(E_0-1.618A)+2(E_0-0.618A)= 4(E_0-A)-0.472A",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 15_ The Independent Particle Approximation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11344,7 +11174,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -11441,7 +11270,6 @@
       "after_equation": null,
       "feynman_latex": "E=(E_0-2A)+Ak^2b^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11485,7 +11313,6 @@
         "psi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11530,7 +11357,6 @@
       "after_equation": null,
       "feynman_latex": "\\text{prob} (x,\\Delta_{x})=|{\\psi}|^2 \\Delta_{x}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11574,7 +11400,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11659,7 +11484,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi=Ke^{-x^2/4\\sigma^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11707,7 +11531,6 @@
         "sigma"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11858,7 +11681,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi=(8\\pi\\sigma^2)^{1/4}e^{-p^2\\sigma^2/\\hbar^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11907,7 +11729,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12071,7 +11892,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi=(\\eta^2/2\\pi\\hbar^2)^{-1/4}e^{-p^2/4\\eta^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12118,7 +11938,6 @@
         "sigma"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12162,7 +11981,6 @@
       "after_equation": null,
       "feynman_latex": "\\eta=\\frac{\\hbar}{2\\sigma}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 16_ The Dependence of Amplitudes on Position.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12204,7 +12022,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12235,7 +12052,6 @@
       "after_equation": null,
       "feynman_latex": "J_z=N\\hbar=\\frac{W}{\\omega}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 17_ Symmetry and Conservation Laws.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12277,7 +12093,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -12416,7 +12231,6 @@
       "after_equation": null,
       "feynman_latex": "f=|{a}|^2\\cos^2\\frac{\\theta}{2}+ |{b}|^2\\sin^2\\frac{\\theta}{2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 17_ Symmetry and Conservation Laws.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12464,7 +12278,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -12623,7 +12436,6 @@
       "after_equation": null,
       "feynman_latex": "f= (\\frac{|{a}|^2 +|{b}|^2}{2}) + (\\frac{|{a}|^2 -|{b}|^2}{2}) \\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 17_ Symmetry and Conservation Laws.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12671,7 +12483,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -12735,7 +12546,6 @@
       "after_equation": null,
       "feynman_latex": "f=\\beta(1+\\alpha\\cos\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 17_ Symmetry and Conservation Laws.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "III.17.37",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -12780,7 +12590,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -12918,7 +12727,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{R'} | {S} | {R}\\rangle=\\frac{ac}{2} (1+\\cos\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12964,7 +12772,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13116,7 +12923,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{L'} | {S} | {R}\\rangle=-\\frac{ac}{2} (1-\\cos\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13163,7 +12969,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13289,7 +13094,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{R'} | {S} | {x}\\rangle=\\frac{ac}{\\sqrt{2}}\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13335,7 +13139,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13421,7 +13224,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{x'} | {S} | {x}\\rangle=ac\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13462,7 +13264,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13533,7 +13334,6 @@
       "after_equation": null,
       "feynman_latex": "P_2(\\cos\\theta) =\\frac{1}{2}(3\\cos^2\\theta-1)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13577,7 +13377,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13668,7 +13467,6 @@
       "after_equation": null,
       "feynman_latex": "P_3(\\cos\\theta) =\\frac{1}{2}(5\\cos^3\\theta-3\\cos\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13713,7 +13511,6 @@
         "j_b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -13744,7 +13541,6 @@
       "after_equation": "III.18.57",
       "feynman_latex": "J=(M)_{\\text{max}}=j_a+j_b",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13785,7 +13581,6 @@
         "s"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13829,7 +13624,6 @@
       "after_equation": null,
       "feynman_latex": "m=\\frac{r-s}{2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 18_ Angular Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13872,7 +13666,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13917,7 +13710,6 @@
       "after_equation": "III.19.2",
       "feynman_latex": "V=-\\frac{e^2}{r}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13963,7 +13755,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14034,7 +13825,6 @@
       "after_equation": null,
       "feynman_latex": "r=\\frac{\\hbar^2}{me^2} \\rho",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14080,7 +13870,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14164,7 +13953,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\frac{me^4}{2\\hbar^2} \\epsilon",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14209,7 +13997,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14267,7 +14054,6 @@
       "after_equation": null,
       "feynman_latex": "f=e^{-\\alpha\\rho}g",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14309,7 +14095,6 @@
         "epsilon"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -14334,7 +14119,6 @@
       "after_equation": null,
       "feynman_latex": "\\alpha^2=-\\epsilon",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14376,7 +14160,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14485,7 +14268,6 @@
       "after_equation": null,
       "feynman_latex": "a_{k+1}=\\frac{2(\\alpha k-1)}{k(k+1)} a_k",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14530,7 +14312,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14587,7 +14368,6 @@
       "after_equation": "III.19.22",
       "feynman_latex": "a_{k+1}=\\frac{2\\alpha}{k} a_k",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14629,7 +14409,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -14674,7 +14453,6 @@
       "after_equation": null,
       "feynman_latex": "E_n=-E_R \\frac{1}{n^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14718,7 +14496,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14789,7 +14566,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_n=\\frac{f_n}{\\rho}=\\frac{e^{-\\rho/n}}{\\rho} g_n",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14834,7 +14610,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14943,7 +14718,6 @@
       "after_equation": null,
       "feynman_latex": "a_{k+1}=\\frac{2(k/n-1)}{k(k+1)} a_k",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14986,7 +14760,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -15018,7 +14791,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_1=e^{-\\rho}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15059,7 +14831,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15143,7 +14914,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_2=(1-\\frac{\\rho}{2})e^{-\\rho/2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15187,7 +14957,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15330,7 +15099,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_3=(1-\\frac{2\\rho}{3}+\\frac{2}{27} \\rho^2) e^{-\\rho/3}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15378,7 +15146,6 @@
         "l"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -15455,7 +15222,6 @@
       "after_equation": null,
       "feynman_latex": "a=\\sqrt{\\frac{4\\pi}{2l+1}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15501,7 +15267,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15586,7 +15351,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{1,0} | {R_yR_z} | {1,+1}\\rangle = -\\frac{1}{\\sqrt{2}}\\sin\\theta e^{i\\phi}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15634,7 +15398,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15719,7 +15482,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{1,0} | {R_yR_z} | {1,-1}\\rangle = \\frac{1}{\\sqrt{2}}\\sin\\theta e^{-i\\phi}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15766,7 +15528,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15817,7 +15578,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{l,0} | {R_y} | {l,l}\\rangle=b (\\sin\\theta)^l",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15859,7 +15619,6 @@
         "l"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15903,7 +15662,6 @@
       "after_equation": null,
       "feynman_latex": "K_l=l(l+1)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15948,7 +15706,6 @@
         "v_r"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -16078,7 +15835,6 @@
       "after_equation": "III.19.46",
       "feynman_latex": "U = \\frac{1}{2}mv_r^2+V+\\frac{L^2}{2mr^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16124,7 +15880,6 @@
         "l"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -16272,7 +16027,6 @@
       "after_equation": null,
       "feynman_latex": "a_{k+1}=\\frac{2(\\alpha k-1)}{k(k+1)-l(l+1)} a_k",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16319,7 +16073,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -16417,7 +16170,6 @@
       "after_equation": null,
       "feynman_latex": "E_n=-\\frac{me^4}{2\\hbar^2}(\\frac{1}{n^2})",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 19_ The Hydrogen Atom and The Periodic Table.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "III.19.51",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -16462,7 +16214,6 @@
         "P_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -16493,7 +16244,6 @@
       "after_equation": null,
       "feynman_latex": "P_{12}=P_1+P_2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 1_ Quantum Behavior.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16535,7 +16285,6 @@
         "delta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -16632,7 +16381,6 @@
       "after_equation": null,
       "feynman_latex": "I_{12}=I_1+I_2+2\\sqrt{I_1I_2}\\cos\\delta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 1_ Quantum Behavior.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16675,7 +16423,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -16707,7 +16454,6 @@
       "after_equation": null,
       "feynman_latex": "P =|{\\phi}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 1_ Quantum Behavior.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16749,7 +16495,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -16780,7 +16525,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi =\\phi_1+\\phi_2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 1_ Quantum Behavior.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16821,7 +16565,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -16866,7 +16609,6 @@
       "after_equation": null,
       "feynman_latex": "P =|{\\phi_1+\\phi_2}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 1_ Quantum Behavior.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16908,7 +16650,6 @@
         "C_i"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -16940,7 +16681,6 @@
       "after_equation": null,
       "feynman_latex": "P_i=|{C_i}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 20_ Operators.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16986,7 +16726,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17119,7 +16858,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda^2=\\rho \\frac{q}{\\epsilon_0 mc^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17164,7 +16902,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17221,7 +16958,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda^2=8\\pi Nr_0",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17264,7 +17000,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17322,7 +17057,6 @@
       "after_equation": "III.21.28",
       "feynman_latex": "\\psi=\\sqrt{\\rho}e^{i\\theta}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17367,7 +17101,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -17411,7 +17144,6 @@
       "after_equation": null,
       "feynman_latex": "\\Phi_0=\\frac{\\pi\\hbar}{q_e}\\approx2\\times10^{-7}\\text{ gauss}\\cdot\\text{cm}^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17455,7 +17187,6 @@
         "theta_1"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17513,7 +17244,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_1 =\\sqrt{\\rho_1}e^{i\\theta_1}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17558,7 +17288,6 @@
         "theta_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17616,7 +17345,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi_2 =\\sqrt{\\rho_2}e^{i\\theta_2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17663,7 +17391,6 @@
         "rho_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17760,7 +17487,6 @@
       "after_equation": null,
       "feynman_latex": "J=\\frac{2K}{\\hbar}\\sqrt{\\rho_1\\rho_2}\\sin\\delta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17804,7 +17530,6 @@
         "delta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17842,7 +17567,6 @@
       "after_equation": null,
       "feynman_latex": "J=J_0\\sin\\delta",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17886,7 +17610,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -17950,7 +17673,6 @@
       "after_equation": "III.21.47",
       "feynman_latex": "V=V_0+v\\cos\\omega t",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17999,7 +17721,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18246,7 +17967,6 @@
       "after_equation": "III.21.47",
       "feynman_latex": "J= J_0[\\sin( \\delta_0 + \\frac{q}{\\hbar}V_0t ) + \\frac{q}{\\hbar}\\frac{v}{\\omega}\\sin\\omega t \\cos( \\delta_0 + \\frac{q}{\\hbar}V_0t )]",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18299,7 +18019,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18343,7 +18062,6 @@
       "after_equation": "III.21.47",
       "feynman_latex": "\\omega=\\frac{q}{\\hbar} V_0",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18389,7 +18107,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18486,7 +18203,6 @@
       "after_equation": null,
       "feynman_latex": "J_{\\text{total}} =J_0\\{ \\sin( \\delta_0 - \\frac{q_e}{\\hbar}\\Phi ) +\\sin( \\delta_0 + \\frac{q_e}{\\hbar} \\Phi ) \\} =2J_0\\sin\\delta_0\\cos\\frac{q_e\\Phi}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18533,7 +18249,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18617,7 +18332,6 @@
       "after_equation": "III.21.52",
       "feynman_latex": "J_{\\text{max}}=2J_0\\left| \\cos(\\frac{q_e}{\\hbar}\\Phi)\\right|",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18664,7 +18378,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18721,7 +18434,6 @@
       "after_equation": "III.21.52",
       "feynman_latex": "\\Phi=n \\frac{\\pi\\hbar}{q_e}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 21_ The Schrödinger Equation in a Classical Context_ A Seminar on Superconductivity.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18764,7 +18476,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18795,7 +18506,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\hbar\\omega",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18839,7 +18549,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -18943,7 +18652,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\hbar^2/2ma^2-e^2/a",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18989,7 +18697,6 @@
         "E_3"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -19033,7 +18740,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{31}=(E_3-E_1)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19077,7 +18783,6 @@
         "E_3"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -19121,7 +18826,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{30}=(E_3-E_0)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19165,7 +18869,6 @@
         "E_1"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -19209,7 +18912,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{10}=(E_1-E_0)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19251,7 +18953,6 @@
         "omega_31"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -19282,7 +18983,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{30}=\\omega_{31}+\\omega_{10}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 2_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19325,7 +19025,6 @@
         "b_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -19438,7 +19137,6 @@
       "after_equation": null,
       "feynman_latex": "P_2=|{a_1}|^2|{b_2}|^2+|{a_2}|^2|{b_1}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19482,7 +19180,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19554,7 +19251,6 @@
       "after_equation": null,
       "feynman_latex": "P_2=2|{a}|^2|{b}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19597,7 +19293,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19669,7 +19364,6 @@
       "after_equation": null,
       "feynman_latex": "P_2=|{a_1b_2+a_2b_1}|^2=4|{a}|^2|{b}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19712,7 +19406,6 @@
         "a"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19757,7 +19450,6 @@
       "after_equation": null,
       "feynman_latex": "p_a=|{a}|^2 \\Delta_{S}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19800,7 +19492,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19845,7 +19536,6 @@
       "after_equation": null,
       "feynman_latex": "p_b=|{b}|^2 \\Delta_{S}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19889,7 +19579,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19968,7 +19657,6 @@
       "after_equation": null,
       "feynman_latex": "P_2=|{a}|^2|{b}|^2 (\\Delta_{S})^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20012,7 +19700,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20104,7 +19791,6 @@
       "after_equation": null,
       "feynman_latex": "P_2(\\text{Bose})=\\frac{1}{2}\\{4|{a}|^2|{b}|^2 (\\Delta_{S})^2\\}= 2|{a}|^2|{b}|^2 (\\Delta_{S})^2",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20147,7 +19833,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20198,7 +19883,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{n+1} | {n}\\rangle=\\sqrt{n+1} a",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20243,7 +19927,6 @@
         "j"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20287,7 +19970,6 @@
       "after_equation": null,
       "feynman_latex": "k_j=\\frac{j\\pi}{L}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20330,7 +20012,6 @@
         "L"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20361,7 +20042,6 @@
       "after_equation": "III.4.34",
       "feynman_latex": "\\delta k=k_{j+1}-k_j=\\frac{\\pi}{L}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20404,7 +20084,6 @@
         "j_x"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20448,7 +20127,6 @@
       "after_equation": "III.4.36",
       "feynman_latex": "k_x =\\frac{j_x\\pi}{L_x}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20492,7 +20170,6 @@
         "j_y"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20536,7 +20213,6 @@
       "after_equation": "III.4.36",
       "feynman_latex": "k_y =\\frac{j_y\\pi}{L_y}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20580,7 +20256,6 @@
         "j_z"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20624,7 +20299,6 @@
       "after_equation": "III.4.36",
       "feynman_latex": "k_z =\\frac{j_z\\pi}{L_z}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 4_ Identical Particles.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20665,7 +20339,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20716,7 +20389,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{+T} | {+S}\\rangle = \\frac{1}{2}(1+\\cos\\alpha)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20758,7 +20430,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20810,7 +20481,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{0 T } | {+S}\\rangle = -\\frac{1}{\\sqrt{2}} \\sin\\alpha",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20853,7 +20523,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20904,7 +20573,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{-T} | {+S}\\rangle = \\frac{1}{2}(1-\\cos\\alpha)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20946,7 +20614,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20991,7 +20658,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{+T} | {0 S}\\rangle = +\\frac{1}{\\sqrt{2}} \\sin\\alpha",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21033,7 +20699,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "cos",
@@ -21058,7 +20723,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{0 T } | {0 S}\\rangle = \\cos\\alpha",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21100,7 +20764,6 @@
         "beta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -21138,7 +20801,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{+T} | {+S}\\rangle =e^{+i\\beta}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21181,7 +20843,6 @@
         "beta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "exp",
@@ -21226,7 +20887,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{-T} | {-S}\\rangle =e^{-i\\beta}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 5_ Spin One.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21271,7 +20931,6 @@
         "lambd"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21322,7 +20981,6 @@
       "after_equation": "III.6.15",
       "feynman_latex": "C_{p}'=e^{i\\lambda}C_{p}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21366,7 +21024,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21417,7 +21074,6 @@
       "after_equation": "III.6.15",
       "feynman_latex": "C_{m}'=e^{i\\mu}C_{m}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21456,7 +21112,6 @@
       "constant_names": [],
       "variable_names": [],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -21481,7 +21136,6 @@
       "after_equation": "III.6.15",
       "feynman_latex": "\\lambda'=\\frac{\\lambda}{2}-\\frac{\\mu}{2}=-\\mu'",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21530,7 +21184,6 @@
         "lambd"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21594,7 +21247,6 @@
       "after_equation": "III.6.16",
       "feynman_latex": "C_{p}''=e^{i\\lambda}C_{p}'=e^{i2\\lambda}C_{p}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21638,7 +21290,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21709,7 +21360,6 @@
       "after_equation": null,
       "feynman_latex": "C_{m}'=e^{-i\\phi/2}C_{m} \\right\\} \\text{$\\phi$ about $z$}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21752,7 +21402,6 @@
         "C_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -21777,7 +21426,6 @@
       "after_equation": "III.6.20",
       "feynman_latex": "C_{p}''=e^{i\\beta}C_{m}'=e^{i\\beta}e^{i\\gamma}C_{p}=-C_{p}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21817,7 +21465,6 @@
         "C_m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -21842,7 +21489,6 @@
       "after_equation": null,
       "feynman_latex": "C_{m}''=e^{i\\gamma}C_{p}'=e^{i\\gamma}e^{i\\beta}C_{m}=-C_{m}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21883,7 +21529,6 @@
         "beta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -21914,7 +21559,6 @@
       "after_equation": null,
       "feynman_latex": "\\beta_A=\\beta-\\alpha",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21958,7 +21602,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22108,7 +21751,6 @@
       "after_equation": "III.6.33",
       "feynman_latex": "C_{p}''' =\\frac{1}{\\sqrt{2}} (e^{+i\\alpha/2}C_{p}'-e^{-i\\alpha/2}C_{m}')",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22157,7 +21799,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22307,7 +21948,6 @@
       "after_equation": "III.6.33",
       "feynman_latex": "C_{m}''' =\\frac{1}{\\sqrt{2}} (e^{+i\\alpha/2}C_{p}'+e^{-i\\alpha/2}C_{m}')",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22356,7 +21996,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22532,7 +22171,6 @@
       "after_equation": "III.6.33",
       "feynman_latex": "C_{p}''' =\\frac{1}{2} \\{e^{+i\\alpha/2}(C_{p}+C_{m})-e^{-i\\alpha/2}(-C_{p}+C_{m})\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22581,7 +22219,6 @@
         "alpha"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22757,7 +22394,6 @@
       "after_equation": "III.6.33",
       "feynman_latex": "C_{m}''' =\\frac{1}{2} \\{e^{+i\\alpha/2}(C_{p}+C_{m})+e^{-i\\alpha/2}(-C_{p}+C_{m})\\}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22807,7 +22443,6 @@
         "gamma"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -23042,7 +22677,6 @@
       "after_equation": null,
       "feynman_latex": "C_{p}' = \\cos\\frac{\\alpha}{2} e^{i(\\beta+\\gamma)/2}C_{p} + i \\sin\\frac{\\alpha}{2} e^{-i(\\beta-\\gamma)/2}C_{m}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23095,7 +22729,6 @@
         "gamma"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -23330,7 +22963,6 @@
       "after_equation": null,
       "feynman_latex": "C_{m}' =i \\sin\\frac{\\alpha}{2} e^{i(\\beta-\\gamma)/2}C_{p} + \\cos\\frac{\\alpha}{2} e^{-i(\\beta+\\gamma)/2}C_{m}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 6_ Spin One-Half.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23381,7 +23013,6 @@
         "xp"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -23586,7 +23217,6 @@
       "after_equation": "III.7.4",
       "feynman_latex": "t=\\frac{t'-x'v/c^2}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23633,7 +23263,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -23747,7 +23376,6 @@
       "after_equation": null,
       "feynman_latex": "E_p=\\sqrt{(pc)^2+E_0^2}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23793,7 +23421,6 @@
         "W_p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -23872,7 +23499,6 @@
       "after_equation": null,
       "feynman_latex": "E_p=M_sc^2+W_p",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23916,7 +23542,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -23980,7 +23605,6 @@
       "after_equation": null,
       "feynman_latex": "W_p=W_{\\text{int}}+\\frac{p^2}{2M}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24025,7 +23649,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24056,7 +23679,6 @@
       "after_equation": null,
       "feynman_latex": "k=\\frac{p}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24098,7 +23720,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24170,7 +23791,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda=\\frac{2\\pi}{k}=\\frac{h}{p}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24211,7 +23831,6 @@
         "Delta_o__m__e__a_g___"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24242,7 +23861,6 @@
       "after_equation": "III.7.12",
       "feynman_latex": "v_g=\\frac{\\Delta_{omega}}{\\Delta_{k}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24285,7 +23903,6 @@
         "p_1"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24388,7 +24005,6 @@
       "after_equation": null,
       "feynman_latex": "p_2^2=2M[\\frac{p_1^2}{2M}-V_2+V_1]",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24434,7 +24050,6 @@
         "w"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24478,7 +24093,6 @@
       "after_equation": "III.7.25",
       "feynman_latex": "p_y=F \\frac{w}{v}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24525,7 +24139,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24622,7 +24235,6 @@
       "after_equation": null,
       "feynman_latex": "C_{p}(t) =C_{p}(0)e^{-(i/\\hbar)\\mu Bt}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24671,7 +24283,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24761,7 +24372,6 @@
       "after_equation": null,
       "feynman_latex": "C_{m}(t) =C_{m}(0)e^{+(i/\\hbar)\\mu Bt}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24808,7 +24418,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -24990,7 +24599,6 @@
       "after_equation": "III.7.37",
       "feynman_latex": "A_{p}(t)=\\frac{1}{2}e^{(i/\\hbar)\\mu Bt}+ \\frac{1}{2}e^{-(i/\\hbar)\\mu Bt}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25038,7 +24646,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "cos",
@@ -25102,7 +24709,6 @@
       "after_equation": "III.7.37",
       "feynman_latex": "A_{p}(t)=\\cos(\\frac{\\mu B}{\\hbar}t)",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25148,7 +24754,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -25219,7 +24824,6 @@
       "after_equation": "III.7.37",
       "feynman_latex": "P_{p}=\\cos^2\\frac{\\mu Bt}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25265,7 +24869,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -25322,7 +24925,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_p=\\frac{2\\mu B}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 7_ The Dependence of Amplitudes on Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "III.7.38",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -25365,7 +24967,6 @@
         "delta_i_j"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -25409,7 +25010,6 @@
       "after_equation": null,
       "feynman_latex": "U_{ij}=\\delta_{ij}+K_{ij} \\Delta_{t}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25457,7 +25057,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -25672,7 +25271,6 @@
       "after_equation": null,
       "feynman_latex": "C_1 =\\frac{a}{2} e^{-(i/\\hbar)(E_0-A)t}+ \\frac{b}{2} e^{-(i/\\hbar)(E_0+A)t}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25724,7 +25322,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -25939,7 +25536,6 @@
       "after_equation": null,
       "feynman_latex": "C_2 =\\frac{a}{2} e^{-(i/\\hbar)(E_0-A)t}- \\frac{b}{2} e^{-(i/\\hbar)(E_0+A)t}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25989,7 +25585,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26198,7 +25793,6 @@
       "after_equation": "III.8.51",
       "feynman_latex": "C_1 =e^{-(i/\\hbar)E_0t}( \\frac{e^{(i/\\hbar)At}+e^{-(i/\\hbar)At}}{2} )",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26247,7 +25841,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26456,7 +26049,6 @@
       "after_equation": "III.8.51",
       "feynman_latex": "C_2 =e^{-(i/\\hbar)E_0t}( \\frac{e^{(i/\\hbar)At}-e^{-(i/\\hbar)At}}{2} )",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26505,7 +26097,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26622,7 +26213,6 @@
       "after_equation": null,
       "feynman_latex": "C_1 =e^{-(i/\\hbar)E_0t}\\cos\\frac{At}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26671,7 +26261,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26801,7 +26390,6 @@
       "after_equation": null,
       "feynman_latex": "C_2 =ie^{-(i/\\hbar)E_0t}\\sin\\frac{At}{\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 8_ The Hamiltonian Matrix.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26846,7 +26434,6 @@
         "C_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26897,7 +26484,6 @@
       "after_equation": "III.9.5",
       "feynman_latex": "C_{\\mathit{II}}=\\frac{1}{\\sqrt{2}} [C_1+C_2]",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26940,7 +26526,6 @@
         "C_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26991,7 +26576,6 @@
       "after_equation": "III.9.5",
       "feynman_latex": "C_{\\mathit{I}}=\\frac{1}{\\sqrt{2}} [C_1-C_2]",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27038,7 +26622,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -27122,7 +26705,6 @@
       "after_equation": null,
       "feynman_latex": "C_1 =a_1e^{-(i/\\hbar)Et}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27170,7 +26752,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -27254,7 +26835,6 @@
       "after_equation": null,
       "feynman_latex": "C_2 =a_2e^{-(i/\\hbar)Et}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27300,7 +26880,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27423,7 +27002,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{I}} = \\frac{H_{11} + H_{22}}{2} + \\sqrt{\\frac{(H_{11} - H_{22})^2}{4} + H_{12}H_{21}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27471,7 +27049,6 @@
         "H_22"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -27594,7 +27171,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\mathit{II}} = \\frac{H_{11} + H_{22}}{2} - \\sqrt{\\frac{(H_{11} - H_{22})^2}{4} + H_{12}H_{21}}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27643,7 +27219,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -27727,7 +27302,6 @@
       "after_equation": null,
       "feynman_latex": "C_{\\mathit{I}}=\\gamma_{\\mathit{I}}e^{-i(E_0+A)t/\\hbar}= \\gamma_{\\mathit{I}}e^{-it/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27779,7 +27353,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -27863,7 +27436,6 @@
       "after_equation": null,
       "feynman_latex": "C_{\\mathit{II}}=\\gamma_{\\mathit{II}}e^{-i(E_0-A)t/\\hbar}= \\gamma_{\\mathit{II}}e^{-it/\\hbar}",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27910,7 +27482,6 @@
       "constant_names": [],
       "variable_names": [],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -27981,7 +27552,6 @@
       "after_equation": null,
       "feynman_latex": "P_{\\mathit{I}}=|{\\gamma_{\\mathit{I}}}|^2= \\cos^2 \\frac{\\mu\\mathcal{E}_0}{\\hbar}t",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28028,7 +27598,6 @@
       "constant_names": [],
       "variable_names": [],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -28099,7 +27668,6 @@
       "after_equation": null,
       "feynman_latex": "P_{\\mathit{II}}=|{\\gamma_{\\mathit{II}}}|^2= \\sin^2 \\frac{\\mu\\mathcal{E}_0}{\\hbar}t",
       "source_file": "The Feynman Lectures on Physics Vol. III Ch. 9_ The Ammonia Maser.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {

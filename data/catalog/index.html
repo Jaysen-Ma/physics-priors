@@ -362,8 +362,7 @@
           <button type="button" data-branch="Waves and optics">Waves and optics</button>
           <button type="button" data-branch="Thermodynamics and kinetic theory">Thermodynamics</button>
           <button type="button" data-branch="Quantum mechanics">Quantum mechanics</button>
-          <button type="button" data-branch="Fluid mechanics">Fluid mechanics</button>
-          <button type="button" data-branch="Continuum mechanics">Continuum mechanics</button>
+          <button type="button" data-branch="Fluid and continuum mechanics">Fluid and continuum mechanics</button>
           <button type="button" data-branch="Astronomy and astrophysics">Astronomy</button>
           <button type="button" data-branch="other">Other</button>
         </nav>
@@ -520,7 +519,7 @@
       const q = document.getElementById("q").value.trim().toLowerCase();
       return records.filter(r => {
         if (!q) return true;
-        const blob = [r.id, r.original_id, r.name, r.formula, r.family, r.branch, r.notes, r.source_locator,
+        const blob = [r.id, r.original_id, r.name, r.formula, r.family, displayBranches(r).join(" "), r.outside, r.notes, r.source_locator,
                       r.c1 && r.c1.formula, r.hbar1 && r.hbar1.formula,
                       r.c1_hbar1 && r.c1_hbar1.formula]
           .join(" ").toLowerCase();
@@ -695,7 +694,7 @@
         "<dl>" +
           kv("Output", esc(r.output || "—")) +
           kv("Family", family) +
-          kv("Branch", esc(r.branch || "—")) +
+          kv("Physics branches", esc(displayBranches(r).join(", ") || r.outside || "—")) +
           kv("Source", source) +
           kv("Notes", esc(r.notes || "—")) +
         "</dl>");
@@ -789,6 +788,37 @@
         || null;
     }
 
+    const FEYNMAN_BRANCH_NAMES = {
+      Classical: "Classical mechanics", SR: "Special relativity", EM: "Electromagnetism",
+      "Waves+optics": "Waves and optics", Thermo: "Thermodynamics and kinetic theory",
+      QM: "Quantum mechanics", "Fluid+continuum": "Fluid and continuum mechanics",
+    };
+    const FLUID_BRANCHES = [FEYNMAN_BRANCH_NAMES["Fluid+continuum"], "Fluid mechanics", "Continuum mechanics"];
+    const BRANCH_NAMES = new Set([...Object.values(FEYNMAN_BRANCH_NAMES), ...FLUID_BRANCHES,
+      "Astronomy and astrophysics"]);
+    let feynmanBranches;
+
+    function loadFeynmanBranches() {
+      feynmanBranches ??= fetch("./feynman_branches.json?t=" + Date.now()).then(response => {
+        if (!response.ok) throw new Error("Feynman branch labels HTTP " + response.status);
+        return response.json();
+      }).then(data => new Map(data.records.map(row => [row.id, row])));
+      return feynmanBranches;
+    }
+
+    function displayBranches(record) {
+      return record.branches ?? (record.branch ? [record.branch] : []);
+    }
+
+    function matchesBranch(record, branch) {
+      const labels = displayBranches(record);
+      if (branch === "other") return Boolean(record.outside) || labels.some(label => !BRANCH_NAMES.has(label));
+      if (branch === FEYNMAN_BRANCH_NAMES["Fluid+continuum"]) {
+        return labels.some(label => FLUID_BRANCHES.includes(label));
+      }
+      return labels.includes(branch);
+    }
+
     function loadCatalog(name) {
       if (name === "feynman_lectures") {
         return Promise.all(LECTURE_VOLUMES.map(loadCatalog)).then(datas => ({
@@ -797,18 +827,23 @@
           records: datas.flatMap(d => d.records || []),
         }));
       }
-      return fetch("./" + name + ".json?t=" + Date.now()).then(r => {
+      const payload = fetch("./" + name + ".json?t=" + Date.now()).then(r => {
         if (!r.ok) throw new Error("catalog HTTP " + r.status);
         return r.json();
       });
+      if (name !== "feynman" && !LECTURE_VOLUMES.includes(name)) return payload;
+      return Promise.all([payload, loadFeynmanBranches()]).then(([data, labels]) => {
+        for (const record of data.records) {
+          const annotation = labels.get(record.id);
+          if (annotation) {
+            record.branches = annotation.branches.map(code => FEYNMAN_BRANCH_NAMES[code]);
+            record.outside = annotation.outside;
+          }
+        }
+        return data;
+      });
     }
 
-    const BRANCH_NAMES = new Set([
-      "Classical mechanics", "Special relativity", "Electromagnetism",
-      "Waves and optics", "Thermodynamics and kinetic theory",
-      "Quantum mechanics", "Fluid mechanics", "Continuum mechanics",
-      "Astronomy and astrophysics",
-    ]);
     const POOL_CORPORA = ["feynman", "feynman_lectures", "wiki", "inflation", "leemis", "fr"];
     // The Feynman Lectures catalog is one JSON per volume; the page shows them as one corpus.
     const LECTURE_VOLUMES = ["feynman_lectures_v1", "feynman_lectures_v2", "feynman_lectures_v3"];
@@ -843,9 +878,7 @@
       }
       document.getElementById("count").textContent = "loading…";
       loadPool().then(rows => {
-        records = rows.filter(r => branchFilter === "other"
-          ? r.branch && !BRANCH_NAMES.has(r.branch)
-          : r.branch === branchFilter);
+        records = rows.filter(r => matchesBranch(r, branchFilter));
         selected = null;
         expanded.clear();
         select(records.length ? pickInitial() : null);

@@ -45,10 +45,6 @@ def strip_private(payload: dict) -> dict:
 
 SCRATCH = ROOT / ".scratch" / "feynman_v1"
 FIXES = ROOT / "data" / "feynman_lectures_fixes.csv"
-# Main chapter -> branch mapping overrides (user decision 2026-10-13): relativistic electrodynamics counts as
-# special relativity. The chapters stay flagged ambiguous; the sensitivity analysis reassigns them to EM.
-BRANCH_OVERRIDE = {("I", 34): "Special relativity", ("II", 25): "Special relativity",
-                   ("II", 26): "Special relativity", ("II", 28): "Special relativity"}
 REVIEWED_BENCHMARK_OVERLAPS = {
     "flp2.34.u2": "II.34.2a",  # Orbital current, the unnumbered display.
     "flp2.34.2": "II.34.2",  # Orbital magnetic moment.
@@ -119,7 +115,7 @@ def benchmark_index() -> dict:
         vol, ch = m.group(1), int(m.group(2))
         eqs = {f"{vol}.{a}.{b}" for a, b in re.findall(r"\((\d+)\.(\d+)[a-z]?", r["source_locator"])}
         sig = (signature(r["formula"]), consts(r["formula"]))
-        out.setdefault((vol, ch), []).append(dict(id=r["id"], eqs=eqs, sig=sig, branch=r.get("branch")))
+        out.setdefault((vol, ch), []).append(dict(id=r["id"], eqs=eqs, sig=sig))
     return out
 
 
@@ -160,7 +156,7 @@ def row_to_json(row: dict, vol: str) -> dict:
         source_locator=f"Vol. {vol}, ch. {row['chapter']} {row['chapter_title']}, sec. {row['section']}, {where}",
         notes="; ".join(p for p in (f"LaTeX: {row['tex']}", f"RHS used: {row['rhs']}") if p),
         name="", constant_names=row.get("constant_names", []), variable_names=row.get("variable_names", []),
-        consideration="in", branch=BRANCH_OVERRIDE.get((vol, row["chapter"]), row["branch"]), public=PUBLIC,
+        consideration="in", public=PUBLIC,
     )
     rec = attach_counts(apply_constants(rec))
     rec.original_n_variables, rec.original_n_numbers = rec.n_variables, rec.n_numbers
@@ -169,7 +165,6 @@ def row_to_json(row: dict, vol: str) -> dict:
     d["latex"] = M.formula_latex(rec.formula, symbol_tex=symbol_tex)
     d.update(volume=vol, chapter=row["chapter"], chapter_name=row["chapter_title"], section=row["section"],
              equation=eq, after_equation=row.get("after_eq"), feynman_latex=row["tex"], source_file=row["file"],
-             ambiguous_chapter=row.get("ambiguous_chapter", False),
              benchmark_overlap=None, benchmark_overlap_rule=None,
              operator_counts={**{k: int(v) for k, v in rec.operator_counts.items()},
                               M.NULLARY_VARIABLE: rec.n_variables, M.NULLARY_NUMBER: rec.n_numbers,

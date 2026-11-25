@@ -3,7 +3,7 @@
 The Constantin release lives at
 `.scratch/physics-formulae-patterns/data/` and is never edited.
 `python -m physics_priors.catalog --seed` rebuilds
-`data/catalog/{feynman,wiki,inflation}.json` from those CSVs using the branch annotations in `data/catalog_branches.json`.
+`data/catalog/{feynman,wiki,inflation}.json` from those CSVs, applying the Wikipedia annotations in `data/wiki_branches.json`.
 
 Source URLs, by corpus:
   feynman   — one HTML chapter per id, `https://www.feynmanlectures.caltech.edu/{I,II,III}_{cc}.html`
@@ -27,7 +27,7 @@ from . import metalaw as M
 from .paths import ROOT, require_checkout
 
 CATALOG_DIR = ROOT / "data" / "catalog"
-CATALOG_BRANCHES = ROOT / "data" / "catalog_branches.json"
+WIKI_BRANCHES = ROOT / "data" / "wiki_branches.json"
 RELEASED_CLONE = ROOT / ".scratch" / "physics-formulae-patterns"
 RELEASED_DIR = RELEASED_CLONE / "data"
 RELEASED_REPO_URL = "https://github.com/andrei-const/physics-formulae-patterns"
@@ -131,6 +131,8 @@ class FormulaRecord:
     def to_json(self) -> dict:
         d = asdict(self)
         d.pop("operator_counts")
+        if self.corpus == "feynman" or self.corpus in FEYNMAN_LECTURES:
+            d.pop("branch")
         constants = {"pi", "e", *self.constant_names}
         d["tree"] = M.expression_tree(self.formula, constants=constants)
         d["latex"] = M.formula_latex(self.formula)
@@ -1725,10 +1727,9 @@ def main() -> int:
                 "M_is": "amplitude parameter (variable)",
             }),
         ]
-        branches = json.loads(CATALOG_BRANCHES.read_text())
-        for name, recs, _path, _meta in seeds:
-            apply_curated_branches(recs, branches.get(name, {}))
         for name, recs, path, meta in seeds:
+            if name == "wiki":
+                apply_curated_branches(recs, json.loads(WIKI_BRANCHES.read_text()))
             save_catalog(path, recs, name, extra_meta=meta)
             print(f"wrote {path} ({len(recs)} records)")
             for pol in POLICIES:

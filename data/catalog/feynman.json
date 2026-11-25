@@ -115,8 +115,7 @@
         ]
       },
       "latex": "\\frac{e^{\\frac{-\\theta^{2}}{2}}}{\\sqrt{2 \\pi}}",
-      "csv_disagreements": {},
-      "branch": "probability"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -245,8 +244,7 @@
         ]
       },
       "latex": "\\frac{e^{\\frac{-\\left(\\frac{\\theta}{\\sigma}\\right)^{2}}{2}}}{\\sqrt{2 \\pi} \\sigma}",
-      "csv_disagreements": {},
-      "branch": "probability"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -388,8 +386,7 @@
         ]
       },
       "latex": "\\frac{e^{\\frac{-\\left(\\frac{\\theta - \\theta_{1}}{\\sigma}\\right)^{2}}{2}}}{\\sqrt{2 \\pi} \\sigma}",
-      "csv_disagreements": {},
-      "branch": "probability"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -485,8 +482,7 @@
         ]
       },
       "latex": "\\sqrt{\\left(x_{2} - x_{1}\\right)^{2} + \\left(y_{2} - y_{1}\\right)^{2}}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -649,8 +645,7 @@
         ]
       },
       "latex": "\\frac{G m_{1} m_{2}}{\\left(x_{2} - x_{1}\\right)^{2} + \\left(y_{2} - y_{1}\\right)^{2} + \\left(z_{2} - z_{1}\\right)^{2}}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -803,8 +798,7 @@
         "n_constants": 0,
         "complexity": 7,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -905,8 +899,7 @@
         ]
       },
       "latex": "x_{1} y_{1} + x_{2} y_{2} + x_{3} y_{3}",
-      "csv_disagreements": {},
-      "branch": "vector algebra"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -955,8 +948,7 @@
         ]
       },
       "latex": "\\mu Nn",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1079,8 +1071,7 @@
         ]
       },
       "latex": "\\frac{q_{1} q_{2} r}{4 \\pi \\epsilon r^{3}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1190,8 +1181,7 @@
         ]
       },
       "latex": "\\frac{q_{1} r}{4 \\pi \\epsilon r^{3}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1240,8 +1230,7 @@
         ]
       },
       "latex": "q_{2} E_{f}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1336,8 +1325,7 @@
         ]
       },
       "latex": "q \\left(E_{f} + B v \\sin\\left(\\theta\\right)\\right)",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1459,8 +1447,7 @@
         ]
       },
       "latex": "\\frac{1}{2} m \\left(v^{2} + u^{2} + w^{2}\\right)",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1576,8 +1563,7 @@
         ]
       },
       "latex": "G m_{1} m_{2} \\left(\\frac{1}{r_{2}} - \\frac{1}{r_{1}}\\right)",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1641,8 +1627,7 @@
         ]
       },
       "latex": "m g z",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1724,8 +1709,7 @@
         ]
       },
       "latex": "\\frac{1}{2} k_{\\text{spring}} x^{2}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -1930,8 +1914,7 @@
         "n_constants": 0,
         "complexity": 11,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -2156,8 +2139,7 @@
         "n_constants": 0,
         "complexity": 11,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -2336,8 +2318,7 @@
         "n_constants": 0,
         "complexity": 9,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -2514,8 +2495,7 @@
         "n_constants": 0,
         "complexity": 9,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -2616,8 +2596,7 @@
         ]
       },
       "latex": "\\frac{m_{1} r_{1} + m_{2} r_{2}}{m_{1} + m_{2}}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -2686,8 +2665,7 @@
         ]
       },
       "latex": "r F \\sin\\left(\\theta\\right)",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -2769,8 +2747,7 @@
         ]
       },
       "latex": "m r v \\sin\\left(\\theta\\right)",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -2918,8 +2895,7 @@
         ]
       },
       "latex": "\\frac{1}{2} m \\left(\\omega^{2} + \\omega_{0}^{2}\\right) \\frac{1}{2} x^{2}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -2968,8 +2944,7 @@
         ]
       },
       "latex": "\\frac{q}{C}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3032,8 +3007,7 @@
         ]
       },
       "latex": "\\arcsin\\left(n \\sin\\left(\\theta_{2}\\right)\\right)",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3121,8 +3095,7 @@
         ]
       },
       "latex": "\\frac{1}{\\frac{1}{d_{1}} + \\frac{n}{d_{2}}}",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3197,8 +3170,7 @@
         "n_constants": 0,
         "complexity": 1,
         "constant_names": []
-      },
-      "branch": "Waves and optics"
+      }
     },
     {
       "corpus": "feynman",
@@ -3340,8 +3312,7 @@
         ]
       },
       "latex": "\\sqrt{x_{1}^{2} + x_{2}^{2} - 2 x_{1} x_{2} \\cos\\left(\\theta_{1} - \\theta_{2}\\right)}",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3470,8 +3441,7 @@
         ]
       },
       "latex": "\\frac{I_{0} \\sin\\left(\\frac{n \\theta}{2}\\right)^{2}}{\\sin\\left(\\frac{\\theta}{2}\\right)^{2}}",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3540,8 +3510,7 @@
         ]
       },
       "latex": "\\arcsin\\left(\\frac{\\lambda}{n d}\\right)",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -3749,8 +3718,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -4168,8 +4136,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -4244,8 +4211,7 @@
         ]
       },
       "latex": "\\frac{q v B}{p}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -4363,8 +4329,7 @@
         "n_constants": 0,
         "complexity": 5,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -4582,8 +4547,7 @@
         "n_constants": 0,
         "complexity": 11,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -4684,8 +4648,7 @@
         "n_constants": 0,
         "complexity": 1,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -4800,8 +4763,7 @@
         ]
       },
       "latex": "I_{1} + I_{2} + 2 \\sqrt{I_{1} I_{2}} \\cos\\left(\\delta\\right)",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -5030,8 +4992,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -5106,8 +5067,7 @@
         ]
       },
       "latex": "\\frac{3}{2} P_{F} V",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -5195,8 +5155,7 @@
         ]
       },
       "latex": "\\frac{1}{\\gamma - 1} P_{F} V",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -5273,8 +5232,7 @@
         ]
       },
       "latex": "\\frac{n k_{b} T}{V}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -5392,8 +5350,7 @@
         ]
       },
       "latex": "n_{0} e^{\\frac{-m g x}{k_{b} T}}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6039,8 +5996,7 @@
         "constant_names": [
           "kb"
         ]
-      },
-      "branch": "Thermodynamics and kinetic theory"
+      }
     },
     {
       "corpus": "feynman",
@@ -6115,8 +6071,7 @@
         ]
       },
       "latex": "\\frac{\\mu_{\\text{drift}} q V_{e}}{d}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6180,8 +6135,7 @@
         ]
       },
       "latex": "\\mu k_{b} T",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6284,8 +6238,7 @@
         ]
       },
       "latex": "\\frac{\\frac{1}{\\gamma - 1} k_{b} v}{A}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6382,8 +6335,7 @@
         ]
       },
       "latex": "n k_{b} T \\ln\\left(\\frac{V_{2}}{V_{1}}\\right)",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6452,8 +6404,7 @@
         ]
       },
       "latex": "\\sqrt{\\frac{\\gamma P}{\\rho}}",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6626,8 +6577,7 @@
         "n_constants": 0,
         "complexity": 7,
         "constant_names": []
-      },
-      "branch": "Special relativity"
+      }
     },
     {
       "corpus": "feynman",
@@ -6749,8 +6699,7 @@
         ]
       },
       "latex": "x_{1} \\left(\\cos\\left(\\omega t\\right) + \\alpha \\cos\\left(\\omega t\\right)^{2}\\right)",
-      "csv_disagreements": {},
-      "branch": "Waves and optics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6838,8 +6787,7 @@
         ]
       },
       "latex": "\\frac{\\kappa \\left(T_{2} - T_{1}\\right) A}{d}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -6921,8 +6869,7 @@
         ]
       },
       "latex": "\\frac{P}{4 \\pi r^{2}}",
-      "csv_disagreements": {},
-      "branch": "inverse-square flux, no branch"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7012,8 +6959,7 @@
         ]
       },
       "latex": "\\frac{q}{4 \\pi \\epsilon r}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7143,8 +7089,7 @@
         ]
       },
       "latex": "\\frac{\\frac{1}{4 \\pi \\epsilon} p_{d} \\cos\\left(\\theta\\right)}{r^{2}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7320,8 +7265,7 @@
         ]
       },
       "latex": "\\frac{\\frac{p_{d}}{4 \\pi \\epsilon} 3 z}{r^{5}} \\sqrt{x^{2} + y^{2}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7471,8 +7415,7 @@
         ]
       },
       "latex": "\\frac{\\frac{p_{d}}{4 \\pi \\epsilon} 3 \\cos\\left(\\theta\\right) \\sin\\left(\\theta\\right)}{r^{3}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7595,8 +7538,7 @@
         ]
       },
       "latex": "\\frac{\\frac{3}{5} q^{2}}{4 \\pi \\epsilon d}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7667,8 +7609,7 @@
         ]
       },
       "latex": "\\frac{\\epsilon E_{f}^{2}}{2}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7758,8 +7699,7 @@
         ]
       },
       "latex": "\\frac{\\frac{\\sigma_{\\text{den}}}{\\epsilon} 1}{1 + \\chi}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7861,8 +7801,7 @@
         ]
       },
       "latex": "\\frac{q E_{f}}{m \\left(\\omega_{0}^{2} - \\omega^{2}\\right)}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -7985,8 +7924,7 @@
         ]
       },
       "latex": "n_{0} \\left(1 + \\frac{p_{d} E_{f} \\cos\\left(\\theta\\right)}{k_{b} T}\\right)",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -8101,8 +8039,7 @@
           "csv": 2,
           "catalog": 1
         }
-      },
-      "branch": "Thermodynamics and kinetic theory"
+      }
     },
     {
       "corpus": "feynman",
@@ -8231,8 +8168,7 @@
         ]
       },
       "latex": "\\frac{n \\alpha}{1 - \\frac{n \\alpha}{3}} \\epsilon E_{f}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -8346,8 +8282,7 @@
         ]
       },
       "latex": "1 + \\frac{n \\alpha}{1 - \\frac{n \\alpha}{3}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -8579,8 +8514,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -8733,8 +8667,7 @@
         "n_constants": 0,
         "complexity": 7,
         "constant_names": []
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -8913,8 +8846,7 @@
         "n_constants": 0,
         "complexity": 9,
         "constant_names": []
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -8990,8 +8922,7 @@
         ]
       },
       "latex": "-\\mu B \\cos\\left(\\theta\\right)",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -9067,8 +8998,7 @@
         ]
       },
       "latex": "-p_{d} E_{f} \\cos\\left(\\theta\\right)",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -9293,8 +9223,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -9475,8 +9404,7 @@
         "n_constants": 1,
         "complexity": 9,
         "constant_names": []
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -9585,8 +9513,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Electromagnetism"
+      }
     },
     {
       "corpus": "feynman",
@@ -9644,8 +9571,7 @@
         ]
       },
       "latex": "\\epsilon E_{f}^{2}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -9733,8 +9659,7 @@
         ]
       },
       "latex": "\\frac{q v}{2 \\pi r}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -9809,8 +9734,7 @@
         ]
       },
       "latex": "\\frac{q v r}{2}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -9898,8 +9822,7 @@
         ]
       },
       "latex": "\\frac{g q B}{2 m}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -10039,8 +9962,7 @@
         "n_constants": 0,
         "complexity": 5,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -10219,8 +10141,7 @@
         "n_constants": 0,
         "complexity": 7,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -10383,8 +10304,7 @@
         ]
       },
       "latex": "\\frac{n_{0}}{e^{\\frac{\\mu B}{k_{b} T}} + e^{\\frac{-\\mu B}{k_{b} T}}}",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -10494,8 +10414,7 @@
         ]
       },
       "latex": "n_{\\rho} \\mu \\tanh\\left(\\frac{\\mu B}{k_{b} T}\\right)",
-      "csv_disagreements": {},
-      "branch": "Thermodynamics and kinetic theory"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -10807,8 +10726,7 @@
           "epsilon",
           "kb"
         ]
-      },
-      "branch": "Thermodynamics and kinetic theory"
+      }
     },
     {
       "corpus": "feynman",
@@ -10883,8 +10801,7 @@
         ]
       },
       "latex": "\\mu \\left(1 + \\chi\\right) B",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -10959,8 +10876,7 @@
         ]
       },
       "latex": "\\frac{Y A x}{d}",
-      "csv_disagreements": {},
-      "branch": "Continuum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -11035,8 +10951,7 @@
         ]
       },
       "latex": "\\frac{Y}{2 \\left(1 + \\sigma\\right)}",
-      "csv_disagreements": {},
-      "branch": "Continuum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -11258,8 +11173,7 @@
         "constant_names": [
           "kb"
         ]
-      },
-      "branch": "Thermodynamics and kinetic theory"
+      }
     },
     {
       "corpus": "feynman",
@@ -11520,8 +11434,7 @@
         "constant_names": [
           "kb"
         ]
-      },
-      "branch": "Thermodynamics and kinetic theory"
+      }
     },
     {
       "corpus": "feynman",
@@ -11674,8 +11587,7 @@
         "n_constants": 0,
         "complexity": 5,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -11830,8 +11742,7 @@
         "n_constants": 0,
         "complexity": 5,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -12253,7 +12164,6 @@
         "complexity": 25,
         "constant_names": []
       },
-      "branch": "Quantum mechanics",
       "consideration": "",
       "public": true
     },
@@ -12358,8 +12268,7 @@
         ]
       },
       "latex": "\\mu \\sqrt{B_{x}^{2} + B_{y}^{2} + B_{z}^{2}}",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -12460,8 +12369,7 @@
         "n_constants": 0,
         "complexity": 1,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -12654,8 +12562,7 @@
         "n_constants": 0,
         "complexity": 8,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -12765,8 +12672,7 @@
         ]
       },
       "latex": "I_{0} \\left(e^{\\frac{q V_{e}}{k_{b} T}} - 1\\right)",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -12861,8 +12767,7 @@
         ]
       },
       "latex": "2 U \\left(1 - \\cos\\left(k d\\right)\\right)",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13049,8 +12954,7 @@
         "n_constants": 0,
         "complexity": 8,
         "constant_names": []
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -13138,8 +13042,7 @@
         ]
       },
       "latex": "\\frac{2 \\pi \\alpha}{n d}",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13221,8 +13124,7 @@
         ]
       },
       "latex": "\\beta \\left(1 + \\alpha \\cos\\left(\\theta\\right)\\right)",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13571,8 +13473,7 @@
         "constant_names": [
           "epsilon"
         ]
-      },
-      "branch": "Quantum mechanics"
+      }
     },
     {
       "corpus": "feynman",
@@ -13654,8 +13555,7 @@
         ]
       },
       "latex": "\\frac{-\\rho_{c,0} q \\vec{A}}{m}",
-      "csv_disagreements": {},
-      "branch": "Quantum mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13739,8 +13639,7 @@
         ]
       },
       "latex": "\\frac{G m_{1} m_{2}}{r^{2}}",
-      "csv_disagreements": {},
-      "branch": "Classical mechanics"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13850,8 +13749,7 @@
         ]
       },
       "latex": "\\frac{q_{1} q_{2}}{4 \\pi \\epsilon r^{2}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     },
     {
       "corpus": "feynman",
@@ -13948,8 +13846,7 @@
         ]
       },
       "latex": "\\frac{q_{1}}{4 \\pi \\epsilon r^{2}}",
-      "csv_disagreements": {},
-      "branch": "Electromagnetism"
+      "csv_disagreements": {}
     }
   ]
 }

@@ -434,7 +434,7 @@ def main() -> int:
     records = [record for record, _branch, _meta in rows]
     full_matrix = matrix_from_entries([record_as_entry(record) for record in records])
     groups = FY.groups_of(rows)
-    labelled = np.concatenate([groups[key] for key in ORDER])
+    labelled = np.unique(np.concatenate(list(groups.values())))
     n_boot = args.boot
     seed_seq = np.random.SeedSequence(BOOTSTRAP_SEED)
     spawn_index = 0
@@ -474,13 +474,32 @@ def main() -> int:
         for key, _name in CORPORA:
             corpora[label][key] = one(f"corpus__{key}__{label}", corpus_matrices[key], threshold)
 
-    branches = {label: {} for label, _value in THRESHOLDS}
-    branch_draws = {label: {} for label, _value in THRESHOLDS}
+    def joint_branches(prefix, grouped, threshold, suffix=""):
+        rng, index = generator()
+        eligible = np.unique(np.concatenate(list(grouped.values())))
+        probabilities = np.full(eligible.size, 1 / eligible.size)
+        positions = {key: np.searchsorted(eligible, indices) for key, indices in grouped.items()}
+        matrices = {key: full_matrix[indices] for key, indices in grouped.items()}
+        betas = {key: np.full(n_boot, np.nan) for key in grouped}
+        statuses = {key: [] for key in grouped}
+        for b in range(n_boot):
+            # One multiplicity per expression, shared by every branch carrying it.
+            weights = rng.multinomial(eligible.size, probabilities)
+            for key, matrix in matrices.items():
+                fit = fit_from_type_counts(weights[positions[key]] @ matrix, threshold)
+                betas[key][b] = np.nan if fit.beta is None else fit.beta
+                statuses[key].append(fit.status)
+        summaries = {}
+        for key, matrix in matrices.items():
+            original = fit_from_type_counts(matrix.sum(axis=0), threshold)
+            summary = summarise_bootstrap(original, betas[key], statuses[key])
+            summary.update(n_equations=len(matrix), _spawn=index)
+            summaries[key] = store(f"{prefix}__{key}{suffix}", summary, betas[key], statuses[key])
+        return summaries, betas
+
+    branches, branch_draws = {}, {}
     for label, threshold in THRESHOLDS:
-        for key in ORDER:
-            summary = one(f"branch__{key}__{label}", full_matrix[groups[key]], threshold)
-            branches[label][key] = summary
-            branch_draws[label][key] = draws[f"branch__{key}__{label}"]
+        branches[label], branch_draws[label] = joint_branches("branch", groups, threshold, suffix=f"__{label}")
     differences = {
         label: difference_block(ORDER, branches[label], branch_draws[label])
         for label, _value in THRESHOLDS
@@ -495,7 +514,7 @@ def main() -> int:
     chapter_boot, chapter_draws = {}, {}
     chapter_rows = {}
     for idx in labelled:
-        record, branch, meta = rows[int(idx)]
+        record, _labels, meta = rows[int(idx)]
         key = chapter_key(record, meta)
         if key is None:
             raise ValueError("Chapter resampling requires source chapter identifiers")
@@ -539,25 +558,14 @@ def main() -> int:
         "dependence": "All equations in a selected chapter receive the same multiplicity across branches."
     }
 
-    scenarios = [
-        ("ambiguous_dropped", None, lambda meta, branch: meta["ambiguous"]),
-        ("ambiguous_reassigned",
-         lambda meta, branch: (FY.ALT.get((meta["volume"], meta["chapter"]), branch) if meta["ambiguous"] else branch),
-         lambda meta, branch: meta["ambiguous"] and (meta["volume"], meta["chapter"]) in FY.ALT and FY.ALT[(meta["volume"], meta["chapter"])] is None),
-        ("notation_dropped", None, lambda meta, branch: meta["notation"]),
-        ("volume_iii_dropped", None, lambda meta, branch: meta["volume"] == "III"),
-    ]
+    scenarios = {
+        "primary_label_only": FY.groups_of(rows, primary_only=True),
+        "notation_dropped": FY.groups_of(rows, drop=lambda meta: meta["notation"]),
+        "volume_iii_dropped": FY.groups_of(rows, drop=lambda meta: meta["volume"] == "III"),
+    }
     ablations = {}
-    for name, relabel, drop in scenarios:
-        grouped = FY.groups_of(rows, relabel, drop)
-        summaries = {}
-        local_draws = {}
-        for key in ORDER:
-            if key not in grouped:
-                continue
-            summary = one(f"ablation__{name}__{key}", full_matrix[grouped[key]], PRIMARY_THRESHOLD)
-            summaries[key] = summary
-            local_draws[key] = draws[f"ablation__{name}__{key}"]
+    for name, grouped in scenarios.items():
+        summaries, local_draws = joint_branches(f"ablation__{name}", grouped, PRIMARY_THRESHOLD)
         present = [key for key in ORDER if key in summaries]
         ablations[name] = {
             "n": {key: int(len(grouped[key])) for key in present},
@@ -646,6 +654,7 @@ def main() -> int:
     ]
     data_files = [
         "data/catalog/feynman.json",
+        "data/catalog/feynman_branches.json",
         "data/catalog/feynman_lectures_v1.json",
         "data/catalog/feynman_lectures_v2.json",
         "data/catalog/feynman_lectures_v3.json",
@@ -672,8 +681,8 @@ def main() -> int:
             "formal_difference": (
                 "No difference interval is reported between the Feynman benchmark and the "
                 "expanded Feynman corpus, because the benchmark equations are part of the "
-                "expanded corpus. Equation resampling assumes independence between disjoint "
-                "branches. Joint chapter resampling preserves shared-chapter dependence."
+                "expanded corpus. Each formula has one bootstrap multiplicity across all of its "
+                "branches. Chapter resampling shares one multiplicity across all formulas in a chapter."
             ),
         },
         "provenance": {

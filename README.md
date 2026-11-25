@@ -19,9 +19,9 @@ We created a public formula ledger for searching expressions, tracing their sour
 
 We estimate exponential decay rates and nominal 95% bootstrap intervals for the collections and branches. The $f(R)$ collection has a fitted rate close to that of the inflationary potentials, and the cause of the gap remains open. The Feynman estimates suggest that the decay rate varies across branches of physics.
 
-Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We use Codex to assign labels from each Feynman expression and its source context. Of the 1,016 expressions, 967 have a label in one of the seven physics branches and 221 have multiple labels. [Branch labels](data/priors/feynman_multilabel_labels.json)
+Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We use Codex to assign labels from each Feynman expression and its source context. Of the 1,016 expressions, 967 have a label in one of the seven physics branches and 221 have multiple labels. [Branch labels](data/catalog/feynman_branches.json)
 
-We compare the earlier labels, fresh single labels and multiple labels on 943 Feynman formulas using the same grouped six-fold split. The branch-dependent prior trained with multiple labels assigns 1.34 times as much probability as the pooled prior on a geometric-average basis. The corresponding ratios are 1.29 with the earlier labels and 1.42 with the fresh single labels. These results measure how well the priors describe held-out expressions. [Saved results](results/prior_scoring/multilabel_summary.json)
+We use grouped six-fold cross-validation on 943 Feynman formulas to compare a pooled prior with priors that use branch information. The branch-dependent prior trained with multiple labels assigns 1.34 times as much probability as the pooled prior on a geometric-average basis. These results measure how well the priors describe held-out expressions. [Saved results](results/prior_scoring/summary.json)
 
 ![Fitted exponential decay rates for seven Feynman branches and five comparison collections, with individual bootstrap intervals](writeup/figures/beta_by_branch.png)
 

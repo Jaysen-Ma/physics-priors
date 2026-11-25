@@ -11,54 +11,50 @@ import warnings
 
 from scipy.special import logsumexp
 
-from physics_priors.analysis.prior_comparison import INNER_FOLDS, KATZ_WARNINGS, OUTER_FOLDS
 from physics_priors.catalog_tools import feynman
 from physics_priors.paths import ROOT
 from physics_priors.priors import model
 from physics_priors.priors.encoding import normalized_tree, prefix_labels, tree_events
 
 
-LABELS = ROOT / 'data' / 'priors' / 'feynman_multilabel_labels.json'
+OUTER_FOLDS = range(6)
+INNER_FOLDS = range(3)
+KATZ_WARNINGS = {
+    'divide by zero encountered in scalar divide',
+    'invalid value encountered in scalar multiply',
+    'invalid value encountered in scalar divide',
+}
 FOLDS = ROOT / 'data' / 'priors' / 'feynman_multilabel_folds.json'
 DOMAINS = sorted(feynman.ORDER)
 SCHEMES = ('earlier', 'fresh_single', 'multilabel')
 
 
-def load_design(labels_path=LABELS, fold_path=FOLDS):
-    labels_bytes, fold_bytes = labels_path.read_bytes(), fold_path.read_bytes()
-    labels, plan = json.loads(labels_bytes), json.loads(fold_bytes)
-    labels_hash = hashlib.sha256(labels_bytes).hexdigest()
+def load_design(labels_path=feynman.LABELS, fold_path=FOLDS):
+    catalogue, _, _ = feynman.corpus_records()
+    labels, labels_hash = feynman.load_labels(catalogue, labels_path)
+    fold_bytes = fold_path.read_bytes()
+    plan = json.loads(fold_bytes)
     if labels_hash != plan['labels_sha256'] or plan['geometric_share'] != model.GEOMETRIC_SHARE:
         raise ValueError('The label file or prior mixture differs from the frozen multilabel study.')
 
-    catalogue = {record.id: (record.formula, feynman.FINE.get(branch))
-                 for record, branch, _ in feynman.feynman_corpus()[0]}
-    records = labels['records']
-    if Counter(row['id'] for row in records) != Counter(catalogue.keys()):
-        raise ValueError('The label file must cover each retained Feynman expression once.')
-    pairs = sorted((ident, formula, branch) for ident, (formula, branch) in catalogue.items())
-    fingerprint = hashlib.sha256(json.dumps(
-        pairs, ensure_ascii=False, separators=(',', ':'),
-    ).encode()).hexdigest()
-    if fingerprint != labels['catalogue_sha256']:
-        raise ValueError('Feynman expressions or earlier labels differ from the frozen multilabel study.')
-
     assignments = [(ident, group) for group, ids in plan['groups'].items() for ident in ids]
-    matched = [row['id'] for row in records if row['primary'] and catalogue[row['id']][1]]
-    if Counter(ident for ident, _ in assignments) != Counter(matched):
-        raise ValueError('The frozen groups must cover the matched roster exactly once.')
+    earlier = plan['historical_control']
+    if Counter(ident for ident, _ in assignments) != Counter(earlier.keys()):
+        raise ValueError('The frozen groups and historical control must cover the same roster once.')
     by_id = dict(assignments)
+    # Keep the label-file order used in the original experiment's floating-point reductions.
+    formulas = {record.id: record.formula for record, _ in catalogue}
+    records = labels.values()
+    eligible = {row['id'] for row in records if row['primary']}
+    if earlier.keys() - eligible or set(earlier.values()) - set(DOMAINS):
+        raise ValueError('The historical control must provide a valid label for each matched formula.')
     rows = []
     for row in records:
         ident, primary, tags = row['id'], row['primary'], row['branches']
-        if (len(tags) != len(set(tags)) or set(tags) - set(DOMAINS)
-                or (tags and primary not in tags) or (not tags and primary is not None)):
-            raise ValueError(f'Invalid branch labels for {ident}.')
         if ident in by_id:
-            formula, earlier = catalogue[ident]
-            prefix = prefix_labels(normalized_tree(formula))
+            prefix = prefix_labels(normalized_tree(formulas[ident]))
             rows.append({'id': ident, 'group': by_id[ident], 'prefix': prefix,
-                         'shape': tuple(tree_events(prefix)), 'earlier': [earlier],
+                         'shape': tuple(tree_events(prefix)), 'earlier': [earlier[ident]],
                          'fresh_single': [primary], 'multilabel': tags})
     provenance = {
         'n_catalogue_formulas': len(records),
@@ -167,7 +163,7 @@ def summarize(scores):
     }
 
 
-def compare_multilabel(labels_path=LABELS, fold_path=FOLDS):
+def compare_multilabel(labels_path=feynman.LABELS, fold_path=FOLDS):
     rows, plan, summary = load_design(labels_path, fold_path)
     splits = validated_folds(rows, plan)
     contexts = model.Contexts(rows, keys=grammar_context_keys())
@@ -199,4 +195,10 @@ def compare_multilabel(labels_path=LABELS, fold_path=FOLDS):
     pooled = {(row['id'], row['log_deep_pooled']) for row in result}
     if len(pooled) != len(rows):
         raise RuntimeError('The same pooled prior must be used for all labelling schemes on each fold.')
+    main = summary['schemes']['multilabel']
+    summary['overall'] = {
+        'n_scores': main['n_formulae'],
+        'equal_formula_gain_nats': math.log(main['overall_probability_ratio']),
+        'by_branch': {domain: math.log(ratio) for domain, ratio in main['per_domain_ratio'].items()},
+    }
     return result, summary
