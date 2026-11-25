@@ -51,7 +51,7 @@ If the fixture checkout already exists, verify its revision and the three files 
 OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare
 ```
 
-The small decay-rate and calibration runs write to `results/exponential_fit/diagnostics/`. The prior comparison writes to `results/prior_scoring/run/`. GitHub Actions checks the results and verifies that the runs leave tracked files intact.
+The small decay-rate and calibration runs write to `results/exponential_fit/diagnostics/`. The prior comparisons write to `results/prior_scoring/run/` for the single-label study and `results/prior_scoring/multilabel_run/` for the multilabel study. GitHub Actions runs the tests, checks the single-label reference result and verifies that the runs leave tracked files intact.
 
 GitHub Actions runs the checks on Linux for pull requests to `main` and pushes to `main`.
 

@@ -237,3 +237,4 @@ writeup/*.log
 /results/previous_unweighted_logls/
 /results/exponential_fit/diagnostics/
 /results/prior_scoring/run/
+/results/prior_scoring/multilabel_run/

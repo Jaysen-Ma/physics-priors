@@ -57,12 +57,26 @@ The saved decay-rate figures and data under `results/exponential_fit/` correspon
 
 ## Compare priors on held-out formulas
 
+### Multilabel comparison
+
 ```bash
-OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare
+OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare --study multilabel
+```
+
+The [expression-level labels](../data/priors/feynman_multilabel_labels.json) cover all 1,016 benchmark and lecture expressions. The run compares the earlier labels, fresh single labels and multiple labels on the same 943 expressions. The [frozen fold plan](../data/priors/feynman_multilabel_folds.json) gives six outer folds and three inner folds for each outer training set. Related formulas and all labels of each formula stay together. Before each fit, the scorer removes training expressions with the same model encoding as an expression in the corresponding evaluation set.
+
+The pooled prior uses each training formula once. Each branch adjustment uses the subset carrying its label, with the same 25% geometric mixture as the single-label study. The scorer averages the log probability ratios across applicable branches within each formula. It then averages those formula-level log ratios and exponentiates the overall mean. It also reports the alternative that averages the branch probabilities before taking the log.
+
+The command writes `scores.csv` and `summary.json` to `results/prior_scoring/multilabel_run/` by default. The CSV contains one row per held-out formula and applicable label in each scheme. Use `--output` to choose a new output directory. The [saved summary](../results/prior_scoring/multilabel_summary.json) reports 1.34 for the main multilabel comparison and 1.41 for the probability mixture.
+
+### Earlier single-label comparison
+
+```bash
+OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare --study single-label
 ```
 
 The command refits both priors from the same outer training folds of the corrected Feynman catalog. [The frozen fold plan](../data/priors/feynman_folds.json) records the 172 groups and a single division into six folds. We fixed the fold assignments using branch counts before fitting the priors. We adopted the six-part split after comparing it with a three-part split of the same catalogue. Related formulas stay together across each split, and every test fold contains formulas from all seven branches. Each outer training set has its own three inner folds, which are used to learn the mixture weights. The final whole-equation probability mixes 75% learned mixture with 25% geometric adjustment. The reference is the deeper pooled Katz model.
 
 The command writes the 968 held-out scores and summaries to `results/prior_scoring/run/`. Use `--output` to choose a new directory for another run. `gain` is the branch-informed log probability minus the pooled log probability in nats. The headline probability ratio exponentiates the mean gain with each formula weighted equally. The summary also includes the equal-branch mean gain. See the [saved summary](../results/prior_scoring/summary.json) for the reference result.
 
-The scorer uses the Katz back-off and Good–Turing implementation from [Bartlett and Desmond's Katz repository, pinned revision](https://github.com/DeaglanBartlett/katz/tree/71544a6feafb3162713fcd67a95c24d6616eeb85). The required modules and their [MIT license](../src/physics_priors/priors/_katz/LICENSE) are included with the package. The summary records known upstream numerical warnings encountered while building the tables. The scorer checks the resulting tables for finite probabilities, valid support and normalization.
+Both comparisons use the Katz back-off and Good–Turing implementation from [Bartlett and Desmond's Katz repository, pinned revision](https://github.com/DeaglanBartlett/katz/tree/71544a6feafb3162713fcd67a95c24d6616eeb85). The required modules and their [MIT license](../src/physics_priors/priors/_katz/LICENSE) are included with the package. The summaries record known upstream numerical warnings encountered while building the tables. The scorer checks the resulting tables for finite probabilities, valid support and normalization.

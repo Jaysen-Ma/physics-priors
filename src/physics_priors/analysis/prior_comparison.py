@@ -1,4 +1,4 @@
-"""Reproduce the family-grouped comparison of pooled and branch-informed priors."""
+"""Reproduce the family-grouped comparisons of pooled and branch-informed priors."""
 
 import argparse
 from collections import Counter
@@ -150,14 +150,22 @@ def compare(plan_path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=OUT,
+    parser.add_argument('--study', choices=('single-label', 'multilabel'), default='single-label',
+                        help='select the original single-label study or the matched multilabel comparison')
+    parser.add_argument('--output', type=Path,
                         help='new directory for scores.csv and summary.json')
     args = parser.parse_args()
     require_checkout()
-    output = args.output.resolve()
+    default_output = OUT if args.study == 'single-label' else OUT.with_name('multilabel_run')
+    output = (args.output or default_output).resolve()
     if output.exists():
         parser.error(f'Output directory already exists: {output}. Choose a new --output.')
-    scores, summary = compare(PLAN)
+    if args.study == 'multilabel':
+        from physics_priors.analysis.multilabel_comparison import compare_multilabel
+
+        scores, summary = compare_multilabel()
+    else:
+        scores, summary = compare(PLAN)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output.parent) as temporary:
         staged = Path(temporary) / 'result'
