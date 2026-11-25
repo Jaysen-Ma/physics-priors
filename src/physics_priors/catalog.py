@@ -23,6 +23,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Callable, Iterable
 
+from . import RANDOM_SEED
 from . import metalaw as M
 from .paths import ROOT, require_checkout
 
@@ -1363,7 +1364,7 @@ def scatter_records(corpus: str) -> list[FormulaRecord]:
 # negation, a named function, or a collapsed square, cube or fourth power. A
 # binary node is addition, subtraction, multiplication, division or a general
 # power. Seed is fixed so the baseline card does not move between page loads.
-RANDOM_MODEL_SEED = 20261013
+RANDOM_MODEL_SEED = RANDOM_SEED
 # 5, not 2, 3 or 4: those integer exponents collapse into Pow2/3/4 and
 # would drop a node whenever a general power happened to have one as
 # its right-hand side.

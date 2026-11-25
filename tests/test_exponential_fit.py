@@ -129,7 +129,7 @@ class BootstrapRuleTests(unittest.TestCase):
         # One token in total: exclusion of any positive tail leaves too few ranks,
         # and a resample cannot invent a second rank.
         matrix = np.array([[1.0, 0.0]], dtype=float)
-        fit, betas, statuses = bootstrap_type_matrix(matrix, n_boot=5, seed=1, threshold=None)
+        fit, betas, statuses = bootstrap_type_matrix(matrix, n_boot=5, threshold=None)
         self.assertEqual(fit.status, STATUS_DEGENERATE)
         self.assertTrue(np.isnan(betas).all())
         self.assertTrue(np.all(statuses == STATUS_DEGENERATE))

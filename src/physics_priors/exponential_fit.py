@@ -18,12 +18,14 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-BOUNDS = (0.0, 5.0)
+from physics_priors import RANDOM_SEED
+
+BOUNDS = (0.0, 30.0)
 BOUND_TOL = 1e-4
 PRIMARY_THRESHOLD = None  # All positive-count ranks enter the primary fit.
 MIN_RETAINED = 2
 QUANTILE_METHOD = "linear"  # numpy.quantile, Hyndman-Fan type 7
-BOOTSTRAP_SEED = 20261013
+BOOTSTRAP_SEED = RANDOM_SEED
 BOOTSTRAP_REPS = 10000
 
 STATUS_OK = "ok"

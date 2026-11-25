@@ -13,10 +13,10 @@ import json
 import numpy as np
 from scipy.stats import beta as beta_dist
 
+from physics_priors import RANDOM_SEED
 from physics_priors.exponential_fit import bootstrap_type_matrix, simultaneous_intervals, summarise_bootstrap
 from physics_priors.paths import ROOT, code_hashes, require_checkout
 
-SEED = 20261026
 BETA = 0.35
 SCENARIOS = ('homogeneous_equations', 'heterogeneous_equations', 'chapter_dependence')
 
@@ -54,7 +54,7 @@ def generate_group(rng, scenario, group):
 def one_dataset(task):
     scenario_index, dataset, n_boot = task
     scenario = SCENARIOS[scenario_index]
-    rng = np.random.default_rng(np.random.SeedSequence(SEED, spawn_key=(scenario_index, dataset)))
+    rng = np.random.default_rng(np.random.SeedSequence(RANDOM_SEED, spawn_key=(scenario_index, dataset)))
     hats, draws, covered, bias = [], [], [], []
     failed = boundary = 0
     for group in range(7):
@@ -119,11 +119,11 @@ def main():
     if (args.datasets,args.boot) != (200,400):
         output = output/'diagnostics'/f'coverage_{args.datasets}_{args.boot}'
     output.mkdir(parents=True,exist_ok=True)
-    payload = {'seed': SEED, 'n_datasets_per_scenario':args.datasets, 'n_boot':args.boot,
+    payload = {'seed': RANDOM_SEED, 'n_datasets_per_scenario':args.datasets, 'n_boot':args.boot,
                'beta':BETA, 'threshold':None, 'n_branches':7, 'n_comparisons':21,
                'resampling':{'homogeneous_equations':'equations','heterogeneous_equations':'equations','chapter_dependence':'chapters'},
                'limitations':'Synthetic count vectors, not expression trees. Finite simulation precision. Chapter scenario includes a branch with only four clusters. This does not establish coverage on real corpora.',
-               'code_sha256':code_hashes(['analysis/exponential_coverage_check.py', 'exponential_fit.py', 'paths.py']),
+               'code_sha256':code_hashes(['__init__.py', 'analysis/exponential_coverage_check.py', 'exponential_fit.py', 'paths.py']),
                'scenarios':scenarios}
     (output/'coverage_check.json').write_text(json.dumps(payload,indent=2)+'\n')
     (output/'coverage_datasets.json').write_text(json.dumps(records,indent=2)+'\n')

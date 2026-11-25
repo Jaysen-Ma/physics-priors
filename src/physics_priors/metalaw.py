@@ -31,6 +31,10 @@ from typing import Iterable
 
 import numpy as np
 
+from physics_priors import RANDOM_SEED
+
+from physics_priors.exponential_fit import BOUNDS as LOGLS_BOUNDS
+
 BINARY = {ast.Add: "Add", ast.Sub: "Subtract", ast.Mult: "Mult",
           ast.Div: "Div", ast.Pow: "Pow"}
 COLLAPSED_POWERS = (2, 3, 4)
@@ -695,7 +699,7 @@ def _rss(beta: float, obs: np.ndarray) -> float:
 def _logls_beta_obs(obs: np.ndarray) -> float:
     from scipy.optimize import minimize_scalar
 
-    res = minimize_scalar(lambda beta: _rss(beta, obs), bounds=MLE_BOUNDS,
+    res = minimize_scalar(lambda beta: _rss(beta, obs), bounds=LOGLS_BOUNDS,
                           method="bounded", options={"xatol": 1e-12})
     return float(res.x)
 
@@ -825,7 +829,7 @@ def rank_counts(entries: list[EIEntry]) -> Counter:
 # available as fit_beta_mle but is not the reported estimator.
 MLE_BOUNDS = (0.0, 5.0)
 BOOTSTRAP_REPS = 2000
-BOOTSTRAP_SEED = 20261013
+BOOTSTRAP_SEED = RANDOM_SEED
 
 
 def _mle_from_sorted(obs: np.ndarray) -> float:

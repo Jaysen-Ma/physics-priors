@@ -2,6 +2,7 @@ import unittest
 
 import numpy as np
 
+from physics_priors import RANDOM_SEED
 from physics_priors import metalaw as M
 from physics_priors.beta import expression_beta
 
@@ -19,7 +20,7 @@ class MultinomialMLETest(unittest.TestCase):
         self.assertAlmostEqual(M.fit_beta_mle([1, 5, 3]), M.fit_beta_mle([5, 3, 1]), places=10)
 
     def test_fisher_matches_simulation(self):
-        rng = np.random.default_rng(1)
+        rng = np.random.default_rng(RANDOM_SEED)
         r = np.arange(1, 16)
         p = np.exp(-0.3 * r); p /= p.sum()
         bs = []

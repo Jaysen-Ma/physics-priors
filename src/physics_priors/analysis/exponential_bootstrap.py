@@ -3,7 +3,7 @@
 
 Primary fit: unweighted least squares of log frequency against a normalised
 exponential, retaining every positive-count operator rank.
-Uncertainty: 10,000 equation-level bootstrap replicates, seed 20261013.
+Uncertainty: 10,000 equation-level bootstrap replicates using the project seed.
 Branch differences: 21 pairwise contrasts with centred simultaneous nominal 95% intervals.
 
 Run from the repository root:
@@ -35,12 +35,13 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 
+from physics_priors import RANDOM_SEED  # noqa: E402
 from physics_priors import metalaw as M  # noqa: E402
 from physics_priors.catalog import entry_from_formula, record_as_entry, rewrite_units, scatter_records  # noqa: E402
 from physics_priors.catalog_tools import feynman as FY  # noqa: E402
 from physics_priors.paths import PACKAGE_DIR, ROOT, code_hashes, require_checkout  # noqa: E402
 from physics_priors.exponential_fit import (  # noqa: E402
-    BOOTSTRAP_SEED,
+    BOUNDS,
     PRIMARY_THRESHOLD,
     QUANTILE_METHOD,
     bootstrap_type_matrix,
@@ -436,7 +437,7 @@ def main() -> int:
     groups = FY.groups_of(rows)
     labelled = np.unique(np.concatenate(list(groups.values())))
     n_boot = args.boot
-    seed_seq = np.random.SeedSequence(BOOTSTRAP_SEED)
+    seed_seq = np.random.SeedSequence(RANDOM_SEED)
     spawn_index = 0
 
     def generator():
@@ -597,7 +598,7 @@ def main() -> int:
     }
 
     inflation_matrix = corpus_matrices["inflation"]
-    subset_rng = np.random.default_rng(20260930)
+    subset_rng = np.random.default_rng(RANDOM_SEED)
     subset_betas = []
     subset_status = []
     for _draw in range(2000):
@@ -610,7 +611,7 @@ def main() -> int:
     statuses["ei_sample10"] = np.asarray([{"ok": 0, "boundary": 1, "degenerate": 2, "failed": 3}[v] for v in subset_status], dtype=np.uint8)
     finite_subsets = subset_betas[np.isfinite(subset_betas)]
     ei_sample = {
-        "seed": 20260930,
+        "seed": RANDOM_SEED,
         "n_draws": 2000,
         "sample_size": 10,
         "n_finite": int(finite_subsets.size),
@@ -644,6 +645,7 @@ def main() -> int:
 
     code_path = PACKAGE_DIR / "exponential_fit.py"
     code_files = [
+        "__init__.py",
         "exponential_fit.py",
         "metalaw.py",
         "catalog.py",
@@ -665,12 +667,12 @@ def main() -> int:
     ]
     payload = {
         "method": "exponential fitting with nonparametric bootstrap inference",
-        "seed": BOOTSTRAP_SEED,
+        "seed": RANDOM_SEED,
         "seed_sequence": "numpy.random.SeedSequence spawn order recorded as spawn_index",
         "n_boot": n_boot,
         "primary_threshold": PRIMARY_THRESHOLD,
         "thresholds": {label: value for label, value in THRESHOLDS},
-        "bounds": [0.0, 5.0],
+        "bounds": list(BOUNDS),
         "bound_tol": 1e-4,
         "quantile_method": QUANTILE_METHOD,
         "centring": "original_estimate",
