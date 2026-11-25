@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import Counter
@@ -13,51 +14,26 @@ from physics_priors.catalog import CATALOG_DIR, scatter_records
 from physics_priors.catalog_tools import build_feynman_lectures_catalog as lecture_builder
 
 
-# Fine branch labels (as written in the catalogs) -> analysis groups.
-FINE = {"Classical mechanics": "Classical", "Special relativity": "SR", "Electromagnetism": "EM",
-        "Waves and optics": "Waves+optics", "Thermodynamics and kinetic theory": "Thermo",
-        "Quantum mechanics": "QM", "Fluid mechanics": "Fluid+continuum", "Continuum mechanics": "Fluid+continuum"}
+LABELS = CATALOG_DIR / "feynman_branches.json"
+
 ORDER = ["SR", "QM", "EM", "Waves+optics", "Classical", "Thermo", "Fluid+continuum"]
 LONG = {"SR": "Special relativity", "QM": "Quantum mechanics", "EM": "Electromagnetism",
         "Waves+optics": "Waves and optics", "Classical": "Classical mechanics",
         "Thermo": "Thermodynamics and kinetic theory", "Fluid+continuum": "Fluid and continuum mechanics"}
-
-# Sensitivity check: the alternative branch for each chapter flagged ambiguous in the
-# chapter-to-branch table (None = no single alternative; the chapter is dropped).
-# Relativistic electrodynamics (I.34, II.25, II.26, II.28) is SR in the main mapping
-# (lecture_builder.BRANCH_OVERRIDE); its alternative here is electromagnetism.
-ALT = {
-    ("I", 5): None, ("I", 7): None, ("I", 12): None, ("I", 23): "Electromagnetism",
-    ("I", 24): "Electromagnetism", ("I", 25): "Electromagnetism", ("I", 28): "Waves and optics",
-    ("I", 31): "Electromagnetism", ("I", 32): "Waves and optics", ("I", 34): "Electromagnetism",
-    ("I", 35): None, ("I", 36): None, ("I", 37): "Waves and optics", ("I", 41): "Quantum mechanics",
-    ("I", 50): None, ("I", 51): "Fluid mechanics",
-    ("II", 1): None, ("II", 10): None, ("II", 11): "Thermodynamics and kinetic theory", ("II", 12): None,
-    ("II", 19): None, ("II", 22): None, ("II", 25): "Electromagnetism", ("II", 26): "Electromagnetism",
-    ("II", 28): "Electromagnetism", ("II", 32): "Electromagnetism", ("II", 33): "Electromagnetism",
-    ("II", 34): "Quantum mechanics", ("II", 35): "Quantum mechanics", ("II", 36): None, ("II", 37): None,
-    ("III", 4): "Thermodynamics and kinetic theory", ("III", 13): None, ("III", 14): None,
-    ("III", 15): None, ("III", 20): None, ("III", 21): None,
-}
-
 
 def chapter_from_url(url):
     m = re.search(r"/(I{1,3})_(\d+)\.html", url or "")
     return (m.group(1), int(m.group(2))) if m else None
 
 
-def feynman_corpus():
-    """[(record, branch label, meta)] for the benchmark plus deduplicated lecture records."""
+def corpus_records():
+    """Assemble records and their source provenance before joining branch labels."""
     bench = scatter_records("feynman")
-    labels = {r["id"]: r.get("branch") for r in json.loads((CATALOG_DIR / "feynman.json").read_text())["records"]}
-    def bench_label(r):  # same main-mapping rule for benchmark expressions from relativistic-EM chapters
-        b = labels.get(r.id)
-        return "Special relativity" if b == "Electromagnetism" and chapter_from_url(r.source_url) in lecture_builder.BRANCH_OVERRIDE else b
     rows = []
     for record in bench:
         volume, chapter = chapter_from_url(record.source_url) or (None, None)
-        rows.append((record, bench_label(record), dict(source="benchmark", volume=volume,
-                     chapter=chapter, ambiguous=False, notation=False)))
+        rows.append((record, dict(source="benchmark", volume=volume,
+                                 chapter=chapter, notation=False)))
     bench_shape = {(chapter_from_url(r.source_url), lecture_builder.signature(r.formula), lecture_builder.consts(r.formula)) for r in bench}
     seen = set()
     for r in bench:
@@ -90,20 +66,50 @@ def feynman_corpus():
             added[f"v{v}"] += 1
             names = set(d.get("variable_names") or []) | set(re.findall(r"[A-Za-z_]\w*", r.formula))
             notation = any(n.startswith("avg") for n in names) or "i" in names or "I" in names
-            rows.append((r, d.get("branch"), dict(source=f"lectures_v{v}", volume=d["volume"], chapter=d["chapter"],
-                                                  ambiguous=bool(d.get("ambiguous_chapter")), notation=notation)))
+            rows.append((r, dict(source=f"lectures_v{v}", volume=d["volume"],
+                                 chapter=d["chapter"], notation=notation)))
     return rows, dict(dedupe), dict(added)
 
 
-def groups_of(rows, relabel=None, drop=None):
-    """Fine groups -> list of row indices (into rows)."""
-    out = {}
-    for i, (_record, b, meta) in enumerate(rows):
-        if drop and drop(meta, b):
+def load_labels(rows, labels_path=LABELS):
+    """Validate the Codex annotations against the selected formulas."""
+    labels_bytes = labels_path.read_bytes()
+    payload = json.loads(labels_bytes)
+    labels = payload["records"]
+    if Counter(row["id"] for row in labels) != Counter(record.id for record, _ in rows):
+        raise ValueError("Codex labels must cover each retained Feynman expression once.")
+    pairs = sorted((record.id, record.formula) for record, _ in rows)
+    fingerprint = hashlib.sha256(json.dumps(
+        pairs, ensure_ascii=False, separators=(",", ":"),
+    ).encode()).hexdigest()
+    if fingerprint != payload["catalogue_sha256"]:
+        raise ValueError("The Feynman formulas differ from the catalogue used for Codex labelling.")
+
+    for row in labels:
+        tags, primary = row["branches"], row["primary"]
+        if (len(tags) != len(set(tags)) or set(tags) - set(ORDER)
+                or (tags and primary not in tags)
+                or (not tags and (primary is not None or not row.get("outside")))):
+            raise ValueError(f"Invalid Codex branch labels for {row['id']}.")
+    return {row["id"]: row for row in labels}, hashlib.sha256(labels_bytes).hexdigest()
+
+
+def feynman_corpus():
+    """Return (record, Codex annotation, source metadata) rows and selection counts."""
+    rows, dedupe, added = corpus_records()
+    labels, _ = load_labels(rows)
+    return [(record, labels[record.id], meta) for record, meta in rows], dedupe, added
+
+
+def groups_of(rows, *, primary_only=False, drop=None):
+    """Map each analysis branch to its expression indices."""
+    out = {key: [] for key in ORDER}
+    for i, (_record, labels, meta) in enumerate(rows):
+        if drop and drop(meta):
             continue
-        if relabel:
-            b = relabel(meta, b)
-        g = FINE.get(b)
-        if g:
-            out.setdefault(g, []).append(i)
-    return {k: np.array(out[k]) for k in ORDER if k in out and len(out[k]) >= 5}
+        tags = labels["branches"]
+        if primary_only and tags:
+            tags = (labels["primary"],)
+        for tag in tags:
+            out[tag].append(i)
+    return {key: np.asarray(indices) for key, indices in out.items() if len(indices) >= 5}

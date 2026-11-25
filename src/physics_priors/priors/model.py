@@ -49,9 +49,10 @@ def shallow_katz(events, rows):
 class Contexts:
     """Index the context vocabulary and tree events used in the comparison."""
 
-    def __init__(self, rows):
+    def __init__(self, rows, *, keys=None):
         decoded = {row['id']: tree_events(row['prefix']) for row in rows}
-        self.keys = sorted({key for events in decoded.values() for key, _ in events})
+        self.keys = sorted({key for events in decoded.values() for key, _ in events}
+                           if keys is None else keys)
         context_index = {key: i for i, key in enumerate(self.keys)}
         word_index = {word: i for i, word in enumerate(WORDS)}
         self.decoded = decoded
@@ -189,14 +190,17 @@ def learn_weights(rows):
     return fit.x / fit.x.sum()
 
 
-def fit_experts(contexts, training, domains):
+def fit_experts(contexts, training, domains, *, branch_tags=None):
     """Fit the pooled table and the seven component tables for each branch."""
+    if branch_tags is None:
+        def branch_tags(row):
+            return (row['domain'],)
     pooled = shallow_katz(contexts.decoded, training)
     shallow = contexts.smooth_katz(pooled)
     base = smoothed(shallow, contexts.count(training), 50)
     tables = {}
     for domain in domains:
-        subset = [row for row in training if row['domain'] == domain]
+        subset = [row for row in training if domain in branch_tags(row)]
         counts = contexts.count(subset)
         branch = shallow_katz(contexts.decoded, subset)
         pure = contexts.smooth_katz(branch, fallback=pooled)

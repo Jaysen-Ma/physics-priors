@@ -14,8 +14,9 @@ This folder holds the equation catalogs used by the analysis and the formula led
 | [catalog/leemis.json](catalog/leemis.json) | Probability densities and mass functions from Leemis and McQueston. Some excluded entries have an empty formula and a note. |
 | [catalog/index.html](catalog/index.html) | The browser interface for the formula ledger. |
 | [catalog/expression-beta.json](catalog/expression-beta.json) | Derived decay-rate and complexity values for the ledger plots. |
-| [catalog_branches.json](catalog_branches.json) | Curated branch labels applied when rebuilding the released Feynman benchmark and Wikipedia catalogs. |
-| [priors/feynman_folds.json](priors/feynman_folds.json) | Reviewed formula groups and frozen train/test and inner folds for the prior comparison. |
+| [wiki_branches.json](wiki_branches.json) | Curated branch labels applied when rebuilding the Wikipedia catalogue. |
+| [catalog/feynman_branches.json](catalog/feynman_branches.json) | Primary and applicable branch labels for all 1,016 retained Feynman expressions. |
+| [priors/feynman_multilabel_folds.json](priors/feynman_multilabel_folds.json) | Formula groups and frozen outer and inner folds for the fixed 943-expression evaluation. |
 | [feynman_lectures_fixes.csv](feynman_lectures_fixes.csv) | Manual corrections applied when the three lecture catalogs are built. |
 
 ## Record format
@@ -31,7 +32,13 @@ Each corpus JSON file contains collection metadata, `n_records`, and a `records`
 | `branch`, `family`, `family_role`, `representative` | Optional subject and relationship metadata. A family can contain equivalent forms or related variants. An analysis can use these labels to keep related formulas together. |
 | `in_released`, `consideration`, `benchmark_overlap` | Selection metadata. `in_released` records membership in the upstream release where applicable. `consideration: "out"` retains a catalog record but excludes it from the corresponding corpus analysis. `benchmark_overlap` helps avoid double-counting a lecture expression and its benchmark counterpart. |
 
-The Feynman catalog files store the branch labels. Benchmark labels are maintained in `catalog_branches.json`. Lecture labels come from the archived extractions and the chapter mapping in the lecture builder. The analysis combines fluid and continuum mechanics into one group and applies the relativistic electrodynamics mapping to the benchmark when assembling it with the Lectures.
+## Expression-level branch labels
+
+The Feynman catalogue, ledger and branch analyses use `catalog/feynman_branches.json`, joined to the selected benchmark and lecture formulas by `id`. Chapter, section and equation references in the formula records document the source. Codex with `gpt-6.2-sol` assigned a primary branch from each expression, the quantity it describes and its source context. A second pass recorded additional branches where the expression and context supported them, with reasons stored in `secondary_reasons`. The `branches` array includes the primary branch and any additional branches. An empty array and an `outside` category identify expressions outside the seven analysis branches.
+
+The branch codes are the analysis identifiers for classical mechanics (`Classical`), special relativity (`SR`), electromagnetism (`EM`), waves and optics (`Waves+optics`), thermodynamics and kinetic theory (`Thermo`), quantum mechanics (`QM`), and fluid and continuum mechanics (`Fluid+continuum`).
+
+The prior evaluation uses a fixed subset of 943 of the 967 branch-labelled formulas. The fold plan records the exact formula IDs and their groups. Its outer map assigns whole formula groups to folds. Each inner map covers the groups available for training after filtering out tree encodings present in the outer test set. The label and fold files include fingerprints for checking the exact study inputs. [Reproduction guide](../docs/reproduction.md)
 
 ## Lecture corrections
 

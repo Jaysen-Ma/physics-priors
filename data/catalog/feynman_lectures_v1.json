@@ -180,7 +180,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -224,7 +223,6 @@
       "after_equation": "I.10.6",
       "feynman_latex": "v_1'=v-v(\\text{car})=v+v/2=3v/2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 10_ Conservation of Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -267,7 +265,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -311,7 +308,6 @@
       "after_equation": "I.10.6",
       "feynman_latex": "v=\\frac{m}{M}\\cdot V",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 10_ Conservation of Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -355,7 +351,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -488,7 +483,6 @@
       "after_equation": null,
       "feynman_latex": "m=\\frac{m_0}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 10_ Conservation of Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.10.7",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -533,7 +527,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -604,7 +597,6 @@
       "after_equation": null,
       "feynman_latex": "x' =x \\cos\\theta+y \\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -649,7 +641,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -720,7 +711,6 @@
       "after_equation": null,
       "feynman_latex": "y' =y \\cos\\theta-x \\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -765,7 +755,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -836,7 +825,6 @@
       "after_equation": null,
       "feynman_latex": "F_{x'} =F_x \\cos\\theta+F_y \\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -881,7 +869,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -952,7 +939,6 @@
       "after_equation": null,
       "feynman_latex": "F_{y'} =F_y \\cos\\theta-F_x \\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -997,7 +983,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1041,7 +1026,6 @@
       "after_equation": "I.11.15",
       "feynman_latex": "a_\\perp=v (\\Delta_{theta}/\\Delta_{t})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1084,7 +1068,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -1122,7 +1105,6 @@
       "after_equation": null,
       "feynman_latex": "a_\\perp=v^2/R",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1165,7 +1147,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -1237,7 +1218,6 @@
       "after_equation": "I.11.16",
       "feynman_latex": "r=\\sqrt{x^2+y^2+z^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1281,7 +1261,6 @@
         "zp"
       ],
       "consideration": "in",
-      "branch": "mathematics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -1353,7 +1332,6 @@
       "after_equation": "I.11.16",
       "feynman_latex": "r'=\\sqrt{x'^2+y'^2+z'^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 11_ Vectors.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1396,7 +1374,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1427,7 +1404,6 @@
       "after_equation": null,
       "feynman_latex": "F=\\mu N",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 12_ Characteristics of Force.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.12.1",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -1472,7 +1448,6 @@
         "v_z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1555,7 +1530,6 @@
       "after_equation": null,
       "feynman_latex": "F_x =q(E_x +v_y B_z -v_z B_y )",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 12_ Characteristics of Force.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.12.11",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -1602,7 +1576,6 @@
         "v_z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1685,7 +1658,6 @@
       "after_equation": null,
       "feynman_latex": "F_y =q(E_y +v_z B_x -v_x B_z )",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 12_ Characteristics of Force.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1732,7 +1704,6 @@
         "v_y"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1815,7 +1786,6 @@
       "after_equation": null,
       "feynman_latex": "F_z =q(E_z +v_x B_y -v_y B_x )",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 12_ Characteristics of Force.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1859,7 +1829,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -1917,7 +1886,6 @@
       "after_equation": "I.13.3",
       "feynman_latex": "F_t=-mg\\sin\\theta=-mg \\frac{dh}{ds}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -1962,7 +1930,6 @@
         "v_z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -2053,7 +2020,6 @@
       "after_equation": "I.13.3",
       "feynman_latex": "T=\\frac{1}{2}m(v_x^2+v_y^2+v_z^2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.13.4",
       "benchmark_overlap_rule": "same chapter and operator signature",
       "operator_counts": {
@@ -2101,7 +2067,6 @@
         "r_2"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2197,7 +2162,6 @@
       "after_equation": "I.13.12",
       "feynman_latex": "W_{12}=\\int_1^2\\boldsymbol{F}\\cdot d\\boldsymbol{s}=\\int_1^2-GMm \\frac{dr}{r^2}= GMm(\\frac{1}{r_2}-\\frac{1}{r_1})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.13.12",
       "benchmark_overlap_rule": "same chapter and operator signature",
       "operator_counts": {
@@ -2244,7 +2208,6 @@
         "r_4"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2340,7 +2303,6 @@
       "after_equation": "I.13.12",
       "feynman_latex": "W_{34}=\\int_3^4\\boldsymbol{F}\\cdot d\\boldsymbol{s}= GMm(\\frac{1}{r_4}-\\frac{1}{r_3})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2393,7 +2355,6 @@
         "r_8"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2645,7 +2606,6 @@
       "after_equation": "I.13.12",
       "feynman_latex": "W=GMm( \\frac{1}{r_2}-\\frac{1}{r_1}+ \\frac{1}{r_4}-\\frac{1}{r_3}+ \\frac{1}{r_6}-\\frac{1}{r_5}+ \\frac{1}{r_8}-\\frac{1}{r_7} )",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2690,7 +2650,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2741,7 +2700,6 @@
       "after_equation": "I.13.12",
       "feynman_latex": "W_{ac}=\\int_a^c\\boldsymbol{F}\\cdot d\\boldsymbol{s}=Fs\\cos\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2783,7 +2741,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -2814,7 +2771,6 @@
       "after_equation": "I.13.12",
       "feynman_latex": "W_{bc}=\\int_b^c\\boldsymbol{F}\\cdot d\\boldsymbol{s}=Fx",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -2859,7 +2815,6 @@
         "z_j"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -2970,7 +2925,6 @@
       "after_equation": "I.13.15",
       "feynman_latex": "r_{ij}=\\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3016,7 +2970,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3080,7 +3033,6 @@
       "after_equation": null,
       "feynman_latex": "C_x=-2\\pi G\\mu a\\int_a^\\infty\\frac{dr}{r^2}= -2\\pi G\\mu a(\\frac{1}{a}-\\frac{1}{\\infty})=-2\\pi G\\mu",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3124,7 +3076,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -3208,7 +3159,6 @@
       "after_equation": "I.13.17",
       "feynman_latex": "r^2=y^2+(R-x)^2 =y^2+x^2+R^2-2Rx =a^2+R^2-2Rx",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3255,7 +3205,6 @@
         "mp"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3319,7 +3268,6 @@
       "after_equation": null,
       "feynman_latex": "W =\\frac{Gm'2\\pi a\\mu}{R}\\int_{R+a}^{R-a}dr =-\\frac{Gm'2\\pi a\\mu}{R} 2a= -\\frac{Gm'(4\\pi a^2\\mu)}{R} =-\\frac{Gm'm}{R}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 13_ Work and Potential Energy (A).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3363,7 +3311,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3407,7 +3354,6 @@
       "after_equation": null,
       "feynman_latex": "U=mgz",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.14.3",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -3448,7 +3394,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3499,7 +3444,6 @@
       "after_equation": null,
       "feynman_latex": "U=\\frac{1}{2}kx^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.14.4",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -3545,7 +3489,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3609,7 +3552,6 @@
       "after_equation": null,
       "feynman_latex": "U = -GMm/r",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3656,7 +3598,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3739,7 +3680,6 @@
       "after_equation": null,
       "feynman_latex": "U = q_1q_2/4\\pi\\epsilon_0 r",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3781,7 +3721,6 @@
         "g"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3825,7 +3764,6 @@
       "after_equation": "I.14.6",
       "feynman_latex": "v^2=2ga",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3866,7 +3804,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -3897,7 +3834,6 @@
       "after_equation": null,
       "feynman_latex": "U=-\\int\\boldsymbol{F}\\cdot d\\boldsymbol{s}=-m\\int\\boldsymbol{C}\\cdot d\\boldsymbol{s}=m\\Psi",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -3938,7 +3874,6 @@
         "Delta_x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -3976,7 +3911,6 @@
       "after_equation": null,
       "feynman_latex": "F_x=-\\Delta_{U}/\\Delta_{x}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4018,7 +3952,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4049,7 +3982,6 @@
       "after_equation": "I.14.14",
       "feynman_latex": "U=q\\phi",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4091,7 +4023,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4135,7 +4066,6 @@
       "after_equation": "I.14.14",
       "feynman_latex": "W=\\int_1^2\\boldsymbol{F}\\cdot d\\boldsymbol{s}=q(\\phi_1-\\phi_2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 14_ Work and Potential Energy (conclusion).htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4178,7 +4108,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -4222,7 +4151,6 @@
       "after_equation": null,
       "feynman_latex": "x' =x-ut",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4267,7 +4195,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -4452,7 +4379,6 @@
       "after_equation": null,
       "feynman_latex": "x' =\\frac{x-ut}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.15.3x",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -4500,7 +4426,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -4705,7 +4630,6 @@
       "after_equation": null,
       "feynman_latex": "t' =\\frac{t-ux/c^2}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.15.3t",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -4752,7 +4676,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -4872,7 +4795,6 @@
       "after_equation": "I.15.4",
       "feynman_latex": "L^2 = c^2t_3^2 - u^2t_3^2 = (c^2 - u^2)t_3^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -4917,7 +4839,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -5037,7 +4958,6 @@
       "after_equation": "I.15.4",
       "feynman_latex": "t_3=L/\\sqrt{c^2-u^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5083,7 +5003,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -5216,7 +5135,6 @@
       "after_equation": null,
       "feynman_latex": "L_\\parallel=L_0\\sqrt{1-u^2/c^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 15_ The Special Theory of Relativity.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5264,7 +5182,6 @@
         "xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -5449,7 +5366,6 @@
       "after_equation": null,
       "feynman_latex": "x =\\frac{x'+ut'}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5498,7 +5414,6 @@
         "xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -5703,7 +5618,6 @@
       "after_equation": null,
       "feynman_latex": "t =\\frac{t'+ux'/c^2}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5749,7 +5663,6 @@
         "v_xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -5780,7 +5693,6 @@
       "after_equation": null,
       "feynman_latex": "x'=v_{x'}t'",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -5824,7 +5736,6 @@
         "v_xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6035,7 +5946,6 @@
       "after_equation": null,
       "feynman_latex": "x=\\frac{v_{x'}t'+ut'}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6084,7 +5994,6 @@
         "v_xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6315,7 +6224,6 @@
       "after_equation": null,
       "feynman_latex": "t=\\frac{t'+u(v_{x'}t')/c^2}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6363,7 +6271,6 @@
         "v_xp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6520,7 +6427,6 @@
       "after_equation": null,
       "feynman_latex": "v_x=\\frac{x}{t}=\\frac{u+v_{x'}}{1+uv_{x'}/c^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.16.6",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -6564,7 +6470,6 @@
         "v_yp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -6595,7 +6500,6 @@
       "after_equation": "I.16.6",
       "feynman_latex": "y=y'=v_{y'}t'",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6638,7 +6542,6 @@
         "v_yp"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -6771,7 +6674,6 @@
       "after_equation": null,
       "feynman_latex": "v_y=\\frac{y}{t}=v_{y'}\\sqrt{1-u^2/c^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6818,7 +6720,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -6951,7 +6852,6 @@
       "after_equation": null,
       "feynman_latex": "m_u=\\frac{m_0}{\\sqrt{1-u^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -6997,7 +6897,6 @@
         "w"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Add",
@@ -7170,7 +7069,6 @@
       "after_equation": "I.16.10",
       "feynman_latex": "v^2=u^2+w^2(1-u^2/c^2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7214,7 +7112,6 @@
         "m_w"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -7245,7 +7142,6 @@
       "after_equation": null,
       "feynman_latex": "M_0 = 2m_w",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 16_ Relativistic Energy and Momentum.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7287,7 +7183,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -7371,7 +7266,6 @@
       "after_equation": "I.17.3",
       "feynman_latex": "x' =\\frac{x-ut}{\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7417,7 +7311,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -7501,7 +7394,6 @@
       "after_equation": null,
       "feynman_latex": "t' =\\frac{t-ux}{\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7546,7 +7438,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -7604,7 +7495,6 @@
       "after_equation": null,
       "feynman_latex": "E =m=m_0/\\sqrt{1-v^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7648,7 +7538,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -7718,7 +7607,6 @@
       "after_equation": null,
       "feynman_latex": "v'=\\frac{v-u}{1-uv}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7761,7 +7649,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -7937,7 +7824,6 @@
       "after_equation": "I.17.8",
       "feynman_latex": "v'^2 =\\frac{v^2-2uv+u^2}{1-2uv+u^2v^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -7983,7 +7869,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8160,7 +8045,6 @@
       "after_equation": "I.17.9",
       "feynman_latex": "E'=\\frac{m_0-m_0uv}{\\sqrt{1-v^2}\\sqrt{1-u^2}}= \\frac{(m_0/\\sqrt{1-v^2})-(m_0v/\\sqrt{1-v^2})u}{\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8206,7 +8090,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8290,7 +8173,6 @@
       "after_equation": null,
       "feynman_latex": "E'=\\frac{E-up_x}{\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8336,7 +8218,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8473,7 +8354,6 @@
       "after_equation": "I.17.10",
       "feynman_latex": "p_x'=E'v'=\\frac{m_0(1-uv)}{\\sqrt{1-v^2}\\sqrt{1-u^2}}\\cdot \\frac{v-u}{(1-uv)}= \\frac{m_0v-m_0u}{\\sqrt{1-v^2}\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8519,7 +8399,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -8603,7 +8482,6 @@
       "after_equation": null,
       "feynman_latex": "p_x'=\\frac{p_x-uE}{\\sqrt{1-u^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 17_ Space-Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8648,7 +8526,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -8679,7 +8556,6 @@
       "after_equation": null,
       "feynman_latex": "v=\\sqrt{v_x^2+v_y^2}=\\sqrt{\\omega^2y^2+\\omega^2x^2}= \\omega\\sqrt{x^2+y^2}=\\omega r",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 18_ Rotation in Two Dimensions.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8722,7 +8598,6 @@
         "y_i"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -8779,7 +8654,6 @@
       "after_equation": null,
       "feynman_latex": "\\tau_i=x_iF_{yi}-y_iF_{xi}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 18_ Rotation in Two Dimensions.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.18.12",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -8822,7 +8696,6 @@
         "r_i"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -8873,7 +8746,6 @@
       "after_equation": null,
       "feynman_latex": "L_i=m_iv_ir_i=m_ir_i^2\\omega",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 18_ Rotation in Two Dimensions.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8915,7 +8787,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -8946,7 +8817,6 @@
       "after_equation": null,
       "feynman_latex": "L=I\\omega",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 18_ Rotation in Two Dimensions.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -8988,7 +8858,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9045,7 +8914,6 @@
       "after_equation": "I.19.3",
       "feynman_latex": "x=4r/3\\pi",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9087,7 +8955,6 @@
         "M"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9138,7 +9005,6 @@
       "after_equation": null,
       "feynman_latex": "I=\\int_0^Lx^2 \\frac{M dx}{L} = \\frac{M}{L}\\int_0^L x^2 dx = \\frac{ML^2}{3}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9181,7 +9047,6 @@
         "M"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9232,7 +9097,6 @@
       "after_equation": null,
       "feynman_latex": "I=\\frac{2(M/2)(L/2)^2}{3}=\\frac{ML^2}{12}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9276,7 +9140,6 @@
         "R_C_M"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -9327,7 +9190,6 @@
       "after_equation": null,
       "feynman_latex": "I=I_c+MR_{\\text{CM}}^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9370,7 +9232,6 @@
         "x_ip"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -9401,7 +9262,6 @@
       "after_equation": "I.19.7",
       "feynman_latex": "x_i=x_i'+X_{\\text{CM}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9442,7 +9302,6 @@
         "x_ip"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -9526,7 +9385,6 @@
       "after_equation": "I.19.7",
       "feynman_latex": "x_i^2=x_i'^2+2X_{\\text{CM}}x_i'+X_{\\text{CM}}^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9569,7 +9427,6 @@
         "I_y"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -9600,7 +9457,6 @@
       "after_equation": "I.19.7",
       "feynman_latex": "I_z=\\sum m_i(x_i^2+y_i^2) =\\sum m_ix_i^2 + \\sum m_iy_i^2 =I_x+I_y",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9642,7 +9498,6 @@
         "w"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9713,7 +9568,6 @@
       "after_equation": "I.19.7",
       "feynman_latex": "I = M(w^2 + L^2)/12",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9757,7 +9611,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -9808,7 +9661,6 @@
       "after_equation": null,
       "feynman_latex": "T=\\frac{1}{2}\\omega^2\\sum m_ir_i^2=\\frac{1}{2}I\\omega^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9852,7 +9704,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9903,7 +9754,6 @@
       "after_equation": "I.19.8",
       "feynman_latex": "L=mv_{\\text{tang}}r=m\\omega r\\cdot r=m\\omega r^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -9945,7 +9795,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -9976,7 +9825,6 @@
       "after_equation": "I.19.8",
       "feynman_latex": "\\tau=F_cr=\\frac{dL}{dt}=\\frac{d(m\\omega r^2)}{dt}=2m\\omega r \\frac{dr}{dt}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10019,7 +9867,6 @@
         "v_M"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -10175,7 +10022,6 @@
       "after_equation": "I.19.8",
       "feynman_latex": "F_r=-\\frac{mv_J^2}{r}=-\\frac{mv_M^2}{r}- 2mv_M\\omega-m\\omega^2r",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 19_ Center of Mass; Moment of Inertia.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10223,7 +10069,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -10360,7 +10205,6 @@
       "after_equation": "I.20.5",
       "feynman_latex": "\\tau_{x'y'} = [t] (x\\cos\\theta+y\\sin\\theta)(F_y\\cos\\theta-F_x\\sin\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 20_ Rotation in space.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10412,7 +10256,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -10483,7 +10326,6 @@
       "after_equation": null,
       "feynman_latex": "\\tau_{y'z'} = [t] (y\\cos\\theta-x\\sin\\theta)F_z -~z(F_y\\cos\\theta-F_x\\sin\\theta) =(yF_z - zF_y)\\cos\\theta+(zF_x - xF_z)\\sin\\theta =\\tau_{yz}\\cos\\theta+\\tau_{zx}\\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 20_ Rotation in space.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10528,7 +10370,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -10599,7 +10440,6 @@
       "after_equation": null,
       "feynman_latex": "\\tau_{z'x'} = [t] z(F_x\\cos\\theta+F_y\\sin\\theta) -(x\\cos\\theta+y\\sin\\theta)F_z =(zF_x - xF_z)\\cos\\theta-(yF_z - z F_y)\\sin\\theta =\\tau_{zx}\\cos\\theta-\\tau_{yz}\\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 20_ Rotation in space.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10647,7 +10487,6 @@
         "omega_z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -10764,7 +10603,6 @@
       "after_equation": null,
       "feynman_latex": "\\text{KE} =\\frac{1}{2}(A\\omega_x^2+B\\omega_y^2+C\\omega_z^2) =\\frac{1}{2}\\boldsymbol{L}\\cdot\\boldsymbol{\\omega}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 20_ Rotation in space.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10808,7 +10646,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "cos",
@@ -10846,7 +10683,6 @@
       "after_equation": null,
       "feynman_latex": "x=\\cos\\omega_0t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10890,7 +10726,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -10954,7 +10789,6 @@
       "after_equation": null,
       "feynman_latex": "t_0=2\\pi/\\omega_0=2\\pi\\sqrt{m/k}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -10999,7 +10833,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -11096,7 +10929,6 @@
       "after_equation": "I.21.5",
       "feynman_latex": "x = A \\cos \\omega_0t + B \\sin \\omega_0t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11140,7 +10972,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11185,7 +11016,6 @@
       "after_equation": null,
       "feynman_latex": "a_x=-a\\cos\\theta=-\\omega_0^2R\\cos\\theta=-\\omega_0^2x",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11230,7 +11060,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -11360,7 +11189,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "v=-\\omega_0 A \\sin \\omega_0t + \\omega_0 B \\cos \\omega_0t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11405,7 +11233,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11436,7 +11263,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "v_0=-\\omega_0 A\\cdot 0 + \\omega_0 B\\cdot 1 = \\omega_0 B",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11479,7 +11305,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11543,7 +11368,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "x =a\\cos (\\omega_0t+\\Delta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11588,7 +11412,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -11672,7 +11495,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "v =-\\omega_0 a\\sin (\\omega_0t+\\Delta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11719,7 +11541,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -11823,7 +11644,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "U=\\frac{1}{2}kx^2=\\frac{1}{2}ka^2\\cos^2 (\\omega_0t+\\Delta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -11871,7 +11691,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -11995,7 +11814,6 @@
       "after_equation": "I.21.7",
       "feynman_latex": "T=\\frac{1}{2}mv^2=\\frac{1}{2}m\\omega_0^2a^2\\sin^2 (\\omega_0t+\\Delta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12041,7 +11859,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -12092,7 +11909,6 @@
       "after_equation": null,
       "feynman_latex": "F=F_0\\cos\\omega t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12135,7 +11951,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -12186,7 +12001,6 @@
       "after_equation": null,
       "feynman_latex": "x=C\\cos\\omega t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12230,7 +12044,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12301,7 +12114,6 @@
       "after_equation": null,
       "feynman_latex": "C=F_0/m(\\omega_0^2-\\omega^2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 21_ The Harmonic Oscillator.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12349,7 +12161,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12459,7 +12270,6 @@
       "after_equation": "I.23.8",
       "feynman_latex": "R=\\frac{1}{m(\\omega_0^2-\\omega^2+i\\gamma\\omega)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 23_ Resonance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12508,7 +12318,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -12598,7 +12407,6 @@
       "after_equation": null,
       "feynman_latex": "x=\\rho F_0\\cos (\\omega t+\\Delta+\\theta)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 23_ Resonance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12643,7 +12451,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12768,7 +12575,6 @@
       "after_equation": null,
       "feynman_latex": "\\rho^2 =\\frac{1}{m^2(\\omega_0^2-\\omega^2+i\\gamma\\omega) (\\omega_0^2-\\omega^2-i\\gamma\\omega)} =\\frac{1}{m^2[(\\omega_0^2-\\omega^2)^2+\\gamma^2\\omega^2]}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 23_ Resonance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12814,7 +12620,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12892,7 +12697,6 @@
       "after_equation": null,
       "feynman_latex": "\\tan\\theta=-\\gamma\\omega/(\\omega_0^2-\\omega^2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 23_ Resonance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -12940,7 +12744,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -12997,7 +12800,6 @@
       "after_equation": null,
       "feynman_latex": "V=\\sigma d/\\epsilon_0=qd/\\epsilon_0 A",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 23_ Resonance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13041,7 +12843,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13125,7 +12926,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{P}\\rangle = \\frac{1}{2}\\gamma m\\omega^2x_0^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13169,7 +12969,6 @@
         "I_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13220,7 +13019,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{P}\\rangle = R\\langle{I^2}\\rangle = R\\cdot\\frac{1}{2}I_0^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13264,7 +13062,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -13348,7 +13145,6 @@
       "after_equation": null,
       "feynman_latex": "Q=2\\pi \\frac{\\frac{1}{2}m(\\omega^2+\\omega_0^2)\\cdot \\langle{x^2}\\rangle}{\\gamma m\\omega^2\\langle{x^2}\\rangle\\cdot 2\\pi/\\omega}=\\frac{\\omega^2+\\omega_0^2}{2\\gamma\\omega}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13393,7 +13189,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13451,7 +13246,6 @@
       "after_equation": null,
       "feynman_latex": "E=E_0e^{-\\omega_0t/Q}=E_0e^{-\\gamma t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13496,7 +13290,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13600,7 +13393,6 @@
       "after_equation": null,
       "feynman_latex": "x=A_0e^{-\\gamma t/2}\\cos\\omega_0 t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13647,7 +13439,6 @@
         "omega_gamma"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -13704,7 +13495,6 @@
       "after_equation": null,
       "feynman_latex": "\\alpha_1 =i\\gamma/2+\\sqrt{\\omega_0^2-\\gamma^2/4}= i\\gamma/2+\\omega_\\gamma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13749,7 +13539,6 @@
         "omega_gamma"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -13806,7 +13595,6 @@
       "after_equation": null,
       "feynman_latex": "\\alpha_2 =i\\gamma/2-\\sqrt{\\omega_0^2-\\gamma^2/4}=i\\gamma/2-\\omega_\\gamma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -13853,7 +13641,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -13970,7 +13757,6 @@
       "after_equation": null,
       "feynman_latex": "x_1=Ae^{-\\gamma t/2}e^{i\\omega_\\gamma t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14016,7 +13802,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14120,7 +13905,6 @@
       "after_equation": null,
       "feynman_latex": "x_1=Ae^{-\\gamma t/2}\\cos\\omega_\\gamma t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14169,7 +13953,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14293,7 +14076,6 @@
       "after_equation": null,
       "feynman_latex": "x_2=Be^{-\\gamma t/2}e^{-i\\omega_\\gamma t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14342,7 +14124,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14525,7 +14306,6 @@
       "after_equation": null,
       "feynman_latex": "x=e^{-\\gamma t/2}(Ae^{i\\omega_\\gamma t}+Be^{-i\\omega_\\gamma t})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14572,7 +14352,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14703,7 +14482,6 @@
       "after_equation": "I.24.20",
       "feynman_latex": "x=Ae^{-(\\gamma/2+\\sqrt{\\gamma^2/4-\\omega_0^2})t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14753,7 +14531,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -14884,7 +14661,6 @@
       "after_equation": "I.24.20",
       "feynman_latex": "x=Be^{-(\\gamma/2-\\sqrt{\\gamma^2/4-\\omega_0^2})t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -14930,7 +14706,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -14961,7 +14736,6 @@
       "after_equation": "I.24.20",
       "feynman_latex": "A_R =x_0/2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15004,7 +14778,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15094,7 +14867,6 @@
       "after_equation": null,
       "feynman_latex": "A_I =-(v_0+\\gamma x_0/2)/2\\omega_\\gamma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15147,7 +14919,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15349,7 +15120,6 @@
       "after_equation": null,
       "feynman_latex": "x=e^{-\\gamma t/2}[ x_0\\cos\\omega_\\gamma t+ \\frac{v_0+\\gamma x_0/2}{\\omega_\\gamma}\\sin\\omega_\\gamma t ]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 24_ Transients.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15397,7 +15167,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15441,7 +15210,6 @@
       "after_equation": null,
       "feynman_latex": "A=A_0a^n",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 25_ Linear Systems and Review.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15483,7 +15251,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15514,7 +15281,6 @@
       "after_equation": null,
       "feynman_latex": "V=q/C",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 25_ Linear Systems and Review.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.25.13",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -15555,7 +15321,6 @@
         "theta_r"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -15593,7 +15358,6 @@
       "after_equation": null,
       "feynman_latex": "\\sin\\theta_i=n\\sin\\theta_r",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 26_ Optics_ The Principle of Least Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.26.2",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -15635,7 +15399,6 @@
         "n_13"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15666,7 +15429,6 @@
       "after_equation": null,
       "feynman_latex": "n_{23}=\\frac{v_2}{v_3}=\\frac{v_1/v_3}{v_1/v_2}=\\frac{n_{13}}{n_{12}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 26_ Optics_ The Principle of Least Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15707,7 +15469,6 @@
         "n_j"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -15738,7 +15499,6 @@
       "after_equation": null,
       "feynman_latex": "n_{ij}=\\frac{v_i}{v_j}=\\frac{n_j}{n_i}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 26_ Optics_ The Principle of Least Time.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -15781,7 +15541,6 @@
         "R_2"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -15998,7 +15757,6 @@
       "after_equation": null,
       "feynman_latex": "T = (h^2/2R_1) - (h^2/2R_2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 27_ Geometrical Optics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16047,7 +15805,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -16247,7 +16004,6 @@
       "after_equation": null,
       "feynman_latex": "E_x=\\frac{-q}{4\\pi\\epsilon_0 c^2r} a_x (t-\\frac{r}{c})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 28_ Electromagnetic Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16303,7 +16059,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -16543,7 +16298,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\frac{-qa(t-r/c)\\sin\\theta}{4\\pi\\epsilon_0 c^2r}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16596,7 +16350,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -16647,7 +16400,6 @@
       "after_equation": null,
       "feynman_latex": "a=-\\omega^2x_0\\cos\\omega t=a_0\\cos\\omega t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -16697,7 +16449,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -17043,7 +16794,6 @@
       "after_equation": null,
       "feynman_latex": "E=-q\\sin\\theta \\frac{a_0(\\cos \\omega)(t-r/c)}{4\\pi\\epsilon_0 rc^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17097,7 +16847,6 @@
         "t_0"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17143,7 +16892,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda = ct_0",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17185,7 +16933,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17231,7 +16978,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega = ck",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17275,7 +17021,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17385,7 +17130,6 @@
       "after_equation": null,
       "feynman_latex": "R = A[\\cos (\\omega t+\\phi_1)+\\cos (\\omega t + \\phi_2)]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17431,7 +17175,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17593,7 +17336,6 @@
       "after_equation": null,
       "feynman_latex": "R=2A\\cos\\frac{1}{2}(\\phi_1-\\phi_2)\\cos (\\omega t+\\frac{1}{2}\\phi_1+ \\frac{1}{2}\\phi_2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17639,7 +17381,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17716,7 +17457,6 @@
       "after_equation": null,
       "feynman_latex": "A_R=2A\\cos\\frac{1}{2}(\\phi_1-\\phi_2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17766,7 +17506,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -17909,7 +17648,6 @@
       "after_equation": null,
       "feynman_latex": "R=A_1e^{i(\\omega t + \\phi_1)}+A_2e^{i(\\omega t + \\phi_2)}= (A_1e^{i\\phi_1}+A_2e^{i\\phi_2})e^{i\\omega t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -17956,7 +17694,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18159,7 +17896,6 @@
       "after_equation": null,
       "feynman_latex": "A_R^2=(A_1e^{i\\phi_1}+A_2e^{i\\phi_2})(A_1e^{-i\\phi_1}+A_2e^{-i\\phi_2})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18205,7 +17941,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -18322,7 +18057,6 @@
       "after_equation": null,
       "feynman_latex": "A_R^2=A_1^2+A_2^2+2A_1A_2\\cos (\\phi_2-\\phi_1)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 29_ Interference.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.29.16",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -18368,7 +18102,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18465,7 +18198,6 @@
       "after_equation": null,
       "feynman_latex": "A_R=A \\frac{\\sin n\\phi/2}{\\sin \\phi/2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18509,7 +18241,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -18620,7 +18351,6 @@
       "after_equation": null,
       "feynman_latex": "I=I_0 \\frac{\\sin^2 n\\phi/2}{\\sin^2 \\phi/2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.30.3",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -18665,7 +18395,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -18729,7 +18458,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi =\\alpha+2\\pi d\\sin\\theta/\\lambda =\\alpha+kd\\sin\\theta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18779,7 +18507,6 @@
         "lambd"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -18928,7 +18655,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi=2\\pi d\\sin\\theta_{\\text{out}}/\\lambda - 2\\pi d \\sin \\theta_{\\text{in}}/\\lambda",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -18978,7 +18704,6 @@
         "Phi"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -19069,7 +18794,6 @@
       "after_equation": null,
       "feynman_latex": "I=4I_m\\sin^2(\\frac{1}{2}\\Phi)/\\Phi^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19113,7 +18837,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -19158,7 +18881,6 @@
       "after_equation": null,
       "feynman_latex": "r^2=\\rho^2+z^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 30_ Diffraction.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19204,7 +18926,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19342,7 +19063,6 @@
       "after_equation": null,
       "feynman_latex": "E_s=E_0(\\cos \\omega)(t-z/c)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19397,7 +19117,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19563,7 +19282,6 @@
       "after_equation": null,
       "feynman_latex": "E_s=E_0e^{i\\omega(t-z/c)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19614,7 +19332,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -19871,7 +19588,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\text{after plate}}=E_0e^{i\\omega[t - (n - 1) \\Delta_{z}/c-z/c]}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -19922,7 +19638,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20259,7 +19974,6 @@
       "after_equation": null,
       "feynman_latex": "E_{\\text{after plate}}=e^{-i\\omega(n-1) \\Delta_{z}/c} E_0e^{i\\omega(t - z/c)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20308,7 +20022,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20385,7 +20098,6 @@
       "after_equation": null,
       "feynman_latex": "F=q_eE_s=q_eE_0e^{i\\omega t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20430,7 +20142,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20494,7 +20205,6 @@
       "after_equation": null,
       "feynman_latex": "x=x_0e^{i\\omega t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20539,7 +20249,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -20623,7 +20332,6 @@
       "after_equation": null,
       "feynman_latex": "x_0=\\frac{q_eE_0}{m(\\omega_0^2-\\omega^2)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20673,7 +20381,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -20803,7 +20510,6 @@
       "after_equation": null,
       "feynman_latex": "x=\\frac{q_eE_0}{m(\\omega_0^2-\\omega^2)} e^{i\\omega t}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -20858,7 +20564,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21340,7 +21045,6 @@
       "after_equation": null,
       "feynman_latex": "E_a=-\\frac{\\eta q_e}{2\\epsilon_0 c}[ i\\omega \\frac{q_eE_0}{m(\\omega_0^2-\\omega^2)} e^{i\\omega(t-z/c)}]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21391,7 +21095,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -21521,7 +21224,6 @@
       "after_equation": null,
       "feynman_latex": "n=1+\\frac{Nq_e^2}{2\\epsilon_0 m(\\omega_0^2-\\omega^2)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21568,7 +21270,6 @@
         "npp"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -21612,7 +21313,6 @@
       "after_equation": null,
       "feynman_latex": "n=n'-in''",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21659,7 +21359,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -21851,7 +21550,6 @@
       "after_equation": null,
       "feynman_latex": "E_a=-\\frac{N \\Delta_{z} q_e}{2\\epsilon_0 c} v(\\text{ret by $z/c$})",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 31_ The Origin of the Refractive Index.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -21902,7 +21600,6 @@
         "avgE2"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -21976,7 +21673,6 @@
       "after_equation": null,
       "feynman_latex": "S=\\epsilon_0 c\\langle{E^2}\\rangle",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22023,7 +21719,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22319,7 +22014,6 @@
       "after_equation": null,
       "feynman_latex": "S=\\frac{q^2a'^2\\sin^2\\theta}{16\\pi^2\\epsilon_0 r^2c^3}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22368,7 +22062,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22556,7 +22249,6 @@
       "after_equation": null,
       "feynman_latex": "P=\\frac{q^2a'^2}{6\\pi\\epsilon_0 c^3}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.32.5",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -22600,7 +22292,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22658,7 +22349,6 @@
       "after_equation": "I.32.5",
       "feynman_latex": "\\langle{a'^2}\\rangle = \\frac{1}{2}\\omega^4x_0^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22707,7 +22397,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -22935,7 +22624,6 @@
       "after_equation": null,
       "feynman_latex": "P=\\frac{q^2\\omega^4x_0^2}{12\\pi\\epsilon_0 c^3}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -22982,7 +22670,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -23046,7 +22733,6 @@
       "after_equation": null,
       "feynman_latex": "e^2=\\frac{q_e^2}{4\\pi\\epsilon_0}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23090,7 +22776,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -23161,7 +22846,6 @@
       "after_equation": null,
       "feynman_latex": "W=\\frac{1}{2}m\\omega^2x_0^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23206,7 +22890,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Div",
@@ -23276,7 +22959,6 @@
       "after_equation": null,
       "feynman_latex": "Q=\\frac{3\\lambda}{4\\pi r_0}\\approx 5\\times10^7",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23320,7 +23002,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Add",
@@ -23437,7 +23118,6 @@
       "after_equation": null,
       "feynman_latex": "A_R^2=A_1^2+A_2^2+2A_1A_2\\cos (\\phi_1-\\phi_2)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -23488,7 +23168,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -23855,7 +23534,6 @@
       "after_equation": null,
       "feynman_latex": "P =[(q_e^2\\omega^4/12\\pi\\epsilon_0 c^3)q_e^2E_0^2/m_e^2 (\\omega^2 -\\omega_0^2)^2] =(\\frac{1}{2}\\epsilon_0 cE_0^2)(8\\pi/3)(q_e^4/16\\pi^2\\epsilon_0^2m_e^2c^4) [\\omega^4 /(\\omega^2 -\\omega_0^2)^2] =(\\frac{1}{2}\\epsilon_0 cE_0^2)(8\\pi r_0^2/3) [\\omega^4 /(\\omega^2 -\\omega_0^2)^2]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.32.17",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -23903,7 +23581,6 @@
         "sigma"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24043,7 +23720,6 @@
       "after_equation": null,
       "feynman_latex": "P=(\\frac{1}{2}\\epsilon_0 cE_0^2)\\sigma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24089,7 +23765,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Electromagnetism",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24220,7 +23895,6 @@
       "after_equation": null,
       "feynman_latex": "\\sigma_s=\\frac{8\\pi r_0^2}{3}\\cdot \\frac{\\omega^4}{(\\omega^2-\\omega_0^2)^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 32_ Radiation Damping. Light Scattering.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24264,7 +23938,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24335,7 +24008,6 @@
       "after_equation": "I.33.8",
       "feynman_latex": "B^2=b^2=\\frac{(n-1)^2}{(n+1)^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 33_ Polarization.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24382,7 +24054,6 @@
         "z"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Add",
@@ -24493,7 +24164,6 @@
       "after_equation": "I.34.3",
       "feynman_latex": "t=\\tau+\\frac{R_0}{c}+\\frac{z}{c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24537,7 +24207,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -24581,7 +24250,6 @@
       "after_equation": null,
       "feynman_latex": "p=qBR",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -24624,7 +24292,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24681,7 +24348,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega=qvB/p",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.34.8",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -24725,7 +24391,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -24823,7 +24488,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega=\\frac{\\omega_1}{1-v/c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.34.1",
       "benchmark_overlap_rule": "same chapter and operator signature",
       "operator_counts": {
@@ -24867,7 +24531,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -25000,7 +24663,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_1=\\omega_0\\sqrt{1-v^2/c^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25047,7 +24709,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -25245,7 +24906,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega=\\frac{\\omega_0\\sqrt{1-v^2/c^2}}{1-v/c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25293,7 +24953,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -25478,7 +25137,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega=\\frac{\\omega_0+k_0v}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -25526,7 +25184,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -25724,7 +25381,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega=\\frac{\\omega_0(1+v/c)}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.34.14",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -25773,7 +25429,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -25958,7 +25613,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega' =\\frac{\\omega+kv}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26007,7 +25661,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26212,7 +25865,6 @@
       "after_equation": null,
       "feynman_latex": "k' =\\frac{k+\\omega v/c^2}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26258,7 +25910,6 @@
         "lambd"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26296,7 +25947,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda_x=\\lambda/\\cos\\alpha",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26339,7 +25989,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26485,7 +26134,6 @@
       "after_equation": null,
       "feynman_latex": "\\tan\\theta=\\frac{v/c}{\\sqrt{1-v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26530,7 +26178,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Div",
@@ -26576,7 +26223,6 @@
       "after_equation": null,
       "feynman_latex": "\\sin\\theta=v/c",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26618,7 +26264,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26649,7 +26294,6 @@
       "after_equation": null,
       "feynman_latex": "W=h\\nu=\\hbar\\omega",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26691,7 +26335,6 @@
         "k"
       ],
       "consideration": "in",
-      "branch": "Special relativity",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -26722,7 +26365,6 @@
       "after_equation": null,
       "feynman_latex": "p=W/c=\\hbar\\omega/c=\\hbar k",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 34_ Relativistic Effects in Radiation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26766,7 +26408,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -26823,7 +26464,6 @@
       "after_equation": null,
       "feynman_latex": "Y = rR + gG",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 35_ Color Vision.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -26870,7 +26510,6 @@
         "b"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27020,7 +26659,6 @@
       "after_equation": null,
       "feynman_latex": "X=aA+bB+cC",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 35_ Color Vision.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27066,7 +26704,6 @@
         "cp"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27149,7 +26786,6 @@
       "after_equation": null,
       "feynman_latex": "Y=a'A+b'B+c'C",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 35_ Color Vision.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27199,7 +26835,6 @@
         "cp"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27440,7 +27075,6 @@
       "after_equation": null,
       "feynman_latex": "Z=X+Y=(a+a')A+(b+b')B+(c+c')C",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 35_ Color Vision.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27482,7 +27116,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -27520,7 +27153,6 @@
       "after_equation": null,
       "feynman_latex": "\\delta=\\sqrt{\\lambda r}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 36_ Mechanisms of Seeing.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27562,7 +27194,6 @@
         "P_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27593,7 +27224,6 @@
       "after_equation": null,
       "feynman_latex": "P_{12}=P_1+P_2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 37_ Quantum Behavior.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27635,7 +27265,6 @@
         "delta"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27732,7 +27361,6 @@
       "after_equation": null,
       "feynman_latex": "I_{12}=I_1+I_2+2\\sqrt{I_1I_2}\\cos\\delta",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 37_ Quantum Behavior.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.37.4",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -27775,7 +27403,6 @@
         "phi"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -27807,7 +27434,6 @@
       "after_equation": null,
       "feynman_latex": "P =|{\\phi}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 37_ Quantum Behavior.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27849,7 +27475,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -27880,7 +27505,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi =\\phi_1+\\phi_2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 37_ Quantum Behavior.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -27921,7 +27545,6 @@
         "phi_2"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Pow2",
@@ -27966,7 +27589,6 @@
       "after_equation": null,
       "feynman_latex": "P =|{\\phi_1+\\phi_2}|^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 37_ Quantum Behavior.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28012,7 +27634,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -28116,7 +27737,6 @@
       "after_equation": null,
       "feynman_latex": "E=\\hbar^2/2ma^2-e^2/a",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 38_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28162,7 +27782,6 @@
         "E_3"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -28206,7 +27825,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{31}=(E_3-E_1)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 38_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28250,7 +27868,6 @@
         "E_3"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -28294,7 +27911,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{30}=(E_3-E_0)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 38_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28338,7 +27954,6 @@
         "E_1"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -28382,7 +27997,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{10}=(E_1-E_0)/\\hbar",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 38_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28424,7 +28038,6 @@
         "omega_31"
       ],
       "consideration": "in",
-      "branch": "Quantum mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -28455,7 +28068,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega_{30}=\\omega_{31}+\\omega_{10}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 38_ The Relation of Wave and Particle Viewpoints.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28496,7 +28108,6 @@
         "F"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -28527,7 +28138,6 @@
       "after_equation": null,
       "feynman_latex": "P = F/A",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28570,7 +28180,6 @@
         "v_x"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -28653,7 +28262,6 @@
       "after_equation": null,
       "feynman_latex": "F = nv_xA\\cdot 2mv_x",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28695,7 +28303,6 @@
         "v_x"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -28759,7 +28366,6 @@
       "after_equation": null,
       "feynman_latex": "P = 2nmv_x^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28802,7 +28408,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -28846,7 +28451,6 @@
       "after_equation": null,
       "feynman_latex": "P = nm\\langle{v_x^2}\\rangle",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28886,7 +28490,6 @@
         "avgv2"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -28917,7 +28520,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{v_x^2}\\rangle = \\frac{1}{3}\\langle{v_x^2 + v_y^2 + v_z^2}\\rangle = \\langle{v^2}\\rangle/3",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -28958,7 +28560,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29015,7 +28616,6 @@
       "after_equation": null,
       "feynman_latex": "P = (\\frac{2}{3})n\\langle{mv^2/2}\\rangle",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29058,7 +28658,6 @@
         "v_x"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29115,7 +28714,6 @@
       "after_equation": null,
       "feynman_latex": "P = 2np_xv_x",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29157,7 +28755,6 @@
         "T"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29214,7 +28811,6 @@
       "after_equation": null,
       "feynman_latex": "\\left\\langle\\frac{1}{2}Mv_{\\text{CM}}^2\\right\\rangle = \\frac{3}{2}kT",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 39_ The Kinetic Theory of Gases.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29261,7 +28857,6 @@
         "n_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29467,7 +29062,6 @@
       "after_equation": null,
       "feynman_latex": "n = n_0e^{-mgh/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 40_ The Principles of Statistical Mechanics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.40.1",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -29515,7 +29109,6 @@
         "n_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29592,7 +29185,6 @@
       "after_equation": null,
       "feynman_latex": "n_1 = n_0e^{-(E_1 - E_0)/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 40_ The Principles of Statistical Mechanics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29639,7 +29231,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -29703,7 +29294,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{\\theta^2}\\rangle = kT/I\\omega_0^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29749,7 +29339,6 @@
         "omega_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29813,7 +29402,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{V_L^2}\\rangle = L\\omega_0^2 kT",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -29857,7 +29445,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -29995,7 +29582,6 @@
       "after_equation": null,
       "feynman_latex": "\\gamma = \\frac{\\omega_0}{Q} = \\frac{2}{3} \\frac{r_0\\omega_0^2}{c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30042,7 +29628,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -30213,7 +29798,6 @@
       "after_equation": null,
       "feynman_latex": "\\sigma_s = \\frac{8\\pi r_0^2}{3}( \\frac{\\omega^4}{(\\omega^2 - \\omega_0^2)^2 + \\gamma^2\\omega^2} )",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30263,7 +29847,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -30413,7 +29996,6 @@
       "after_equation": null,
       "feynman_latex": "\\sigma_s = \\frac{2\\pi r_0^2\\omega_0^2} {3[(\\omega - \\omega_0)^2 + \\gamma^2/4]}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30463,7 +30045,6 @@
         "r_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -30600,7 +30181,6 @@
       "after_equation": null,
       "feynman_latex": "I = \\frac{9\\gamma^2kT}{4\\pi^2r_0^2\\omega_0^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30647,7 +30227,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -30809,7 +30388,6 @@
       "after_equation": null,
       "feynman_latex": "I = \\frac{\\omega^2kT}{\\pi^2c^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30852,7 +30430,6 @@
         "N_t__o_t_"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -30883,7 +30460,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{E}\\rangle = \\frac{E_{\\text{tot}}}{N_{\\text{tot}}} = \\frac{N_0\\hbar\\omega(0 + x +2x^2 + 3x^3 + \\dotsb)} {N_0(1 + x + x^2 + x^3 + \\dotsb)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -30927,7 +30503,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -31030,7 +30605,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{E}\\rangle = \\frac{\\hbar\\omega}{e^{\\hbar\\omega/kT} - 1}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31074,7 +30648,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31105,7 +30678,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{R^2}\\rangle = \\alpha t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31146,7 +30718,6 @@
         "N"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31184,7 +30755,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{R_N^2}\\rangle = NL^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31229,7 +30799,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31299,7 +30868,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{R^2}\\rangle = 6kT \\frac{t}{\\mu}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 41_ The Brownian Movement.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31341,7 +30909,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31372,7 +30939,6 @@
       "after_equation": null,
       "feynman_latex": "N_c = nv",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31418,7 +30984,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31528,7 +31093,6 @@
       "after_equation": null,
       "feynman_latex": "N_e = (1/A)(v/D)e^{-W/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31577,7 +31141,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31687,7 +31250,6 @@
       "after_equation": null,
       "feynman_latex": "N_e = nv(1-R) = (v(1-R)/V_a)e^{-W/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31737,7 +31299,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -31847,7 +31408,6 @@
       "after_equation": null,
       "feynman_latex": "I = q_env = (q_ev/V_a)e^{-q_e\\phi/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -31896,7 +31456,6 @@
         "n_i"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32006,7 +31565,6 @@
       "after_equation": "I.42.6",
       "feynman_latex": "n_e = \\frac{n_a}{(n_a + n_i)V_a} e^{-W/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32055,7 +31613,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32139,7 +31696,6 @@
       "after_equation": null,
       "feynman_latex": "N_m = N_ne^{-\\hbar\\omega/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32188,7 +31744,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -32291,7 +31846,6 @@
       "after_equation": null,
       "feynman_latex": "I = \\frac{A_{mn}}{B_{nm}e^{\\hbar\\omega/kT} - B_{mn}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 42_ Applications of Kinetic Theory.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32335,7 +31889,6 @@
         "tau"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -32366,7 +31919,6 @@
       "after_equation": null,
       "feynman_latex": "N = T/\\tau",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32408,7 +31960,6 @@
         "tau"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32466,7 +32017,6 @@
       "after_equation": null,
       "feynman_latex": "N = N_0e^{-t/\\tau}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32510,7 +32060,6 @@
         "tau"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "exp",
@@ -32555,7 +32104,6 @@
       "after_equation": null,
       "feynman_latex": "P = e^{-t/\\tau}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32599,7 +32147,6 @@
         "tau"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -32643,7 +32190,6 @@
       "after_equation": null,
       "feynman_latex": "v_{\\text{drift}} = \\frac{F\\tau}{m}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32685,7 +32231,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32716,7 +32261,6 @@
       "after_equation": null,
       "feynman_latex": "v_{\\text{drift}} = \\mu F",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32757,7 +32301,6 @@
         "tau"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -32788,7 +32331,6 @@
       "after_equation": null,
       "feynman_latex": "\\mu = \\tau/m",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -32831,7 +32373,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32888,7 +32429,6 @@
       "after_equation": null,
       "feynman_latex": "v_{\\text{drift}} = \\mu F = \\mu qE = \\mu q \\frac{V}{b}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.43.16",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -32932,7 +32472,6 @@
         "v_dr__i__f_t__"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -32989,7 +32528,6 @@
       "after_equation": null,
       "feynman_latex": "I = qn_iAv_{\\text{drift}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33034,7 +32572,6 @@
         "q"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33124,7 +32661,6 @@
       "after_equation": null,
       "feynman_latex": "I = \\mu q^2n_i \\frac{A}{b} V",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33169,7 +32705,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -33265,7 +32800,6 @@
       "after_equation": null,
       "feynman_latex": "J = \\frac{n_{m}v \\Delta_{T} - n_{p}v \\Delta_{T}}{\\Delta_{T}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33309,7 +32843,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33353,7 +32886,6 @@
       "after_equation": null,
       "feynman_latex": "J = (n_{m} - n_{p})v",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33395,7 +32927,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -33439,7 +32970,6 @@
       "after_equation": null,
       "feynman_latex": "D = \\frac{1}{3}lv",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33483,7 +33013,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33527,7 +33056,6 @@
       "after_equation": null,
       "feynman_latex": "D = \\mu kT",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.43.31",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -33568,7 +33096,6 @@
         "v_dr__i__f_t__"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33599,7 +33126,6 @@
       "after_equation": null,
       "feynman_latex": "J_{\\text{drift}} = n_av_{\\text{drift}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33641,7 +33167,6 @@
         "n_a"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33685,7 +33210,6 @@
       "after_equation": null,
       "feynman_latex": "J_{\\text{drift}} = n_a\\mu F",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33729,7 +33253,6 @@
         "n_0"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -33800,7 +33323,6 @@
       "after_equation": null,
       "feynman_latex": "n_a = n_0e^{-U/kT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33848,7 +33370,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -33931,7 +33452,6 @@
       "after_equation": null,
       "feynman_latex": "\\kappa = \\frac{knlv}{\\gamma - 1}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -33977,7 +33497,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -34047,7 +33566,6 @@
       "after_equation": null,
       "feynman_latex": "\\kappa = \\frac{1}{\\gamma - 1} \\frac{kv}{\\sigma_c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 43_ Diffusion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.43.43",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -34090,7 +33608,6 @@
         "W"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -34121,7 +33638,6 @@
       "after_equation": null,
       "feynman_latex": "Q_2 = Q_1 - W",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34165,7 +33681,6 @@
         "V"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -34222,7 +33737,6 @@
       "after_equation": "I.44.3",
       "feynman_latex": "p = \\frac{NkT_1}{V}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34268,7 +33782,6 @@
         "V_b"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34345,7 +33858,6 @@
       "after_equation": "I.44.4",
       "feynman_latex": "Q_1 = NkT_1\\ln\\frac{V_b}{V_a}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34392,7 +33904,6 @@
         "V_d"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34469,7 +33980,6 @@
       "after_equation": null,
       "feynman_latex": "Q_2 = NkT_2\\ln\\frac{V_c}{V_d}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34512,7 +34022,6 @@
         "f"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34543,7 +34052,6 @@
       "after_equation": null,
       "feynman_latex": "Q = Q_Sf",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34584,7 +34092,6 @@
         "T"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34615,7 +34122,6 @@
       "after_equation": null,
       "feynman_latex": "Q = ST",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34657,7 +34163,6 @@
         "T_2"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34701,7 +34206,6 @@
       "after_equation": "I.44.12",
       "feynman_latex": "Q_2 = \\frac{T_2}{T_1} Q_1",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34744,7 +34248,6 @@
         "T_2"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -34801,7 +34304,6 @@
       "after_equation": null,
       "feynman_latex": "W = Q_1(1 - \\frac{T_2}{T_1}) = Q_1 \\frac{T_1 - T_2}{T_1}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -34849,7 +34351,6 @@
         "gamma"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Add",
@@ -34959,7 +34460,6 @@
       "after_equation": "I.44.18",
       "feynman_latex": "S(V,T) = Nk[\\ln V + \\frac{1}{\\gamma - 1}\\ln T] + a",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 44_ The Laws of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35006,7 +34506,6 @@
         "V"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -35050,7 +34549,6 @@
       "after_equation": null,
       "feynman_latex": "P = \\frac{RT}{V}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 45_ Illustrations of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35096,7 +34594,6 @@
         "V_a"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -35173,7 +34670,6 @@
       "after_equation": null,
       "feynman_latex": "n = (\\frac{1}{V_a})e^{-(U_G - U_L)/RT}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 45_ Illustrations of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35222,7 +34718,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Div",
@@ -35503,7 +34998,6 @@
       "after_equation": "I.45.17",
       "feynman_latex": "I = \\frac{\\hbar\\omega^3}{\\pi^2c^2(e^{\\hbar\\omega/kT} - 1)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 45_ Illustrations of Thermodynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35554,7 +35048,6 @@
         "theta"
       ],
       "consideration": "in",
-      "branch": "Thermodynamics and kinetic theory",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -35717,7 +35210,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega = (\\theta/\\tau)(e^{-(\\epsilon + L\\theta)/kT} - e^{-\\epsilon/kT}) = (\\theta/\\tau)e^{-\\epsilon/kT}(e^{-L\\theta/kT} - 1)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 46_ Ratchet and pawl.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35763,7 +35255,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -35807,7 +35298,6 @@
       "after_equation": null,
       "feynman_latex": "c_s^2 = \\frac{\\gamma P}{\\rho}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 47_ Sound. The wave equation.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.47.23",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -35852,7 +35342,6 @@
         "mu"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -35909,7 +35398,6 @@
       "after_equation": null,
       "feynman_latex": "c_s^2 = \\frac{\\gamma kT}{m} = \\frac{\\gamma RT}{\\mu}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 47_ Sound. The wave equation.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -35951,7 +35439,6 @@
         "v_a_v"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -36002,7 +35489,6 @@
       "after_equation": null,
       "feynman_latex": "c_s = (\\frac{\\gamma}{3})^{1/2}v_{\\text{av}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 47_ Sound. The wave equation.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36048,7 +35534,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -36178,7 +35663,6 @@
       "after_equation": null,
       "feynman_latex": "I = A_1^2 + A_2^2 + 2A_1A_2\\cos((\\omega_1 - \\omega_2)t)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36225,7 +35709,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -36322,7 +35805,6 @@
       "after_equation": null,
       "feynman_latex": "S = (1 + b\\cos\\omega_mt)\\cos\\omega_ct",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36367,7 +35849,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -36549,7 +36030,6 @@
       "after_equation": null,
       "feynman_latex": "S = \\cos\\omega_ct + \\frac{1}{2}b\\cos((\\omega_c + \\omega_m)t) + \\frac{1}{2}b\\cos((\\omega_c - \\omega_m)t)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36598,7 +36078,6 @@
         "q_e"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -36708,7 +36187,6 @@
       "after_equation": null,
       "feynman_latex": "n = 1 - \\frac{Nq_e^2}{2\\epsilon_0 m\\omega^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36752,7 +36230,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -36783,7 +36260,6 @@
       "after_equation": null,
       "feynman_latex": "v_p = \\frac{\\omega}{k}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36826,7 +36302,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Subtract",
@@ -36937,7 +36412,6 @@
       "after_equation": null,
       "feynman_latex": "k = \\frac{\\omega}{c} - \\frac{a}{\\omega c}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -36982,7 +36456,6 @@
         "omega_2"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -37039,7 +36512,6 @@
       "after_equation": null,
       "feynman_latex": "v_M = \\frac{\\omega_1 - \\omega_2}{k_1 - k_2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -37083,7 +36555,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -37208,7 +36679,6 @@
       "after_equation": null,
       "feynman_latex": "v_g = \\frac{c}{1 + a/\\omega^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -37256,7 +36726,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -37346,7 +36815,6 @@
       "after_equation": null,
       "feynman_latex": "\\psi = Ae^{i(\\omega t -kx)}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -37391,7 +36859,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -37544,7 +37011,6 @@
       "after_equation": null,
       "feynman_latex": "E = \\frac{mc^2}{\\sqrt{1 - v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.48.2",
       "benchmark_overlap_rule": "same chapter and operator signature",
       "operator_counts": {
@@ -37591,7 +37057,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -37750,7 +37215,6 @@
       "after_equation": null,
       "feynman_latex": "p = \\frac{mv}{\\sqrt{1 - v^2/c^2}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -37798,7 +37262,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -37974,7 +37437,6 @@
       "after_equation": "I.48.22",
       "feynman_latex": "\\omega = c\\sqrt{k^2 + m^2c^2/\\hbar^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38021,7 +37483,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -38100,7 +37561,6 @@
       "after_equation": "I.48.22",
       "feynman_latex": "v_g = \\frac{c^2p}{E}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 48_ Beats.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38147,7 +37607,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -38393,7 +37852,6 @@
       "after_equation": null,
       "feynman_latex": "y = e^{i\\omega t}(e^{-i\\omega x/c} - e^{i\\omega x/c}) = -2ie^{i\\omega t}\\sin (\\omega x/c)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38440,7 +37898,6 @@
         "omega"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -38540,7 +37997,6 @@
       "after_equation": null,
       "feynman_latex": "\\lambda = 2\\pi c/\\omega",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38585,7 +38041,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -38685,7 +38140,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega = kc = n\\pi c/L",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38727,7 +38181,6 @@
         "k_y"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -38772,7 +38225,6 @@
       "after_equation": null,
       "feynman_latex": "k^2 = k_x^2 + k_y^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -38820,7 +38272,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -39225,7 +38676,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi = [e^{i\\omega t}][e^{(-ik_xx + ik_yy)} - e^{(+ik_xx + ik_yy)} - e^{(-ik_xx - ik_yy)} + e^{(+ik_xx - ik_yy)}]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -39276,7 +38726,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -39406,7 +38855,6 @@
       "after_equation": null,
       "feynman_latex": "\\phi = [4\\sin k_xx\\sin k_yy][e^{i\\omega t}]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -39453,7 +38901,6 @@
         "n"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -39673,7 +39120,6 @@
       "after_equation": null,
       "feynman_latex": "\\omega^2 = (\\frac{\\pi c}{b})^2 \\frac{4m^2 + n^2}{4}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 49_ Modes.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -39717,7 +39163,6 @@
         "x_i_n"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -39748,7 +39193,6 @@
       "after_equation": null,
       "feynman_latex": "x_{\\text{out}} = Kx_{\\text{in}}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -39790,7 +39234,6 @@
         "x_i_n"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -39854,7 +39297,6 @@
       "after_equation": null,
       "feynman_latex": "x_{\\text{out}} = K[x_{\\text{in}} + \\epsilon x_{\\text{in}}^2]",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -39899,7 +39341,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -40003,7 +39444,6 @@
       "after_equation": null,
       "feynman_latex": "x_{\\text{out}} = K(\\cos\\omega t + \\epsilon\\cos^2\\omega t)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": "I.50.26",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -40049,7 +39489,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -40198,7 +39637,6 @@
       "after_equation": null,
       "feynman_latex": "x_{\\text{out}} = K(\\cos\\omega t + \\frac{\\epsilon}{2} + \\frac{\\epsilon}{2}\\cos2\\omega t)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40247,7 +39685,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -40503,7 +39940,6 @@
       "after_equation": null,
       "feynman_latex": "x_{\\text{out}} = K\\epsilon(A\\cos\\omega_1t + B\\cos\\omega_2t)^2 = K\\epsilon(A^2\\cos^2\\omega_1t + B^2\\cos^2\\omega_2t + 2AB\\cos\\omega_1t\\cos\\omega_2t)",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40549,7 +39985,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -40613,7 +40048,6 @@
       "after_equation": null,
       "feynman_latex": "C=AB\\cos\\omega_2t",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 50_ Harmonics.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40655,7 +40089,6 @@
         "v"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -40686,7 +40119,6 @@
       "after_equation": null,
       "feynman_latex": "\\sin\\theta = \\frac{c_w}{v}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 51_ Waves.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40729,7 +40161,6 @@
         "rho"
       ],
       "consideration": "in",
-      "branch": "Waves and optics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -40806,7 +40237,6 @@
       "after_equation": "I.51.1",
       "feynman_latex": "v_{\\text{phase}} = \\sqrt{Tk/\\rho + g/k}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 51_ Waves.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40852,7 +40282,6 @@
         "n_2"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -40922,7 +40351,6 @@
       "after_equation": null,
       "feynman_latex": "\\pi r^2=\\sigma=\\frac{A}{N} \\frac{n_1-n_2}{n_1}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 5_ Time and Distance.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -40966,7 +40394,6 @@
         "N"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Div",
@@ -40997,7 +40424,6 @@
       "after_equation": null,
       "feynman_latex": "P=N_A/N",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41039,7 +40465,6 @@
         "sigma"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -41083,7 +40508,6 @@
       "after_equation": null,
       "feynman_latex": "P_C=\\frac{n}{A} \\sigma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41124,7 +40548,6 @@
         "avgDN12"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Add",
@@ -41155,7 +40578,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{D_N^2}\\rangle=\\langle{D_{N-1}^2}\\rangle+1",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41195,7 +40617,6 @@
         "N"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -41220,7 +40641,6 @@
       "after_equation": null,
       "feynman_latex": "D_{\\text{rms}}=\\sqrt{\\langle{D^2}\\rangle}=\\sqrt{N}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41261,7 +40681,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -41292,7 +40711,6 @@
       "after_equation": null,
       "feynman_latex": "P(x,\\Delta_{x})=p \\Delta_{x}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41335,7 +40753,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Div",
@@ -41453,7 +40870,6 @@
       "after_equation": null,
       "feynman_latex": "p=\\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-x^2/2\\sigma^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": "I.6.20a",
       "benchmark_overlap_rule": "same equation number",
       "operator_counts": {
@@ -41500,7 +40916,6 @@
         "p"
       ],
       "consideration": "in",
-      "branch": "probability",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -41544,7 +40959,6 @@
       "after_equation": null,
       "feynman_latex": "\\langle{\\Delta_{N}}\\rangle=N p \\Delta_{v}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 6_ Probability.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41588,7 +41002,6 @@
         "r"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -41652,7 +41065,6 @@
       "after_equation": null,
       "feynman_latex": "F=G \\frac{mm'}{r^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 7_ The Theory of Gravitation.htm",
-      "ambiguous_chapter": true,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41694,7 +41106,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -41732,7 +41143,6 @@
       "after_equation": null,
       "feynman_latex": "s=16t^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41774,7 +41184,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -41805,7 +41214,6 @@
       "after_equation": "I.8.2",
       "feynman_latex": "v=x/\\epsilon",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41846,7 +41254,6 @@
         "t_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -41903,7 +41310,6 @@
       "after_equation": null,
       "feynman_latex": "v=\\frac{x}{\\epsilon}=32t_0+16\\epsilon",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -41947,7 +41353,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -42024,7 +41429,6 @@
       "after_equation": "I.8.5",
       "feynman_latex": "s=At^3+Bt+C",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42068,7 +41472,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -42132,7 +41535,6 @@
       "after_equation": "I.8.9",
       "feynman_latex": "v=3At^2+B",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42175,7 +41577,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -42206,7 +41607,6 @@
       "after_equation": "I.8.9",
       "feynman_latex": "v=gt",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42247,7 +41647,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -42298,7 +41697,6 @@
       "after_equation": "I.8.9",
       "feynman_latex": "s=\\frac{1}{2}gt^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42342,7 +41740,6 @@
         "v_z"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -42414,7 +41811,6 @@
       "after_equation": null,
       "feynman_latex": "v=\\sqrt{v_x^2+v_y^2+v_z^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42457,7 +41853,6 @@
         "u"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -42488,7 +41883,6 @@
       "after_equation": null,
       "feynman_latex": "x=ut",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42529,7 +41923,6 @@
         "t"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Div",
@@ -42587,7 +41980,6 @@
       "after_equation": null,
       "feynman_latex": "y=-\\frac{1}{2}gt^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42638,7 +42030,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -42716,7 +42107,6 @@
       "after_equation": null,
       "feynman_latex": "y=-\\frac{g}{2u^2} x^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 8_ Motion.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42760,7 +42150,6 @@
         "m"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Mult",
@@ -42791,7 +42180,6 @@
       "after_equation": null,
       "feynman_latex": "F=m \\frac{dv}{dt}=ma",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 9_ Newton’s Laws of Dynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42834,7 +42222,6 @@
         "x_0"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Add",
@@ -42924,7 +42311,6 @@
       "after_equation": null,
       "feynman_latex": "x =x_0 +v_0t+\\frac{1}{2}gt^2",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 9_ Newton’s Laws of Dynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -42967,7 +42353,6 @@
         "x"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "Neg",
@@ -42992,7 +42377,6 @@
       "after_equation": null,
       "feynman_latex": "a =-x",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 9_ Newton’s Laws of Dynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {
@@ -43033,7 +42417,6 @@
         "y"
       ],
       "consideration": "in",
-      "branch": "Classical mechanics",
       "public": true,
       "tree": {
         "label": "sqrt",
@@ -43085,7 +42468,6 @@
       "after_equation": null,
       "feynman_latex": "r =\\sqrt{x^2+y^2}",
       "source_file": "The Feynman Lectures on Physics Vol. I Ch. 9_ Newton’s Laws of Dynamics.htm",
-      "ambiguous_chapter": false,
       "benchmark_overlap": null,
       "benchmark_overlap_rule": null,
       "operator_counts": {

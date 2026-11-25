@@ -409,14 +409,11 @@ class FeynmanCatalogTests(unittest.TestCase):
 
 
 class CatalogBranchTests(unittest.TestCase):
-    def test_rebuilt_catalogues_keep_curated_branch_labels(self):
-        annotations = json.loads(C.CATALOG_BRANCHES.read_text())
-        for corpus, builder in (("feynman", C.seed_feynman), ("wiki", C.seed_wiki)):
-            with self.subTest(corpus=corpus):
-                records = builder()
-                expected = C.load_catalog(C.CATALOG_DIR / f"{corpus}.json")
-                C.apply_curated_branches(records, annotations[corpus])
-                self.assertEqual({r.id: r.branch for r in records}, {r.id: r.branch for r in expected})
+    def test_rebuilt_wikipedia_keeps_curated_branches(self):
+        records = C.seed_wiki()
+        expected = C.load_catalog(C.CATALOG_DIR / "wiki.json")
+        C.apply_curated_branches(records, json.loads(C.WIKI_BRANCHES.read_text()))
+        self.assertEqual({r.id: r.branch for r in records}, {r.id: r.branch for r in expected})
 
     def test_unknown_annotation_id_is_an_error(self):
         with self.assertRaisesRegex(ValueError, "unknown ID"):
