@@ -61,6 +61,22 @@ To redraw plots from the saved summary or run the separate interval-calibration 
 
 The saved decay-rate figures and data under `results/exponential_fit/` use the Codex labels. Within each bootstrap replicate, a formula receives one resampling count shared across all of its branches.
 
+## Reproduce the SBI intervals
+
+Use a separate Python 3.12 environment for the simulation-based inference comparison in Section 3.2.1.
+
+```bash
+python3.12 -m venv .venv-sbi
+.venv-sbi/bin/python -m pip install 'torch==2.14.0' --index-url https://download.pytorch.org/whl/cpu
+.venv-sbi/bin/python -m pip install -r requirements-sbi.txt -e .
+.venv-sbi/bin/python -m pip check
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv-sbi/bin/physics-priors-sbi-intervals --workers 4
+```
+
+The command uses 100 Feynman benchmark expressions, the 41 released Wikipedia expressions, and 70 inflationary potentials. It fixes the number of operator occurrences in each simulation to the corresponding observed total, generates 10,000 rank curves per collection, and learns a posterior over `beta` from the rank-curve summaries. The summaries use ten features from three curve fits and the number of nonzero ranks, as in the authors' released code. The default prior is uniform on `[0.1, 1]`. The 95% credible intervals are the 2.5th and 97.5th posterior percentiles. [Published SBI procedure](https://arxiv.org/html/2408.11065#S4.SS1) · [Reference implementation](https://github.com/andrei-const/physics-formulae-patterns/blob/2aa199b5a1d210dacd122f97c3e8086d3e54f752/ili_zipf.py)
+
+Each run writes a summary and a posterior density grid for each collection to `results/sbi/run/`. Use `--collection` to select one or more collections and `--output` to choose a new directory. Changing `--beta-min` or `--beta-max` changes the prior and regenerates the training simulations. The resulting posterior intervals describe uncertainty under the simulator and the chosen prior.
+
 ## Compare priors on held-out formulas
 
 ```bash

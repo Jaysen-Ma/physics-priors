@@ -13,8 +13,9 @@
   },
   "limitations": "Synthetic count vectors, not expression trees. Finite simulation precision. Chapter scenario includes a branch with only four clusters. This does not establish coverage on real corpora.",
   "code_sha256": {
-    "scripts/exponential_coverage_check.py": "99fb101607773d3f783bee7283b58856dfd89e22ae2a563c62d68a270d49b191",
-    "physics_metalaw/exponential_fit.py": "9fb29ed689605450598a98fcc7e9743f16d3abb7b6ecf2ce244dc37e106e13e1"
+    "src/physics_priors/analysis/exponential_coverage_check.py": "203621ae7ca68788c33a96f5dac39176cfafca137989dd1b7537c283814fe684",
+    "src/physics_priors/exponential_fit.py": "829476f9a246a13c05a2c3a219641158f6e3b62a312f2140d769b2a959a36306",
+    "src/physics_priors/paths.py": "272b93ef14bf6adc34d629cd8296bd20ec37e2a5ca10581281524cdd3246ecbf"
   },
   "scenarios": {
     "homogeneous_equations": {
@@ -101,13 +102,13 @@
         }
       ],
       "mean_estimation_error_by_branch": [
-        0.005874062147592423,
-        0.010915773317483826,
-        0.00667713614637306,
-        0.008689824546526921,
-        0.00615935869160201,
-        0.009953954273676974,
-        0.0074737721254500376
+        0.005874061747225245,
+        0.010915773003482374,
+        0.006677135783852992,
+        0.008689824190241833,
+        0.006159358308801766,
+        0.009953953889325412,
+        0.0074737717586164055
       ],
       "failed_draws": 0,
       "boundary_draws": 0
@@ -196,13 +197,13 @@
         }
       ],
       "mean_estimation_error_by_branch": [
-        0.011783246266632755,
-        0.0021707521787825757,
-        0.0008100661720121493,
-        0.005790411012385595,
-        0.004886336339047788,
-        0.009452569996701816,
-        0.01177583081098446
+        0.011783245390351227,
+        0.0021707512971224875,
+        0.0008100655516165706,
+        0.00579041062628358,
+        0.004886336147776339,
+        0.009452570015975654,
+        0.011775830759191723
       ],
       "failed_draws": 0,
       "boundary_draws": 0
@@ -291,13 +292,13 @@
         }
       ],
       "mean_estimation_error_by_branch": [
-        0.02638814243638975,
-        0.007520969119170532,
-        0.010424096550582782,
-        0.01913672488471639,
-        0.02138915233335467,
-        0.021334989865393773,
-        0.023331907200735937
+        0.026388141790962768,
+        0.007520968331325744,
+        0.010424095980472638,
+        0.019136724554824663,
+        0.021389152053197656,
+        0.02133498960724375,
+        0.023331906955091766
       ],
       "failed_draws": 0,
       "boundary_draws": 0

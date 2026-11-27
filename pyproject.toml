@@ -21,6 +21,7 @@ Repository = "https://github.com/Jaysen-Ma/physics-priors"
 [project.scripts]
 physics-priors-catalog = "physics_priors.catalog:main"
 physics-priors-fit = "physics_priors.analysis.exponential_bootstrap:main"
+physics-priors-sbi-intervals = "physics_priors.analysis.sbi_intervals:main"
 physics-priors-calibrate = "physics_priors.analysis.exponential_coverage_check:main"
 physics-priors-compare = "physics_priors.analysis.prior_comparison:main"
 
