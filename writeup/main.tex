@@ -27,7 +27,7 @@
 \end{center}
 
 \begin{abstract}
-Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 967 assigned to six branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula catalogue for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using six-fold cross-validation on 1,090 formulas from Feynman, Wikipedia, and curated collections in astrophysics and fluid mechanics. Across ten variants of a Katz back-off model, the branch-dependent prior gives more training weight to formulas from the relevant branch in the same training set. It assigns 1.26 times as much probability as the pooled prior on a geometric-average basis. The average ratio exceeds one in all seven branches.
+Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 967 assigned to six branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula catalogue for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using six-fold cross-validation on 1,090 formulas from Feynman, Wikipedia, and curated collections in astrophysics and fluid mechanics. Across ten variants of a Katz back-off model, the branch-dependent prior gives more training weight to formulas from the relevant branch in the same training set. It assigns 1.25 times as much probability as the pooled prior on a geometric-average basis. The ratio exceeds one in every branch for all ten variants.
 \end{abstract}
 
 \section{Introduction}
@@ -51,7 +51,7 @@ Constantin et al. also suggested that $\beta$ could vary with energy scale~\cite
 
 This variation motivates building a prior for a new symbolic regression task that is adapted to its known physics branch. We compare a pooled prior that learns operator arrangements across all training branches with a branch-dependent prior that gives greater training weight to formulas from the relevant branch in the same training set.
 
-We evaluate both priors on 1,090 formulas using six-fold cross-validation. We exclude training expressions that share a reviewed formula group or encoded tree with a held-out expression. Across ten Katz model variants, the branch-dependent prior assigns 1.26 times as much probability as the pooled prior on a geometric-average basis. All ten variants yield higher average probabilities in six branches, and nine do so in waves and optics.
+We evaluate both priors on 1,090 formulas using six-fold cross-validation. We exclude training expressions that share a reviewed formula group with a held-out expression. Across ten Katz model variants, the branch-dependent prior assigns 1.25 times as much probability as the pooled prior on a geometric-average basis. All ten variants yield higher average probabilities in each of the seven branches.
 
 Section~\ref{sec:data} describes the sources of the formula catalogue and how we selected expressions. It explains how we assigned Feynman formulas to physics branches and what the public formula catalogue records. Section~\ref{sec:decay} explains how we estimate exponential decay rates and their uncertainty. We revisit the inflationary gap and compare the fitted rates across the physics branches. Section~\ref{sec:priors} describes how we learn and adapt a pooled prior over operator arrangements. It compares the two priors on held-out formulas, both overall and within each branch. Section~\ref{sec:discussion} discusses what the decay-rate and prior comparisons tell us about the structure of physics equations. It considers how these findings might inform symbolic regression and what remains to be tested.
 
@@ -195,78 +195,89 @@ We treat these comparisons as descriptive. The bootstrap intervals summarise unc
 
 \section{Branch-dependent priors for expression structure}\label{sec:priors}
 
-We ask whether knowing the physics branch of a symbolic regression task helps us assign higher prior probability to the underlying equation form. We compare a pooled prior that learns operator arrangements across all seven branches with a branch-dependent prior that gives more training weight to formulas from the known branch. The two priors use the same set of training formulas in each fold. We evaluate both priors on held-out expression trees and repeat the comparison with ten variants of the same language model.
+In this section, we explore whether knowing which branch of physics a symbolic regression task belongs to can help us construct a prior that favours the true underlying functional form. We compare a pooled prior, which learns from formulas across all seven branches, with a branch-dependent prior, which gives greater training weight to formulas carrying the relevant branch label. Both priors use the same set of training expressions in each fold.
+
+We compare the probabilities the two priors assign to held-out expression trees using six-fold cross-validation. We repeat the comparison with ten variants of the Katz back-off model to check whether the advantage of using branch information holds across context settings.
 
 \subsection{Expression trees and the pooled prior}
-Following Bartlett et al.~\citep{bartlett2023}, we represent a formula as an ordered expression tree and use a Katz back-off language model to learn how operators are arranged. We use a common operator vocabulary and anonymise the leaves while preserving whether two sibling leaves are identical. We fit one model for right children and one for the rest of the nodes. For a right child, the context can include the token at its left sibling as well as ancestor operators. When an operator sequence is unseen, the model falls back to a shorter context.
+Following Bartlett et al.~\citep{bartlett2023}, we represent each formula as an ordered expression tree and use a Katz back-off language model to learn how its operators are arranged. We anonymise the leaves while preserving whether two sibling leaves are identical. We fit one conditional model for right children of binary operators and another for the remaining nodes, including the root. The context of a right child includes the token of its left sibling and can include ancestor operators.
 
-For a model variant $m$, the prior probability of an encoded formula $g$ is the product of the conditional probabilities of its tokens,
+The model estimates conditional token probabilities from counts in the training trees. When a context is unseen, the model backs off to a shorter one. For variant $m$, the probability assigned to an encoded formula $g$ is the product of the conditional probabilities of its nodes,
 \begin{equation}
-P_m(g)=\prod_{v\in g} p_m(t_v\mid h_v),
+P_m(g)=\prod_{v\in g}p_m(t_v\mid h_{m,v}),
 \label{eq:tree-score}
 \end{equation}
-where $t_v$ is the token at node $v$ and $h_v$ is its context. To check how the result depends on the context definition, we fit ten variants of the Katz model. Eight use histories of three through ten context tokens. The other two use histories of three or four tokens and also include the depth of the current node, with depths of four or more grouped together. For each variant, the pooled prior $P_{m,0}$ counts every training formula once. Appendix~\ref{app:prior-fitting} gives the settings and results for individual variants.
+where $t_v$ is the token at node $v$ and $h_{m,v}$ is the context used to predict it.
+
+Eight variants use histories of three through ten context tokens. The other two use three or four tokens and also include the node's depth from the root, grouping depths of four or more together. Longer histories can include ancestors farther up the tree. For every variant, the pooled prior $P_{m,0}$ counts each eligible training formula once. Appendix~\ref{app:prior-fitting} gives the results for the individual variants.
 
 \subsection{Branch-dependent adjustment}
-For each branch $b$, we refit the model after counting each training formula carrying label $b$ eight times and every other training formula once. Denote the resulting prior by $P^{(8)}_{m,b}$. We combine it with the pooled prior at the level of the whole expression,
+For each variant $m$ and branch $b$, we refit the model on the same training formulas as the pooled prior. Each formula carrying label $b$ is counted eight times, and every other formula is counted once. A formula with several labels receives the eightfold weight in the separate fit for each branch it belongs to.
+
+Let $P^{(8)}_{m,b}(g)$ denote the probability that the weighted fit assigns to formula $g$. We compute both probabilities for the whole expression tree and combine them using a mixture weight $\alpha$,
 \begin{equation}
-P_{m,b}(g)=0.75\,P_{m,0}(g)+0.25\,P^{(8)}_{m,b}(g).
+P_{m,b}(g)=(1-\alpha)P_{m,0}(g)+\alpha P^{(8)}_{m,b}(g).
 \label{eq:branch-prior}
 \end{equation}
-The same eightfold weight and 25\% mixture share apply to all seven branches and ten variants. A formula carrying several labels is counted eight times in each applicable branch-weighted fit.
+We set $\alpha=0.25$. The eightfold weight controls how much the relevant branch contributes during training. The mixture weight controls how much the fitted branch-weighted model contributes to the final probability. We use the same settings in every fold, branch, and variant.
 
 \subsection{Six-fold cross-validation}\label{sec:prior-evaluation}
-We evaluate the priors on 1,090 expressions across seven branches. The evaluation set comprises 933 Feynman formulas, 103 formulas from the astrophysics and cosmology collection, 29 from Wikipedia, and 25 sourced additions to fluid and continuum mechanics. When reviewed entries describe the same physical quantity, we keep one representative.
+We evaluate the priors on 1,090 expressions across seven branches. The evaluation set comprises 933 Feynman formulas, 103 from the astrophysics and cosmology collection, 29 from Wikipedia, and 25 additional formulas in fluid and continuum mechanics. Where our review identified variants of the same physical relation, we retained one representative.
 
-We shuffle the 90 fluid and continuum mechanics formulas once into six folds of 15. Other formulas retain their existing grouped fold assignments. Each formula stays in one fold with all of its labels. For each held-out fold, both priors train on the other five folds after excluding any candidate training expression that shares a reviewed formula group or an encoded tree with a held-out expression. These exclusions apply across branches and sources. They leave between 32 and 38 fluid formulas in each training set. Each of the 1,090 formulas is evaluated once per variant.
+Each formula is assigned to one fold together with all of its branch labels. We hold out each fold in turn and fit both priors using formulas from the other five folds. Before fitting, we exclude any training formula that belongs to the same reviewed group as a held-out formula. A group can include relations for different quantities derived from the same physical model. Equations from different groups can remain in training when they share an encoded tree with a held-out formula.
 
 \subsection{Probability ratios}
-For held-out formula $g_i$, let $B_i$ be its set of branch labels. For variant $m$, we average the log probability ratios across those labels,
+For each held-out formula $g_i$, we divide the probability from each applicable branch-dependent prior separately by the pooled probability for the same formula. For branch $b$ and variant $m$, the ratio is
 \begin{equation}
-\Delta_{i,m}=\frac{1}{|B_i|}\sum_{b\in B_i}
-  \log\!\left(\frac{P_{m,b}(g_i)}{P_{m,0}(g_i)}\right).
-\label{eq:formula-log-ratio}
+r_{i,m,b}=\frac{P_{m,b}(g_i)}{P_{m,0}(g_i)}.
+\label{eq:formula-ratio}
 \end{equation}
-Each probability comes from the fit for the fold that held out $g_i$. The overall ratio is the geometric mean across $N$ formulas and $M=10$ variants,
+Let $\mathcal{T}_{b,k}$ be the set of indices of the $n_{b,k}$ held-out formulas carrying branch label $b$ in fold $k$. For model variant $m$, the geometric-mean probability ratio in that fold is
 \begin{equation}
-R=\exp\!\left(\frac{1}{NM}\sum_{m=1}^{M}\sum_{i=1}^{N}\Delta_{i,m}\right).
-\label{eq:prior-ratio}
+R_{m,b,k}=\left(\prod_{i\in\mathcal{T}_{b,k}}r_{i,m,b}\right)^{1/n_{b,k}}.
+\label{eq:fold-prior-ratio}
 \end{equation}
-For each branch, we use the log ratio for that branch and average over formulas carrying its label. We report the geometric mean across the ten variants and count how many variants have a branch ratio above one.
+We combine the six fold ratios, weighting each by the number of held-out formulas carrying that branch label,
+\begin{equation}
+R_{m,b}=
+\left(\prod_{k=1}^{6}R_{m,b,k}^{\,n_{b,k}}\right)^{1/\sum_{k=1}^{6}n_{b,k}}.
+\label{eq:variant-branch-ratio}
+\end{equation}
+We then take the geometric mean of $R_{m,b}$ across the ten variants to obtain the reported branch ratio. We also count the variants with $R_{m,b}>1$ to show how consistently the branch-dependent prior comes out ahead across context settings.
+
+For the overall comparison, a formula carrying several labels contributes the geometric mean of its branch ratios. For example, a formula labelled both fluid and continuum mechanics and waves and optics contributes one ratio to each branch comparison and one combined ratio to the overall comparison. We take the geometric mean of these formula-level ratios across all held-out formulas and variants.
 
 \subsection{Results}
-The branch-dependent prior assigns 1.255 times as much probability as the pooled prior on a geometric-average basis across the 1,090 held-out formulas (Table~\ref{tab:prior-ratios}). All ten variants improve overall, with ratios ranging from 1.163 to 1.338. The ratio averaged across variants exceeds one in all seven branches. All ten variants improve in six branches, and nine improve in waves and optics.
+The branch-dependent prior assigns 1.246 times as much probability as the pooled prior on a geometric-average basis across the 1,090 held-out formulas (Table~\ref{tab:prior-ratios}). The ratio exceeds one in each of the seven branches for all ten variants. Thermodynamics and kinetic theory has the largest average ratio, at 1.882, and waves and optics has the smallest, at 1.071.
 
-\begin{table}[!htbp]\centering\small
+\begin{table}[H]\centering\small
 \begin{tabular}{lrrr}
 \toprule
 Branch & Formulas & Probability ratio & Variants above one \\
 \midrule
-Mechanics & 145 & 1.134 & 10/10 \\
-Electromagnetism & 440 & 1.357 & 10/10 \\
-Waves and optics & 168 & 1.079 & 9/10 \\
-Thermodynamics and kinetic theory & 98 & 1.961 & 10/10 \\
-Quantum mechanics & 227 & 1.093 & 10/10 \\
-Fluid and continuum mechanics & 90 & 1.145 & 10/10 \\
-Astrophysics and cosmology & 105 & 1.553 & 10/10 \\
+Mechanics & 145 & 1.126 & 10/10 \\
+Electromagnetism & 440 & 1.317 & 10/10 \\
+Waves and optics & 168 & 1.071 & 10/10 \\
+Thermodynamics and kinetic theory & 98 & 1.882 & 10/10 \\
+Quantum mechanics & 227 & 1.165 & 10/10 \\
+Fluid and continuum mechanics & 90 & 1.130 & 10/10 \\
+Astrophysics and cosmology & 105 & 1.487 & 10/10 \\
 \midrule
-Overall & 1,090 & 1.255 & 10/10 \\
+Overall & 1,090 & 1.246 & 10/10 \\
 \bottomrule
 \end{tabular}
 \caption{Geometric-mean probabilities under the branch-dependent prior relative to the pooled prior. The ratios summarise ten Katz variants. Formulas with multiple labels contribute to each applicable branch row and are counted once in the overall row.}
 \label{tab:prior-ratios}
 \end{table}
 
-For fluid and continuum mechanics, the ratio is 1.145 overall and exceeds one in five of the six folds. The geometric mean is 0.994 for the Feynman formulas, 1.272 for the Wikipedia formulas, and 1.386 for the 25 sourced additions. Averaging the log ratios across variants for each fluid formula gives higher probabilities for 31 of the 90 formulas and a median probability ratio of 0.950. The overall gain therefore reflects larger improvements on a subset of formulas.
-
-These comparisons describe performance on the selected formula collections. We chose the training weight and mixture share after exploratory comparisons on overlapping data. The ten variants share training and test folds, so their agreement shows how sensitive the result is to the model's context definition.
+The ten variants share the same training and test sets within each fold. Their agreement shows how consistently the branch-dependent prior improves held-out probabilities across context settings. Appendix~\ref{app:prior-ablation} reports an exploratory ablation of the training weight and mixture share.
 
 \section{Discussion}\label{sec:discussion}
 The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The branch comparison shows variation among the selected expressions. Its interpretation depends on how equations are assigned to branches.
 
 The catalogue is limited to selected explicit expressions and excludes differential and integral forms. The exponential curve also captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. Equation resampling describes variability under repeated selection from the observed collection, and chapter resampling addresses some of the dependence among related formulas. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
 
-The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-dependent prior assigned higher probabilities to the held-out formulas overall in every Katz variant. The largest average gain was in thermodynamics and kinetic theory. In fluid and continuum mechanics, the size of the gain varied across formula sources. We chose the weighting and mixture through exploratory comparisons on overlapping formula collections. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
+The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-dependent prior assigned higher probabilities to the held-out formulas overall in every Katz variant. The largest average gain was in thermodynamics and kinetic theory. We chose the weighting and mixture through exploratory comparisons on overlapping formula collections. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
 
 \bibliographystyle{unsrtnat}
 \bibliography{refs}
@@ -434,27 +445,57 @@ recovering Eq.~\eqref{eq:law}. The scaling of both parameters matters: if $b$ in
 
 This limiting relationship helps interpret comparisons of the Zipf--Mandelbrot and exponential models. Whether fitted parameters for a particular corpus approach this regime requires examining their values relative to the observed rank range. The limiting argument alone makes no claim about the empirical preference between the models.
 
+\clearpage
 \section{Katz context variants}\label{app:prior-fitting}
 
 The tree history consists of the nearest available ancestor operators, with the left sibling's token occupying the last history slot for a right child. Slots beyond the root use a padding token. In the depth-augmented variants, the depth from the root is prepended to the history and capped at four. For each context, we normalise the conditional probabilities over the legal tokens and mix them with the uniform distribution over those tokens at a weight of 0.001.
 
-\begin{table}[!htbp]\centering\small
+\begin{table}[H]\centering\small
 \begin{tabular}{rrr}
 \toprule
 History length & Ratio without depth & Ratio with depth \\
 \midrule
-3 & 1.164 & 1.163 \\
-4 & 1.164 & 1.187 \\
-5 & 1.234 & --- \\
-6 & 1.317 & --- \\
-7 & 1.332 & --- \\
-8 & 1.337 & --- \\
-9 & 1.338 & --- \\
-10 & 1.338 & --- \\
+3 & 1.189 & 1.191 \\
+4 & 1.181 & 1.198 \\
+5 & 1.238 & --- \\
+6 & 1.283 & --- \\
+7 & 1.293 & --- \\
+8 & 1.298 & --- \\
+9 & 1.298 & --- \\
+10 & 1.298 & --- \\
 \bottomrule
 \end{tabular}
 \caption{Overall geometric-mean probability ratios for each Katz context variant on the same six folds.}
 \label{tab:katz-variants}
+\end{table}
+
+\section{Training weight and mixture share}\label{app:prior-ablation}
+
+We varied the training weight $w$ for formulas carrying the relevant branch label and the mixture share $\alpha$ assigned to the weighted prior. We used the same six folds, training exclusions, and ten Katz variants as in Section~\ref{sec:priors}. We refitted the branch-weighted models for integer weights from 2 to 10, with $w=1$ corresponding to the pooled fit. For each weight, we used $P^{(w)}_{m,b}$ in place of $P^{(8)}_{m,b}$ in Equation~\eqref{eq:branch-prior} and varied $\alpha$ from 0 to 1 in steps of 0.001. The cases $w=1$ and $\alpha=0$ both give the pooled prior.
+
+Table~\ref{tab:prior-ablation} shows the overall geometric-mean probability ratio at selected mixture shares. With eightfold weighting, the ratio is 1.246 at the main setting of $\alpha=0.25$ and falls to 0.801 when the weighted model supplies the entire probability ($\alpha=1$). The highest overall ratio on the grid is 1.299 at $w=4$ and $\alpha=0.646$. This maximum is exploratory because we selected it on the same folds used for evaluation.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{rrrrrrr}
+\toprule
+& \multicolumn{6}{c}{Mixture share $\alpha$} \\
+\cmidrule(lr){2-7}
+Training weight $w$ & 0.00 & 0.10 & 0.25 & 0.50 & 0.75 & 1.00 \\
+\midrule
+1 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+2 & 1.000 & 1.070 & 1.127 & 1.191 & 1.233 & 1.253 \\
+3 & 1.000 & 1.117 & 1.192 & 1.263 & 1.289 & 1.250 \\
+4 & 1.000 & 1.142 & 1.224 & 1.289 & 1.293 & 1.176 \\
+5 & 1.000 & 1.156 & 1.238 & 1.293 & 1.275 & 1.078 \\
+6 & 1.000 & 1.164 & 1.244 & 1.288 & 1.251 & 0.979 \\
+7 & 1.000 & 1.169 & 1.246 & 1.280 & 1.226 & 0.888 \\
+8 & 1.000 & 1.172 & \textbf{1.246} & 1.270 & 1.201 & 0.801 \\
+9 & 1.000 & 1.173 & 1.244 & 1.260 & 1.177 & 0.723 \\
+10 & 1.000 & 1.174 & 1.242 & 1.250 & 1.156 & 0.657 \\
+\bottomrule
+\end{tabular}
+\caption{Overall geometric-mean probability ratios relative to the pooled prior at selected training weights and mixture shares. The bold entry marks the setting used in Section~\ref{sec:priors}.}
+\label{tab:prior-ablation}
 \end{table}
 
 \end{document}
