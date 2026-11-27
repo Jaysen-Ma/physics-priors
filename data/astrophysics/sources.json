@@ -1,0 +1,90 @@
+{
+  "mit": {
+    "citation": "Mark Vogelsberger, Stephanie O’Neil and David DePalma, Astrophysics II (MIT OpenCourseWare 8.902, Fall 2023).",
+    "url": "https://ocw.mit.edu/courses/8-902-astrophysics-ii-fall-2023/mit8_902_f23_lec_full.pdf"
+  },
+  "stellar": {
+    "citation": "Princeton AST 403, Equations of Stellar Structure.",
+    "url": "https://www.astro.princeton.edu/~gk/A403/stellar.pdf"
+  },
+  "poly": {
+    "citation": "Princeton AST 403, Polytropes.",
+    "url": "https://www.astro.princeton.edu/~gk/A403/polytrop.pdf"
+  },
+  "rad": {
+    "citation": "Princeton AST 403, Transfer of Radiation.",
+    "url": "https://www.astro.princeton.edu/~gk/A403/radtrans.pdf"
+  },
+  "disk": {
+    "citation": "Princeton AST 403, Accretion Disks.",
+    "url": "https://www.astro.princeton.edu/~gk/A403/disk.pdf"
+  },
+  "wind": {
+    "citation": "Princeton AST 403, Spherical Winds – Spherical Accretion.",
+    "url": "https://www.astro.princeton.edu/~gk/A403/wind.pdf"
+  },
+  "cosmo1": {
+    "citation": "David Tong, Cosmology, chapter 1, The Expanding Universe.",
+    "url": "https://davidtong.org/pdfs/teaching/cosmology/cosmo1.pdf"
+  },
+  "cosmo2": {
+    "citation": "David Tong, Cosmology, chapter 2, The Hot Universe.",
+    "url": "https://davidtong.org/pdfs/teaching/cosmology/cosmo2.pdf"
+  },
+  "cosmo3": {
+    "citation": "David Tong, Cosmology, chapter 3, Structure Formation.",
+    "url": "https://davidtong.org/pdfs/teaching/cosmology/cosmo3.pdf"
+  },
+  "gr1": {
+    "citation": "David Tong, General Relativity, chapter 1, Geodesics in Spacetime.",
+    "url": "https://davidtong.org/pdfs/teaching/general-relativity/gr1.pdf"
+  },
+  "gr5": {
+    "citation": "David Tong, General Relativity, chapter 5, When Gravity is Weak.",
+    "url": "https://davidtong.org/pdfs/teaching/general-relativity/gr5.pdf"
+  },
+  "gr6": {
+    "citation": "David Tong, General Relativity, chapter 6, Black Holes.",
+    "url": "https://davidtong.org/pdfs/teaching/general-relativity/gr6.pdf"
+  },
+  "hogg": {
+    "citation": "David W. Hogg, Distance Measures in Cosmology, arXiv:astro-ph/9905116v4.",
+    "url": "https://arxiv.org/pdf/astro-ph/9905116v4"
+  },
+  "lens": {
+    "citation": "Ramesh Narayan and Matthias Bartelmann, Lectures on Gravitational Lensing, arXiv:astro-ph/9606001v2.",
+    "url": "https://arxiv.org/pdf/astro-ph/9606001v2"
+  },
+  "nfw": {
+    "citation": "Julio F. Navarro, Carlos S. Frenk and Simon D. M. White, A Universal Density Profile from Hierarchical Clustering, arXiv:astro-ph/9611107v4.",
+    "url": "https://arxiv.org/pdf/astro-ph/9611107v4"
+  },
+  "winn": {
+    "citation": "Joshua N. Winn, Transits and Occultations, arXiv:1001.2010v1.",
+    "url": "https://arxiv.org/pdf/1001.2010v1"
+  },
+  "lorimer": {
+    "citation": "Duncan R. Lorimer, Binary and Millisecond Pulsars, arXiv:0811.0762v1.",
+    "url": "https://arxiv.org/pdf/0811.0762v1"
+  },
+  "ghisellini": {
+    "citation": "Gabriele Ghisellini, Radiative Processes in High Energy Astrophysics, arXiv:1202.5949v1.",
+    "url": "https://arxiv.org/pdf/1202.5949v1"
+  },
+  "kennicutt": {
+    "citation": "Robert C. Kennicutt Jr., The Global Schmidt Law in Star-forming Galaxies, arXiv:astro-ph/9712213v1.",
+    "url": "https://arxiv.org/pdf/astro-ph/9712213v1"
+  },
+  "sheth_tormen": {
+    "citation": "Ravi K. Sheth and Giuseppe Tormen, Large-scale Bias and the Peak Background Split, arXiv:astro-ph/9901122v2.",
+    "url": "https://arxiv.org/pdf/astro-ph/9901122v2"
+  },
+  "tinker": {
+    "citation": "Jeremy L. Tinker et al., Toward a Halo Mass Function for Precision Cosmology: The Limits of Universality, arXiv:0803.2706v1.",
+    "url": "https://arxiv.org/pdf/0803.2706v1"
+  },
+  "ligo_gw150914": {
+    "citation": "LIGO Scientific and Virgo Collaborations, The Basic Physics of the Binary Black Hole Merger GW150914, arXiv:1608.01940v2.",
+    "url": "https://arxiv.org/pdf/1608.01940v2"
+  }
+}

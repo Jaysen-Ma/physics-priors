@@ -353,6 +353,7 @@
           <button type="button" data-corpus="inflation">Encyclopaedia Inflationaris</button>
           <button type="button" data-corpus="leemis">Leemis</button>
           <button type="button" data-corpus="fr">f(R)</button>
+          <button type="button" data-corpus="astrophysics">Astrophysics</button>
         </nav>
         <nav class="seg" id="branches">
           <button type="button" class="on" data-branch="">All formulas</button>
@@ -468,6 +469,10 @@
         href: "https://arxiv.org/abs/0805.1726",
         label: "arXiv:0805.1726",
       },
+      astrophysics: {
+        href: "./astrophysics.json",
+        label: "Catalogue JSON",
+      },
     };
 
     function pretty(name) { return SYM[name] || name; }
@@ -519,7 +524,8 @@
       const q = document.getElementById("q").value.trim().toLowerCase();
       return records.filter(r => {
         if (!q) return true;
-        const blob = [r.id, r.original_id, r.name, r.formula, r.family, displayBranches(r).join(" "), r.outside, r.notes, r.source_locator,
+        const blob = [r.id, r.original_id, r.name, r.formula, r.family, displayBranches(r).join(" "),
+                      r.outside, r.topic, r.notes, r.source_locator, r.source_citation,
                       r.c1 && r.c1.formula, r.hbar1 && r.hbar1.formula,
                       r.c1_hbar1 && r.c1_hbar1.formula]
           .join(" ").toLowerCase();
@@ -664,6 +670,8 @@
           : "<span class='muted'>none (" + esc(r.source_kind) + ")</span>");
       const title = displayId(r);
       const formula = displayFormula(r);
+      const relation = {equals: "=", approx: "≈", proportional: "∝", rhs: "="}[r.relation];
+      const written = relation ? [r.output, relation, formula].join(" ") : formula;
       const showCsv = !c1on() && !hbar1on();
       function tallyCell(label, value, csv) {
         const shown = value;
@@ -681,7 +689,7 @@
       el.insertAdjacentHTML("beforeend",
         "<h2>" + esc(title) + "</h2>" +
         "<p class='meta'>" + named + statusChips(r) + orig + "</p>" +
-        "<pre class='formula'>" + esc(formula) + "</pre>" +
+        "<pre class='formula'>" + esc(written) + "</pre>" +
         "<div class='tex' id='tex'></div>" +
         "<div class='tally'>" +
           tallyCell("variables", v.n_variables, r.original_n_variables) +
@@ -695,7 +703,8 @@
           kv("Output", esc(r.output || "—")) +
           kv("Family", family) +
           kv("Physics branches", esc(displayBranches(r).join(", ") || r.outside || "—")) +
-          kv("Source", source) +
+          (r.topic ? kv("Topic", esc(r.topic)) : "") +
+          kv("Source", source + (r.source_citation ? " · " + esc(r.source_citation) : "")) +
           kv("Notes", esc(r.notes || "—")) +
         "</dl>");
       renderTex(document.getElementById("tex"), v.latex || "");
@@ -844,7 +853,7 @@
       });
     }
 
-    const POOL_CORPORA = ["feynman", "feynman_lectures", "wiki", "inflation", "leemis", "fr"];
+    const POOL_CORPORA = ["feynman", "feynman_lectures", "wiki", "inflation", "leemis", "fr", "astrophysics"];
     // The Feynman Lectures catalog is one JSON per volume; the page shows them as one corpus.
     const LECTURE_VOLUMES = ["feynman_lectures_v1", "feynman_lectures_v2", "feynman_lectures_v3"];
     let branchFilter = "";

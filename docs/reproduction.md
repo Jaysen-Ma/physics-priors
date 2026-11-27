@@ -36,6 +36,12 @@ The checked-in catalogs are the inputs for the analyses below. To rebuild them, 
 
 The Lectures builder needs the archived `rows_I.json`, `rows_II.json`, and `rows_III.json` extractions. It looks in `.scratch/feynman_v1/` when `--inputs` is omitted. The three extraction files are local, and the existing catalogs are sufficient to reproduce the analyses from a fresh checkout.
 
+The astrophysics catalogue builds from the [checked-in formula table and sources](../data/astrophysics/README.md).
+
+```bash
+.venv/bin/python -m physics_priors.catalog_tools.build_astrophysics_catalog
+```
+
 ## Fit and plot the decay rates
 
 The full analysis regenerates saved results and write-up figures. Use a separate checkout if you want to keep the saved files for comparison.
