@@ -151,6 +151,7 @@ activemq-data/
 .env
 .envrc
 .venv
+/.venv-sbi/
 env/
 venv/
 ENV/
@@ -236,5 +237,6 @@ writeup/*.log
 /results/previous_trimmed_bootstrap/
 /results/previous_unweighted_logls/
 /results/exponential_fit/diagnostics/
+/results/sbi/run/
 /results/prior_scoring/run/
 /results/prior_scoring/multilabel_run/

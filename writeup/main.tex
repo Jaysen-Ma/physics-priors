@@ -129,26 +129,28 @@ Constantin et al. identified four possible factors behind the lower decay rate o
 
 \subsubsection{Recovery of the decay-rate gap}
 
-We compare our log-least-squares fits with the simulation-based estimates for Feynman, Wikipedia, and the inflationary potentials. The published Wikipedia estimate of $0.35\pm0.03$ corresponds to the 78-expression collection described by Constantin et al.~\citep{constantin2026}. Their \href{https://github.com/andrei-const/physics-formulae-patterns/blob/2aa199b5a1d210dacd122f97c3e8086d3e54f752/ili_zipf.py\#L978-L982}{analysis code} constructs the corresponding input of 839 operator occurrences. The released formula file contains 41 expressions. For a matched comparison, we ran the simulation-based method on the same operator counts from those 41 expressions used in our direct fit.
+We compare log least squares with simulation-based inference on the same ranked operator counts for each collection. The published Wikipedia posterior mean of $0.35$ corresponds to the 78-expression collection described by Constantin et al.~\citep{constantin2026}. Their \href{https://github.com/andrei-const/physics-formulae-patterns/blob/2aa199b5a1d210dacd122f97c3e8086d3e54f752/ili_zipf.py\#L978-L982}{analysis code} constructs the corresponding input of 839 operator occurrences. Our comparison uses the 41 Wikipedia expressions available in the released formula file.
+
+For each collection, we follow the simulation-based procedure of Constantin et al. using 10,000 simulated samples at the observed operator total and a uniform prior on $\beta$ between $0.1$ and $1$~\citep{constantin2026}. We report the posterior mean and the 2.5th and 97.5th percentiles of the posterior for $\beta$. The simulation-based intervals describe uncertainty under the simulator and prior. The bootstrap intervals describe how the direct fit varies when whole expressions are resampled.
 
 \begin{table}[H]
 \centering\small
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{@{}lrlll@{}}
+\begin{tabular}{@{}lrll@{}}
 \toprule
-Collection & $n$ & \shortstack[l]{Simulation-based\\estimate} &
-\shortstack[l]{Log-least-squares\\estimate} & \shortstack[l]{Nominal 95\%\\bootstrap interval}\\
+Collection & $n$ & \shortstack[l]{Simulation-based mean\\and 95\% credible interval} &
+\shortstack[l]{Log-least-squares estimate\\and nominal 95\% bootstrap interval}\\
 \midrule
-Feynman benchmark & 100 & $0.342\pm0.010$ & $0.342$ & $[0.319,0.371]$\\
-Wikipedia, released subset & 41 & $0.332\pm0.017$ & $0.334$ & $[0.288,0.360]$\\
-\textit{Encyclopaedia Inflationaris} & 70 & $0.266\pm0.014$ & $0.267$ & $[0.252,0.291]$\\
+Feynman benchmark & 100 & $0.337\ [0.317,0.356]$ & $0.342\ [0.319,0.371]$\\
+Wikipedia, released subset & 41 & $0.332\ [0.298,0.366]$ & $0.334\ [0.288,0.360]$\\
+\textit{Encyclopaedia Inflationaris} & 70 & $0.282\ [0.247,0.322]$ & $0.267\ [0.252,0.291]$\\
 \bottomrule
 \end{tabular}
-\caption{Comparison of the simulation-based and direct fits. The column $n$ counts the expressions in each direct fit. The simulation-based entries are from Constantin et al. for Feynman and the inflationary potentials. For Wikipedia, we report the posterior mean and standard deviation from the matched 41-expression rerun.}
+\caption{Point estimates and 95\% intervals for the two fitting methods. Both methods use the same ranked operator counts for each collection of $n$ expressions.}
 \label{tab:decay-recovery}
 \end{table}
 
-The matched Wikipedia rerun gives a posterior mean of $0.332$, a posterior standard deviation of $0.017$, and a 95\% credible interval of $[0.298,0.366]$. Its point estimate differs from the direct fit by $0.002$. The direct fits also closely recover the published Feynman and inflationary estimates (Table~\ref{tab:decay-recovery}). The fitted rate for the inflationary potentials is $0.075$ below that of the Feynman benchmark.
+Within each collection, the intervals from the two methods overlap. Both methods give lower point estimates for the inflationary potentials than for the Feynman benchmark. The individual Feynman and inflationary SBI intervals overlap slightly. The corresponding bootstrap intervals are separated. The gap between the point estimates is 0.055 for the matched simulation-based fits and 0.075 for the direct fits. The published simulation-based estimates for these two collections, $0.342$ and $0.266$, give a gap of $0.076$~\citep{constantin2026}.
 
 \subsubsection{Changes to constant conventions}\label{sec:units}
 
@@ -158,47 +160,38 @@ The Feynman estimate falls from $0.342$ to $0.332$, and its nominal 95\% bootstr
 
 The Feynman--inflation gap changes from $0.075$ to $0.072$. Using the same resampled expressions for the two versions of each collection, we obtain a nominal 95\% bootstrap interval of $[-0.011,0.007]$ for the change in the gap. The tested conventions leave most of the gap intact.
 
+\begin{figure}[H]\centering
+\includegraphics[width=0.53\linewidth]{constant-conventions.pdf}
+\caption{Decay rates before and after the indicated substitutions. Bars show nominal 95\% whole-expression bootstrap intervals.}
+\label{fig:constant-conventions}
+\end{figure}
+
 \subsubsection{Comparison with modified gravity}\label{sec:fr}
 
 \textit{Encyclopaedia Inflationaris} collects proposed potentials for single-field slow-roll inflation. We have yet to find a sufficiently large collection centred on a single established physical concept. The 37 proposed functions in the $f(R)$ collection provide a comparison centred on a single physical quantity within a hypothetical framework. The two collections thus share a narrow physical focus and the inclusion of proposed models, allowing us to examine these factors together.
 
-The full $f(R)$ collection gives $\hat{\beta}=0.270$, with a nominal 95\% bootstrap interval of $[0.265,0.348]$. The point estimate is close to that of the inflationary potentials, and the interval spans both the inflationary and Feynman point estimates (Figure~\ref{fig:modified-gravity}).
+The full $f(R)$ collection gives $\hat{\beta}=0.270$, with a nominal 95\% bootstrap interval of $[0.265,0.348]$. The point estimate is close to that of the inflationary potentials, and the interval spans both the inflationary and Feynman point estimates (Figure~\ref{fig:main}).
 
 Sixteen of the 37 functions are variants of one template. Retaining each variant in turn alongside the other 21 expressions gives fitted rates from $0.288$ to $0.304$. The collection that retains the square-root variant gives $\hat{\beta}=0.298$, with an interval of $[0.274,0.372]$. The fitted rate is sensitive to how many variants of this family are included. The comparison leaves open how much a narrow physical focus and the inclusion of hypothetical models each contribute to the inflationary gap.
-
-\begin{figure}[htbp]\centering
-\begin{minipage}[t]{0.485\linewidth}
-\centering
-\includegraphics[width=\linewidth]{constant-conventions.pdf}
-\caption{Decay rates before and after the indicated substitutions. Bars show nominal 95\% whole-expression bootstrap intervals.}
-\label{fig:constant-conventions}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.485\linewidth}
-\centering
-\includegraphics[width=\linewidth]{modified-gravity.pdf}
-\caption{Modified-gravity fits alongside the Feynman and inflationary estimates. The reduced collection retains the square-root variant from the 16-member family. Bars show nominal 95\% whole-expression bootstrap intervals.}
-\label{fig:modified-gravity}
-\end{minipage}
-\end{figure}
 
 \subsubsection{Energy scale and variation across branches}
 
 The fourth factor concerns whether the decay rate varies with energy scale. Characteristic energy scales are one aspect of how the phenomena studied in different branches of physics vary. This motivates a broader question that we can examine with the expanded Feynman collection. In Section~\ref{sec:results}, we ask whether fitted decay rates vary across physics branches.
 
-\subsection{Variation across Feynman branches}\label{sec:results}
+\subsection{Variation across physics branches}\label{sec:results}
 
-The original study proposed differences in energy scale as one possible explanation for the lower inflationary decay rate~\citep{constantin2026}. Inflation also concerns a different branch of physics from much of the material in the broader equation collections. This motivates us to examine whether fitted decay rates vary across physics branches. We use the expanded Feynman collection because the expressions in the Feynman Lectures are publicly accessible~\citep{feynman}. Branch labels provide a way to explore variation with physical domain, although they do not isolate the effect of energy scale.
+We compare fitted operator-frequency decay rates across eight physics branches. Seven draw on the expanded Feynman collection, and astrophysics and cosmology draws on a catalogue curated for that branch. For each Feynman branch, we fit $\beta$ using all expressions carrying its label, including expressions that also belong to another branch. The astrophysics and cosmology fit uses 137 expressions.
 
-The fitted rates range from 0.333 in quantum mechanics to 0.445 in special relativity (Figure~\ref{fig:main}). Thermodynamics and kinetic theory and fluid and continuum mechanics have fitted rates of 0.399 and 0.406, respectively. Both are above the estimates for electromagnetism, waves and optics, and classical mechanics. The individual bootstrap intervals overlap across several branches, and the interval for special relativity is especially wide. Figure~\ref{fig:main} also shows five comparison collections.
+The fitted rates range from $0.292$ for astrophysics and cosmology to $0.445$ for special relativity. Thermodynamics and kinetic theory ($0.399$) and fluid and continuum mechanics ($0.406$) have higher fitted rates than quantum mechanics ($0.333$), waves and optics ($0.348$), electromagnetism ($0.353$), and classical mechanics ($0.373$).
+
+The nominal 95\% bootstrap interval for astrophysics and cosmology, $[0.268,0.317]$, overlaps those for quantum mechanics, waves and optics, and classical mechanics. Figure~\ref{fig:main} shows a clear gap between the astrophysics interval and the intervals for thermodynamics and kinetic theory and for fluid and continuum mechanics. Special relativity has the widest interval, $[0.328,0.479]$.
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.8\linewidth]{beta_by_branch.pdf}
-\caption{Fitted rates for the seven Feynman branches (circles) and five comparison collections (diamonds, below the dividing line), with nominal individual 95\% equation-bootstrap intervals. The comparison collections are the 100-expression Feynman benchmark, the full expanded Feynman collection, $f(R)$ gravity, Encyclopaedia Inflationaris and Wikipedia. The benchmark is contained in the expanded collection, whose expressions also supply the branch estimates.}\label{fig:main}
+\includegraphics[width=0.94\linewidth]{beta_by_branch.pdf}
+\caption{Fitted decay rates and nominal individual 95\% bootstrap intervals for eight physics branches and the comparison collections. The reduced $f(R)$ fit retains the square-root variant from the 16-member family. Parentheses give the number of expressions in each fit.}\label{fig:main}
 \end{figure}
 
-Resampling source chapters widens the intervals for some branches, including quantum mechanics and fluid and continuum mechanics. Appendix~\ref{app:sensitivity} also compares the fitted rates when we use only each formula's primary label or change which equations are included.
-
-The variation in operator frequencies motivates testing whether branch labels also help describe the arrangement of operators in individual expressions.
+We treat these comparisons as descriptive. The bootstrap intervals summarise uncertainty in the individual fits. How often differences at least this large would arise under a shared decay rate remains an open question for formal hypothesis testing. The observed variation motivates the next section, where we test whether adapting a pooled prior to a known physics branch gives higher prior probabilities to held-out equation forms from that branch.
 
 \section{Learning branch-dependent expression priors}\label{sec:priors}
 
