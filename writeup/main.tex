@@ -55,8 +55,10 @@ Section~\ref{sec:data} describes the sources of the formula catalogue and how we
 
 \section{Formula catalogue}\label{sec:data}
 
+We curated a \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula catalogue} to support the analyses in this paper and make the expressions available for reuse. Readers can search for formulas, trace them to their sources, inspect expression trees and operator counts, and explore how fitted decay rates vary with expression complexity.
+
 \subsection{Sources and coverage}
-We curate a source-linked formula catalogue for inspection and reuse. It includes the \nFeynBench{} expressions in the AI Feynman benchmark, \nWiki{} formulas from entries in Wikipedia's \textit{List of scientific equations named after people}, and \nEI{} inflaton potentials from \textit{Encyclopaedia Inflationaris}~\citep{constantin2026,udrescu2020,wikinamed,martin2014}. Each entry records the expression and a reference to its source.
+The catalogue includes the \nFeynBench{} expressions in the AI Feynman benchmark, \nWiki{} formulas from entries in Wikipedia's \textit{List of scientific equations named after people}, and \nEI{} inflaton potentials from \textit{Encyclopaedia Inflationaris}~\citep{constantin2026,udrescu2020,wikinamed,martin2014}.
 
 We expand the AI Feynman benchmark with expressions from all three volumes of \textit{The Feynman Lectures on Physics}~\citep{feynman}. After selection and deduplication, we add \nLectAdded{} expressions, comprising 278 from Volume~I, 442 from Volume~II and 196 from Volume~III. The expanded Feynman collection contains \nFeynAll{} expressions.
 
@@ -82,10 +84,9 @@ Within the expanded Feynman collection, we consider six physics branches coverin
 
 Astrophysics and cosmology forms the seventh branch. We assign all astrophysics catalogue entries to that branch and give the 25 supplemental fluid formulas the fluid and continuum mechanics label. The Wikipedia formulas used in the branch analyses carry expression-level labels.
 
-\subsection{Public access}
-We make the \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{formula catalogue} publicly available. Readers can search for formulas, trace them to their sources, inspect expression trees and operator counts, and explore how fitted decay rates vary with expression complexity.
-
 \section{Variation in operator-frequency decay rates}\label{sec:decay}
+
+The exponential decay rate $\beta$ summarises how strongly operator use is concentrated among the most frequent types. We estimate $\beta$ for each collection by fitting the log frequencies and quantify uncertainty by resampling whole expressions. We use these estimates to revisit the lower decay rate reported for inflationary potentials and to compare decay rates across seven physics branches.
 
 \subsection{Estimating the decay rate}\label{sec:methods}
 
