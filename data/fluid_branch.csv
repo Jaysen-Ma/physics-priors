@@ -1,0 +1,91 @@
+id,source,formula,physical_output,topic,variable_names,constant_names,source_url,source_locator,variables_and_domain
+I.47.23,Feynman,,,,,,,,
+II.38.14,Feynman,,,,,,,,
+II.38.3,Feynman,,,,,,,,
+Wiki_1,Wikipedia,,,,,,,,
+Wiki_14,Wikipedia,,,,,,,,
+Wiki_17,Wikipedia,,,,,,,,
+Wiki_18,Wikipedia,,,,,,,,
+Wiki_19,Wikipedia,,,,,,,,
+Wiki_23,Wikipedia,,,,,,,,
+Wiki_24,Wikipedia,,,,,,,,
+Wiki_25,Wikipedia,,,,,,,,
+Wiki_28,Wikipedia,,,,,,,,
+Wiki_3,Wikipedia,,,,,,,,
+Wiki_39,Wikipedia,,,,,,,,
+Wiki_47,Wikipedia,,,,,,,,
+Wiki_49,Wikipedia,,,,,,,,
+Wiki_54,Wikipedia,,,,,,,,
+Wiki_62,Wikipedia,,,,,,,,
+Wiki_63,Wikipedia,,,,,,,,
+Wiki_75,Wikipedia,,,,,,,,
+Wiki_76,Wikipedia,,,,,,,,
+flp1.47.24,Feynman,,,,,,,,
+flp1.51.1,Feynman,,,,,,,,
+flp1.51.u5,Feynman,,,,,,,,
+flp2.12.38,Feynman,,,,,,,,
+flp2.12.u25,Feynman,,,,,,,,
+flp2.38.12,Feynman,,,,,,,,
+flp2.38.13,Feynman,,,,,,,,
+flp2.38.21,Feynman,,,,,,,,
+flp2.38.24,Feynman,,,,,,,,
+flp2.38.25,Feynman,,,,,,,,
+flp2.38.32,Feynman,,,,,,,,
+flp2.38.33,Feynman,,,,,,,,
+flp2.38.41,Feynman,,,,,,,,
+flp2.38.42,Feynman,,,,,,,,
+flp2.38.46,Feynman,,,,,,,,
+flp2.38.9,Feynman,,,,,,,,
+flp2.38.u15,Feynman,,,,,,,,
+flp2.38.u20,Feynman,,,,,,,,
+flp2.38.u34,Feynman,,,,,,,,
+flp2.38.u36,Feynman,,,,,,,,
+flp2.38.u69,Feynman,,,,,,,,
+flp2.39.19,Feynman,,,,,,,,
+flp2.39.21,Feynman,,,,,,,,
+flp2.39.22.r1,Feynman,,,,,,,,
+flp2.39.22.r2,Feynman,,,,,,,,
+flp2.39.4,Feynman,,,,,,,,
+flp2.39.42.r1,Feynman,,,,,,,,
+flp2.39.42.r2,Feynman,,,,,,,,
+flp2.39.5,Feynman,,,,,,,,
+flp2.39.9,Feynman,,,,,,,,
+flp2.39.u3,Feynman,,,,,,,,
+flp2.39.u72,Feynman,,,,,,,,
+flp2.39.u74,Feynman,,,,,,,,
+flp2.39.u76,Feynman,,,,,,,,
+flp2.39.u9,Feynman,,,,,,,,
+flp2.40.18,Feynman,,,,,,,,
+flp2.40.20,Feynman,,,,,,,,
+flp2.41.10.r1,Feynman,,,,,,,,
+flp2.41.10.r2,Feynman,,,,,,,,
+flp2.41.11,Feynman,,,,,,,,
+flp2.41.20,Feynman,,,,,,,,
+flp2.41.9,Feynman,,,,,,,,
+flp2.41.u18,Feynman,,,,,,,,
+flp2.41.u49,Feynman,,,,,,,,
+fluid.isentropic_mass_flow,Sourced fluid additions,((A*p_t)/sqrt(T_t))*sqrt(gamma/R)*M*(1+0.5*(gamma-1)*M**2)**(-(gamma+1)/(2*(gamma-1))),Mass flow rate,Compressible flow,A M T_t gamma p_t,R,https://www.grc.nasa.gov/www/k-12/airplane/mflchk.html,Equation 10,"A is cross-sectional area, p_t and T_t are stagnation pressure and temperature, R is the specific gas constant, gamma is the heat-capacity ratio, and M is Mach number. Isentropic calorically perfect gas."
+fluid.isentropic_nozzle_area_ratio,Sourced fluid additions,(1+M**2*(gamma-1)/2)**((gamma+1)/(2*(gamma-1)))*((gamma+1)/2)**(-(gamma+1)/(2*(gamma-1)))/M,Local-to-sonic cross-sectional area ratio,Compressible flow,M gamma,,https://www.grc.nasa.gov/www/k-12/airplane/isentrop.html,Equation 9,M is local Mach number and gamma is the heat-capacity ratio. Isentropic calorically perfect gas with M > 0.
+fluid.normal_shock_downstream_mach_squared,Sourced fluid additions,((gamma-1)*M_up**2+2)/(2*gamma*M_up**2-(gamma-1)),Squared downstream Mach number across a normal shock,Compressible flow,M_up gamma,,https://www.grc.nasa.gov/www/k-12/airplane/normal.html,"Equation for downstream Mach number, printed as M1^2","M_up is upstream Mach number greater than one, and gamma is the heat-capacity ratio. Steady, one-dimensional adiabatic normal shock in a calorically perfect gas."
+fluid.normal_shock_static_pressure_ratio,Sourced fluid additions,(2*gamma*M_up**2-(gamma-1))/(gamma+1),Downstream-to-upstream static pressure ratio across a normal shock,Compressible flow,M_up gamma,,https://www.grc.nasa.gov/www/k-12/airplane/normal.html,"Equation for static pressure ratio, printed as p1/p0","M_up is upstream Mach number greater than one, and gamma is the heat-capacity ratio. Steady, one-dimensional adiabatic normal shock in a calorically perfect gas."
+fluid.blasius_boundary_layer_thickness,Sourced fluid additions,4.9*sqrt(nu*x/U_inf),Flat-plate 99% boundary-layer thickness,Boundary layers,U_inf nu x,,https://web.mit.edu/13.021/demos/lectures/lecture16.pdf,"Lecture 16, Blasius layer thickness at 99% of free-stream speed","nu is kinematic viscosity, x is downstream distance, and U_inf is free-stream speed. Laminar incompressible flow over a flat plate at zero pressure gradient."
+fluid.blasius_wall_shear_stress,Sourced fluid additions,0.332*rho*U_inf**2*(U_inf*x/nu)**(-0.5),Local flat-plate wall shear stress magnitude,Boundary layers,U_inf nu rho x,,https://web.mit.edu/13.021/demos/lectures/lecture16.pdf,"Lecture 16, Wall shear stress; Reynolds number expanded","rho is fluid density, nu is kinematic viscosity, x is downstream distance, and U_inf is free-stream speed. Laminar incompressible flow over a flat plate at zero pressure gradient."
+fluid.hydraulic_jump_sequent_depth_ratio,Sourced fluid additions,(sqrt(1+8*Fr_up**2)-1)/2,Downstream-to-upstream water depth ratio across a hydraulic jump,Open-channel hydraulics,Fr_up,,https://www.usbr.gov/tsc/techreferences/hydraulics_lab/pubs/HYD/HYD-380.pdf,Equation 3,Fr_up is the upstream Froude number greater than one. Horizontal rectangular open channel under the classical momentum-balance assumptions.
+fluid.rectangular_channel_critical_depth,Sourced fluid additions,(q**2/g)**(1/3),Critical water depth in a rectangular open channel,Open-channel hydraulics,q,g,https://www.usbr.gov/tsc/techreferences/mands/wmm/chap02_12.html,Critical-flow relation; solves V_c^2 = g D_c using q = V_c D_c,q is volumetric discharge per unit width and g is gravitational acceleration.
+fluid.washburn_penetration_distance,Sourced fluid additions,sqrt(gamma*r*t*cos(theta)/(2*eta)),Penetration distance in a horizontal cylindrical capillary,Capillarity,eta gamma r t theta,,https://journals.aps.org/pr/abstract/10.1103/PhysRev.17.273,"Washburn (1921), abstract on liquid penetration","gamma is surface tension, r is tube radius, t is elapsed time, theta is contact angle, and eta is dynamic viscosity. Capillary driving with negligible slip and inertia."
+fluid.rayleigh_drop_mode_frequency_squared,Sourced fluid additions,(sigma/(rho*R**3))*n*(n-1)*(n+2),Squared angular frequency of a free liquid drop's shape oscillation,Capillarity,R n rho sigma,,https://doi.org/10.1017/S002211209600136X,"Wang, Anilkumar and Lee, Equation 1.2","sigma is surface tension, rho is liquid density, R is the equilibrium radius, and n is integer mode number at least two. Linear perturbation of an inviscid drop with negligible ambient-fluid inertia."
+fluid.ferguson_church_sediment_settling,Sourced fluid additions,Delta*g*d**2/(C_1*nu+sqrt(0.75*C_2*Delta*g*d**3)),Still-water settling speed of a sediment grain,Sediment transport,C_1 C_2 Delta d nu,g,https://geoweb.uwyo.edu/geol5330/FergusonChurch_GrainSettling_JSR04.pdf,"Ferguson and Church (2004), Equation 4","Delta is submerged relative grain density, g is gravitational acceleration, d is grain diameter, nu is fluid kinematic viscosity, and C_1 and C_2 are drag parameters."
+fluid.thiem_steady_well_discharge,Sourced fluid additions,2*pi*T*(h_outer-h_inner)/log(r_outer/r_inner),Steady radial discharge to a well,Groundwater flow,T h_inner h_outer r_inner r_outer,pi,https://pubs.usgs.gov/twri/twri7-c1/html/pdf/TWRI_7-C1.pdf,"Thiem relation, Equation 14, converted from quarter discharge",T is transmissivity and h_outer and h_inner are hydraulic heads at the corresponding radii r_outer > r_inner. Steady horizontal radial flow in a homogeneous isotropic confined aquifer. Positive discharge is toward the well.
+fluid.herschel_bulkley_yielded_shear_stress,Sourced fluid additions,tau_y+K*shear_rate**n,Shear stress magnitude in yielded viscoplastic fluid,Rheology,K n shear_rate tau_y,,https://pmc.ncbi.nlm.nih.gov/articles/PMC9027982/,"Equations 3–4, restricted to the magnitude for simple shear","tau_y is yield stress, K is consistency, n is the flow index, and shear_rate is the positive magnitude of the shear rate. Yielded, steady simple shear."
+fluid2.taylor_aris_pipe_dispersion,Sourced fluid additions,U_mean**2*R**2/(48*D_m)+D_m,Effective axial solute diffusivity in a straight circular tube,Transport and mixing,D_m R U_mean,,https://link.springer.com/article/10.1007/s10765-024-03339-x,Equation 17,"Laminar Poiseuille flow at times long relative to transverse molecular diffusion time. U_mean is the mean flow speed, R the tube radius, and D_m the molecular diffusivity."
+fluid2.landau_levich_dip_coating_thickness,Sourced fluid additions,0.94*sqrt(gamma/(rho*g))*(mu*U/gamma)**(2/3),Film thickness deposited on a withdrawn plate,Thin films,U gamma mu rho,g,https://web.mit.edu/bazant/www/papers/pdf/Jeong_2022_JFM_dip-coating-of-bidisperse-particulate-suspensions.pdf,Equation 1.1 with capillary length and capillary number substituted,"Fully wetting vertical plate withdrawn steadily at speed U from a Newtonian bath at small capillary number. gamma is surface tension, mu dynamic viscosity, rho density, and g gravitational acceleration."
+fluid2.burgers_vortex_axial_vorticity,Sourced fluid additions,Gamma*(strain/(4*pi*nu))*exp(-strain*r**2/(4*nu)),Axial vorticity in an axisymmetric Burgers vortex,Vortices,Gamma nu r strain,pi,https://arxiv.org/pdf/math/0503354,"Equation 5, multiplied by circulation","Steady incompressible axisymmetric vortex with circulation Gamma in a uniform axial strain field at rate strain > 0. nu is kinematic viscosity, r radial distance."
+fluid2.boussinesq_subsurface_vertical_stress,Sourced fluid additions,(3*Q/(2*pi*z**2))*(1/(1+(r/z)**2))**(5/2),Subsurface vertical stress increment from a point load,Solid continuum,Q r z,pi,https://stacks.cdc.gov/view/cdc/9574/cdc_9574_DS1.pdf,"Theory, Equation 1","Homogeneous isotropic linearly elastic half-space under a vertical surface point load Q. z is depth greater than zero, r is horizontal offset. Positive compressive stress."
+fluid2.hertz_contact_radius,Sourced fluid additions,((3/2)*(F*R/E_prime))**(1/3),Radius of a circular Hertzian contact,Solid continuum,E_prime F R,,https://www.mdpi.com/2075-4442/10/10/233,"Equations 2 and 3, source modulus convention retained","F is compressive normal force, R spherical radius, and E_prime is twice the reduced modulus under the source's convention. Small nonadhesive elastic contact between a sphere and a plane."
+fluid2.saffman_particle_lift,Sourced fluid additions,6.46*a*mu*U_slip*sqrt(a**2*G/nu),Magnitude of shear-induced lift on a rigid sphere with slip,Particle transport,G U_slip a mu nu,,https://rcin.org.pl/Content/66754/PDF/WA727_24981_56189_Feuillebois-Perturba.pdf,"Section 3.7 (printed p. 44) and definition Re_k = a^2 G / nu, corrected Saffman coefficient","Unbounded Newtonian simple shear with positive shear rate magnitude G, sphere radius a, dynamic viscosity mu, kinematic viscosity nu and slip speed U_slip. Asymptotic small shear Reynolds number, with slip Reynolds number much smaller than its square root."
+fluid2.taylor_culick_film_retraction_speed,Sourced fluid additions,sqrt(2*gamma/(rho*H)),Retraction speed of an initially stationary liquid sheet,Thin films,H gamma rho,,https://thales.mit.edu/bush/wp-content/uploads/2012/09/savva_JFM1.pdf,"Section 1, corrected Taylor–Culick speed relative to Equation 1.1","Uniform sheet of thickness H with two interfaces, liquid density rho and surface tension gamma. Negligible ambient phase inertia and gas drag."
+fluid2.morton_taylor_turner_plume_volume_flux,Sourced fluid additions,C_e*B**(1/3)*(z0+z)**(5/3),Upward volume flux of a turbulent buoyant plume,Transport and mixing,B C_e z z0,,https://doi.org/10.1017/jfm.2016.454,Equation 3.2,"Classical pure plume in an unstratified quiescent ambient, with constant buoyancy flux B and entrainment-dependent coefficient C_e. Height z measured from the actual source and virtual origin at -z0."
+fluid2.soulsby_whitehouse_critical_shields,Sourced fluid additions,0.3/(1+1.2*d_star)+0.055*(1-exp(-0.02*d_star)),Critical Shields parameter for sediment motion,Particle transport,d_star,,https://www.hec.usace.army.mil/software/hec-ras/documentation/HEC-RAS_2D_Sediment_Technical_Reference.pdf,Equation 2-132,d_star is dimensionless grain diameter as defined in the technical reference. Empirical threshold for incipient grain motion on a noncohesive sediment bed.
+fluid2.nusselt_falling_film_flux,Sourced fluid additions,g*h**3*sin(theta)/(3*nu),Volume flow rate per unit width in a gravity-driven falling film,Thin films,h nu theta,g,https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/solitary-waves-on-falling-liquid-films-in-the-inertiadominated-regime/22A8AC2DFE350998B9697CC48C40764D,Equation 2.1 solved for flow rate per width using nu = mu/rho,"Steady smooth laminar Newtonian film of thickness h on a plane inclined by theta from the horizontal, no slip at the wall and a shear-free interface. nu is kinematic viscosity."
+fluid2.taylor_sheared_drop_deformation,Sourced fluid additions,Ca*(19*visc_ratio+16)/(16*visc_ratio+16),Steady small deformation of a drop in simple shear,Interfacial flow,Ca visc_ratio,,https://www.sciencedirect.com/science/article/abs/pii/S0021979704002760,Small-deformation Taylor theory in the section on steady-state droplet shape,"Clean isolated Newtonian drop in Newtonian ambient, in creeping flow at small capillary number Ca. visc_ratio is drop divided by ambient viscosity. Deformation is the difference of major and minor axes divided by their sum."
+fluid2.stokes_oscillating_plate_velocity,Sourced fluid additions,U_0*exp(-y*sqrt(omega/(2*nu)))*cos(omega*t-y*sqrt(omega/(2*nu))),Fluid velocity parallel to an oscillating flat wall,Unsteady viscous flow,U_0 nu omega t y,,https://ocw.mit.edu/courses/2-20-marine-hydrodynamics-13-021-spring-2005/a3e133727b50505f1c1403f1929ca5db_lecture16.pdf,"Lecture 16, Stokes' second problem, page 13",Newtonian incompressible half-space in periodic steady state above a plane oscillating at frequency omega with wall velocity amplitude U_0. y is wall-normal distance and nu kinematic viscosity.
