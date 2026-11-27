@@ -11,6 +11,8 @@ This folder holds the equation catalogs used by the analysis and the formula led
 | [catalog/inflation.json](catalog/inflation.json) | Inflaton potentials from *Encyclopaedia Inflationaris*. |
 | [catalog/fr.json](catalog/fr.json) | Published modified-gravity functions. The 16 Pérez-Romero–Nesseris variants of the same template share a family ID. |
 | [catalog/astrophysics.json](catalog/astrophysics.json) | Source-linked astrophysics and cosmology formulas. See the [catalogue guide](astrophysics/README.md). |
+| [fluid_branch.csv](fluid_branch.csv) | The 90-formula fluid and continuum mechanics analysis sample. It references 47 Feynman and 18 Wikipedia records by ID and gives formulas, sources, and assumptions for 25 additions. |
+| [catalog/fluid_additions.json](catalog/fluid_additions.json) | The 25 sourced formulas with trees and operator counts. Select **Fluid additions** in the ledger to browse them or **Fluid and continuum mechanics** to browse the branch across collections. |
 | [catalog/wiki.json](catalog/wiki.json) | The released Wikipedia equations and later additions, including a separate set of quantum-mechanics relations. |
 | [catalog/leemis.json](catalog/leemis.json) | Probability densities and mass functions from Leemis and McQueston. Some excluded entries have an empty formula and a note. |
 | [catalog/index.html](catalog/index.html) | The browser interface for the formula ledger. |

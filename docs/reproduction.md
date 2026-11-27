@@ -42,6 +42,13 @@ The astrophysics catalogue builds from the [checked-in formula table and sources
 .venv/bin/python -m physics_priors.catalog_tools.build_astrophysics_catalog
 ```
 
+The fluid additions catalogue builds from the [fluid roster](../data/fluid_branch.csv).
+
+```bash
+.venv/bin/python -m physics_priors.catalog_tools.build_fluid_catalog
+.venv/bin/python -m physics_priors.catalog_tools.build_fluid_catalog --check
+```
+
 ## Fit and plot the decay rates
 
 The full analysis regenerates saved results and write-up figures. Use a separate checkout if you want to keep the saved files for comparison.
