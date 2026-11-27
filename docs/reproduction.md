@@ -61,6 +61,8 @@ To redraw plots from the saved summary or run the separate interval-calibration 
 
 The saved decay-rate figures and data under `results/exponential_fit/` use the Codex labels. Within each bootstrap replicate, a formula receives one resampling count shared across all of its branches.
 
+The manuscript's main branch figure includes a merged fluid sample of 90 expressions. The [fluid roster](../data/fluid_branch.csv) gives the catalogue IDs for the Feynman and Wikipedia expressions, plus the transcriptions, sources, and variable and constant classifications for the 25 additions. Refit this branch alone with `physics-priors-fit --fluid-branch-only`. The command updates the [fluid decay-rate estimate](../results/exponential_fit/fluid_branch.json) and redraws the figure using the [saved comparison estimates](../results/exponential_fit/branch_plot_reference.json).
+
 ## Reproduce the SBI intervals
 
 Use a separate Python 3.12 environment for the simulation-based inference comparison in Section 3.2.1.
@@ -90,3 +92,5 @@ The pooled prior uses each training formula once. Each branch adjustment uses th
 The command writes `scores.csv` and `summary.json` to `results/prior_scoring/run/` by default. The CSV contains one row per held-out formula and applicable label in each scheme. Use `--output` to choose a new output directory. The [saved summary](../results/prior_scoring/summary.json) reports 1.34 for the main multilabel comparison and 1.41 for the probability mixture.
 
 The comparison uses the Katz back-off and Good–Turing implementation from [Bartlett and Desmond's Katz repository, pinned revision](https://github.com/DeaglanBartlett/katz/tree/71544a6feafb3162713fcd67a95c24d6616eeb85). The required modules and their [MIT license](../src/physics_priors/priors/_katz/LICENSE) are included with the package. The summaries record known upstream numerical warnings encountered while building the tables. The scorer checks the resulting tables for finite probabilities, valid support and normalization.
+
+Section 4 reports a separate seven-branch comparison with the expanded fluid roster. Its [saved summary](../results/prior_scoring/expanded_fluid_cv.json) gives the fold design, model settings, and results by variant and branch. The command above runs the Feynman-only comparison.

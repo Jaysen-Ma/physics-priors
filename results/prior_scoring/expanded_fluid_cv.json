@@ -1,0 +1,415 @@
+{
+  "design": {
+    "seed": 8888,
+    "folds": 6,
+    "weight": 8,
+    "blend": 0.25,
+    "settings": {
+      "h3": [
+        3,
+        false
+      ],
+      "h3-depth": [
+        3,
+        true
+      ],
+      "h4": [
+        4,
+        false
+      ],
+      "h4-depth": [
+        4,
+        true
+      ],
+      "h5": [
+        5,
+        false
+      ],
+      "h6": [
+        6,
+        false
+      ],
+      "h7": [
+        7,
+        false
+      ],
+      "h8": [
+        8,
+        false
+      ],
+      "h9": [
+        9,
+        false
+      ],
+      "h10": [
+        10,
+        false
+      ]
+    },
+    "source_counts": {
+      "Feynman": 933,
+      "Wikipedia": 29,
+      "Astrophysics and cosmology": 103,
+      "Sourced fluid additions": 25
+    },
+    "split_policy": "One seeded permutation of fluid-labelled IDs, cut into six consecutive folds. Keep the prior fold for each non-fluid ID. Each fluid ID keeps all labels in its new fold.",
+    "training_policy": "Exclude the test IDs and every row sharing a reviewed group or encoded tree with them.",
+    "roster_plan_sha256": "67356c6f506740e82a4f0eef03874c8b5e65b035999b34a4dc786efcc6487b03",
+    "score_sha256_by_variant": {
+      "h3": "324e63ed07707d6fd849b95736fa3f954b457975b6a1e7efed5e19842e978724",
+      "h3-depth": "f7512cef2aa9c515721477461aa3f2918b843a3e1117ee5d61e1d8d8440be867",
+      "h4": "088872d7bc5291cba9645b0f4ac4ffaebca4f0ea24c24faddddfdb10fa346a6d",
+      "h4-depth": "f71fd3b72560d0dd9b7e0018bfabae91e2b1fc91878a429026cde520da90536c",
+      "h5": "d14fc918be6f5450273d48f6063fd512b16293156588a81f9ffbee6f2161bb2f",
+      "h6": "782501672e15f37c45ac253226e20982ef7e68c4b5e10eb934c8c736a2ecd999",
+      "h7": "a8eb55164bd7e77f13700062e3f94e41b0f978d52557534337c668a62785530c",
+      "h8": "21262898cc7a5fa7d9ffd9c15ae0574fcb1e54c3cf85ba0a4837e83493dec1ff",
+      "h9": "82dd0eee93fcac89cbbdafc41ca24ada24bcba0301f89ca7a60652a69f86b03a",
+      "h10": "039d0952ece6f30cfc98f0a86c56f3cfe56fe2c2cecdc33545b047b8eb159075"
+    }
+  },
+  "overall": {
+    "ratio": 1.2550422965223522,
+    "n_formulas": 1090,
+    "variants_above_one": 10,
+    "variant_ratio_range": [
+      1.1631861414414197,
+      1.3375532299085147
+    ]
+  },
+  "by_branch": {
+    "QM": {
+      "ratio": 1.0933877763173592,
+      "n_formulas": 227,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.0370936994308781,
+        1.1410655318472736
+      ]
+    },
+    "EM": {
+      "ratio": 1.356878021009495,
+      "n_formulas": 440,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.1815169015287708,
+        1.498769436957289
+      ]
+    },
+    "Waves+optics": {
+      "ratio": 1.0794485424598488,
+      "n_formulas": 168,
+      "variants_above_one": 9,
+      "variant_ratio_range": [
+        0.9817039481806633,
+        1.1457811632269597
+      ]
+    },
+    "Mechanics": {
+      "ratio": 1.134344124644792,
+      "n_formulas": 145,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.0377143729760272,
+        1.199388129999318
+      ]
+    },
+    "Thermo": {
+      "ratio": 1.9610939398236735,
+      "n_formulas": 98,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.7391064656447925,
+        2.227339251692181
+      ]
+    },
+    "Fluid+continuum": {
+      "ratio": 1.145003075107849,
+      "n_formulas": 90,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.0746904406973126,
+        1.174627495608395
+      ]
+    },
+    "Astrophysics": {
+      "ratio": 1.5531264939580491,
+      "n_formulas": 105,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.3819373969638578,
+        1.6845439467822336
+      ]
+    }
+  },
+  "mean_log_ratios_by_variant": {
+    "h3": {
+      "overall": 0.1518257478546481,
+      "by_branch": {
+        "QM": 0.054367964303174934,
+        "EM": 0.16679912268746838,
+        "Waves+optics": 0.014945090690247683,
+        "Mechanics": 0.03702057633400986,
+        "Thermo": 0.6758388651278108,
+        "Fluid+continuum": 0.12566598558690067,
+        "Astrophysics": 0.41805886619977606
+      }
+    },
+    "h3-depth": {
+      "overall": 0.15116291355955125,
+      "by_branch": {
+        "QM": 0.04315068631426906,
+        "EM": 0.18298408181773468,
+        "Waves+optics": -0.01846549451252557,
+        "Mechanics": 0.057287472207228234,
+        "Thermo": 0.8008077124129612,
+        "Fluid+continuum": 0.0720326579685325,
+        "Astrophysics": 0.36413812200142215
+      }
+    },
+    "h4": {
+      "overall": 0.15210911444883563,
+      "by_branch": {
+        "QM": 0.03642228141515162,
+        "EM": 0.19228133387118812,
+        "Waves+optics": 0.025625941034493428,
+        "Mechanics": 0.07425147141871792,
+        "Thermo": 0.5763580127139858,
+        "Fluid+continuum": 0.10684263015888781,
+        "Astrophysics": 0.3234864254510438
+      }
+    },
+    "h4-depth": {
+      "overall": 0.17162016829212032,
+      "by_branch": {
+        "QM": 0.04647069550869794,
+        "EM": 0.2300805217261173,
+        "Waves+optics": 0.0334323211697107,
+        "Mechanics": 0.10082929917514469,
+        "Thermo": 0.5533714558355661,
+        "Fluid+continuum": 0.11531170293802293,
+        "Astrophysics": 0.34029147154682415
+      }
+    },
+    "h5": {
+      "overall": 0.21016725334413836,
+      "by_branch": {
+        "QM": 0.0727193001642237,
+        "EM": 0.289209407712638,
+        "Waves+optics": 0.07554860474075378,
+        "Mechanics": 0.11234612897989663,
+        "Thermo": 0.5918173796572561,
+        "Fluid+continuum": 0.1333879470708494,
+        "Astrophysics": 0.38510493561657755
+      }
+    },
+    "h6": {
+      "overall": 0.2757038129846632,
+      "by_branch": {
+        "QM": 0.11664970132052122,
+        "EM": 0.38135425321070887,
+        "Waves+optics": 0.09762272861186305,
+        "Mechanics": 0.15947390715709442,
+        "Thermo": 0.7081278379981523,
+        "Fluid+continuum": 0.15997374662246014,
+        "Astrophysics": 0.5128390628535129
+      }
+    },
+    "h7": {
+      "overall": 0.28684554265727397,
+      "by_branch": {
+        "QM": 0.12773857098293495,
+        "EM": 0.39902657506731903,
+        "Waves+optics": 0.13269179632908124,
+        "Mechanics": 0.17455991453194372,
+        "Thermo": 0.6980409898741406,
+        "Fluid+continuum": 0.16095107231893718,
+        "Astrophysics": 0.5093229823449817
+      }
+    },
+    "h8": {
+      "overall": 0.2905766370631104,
+      "by_branch": {
+        "QM": 0.13196250292680758,
+        "EM": 0.4009083818189382,
+        "Waves+optics": 0.13608664301339224,
+        "Mechanics": 0.181321617014793,
+        "Thermo": 0.7039422458955152,
+        "Fluid+continuum": 0.159901064803867,
+        "Astrophysics": 0.521494872442079
+      }
+    },
+    "h9": {
+      "overall": 0.29083955697794095,
+      "by_branch": {
+        "QM": 0.1317160472657153,
+        "EM": 0.40457680697722487,
+        "Waves+optics": 0.13349072129006825,
+        "Mechanics": 0.18164427966020055,
+        "Thermo": 0.7134265370562695,
+        "Fluid+continuum": 0.15999626206807163,
+        "Astrophysics": 0.5140242240591197
+      }
+    },
+    "h10": {
+      "overall": 0.2908419970585435,
+      "by_branch": {
+        "QM": 0.13161152880261426,
+        "EM": 0.40464439605433483,
+        "Waves+optics": 0.13352466660863485,
+        "Mechanics": 0.1818115350877578,
+        "Thermo": 0.7132934645031056,
+        "Fluid+continuum": 0.1600101573265464,
+        "Astrophysics": 0.5139389595543908
+      }
+    }
+  },
+  "fluid_by_fold": [
+    {
+      "fold": 1,
+      "ratio": 1.0703876825991616,
+      "n_formulas": 15,
+      "variants_above_one": 6,
+      "variant_ratio_range": [
+        0.9644354054518143,
+        1.1682497730471237
+      ],
+      "fluid_train_count": 32
+    },
+    {
+      "fold": 2,
+      "ratio": 0.9592243848496188,
+      "n_formulas": 15,
+      "variants_above_one": 1,
+      "variant_ratio_range": [
+        0.9155934664217156,
+        1.1679574106621877
+      ],
+      "fluid_train_count": 36
+    },
+    {
+      "fold": 3,
+      "ratio": 1.0294988733695878,
+      "n_formulas": 15,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.016332874639317,
+        1.0437452996573076
+      ],
+      "fluid_train_count": 38
+    },
+    {
+      "fold": 4,
+      "ratio": 1.7719021678661402,
+      "n_formulas": 15,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.5736365559503203,
+        1.8855571824172772
+      ],
+      "fluid_train_count": 33
+    },
+    {
+      "fold": 5,
+      "ratio": 1.0637357008884138,
+      "n_formulas": 15,
+      "variants_above_one": 9,
+      "variant_ratio_range": [
+        0.9840797686489289,
+        1.1732935380596181
+      ],
+      "fluid_train_count": 35
+    },
+    {
+      "fold": 6,
+      "ratio": 1.131043360019978,
+      "n_formulas": 15,
+      "variants_above_one": 9,
+      "variant_ratio_range": [
+        0.9714000362492419,
+        1.2342481014031057
+      ],
+      "fluid_train_count": 38
+    }
+  ],
+  "fluid_by_source": {
+    "Feynman": {
+      "ratio": 0.9937578606619455,
+      "n_formulas": 47,
+      "variants_above_one": 5,
+      "variant_ratio_range": [
+        0.9625222777291058,
+        1.0178327098912565
+      ]
+    },
+    "Wikipedia": {
+      "ratio": 1.2717292578738046,
+      "n_formulas": 18,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.1533587448558178,
+        1.3460537419248824
+      ]
+    },
+    "Fluid expansion": {
+      "ratio": 1.1514987515996582,
+      "n_formulas": 13,
+      "variants_above_one": 9,
+      "variant_ratio_range": [
+        0.984866920770747,
+        1.8184153580648479
+      ]
+    },
+    "Fluid expansion batch 2": {
+      "ratio": 1.6933245945190614,
+      "n_formulas": 12,
+      "variants_above_one": 10,
+      "variant_ratio_range": [
+        1.0909204995218724,
+        1.9111338244077616
+      ]
+    }
+  },
+  "fluid_formulas_above_one": 31,
+  "fluid_median_formula_ratio": 0.9504950323204296,
+  "fluid_never_in_training": [
+    "I.47.23",
+    "II.38.14",
+    "II.38.3",
+    "Wiki_1",
+    "Wiki_18",
+    "Wiki_3",
+    "flp1.47.24",
+    "flp1.51.1",
+    "flp2.38.12",
+    "flp2.38.13",
+    "flp2.38.21",
+    "flp2.38.24",
+    "flp2.38.25",
+    "flp2.38.32",
+    "flp2.38.33",
+    "flp2.38.9",
+    "flp2.38.u15",
+    "flp2.38.u20",
+    "flp2.38.u34",
+    "flp2.38.u36",
+    "flp2.39.19",
+    "flp2.39.21",
+    "flp2.39.22.r1",
+    "flp2.39.22.r2",
+    "flp2.39.4",
+    "flp2.39.42.r1",
+    "flp2.39.42.r2",
+    "flp2.39.5",
+    "flp2.39.u3",
+    "flp2.39.u72",
+    "flp2.39.u74",
+    "flp2.39.u76",
+    "flp2.39.u9"
+  ],
+  "fluid_sourced_additions_combined": {
+    "n_formulas": 25,
+    "ratio": 1.385646052860521,
+    "variants_above_one": 10
+  }
+}

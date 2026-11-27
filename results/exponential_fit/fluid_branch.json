@@ -1,0 +1,52 @@
+{
+  "beta": 0.35971250382917996,
+  "status": "ok",
+  "near_bound": false,
+  "n_instances": 1068,
+  "n_ranks": 17,
+  "n_retained": 17,
+  "n_excluded": 0,
+  "excluded_mass": 0.0,
+  "retained_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "threshold": null,
+  "n_boot": 10000,
+  "n_finite": 10000,
+  "n_ok": 10000,
+  "n_boundary": 0,
+  "n_degenerate": 0,
+  "n_failed": 0,
+  "interval_validity": "approximate_percentile",
+  "quantile_method": "linear",
+  "boot_se": 0.01714468438233737,
+  "boot_bias": -0.0007729254994988666,
+  "ci95": [
+    0.32663565044976467,
+    0.3944855494051043
+  ],
+  "n_equations": 90,
+  "seed": 8888,
+  "source_counts": {
+    "Feynman": 47,
+    "Wikipedia": 18,
+    "Sourced fluid additions": 25
+  },
+  "roster_sha256": "b14c43a3b05c9a3634165f108d97751f3ba6c066bc392ebf6223a53f75edd9e0"
+}
