@@ -11,8 +11,6 @@
 \usepackage{microtype}
 \graphicspath{{figures/}}
 \input{generated/numbers.tex}
-% \input is not expandable inside tabular; the TeX primitive is.
-\makeatletter\newcommand{\tabinput}[1]{\@@input #1 }\makeatother
 
 \title{Branch-Dependent Priors for Symbolic Regression in Physics}
 % TODO(author): author name and affiliation (Chun Hin Ma?). Not filled in on purpose.
@@ -27,7 +25,7 @@
 \end{center}
 
 \begin{abstract}
-Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 967 assigned to seven branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula catalogue for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using grouped six-fold cross-validation on 943 branch-labelled Feynman formulas. The pooled prior learns operator arrangements from training formulas across all branches, and the branch-dependent prior adjusts those probabilities using the subset of those training formulas from the relevant branch. We compare the probabilities the two priors assign to each held-out expression tree. The branch-dependent prior assigns 1.34 times as much probability as the pooled prior on a geometric-average basis. It assigns higher probabilities on average in six of the seven branches, suggesting that branch information helps describe equation forms within the fields studied.
+Bayesian symbolic regression uses a prior to express which equation forms are plausible before considering the data, and such a prior can be learned from a curated collection of scientific equations. In physics, ranked operator frequencies have been found to decline more slowly in a collection of inflationary potentials than in broader physics collections. This raises the question of whether physics equations have different statistical signatures across domains, which might explain the difference in decay rates. We revisit the gap using direct log least squares, a computationally simpler approach than training a simulation-based estimator. The gap persists after changes to constant conventions. To analyse a larger collection of expressions, we expand the Feynman collection to about 1,000 expressions, with 967 assigned to six branches. We also build a corpus of 37 expressions for proposed $f(R)$ modified-gravity models and include 76 formulas from Wikipedia's list of scientific equations named after people and 70 potentials from Encyclopaedia Inflationaris. We created a public formula catalogue for searching expressions, tracing their sources, inspecting expression trees and operator counts, and exploring plots of decay rate against complexity. We estimate exponential decay rates and nominal 95\% bootstrap intervals for the collections and branches. The estimates suggest that the decay rate varies across branches of physics. Variation in operator use motivates asking whether adapting a symbolic regression prior to a specific branch gives more probability to the functional forms of equations from that branch. We test this using six-fold cross-validation on 1,090 formulas from Feynman, Wikipedia, and curated collections in astrophysics and fluid mechanics. Across ten variants of a Katz back-off model, the branch-dependent prior gives more training weight to formulas from the relevant branch in the same training set. It assigns 1.25 times as much probability as the pooled prior on a geometric-average basis. The ratio exceeds one in every branch for all ten variants.
 \end{abstract}
 
 \section{Introduction}
@@ -43,24 +41,30 @@ At $\beta=0$, all operator types in the fit have the same frequency. At large $\
 
 We revisit the gap to examine whether a common decay rate can describe equations across physics, a question that informs whether we should build one prior for physics or adapt it to individual branches. We estimate the decay rate by least squares on the log frequencies and estimate uncertainty by resampling whole equations. This computationally simpler procedure gives rates close to the published simulation-based estimates for the Feynman benchmark and the inflationary potentials and reproduces the gap between them~\citep{constantin2026}.
 
-To make the comparisons reproducible and support further analysis, we curate a formula catalogue that includes the 100-expression Feynman benchmark, 76 equations from Wikipedia, 70 inflationary potentials and 37 expressions for proposed $f(R)$ gravity models. We expand the Feynman benchmark with formulas from all three volumes of \textit{The Feynman Lectures on Physics}, bringing the collection to about 1,000 expressions, of which 967 are assigned to seven physics branches~\citep{udrescu2020,feynman}. The \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula catalogue} lets readers search expressions, trace their sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity.
+To make the comparisons reproducible and support further analysis, we curate a formula catalogue that includes the 100-expression Feynman benchmark, 76 equations from Wikipedia, 70 inflationary potentials and 37 expressions for proposed $f(R)$ gravity models. We expand the Feynman benchmark with formulas from all three volumes of \textit{The Feynman Lectures on Physics}, bringing the collection to about 1,000 expressions, of which 967 are assigned to six physics branches~\citep{udrescu2020,feynman}. The \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula catalogue} lets readers search expressions, trace their sources, inspect expression trees and operator counts, and explore plots of decay rate against expression complexity.
 
 We first examine whether the gap is sensitive to constant conventions. Setting $c=\hbar=1$ where applicable and removing the common amplitude prefactor from the inflationary potentials changes the gap with the Feynman benchmark very little. The $f(R)$ collection, another set of proposed forms for a single physical quantity, gives a similarly low fitted rate~\citep{sotiriou2010}. With 37 expressions, its bootstrap interval is wide enough to span both the inflationary and Feynman benchmark estimates. The comparison leaves the cause of the gap open.
 
-Constantin et al. also suggested that $\beta$ could vary with energy scale~\citep{constantin2026}. The three broader collections pool equations from several fields, so fitting a single rate to each collection may obscure differences between its constituent branches. We therefore estimate the decay rate separately for seven physics branches in the expanded Feynman collection. The estimates suggest some variation, with higher fitted rates for thermodynamics and kinetic theory and for fluid and continuum mechanics than for electromagnetism or quantum mechanics.
+Constantin et al. also suggested that $\beta$ could vary with energy scale~\citep{constantin2026}. The three broader collections pool equations from several fields, so fitting a single rate to each collection may obscure differences between its constituent branches. We therefore estimate the decay rate for seven physics branches. We draw on the expanded Feynman collection and broaden the fluid and continuum mechanics sample with equations from Wikipedia and additional sources. We also include the separately curated astrophysics and cosmology collection. The resulting estimates are highest for thermodynamics and kinetic theory and lowest for astrophysics and cosmology.
 
-This variation motivates building a prior for a new symbolic regression task that is adapted to its known physics branch. We compare a pooled prior that learns operator arrangements across all training branches with a branch-dependent prior that adjusts those probabilities using the relevant branch's subset of the same training formulas.
+This variation motivates building a prior for a new symbolic regression task that is adapted to its known physics branch. We compare a pooled prior that learns operator arrangements across all training branches with a branch-dependent prior that gives greater training weight to formulas from the relevant branch in the same training set.
 
-We evaluate both priors on 943 branch-labelled Feynman formulas using grouped six-fold cross-validation. We keep equivalent and related formulas together and compare the probabilities the two priors assign to each held-out expression tree. On a geometric-average basis, the branch-dependent prior assigns 1.34 times as much probability as the pooled prior. The ratio exceeds one in six of the seven branches, suggesting that branch information helps describe equation forms in the Feynman collection.
+We evaluate both priors on 1,090 formulas using six-fold cross-validation. We exclude training expressions that share a reviewed formula group with a held-out expression. Across ten Katz model variants, the branch-dependent prior assigns 1.25 times as much probability as the pooled prior on a geometric-average basis. All ten variants yield higher average probabilities in each of the seven branches.
 
-Section~\ref{sec:data} describes the sources of the formula catalogue and how we selected expressions. It explains how we assigned Feynman formulas to physics branches and what the public formula catalogue records. Section~\ref{sec:decay} explains how we estimate exponential decay rates and their uncertainty. We revisit the inflationary gap and compare the fitted rates across the seven Feynman branches. Section~\ref{sec:priors} describes how a pooled prior learns operator arrangements in expression trees. We then use the relevant branch's subset of the same training formulas to adapt that prior. Section~\ref{sec:prior-evaluation} describes the grouped six-fold evaluation on held-out formulas. It reports how much probability the branch-dependent prior assigns relative to the pooled prior, both overall and within each branch. Section~\ref{sec:discussion} discusses what the decay-rate and prior comparisons tell us about the structure of physics equations. It considers how these findings might inform symbolic regression and what remains to be tested.
+Section~\ref{sec:data} describes the sources of the formula catalogue and how we selected expressions. It explains how we assigned Feynman formulas to physics branches and what the public formula catalogue records. Section~\ref{sec:decay} explains how we estimate exponential decay rates and their uncertainty. We revisit the inflationary gap and compare the fitted rates across the physics branches. Section~\ref{sec:priors} describes how we learn and adapt a pooled prior over operator arrangements. It compares the two priors on held-out formulas, both overall and within each branch. Section~\ref{sec:discussion} discusses what the decay-rate and prior comparisons tell us about the structure of physics equations. It considers how these findings might inform symbolic regression and what remains to be tested.
 
 \section{Formula catalogue}\label{sec:data}
 
+We curated a \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{public formula catalogue} to support the analyses in this paper and make the expressions available for reuse. Readers can search for formulas, trace them to their sources, inspect expression trees and operator counts, and explore how fitted decay rates vary with expression complexity.
+
 \subsection{Sources and coverage}
-We curate a source-linked formula catalogue for inspection and reuse. It includes the \nFeynBench{} expressions in the AI Feynman benchmark, \nWiki{} formulas from entries in Wikipedia's \textit{List of scientific equations named after people}, and \nEI{} inflaton potentials from \textit{Encyclopaedia Inflationaris}~\citep{constantin2026,udrescu2020,wikinamed,martin2014}. Each entry records the expression and a reference to its source.
+The catalogue includes the \nFeynBench{} expressions in the AI Feynman benchmark, \nWiki{} formulas from entries in Wikipedia's \textit{List of scientific equations named after people}, and \nEI{} inflaton potentials from \textit{Encyclopaedia Inflationaris}~\citep{constantin2026,udrescu2020,wikinamed,martin2014}.
 
 We expand the AI Feynman benchmark with expressions from all three volumes of \textit{The Feynman Lectures on Physics}~\citep{feynman}. After selection and deduplication, we add \nLectAdded{} expressions, comprising 278 from Volume~I, 442 from Volume~II and 196 from Volume~III. The expanded Feynman collection contains \nFeynAll{} expressions.
+
+We curate 143 expressions in astrophysics and cosmology from 22 lecture-note documents and research papers. The collection covers stellar structure, radiation, orbital dynamics, compact objects, galaxies, gravitational lensing, and cosmology. It draws on lecture notes from MIT and Princeton and on sources for specific topics such as cosmological distances, dark-matter halo profiles, and exoplanet transits~\citep{vogelsberger2023,princetonast403,tongcosmology,hogg2000,navarro1997,winn2010}. We use 137 of these expressions for the decay-rate fit in Section~\ref{sec:results} and 103 for the prior comparison in Section~\ref{sec:prior-evaluation}.
+
+The fluid and continuum mechanics collection contains 90 expressions. We combine 47 from the expanded Feynman collection and 18 from Wikipedia's named-equation list with 25 expressions from additional sources~\citep{feynman,wikinamed}. The additions extend the coverage to topics such as compressible flow, capillarity, sediment transport, and elastic contact~\citep{nasa-isentropic,washburn1921,ferguson2004,ciulli2022}. The catalogue records the source location and the assumptions for each addition. Appendix~\ref{app:branch-sources} lists the sources for both collections.
 
 For modified gravity, the catalogue contains \nfR{} proposed curvature functions. It includes 16 variants of one template from P\'erez-Romero and Nesseris~\citep{sotiriou2010,perezromero2018}. We record these variants as a single family and use that grouping to assess how sensitive the fitted decay rate is to including several forms of the same template. Appendix~\ref{app:catalogue} lists the transcription sources.
 
@@ -69,17 +73,20 @@ As a mathematical comparison, we also estimate the decay rate for \nLeemis{} pro
 \subsection{Expression selection and representation}
 For the Feynman Lectures additions, we select equations that give one quantity explicitly in terms of other quantities. We record the quantity on the left-hand side and analyse the expression on the right-hand side. We exclude right-hand sides that consist of a single symbol or number or contain derivatives, integrals, explicit summations, limits or unevaluated quantum-mechanical operators.
 
+The astrophysics catalogue records equalities, approximations, proportionalities, and six algebraic right-hand sides from differential equations. The decay-rate fit uses the equalities, approximations, and proportionalities. The fluid additions are explicit expressions. When we rearrange a source equation to isolate the quantity of interest, we record the rearrangement with the source reference.
+
 We follow the expression-tree representation and operator-counting conventions of Constantin et al. The counting scheme treats variables, numerical literals, and physical or mathematical constants as distinct types of leaves. Sections~II and~III of their paper give the operator definitions and describe the tree representation~\citep{constantin2026}.
 
 \subsection{Branch labels}
-After extracting expressions from the three volumes of \textit{The Feynman Lectures on Physics} and combining them with the AI Feynman benchmark, we use Codex with \texttt{gpt-6.2-sol} to assign branch labels to each expression. Codex uses the formula, the quantity it describes and its source context. An expression can receive more than one label. For example, a Lorentz transformation of an electric field can be labelled both electromagnetism and special relativity.
+After extracting expressions from the three volumes of \textit{The Feynman Lectures on Physics} and combining them with the AI Feynman benchmark, we use Codex with \texttt{gpt-6.2-sol} to assign branch labels to each expression. Codex uses the formula, the quantity it describes and its source context. An expression can receive more than one label. For example, a formula for the electric field of a wave after passing through a plate can be labelled both electromagnetism and waves and optics~\citep[Vol.~I, Eq.~(31.5)]{feynman}.
 
-We consider seven physics branches covering classical mechanics, special relativity, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics. We record separate categories for expressions outside these branches and flag unresolved cases. Of the \nFeynAll{} expressions, 967 receive at least one of the seven branch labels and 221 receive more than one. The collection-wide decay-rate fit counts each expression once. Each branch fit includes every expression carrying that branch's label.
+Within the expanded Feynman collection, we consider six physics branches covering mechanics, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics. Mechanics includes Newtonian and relativistic kinematics and dynamics. We reviewed each expression previously assigned to special relativity, classified it by subject, and retained special relativity as a framework tag. We record separate categories for expressions outside these branches and flag unresolved cases. Of the \nFeynAll{} expressions, 967 receive at least one branch label and 179 receive more than one. The collection-wide decay-rate fit counts each expression once. Each branch fit includes every expression carrying that branch's label.
 
-\subsection{Public access}
-We make the \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{formula catalogue} publicly available. Readers can search for formulas, trace them to their sources, inspect expression trees and operator counts, and explore how fitted decay rates vary with expression complexity.
+Astrophysics and cosmology forms the seventh branch. We assign all astrophysics catalogue entries to that branch and give the 25 supplemental fluid formulas the fluid and continuum mechanics label. The Wikipedia formulas used in the branch analyses carry expression-level labels.
 
 \section{Variation in operator-frequency decay rates}\label{sec:decay}
+
+The exponential decay rate $\beta$ summarises how strongly operator use is concentrated among the most frequent types. We estimate $\beta$ for each collection by fitting the log frequencies and quantify uncertainty by resampling whole expressions. We use these estimates to revisit the lower decay rate reported for inflationary potentials and to compare decay rates across seven physics branches.
 
 \subsection{Estimating the decay rate}\label{sec:methods}
 
@@ -180,93 +187,112 @@ The fourth factor concerns whether the decay rate varies with energy scale. Char
 
 \subsection{Variation across physics branches}\label{sec:results}
 
-We compare fitted operator-frequency decay rates across eight physics branches. Seven draw on the expanded Feynman collection, and astrophysics and cosmology draws on a catalogue curated for that branch. For each Feynman branch, we fit $\beta$ using all expressions carrying its label, including expressions that also belong to another branch. The astrophysics and cosmology fit uses 137 expressions.
+We compare fitted operator-frequency decay rates across seven physics branches. For mechanics, electromagnetism, waves and optics, thermodynamics and kinetic theory, and quantum mechanics, we use all expressions in the expanded Feynman collection that carry the relevant label. This includes expressions with multiple labels. For fluid and continuum mechanics, we use a single collection of 90 expressions comprising 47 Feynman formulas, 18 Wikipedia formulas, and 25 formulas curated from additional sources. The accompanying data record the sources and assumptions for the additions, which cover topics including compressible flow, capillarity, and continuum mechanics. The astrophysics and cosmology fit uses 137 expressions from the collection curated for that branch.
 
-The fitted rates range from $0.292$ for astrophysics and cosmology to $0.445$ for special relativity. Thermodynamics and kinetic theory ($0.399$) and fluid and continuum mechanics ($0.406$) have higher fitted rates than quantum mechanics ($0.333$), waves and optics ($0.348$), electromagnetism ($0.353$), and classical mechanics ($0.373$).
+The fitted rates range from $0.292$ for astrophysics and cosmology to $0.399$ for thermodynamics and kinetic theory. The estimate for fluid and continuum mechanics is $0.360$, between electromagnetism ($0.354$) and mechanics ($0.369$). The estimates for quantum mechanics and for waves and optics are $0.328$ and $0.348$, respectively.
 
-The nominal 95\% bootstrap interval for astrophysics and cosmology, $[0.268,0.317]$, overlaps those for quantum mechanics, waves and optics, and classical mechanics. Figure~\ref{fig:main} shows a clear gap between the astrophysics interval and the intervals for thermodynamics and kinetic theory and for fluid and continuum mechanics. Special relativity has the widest interval, $[0.328,0.479]$.
+The nominal 95\% bootstrap interval for fluid and continuum mechanics, $[0.327,0.394]$, overlaps those for the other five branches drawn from Feynman. The interval for astrophysics and cosmology, $[0.268,0.317]$, overlaps those for quantum mechanics, waves and optics, and mechanics. It is separated from the intervals for electromagnetism, thermodynamics and kinetic theory, and fluid and continuum mechanics.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.94\linewidth]{beta_by_branch.pdf}
-\caption{Fitted decay rates and nominal individual 95\% bootstrap intervals for eight physics branches and the comparison collections. The reduced $f(R)$ fit retains the square-root variant from the 16-member family. Parentheses give the number of expressions in each fit.}\label{fig:main}
+\caption{Fitted decay rates and nominal individual 95\% bootstrap intervals for seven physics branches and the comparison collections. The fluid estimate uses the merged collection. The reduced $f(R)$ fit retains the square-root variant from the 16-member family. Parentheses give the number of expressions in each fit.}\label{fig:main}
 \end{figure}
 
-We treat these comparisons as descriptive. The bootstrap intervals summarise uncertainty in the individual fits. How often differences at least this large would arise under a shared decay rate remains an open question for formal hypothesis testing. The observed variation motivates the next section, where we test whether adapting a pooled prior to a known physics branch gives higher prior probabilities to held-out equation forms from that branch.
+For the univariate distribution collection, the same fit gives $\hat{\beta}=\betaLeemis$ with a nominal 95\% bootstrap interval of $[\loLeemis,\hiLeemis]$.
 
-\section{Learning branch-dependent expression priors}\label{sec:priors}
+We treat the branch comparisons as descriptive. The bootstrap intervals summarise uncertainty in the individual fits. How often differences at least this large would arise under a shared decay rate remains an open question for formal hypothesis testing. The observed variation motivates the next section, where we test whether adapting a pooled prior to a known physics branch gives higher prior probabilities to held-out equation forms from that branch.
+
+\section{Branch-dependent priors for expression structure}\label{sec:priors}
+
+In this section, we explore whether knowing which branch of physics a symbolic regression task belongs to can help us construct a prior that favours the true underlying functional form. We compare a pooled prior, which learns from formulas across all seven branches, with a branch-dependent prior, which gives greater training weight to formulas carrying the relevant branch label. Both priors use the same set of training expressions in each fold.
+
+We compare the probabilities the two priors assign to held-out expression trees using six-fold cross-validation. We repeat the comparison with ten variants of the Katz back-off model to check whether the advantage of using branch information holds across context settings.
 
 \subsection{Expression trees and the pooled prior}
-We follow Bartlett et al.~\citep{bartlett2023} in treating an expression tree as a sequence of choices about which token occupies each node. We map the selected formulae to a common set of operators and anonymise the leaves, while preserving whether adjacent sibling leaves are identical. For an encoded formula $g$, a model assigns a conditional probability to the token $t_v$ at each node $v$ given its context $h_v$. The score of the whole tree is
+Following Bartlett et al.~\citep{bartlett2023}, we represent each formula as an ordered expression tree and use a Katz back-off language model to learn how its operators are arranged. We anonymise the leaves while preserving whether two sibling leaves are identical. We fit one conditional model for right children of binary operators and another for the remaining nodes, including the root. The context of a right child includes the token of its left sibling and can include ancestor operators.
+
+The model estimates conditional token probabilities from counts in the training trees. When a context is unseen, the model backs off to a shorter one. For variant $m$, the probability assigned to an encoded formula $g$ is the product of the conditional probabilities of its nodes,
 \begin{equation}
-P(g)=\prod_{v\in g} p(t_v\mid h_v).
+P_m(g)=\prod_{v\in g}p_m(t_v\mid h_{m,v}),
 \label{eq:tree-score}
 \end{equation}
-For example, a context can describe the parent operator and which side of it the node occupies. The Katz back-off model uses shorter contexts when more specific ones have insufficient observations. The pooled prior $P_{\mathrm{pool}}$ fits this model across all training branches and blends its probabilities with pooled counts from deeper tree contexts.
+where $t_v$ is the token at node $v$ and $h_{m,v}$ is the context used to predict it.
+
+Eight variants use histories of three through ten context tokens. The other two use three or four tokens and also include the node's depth from the root, grouping depths of four or more together. Longer histories can include ancestors farther up the tree. For every variant, the pooled prior $P_{m,0}$ counts each eligible training formula once. Appendix~\ref{app:prior-fitting} gives the results for the individual variants.
 
 \subsection{Branch-dependent adjustment}
-For a formula from branch $d$, we start from the pooled prior and fit adjustments using the relevant branch's subset of the same training formulas. The components include adjustments to how often operators with different numbers of children occur, which operator occurs within an arity, and how preferences change with depth or parent operator. One component, $P_{\mathrm{geom},d}$, adjusts the deeper pooled probabilities using the relative frequencies learned from the branch and pooled training formulas. We combine the component scores at the level of whole equations:
+For each variant $m$ and branch $b$, we refit the model on the same training formulas as the pooled prior. Each formula carrying label $b$ is counted eight times, and every other formula is counted once. A formula with several labels receives the eightfold weight in the separate fit for each branch it belongs to.
+
+Let $P^{(8)}_{m,b}(g)$ denote the probability that the weighted fit assigns to formula $g$. We compute both probabilities for the whole expression tree and combine them using a mixture weight $\alpha$,
 \begin{equation}
-P_d(g)
-=0.75\sum_{m} w_{d,m}P_{d,m}(g)+0.25P_{\mathrm{geom},d}(g).
+P_{m,b}(g)=(1-\alpha)P_{m,0}(g)+\alpha P^{(8)}_{m,b}(g).
 \label{eq:branch-prior}
 \end{equation}
-The sum includes the pooled model among its components. The nonnegative mixture weights $w_{d,m}$ sum to one. We learn the weights within the training set. Appendix~\ref{app:prior-fitting} describes the geometric adjustment and weight fitting.
+We set $\alpha=0.25$. The eightfold weight controls how much the relevant branch contributes during training. The mixture weight controls how much the fitted branch-weighted model contributes to the final probability. We use the same settings in every fold, branch, and variant.
 
-\section{Evaluating priors on held-out equations}\label{sec:prior-evaluation}
+\subsection{Six-fold cross-validation}\label{sec:prior-evaluation}
+We evaluate the priors on 1,090 expressions across seven branches. The evaluation set comprises 933 Feynman formulas, 103 from the astrophysics and cosmology collection, 29 from Wikipedia, and 25 additional formulas in fluid and continuum mechanics. Where our review identified variants of the same physical relation, we retained one representative.
 
-\subsection{Grouped cross-validation}
-We use a fixed evaluation subset of 943 branch-labelled Feynman expressions and divide them into six folds. We group expressions using known formula families, identified algebraic matches and source-section information. We assign each group to a single fold before constructing any branch-specific training sets. Every label attached to an expression follows it into the same fold.
-
-We hold out each fold in turn. The pooled prior uses each training expression once. Each branch adjustment uses the subset of those expressions carrying its label, so an expression can contribute to more than one branch adjustment. We remove training expressions whose tree encoding is identical to one in the corresponding evaluation set. We apply this check both to the outer test folds and to the three inner validation folds used to learn the mixture weights.
+Each formula is assigned to one fold together with all of its branch labels. We hold out each fold in turn and fit both priors using formulas from the other five folds. Before fitting, we exclude any training formula that belongs to the same reviewed group as a held-out formula. A group can include relations for different quantities derived from the same physical model. Equations from different groups can remain in training when they share an encoded tree with a held-out formula.
 
 \subsection{Probability ratios}
-For held-out expression $g_i$, let $B_i$ be its set of branch labels. Let $P_b(g_i)$ and $P_{\mathrm{pool}}(g_i)$ be the probabilities assigned by the branch-$b$ and pooled priors, both fitted on the corresponding training set. We first average the log probability ratios across the expression's labels,
+For each held-out formula $g_i$, we divide the probability from each applicable branch-dependent prior separately by the pooled probability for the same formula. For branch $b$ and variant $m$, the ratio is
 \begin{equation}
-\Delta_i=\frac{1}{|B_i|}\sum_{b\in B_i}
-  \log\!\left(\frac{P_b(g_i)}{P_{\mathrm{pool}}(g_i)}\right).
-\label{eq:formula-log-ratio}
+r_{i,m,b}=\frac{P_{m,b}(g_i)}{P_{m,0}(g_i)}.
+\label{eq:formula-ratio}
 \end{equation}
-We then average across the $N$ held-out expressions and exponentiate,
+Let $\mathcal{T}_{b,k}$ be the set of indices of the $n_{b,k}$ held-out formulas carrying branch label $b$ in fold $k$. For model variant $m$, the geometric-mean probability ratio in that fold is
 \begin{equation}
-R=\exp\!\left(\frac{1}{N}\sum_{i=1}^{N}\Delta_i\right).
-\label{eq:prior-ratio}
+R_{m,b,k}=\left(\prod_{i\in\mathcal{T}_{b,k}}r_{i,m,b}\right)^{1/n_{b,k}}.
+\label{eq:fold-prior-ratio}
 \end{equation}
-This gives each expression the same weight in the overall comparison. Within each branch, we take the geometric mean of the ratios from that branch's prior for the held-out expressions carrying its label.
+We combine the six fold ratios, weighting each by the number of held-out formulas carrying that branch label,
+\begin{equation}
+R_{m,b}=
+\left(\prod_{k=1}^{6}R_{m,b,k}^{\,n_{b,k}}\right)^{1/\sum_{k=1}^{6}n_{b,k}}.
+\label{eq:variant-branch-ratio}
+\end{equation}
+We then take the geometric mean of $R_{m,b}$ across the ten variants to obtain the reported branch ratio. We also count the variants with $R_{m,b}>1$ to show how consistently the branch-dependent prior comes out ahead across context settings.
 
-\subsection{Preliminary results}
-Across the 943 held-out expressions, the geometric mean probability ratio for the branch-dependent prior relative to the pooled prior is 1.34 (Table~\ref{tab:prior-ratios}). The ratio exceeds one in six of the seven branches. For waves and optics it is 0.97.
+For the overall comparison, a formula carrying several labels contributes the geometric mean of its branch ratios. For example, a formula labelled both fluid and continuum mechanics and waves and optics contributes one ratio to each branch comparison and one combined ratio to the overall comparison. We take the geometric mean of these formula-level ratios across all held-out formulas and variants.
+
+\subsection{Results}
+The branch-dependent prior assigns 1.246 times as much probability as the pooled prior on a geometric-average basis across the 1,090 held-out formulas (Table~\ref{tab:prior-ratios}). The ratio exceeds one in each of the seven branches for all ten variants. Thermodynamics and kinetic theory has the largest average ratio, at 1.882, and waves and optics has the smallest, at 1.071.
 
 \begin{table}[H]\centering\small
-\begin{tabular}{lr}
+\begin{tabular}{lrrr}
 \toprule
-Branch & Probability ratio \\
+Branch & Formulas & Probability ratio & Variants above one \\
 \midrule
-Classical mechanics & 1.13 \\
-Electromagnetism & 1.15 \\
-Fluid and continuum mechanics & 1.10 \\
-Quantum mechanics & 1.29 \\
-Special relativity & 5.32 \\
-Thermodynamics and kinetic theory & 2.35 \\
-Waves and optics & 0.97 \\
+Mechanics & 145 & 1.126 & 10/10 \\
+Electromagnetism & 440 & 1.317 & 10/10 \\
+Waves and optics & 168 & 1.071 & 10/10 \\
+Thermodynamics and kinetic theory & 98 & 1.882 & 10/10 \\
+Quantum mechanics & 227 & 1.165 & 10/10 \\
+Fluid and continuum mechanics & 90 & 1.130 & 10/10 \\
+Astrophysics and cosmology & 105 & 1.487 & 10/10 \\
 \midrule
-Overall & 1.34 \\
+Overall & 1,090 & 1.246 & 10/10 \\
 \bottomrule
 \end{tabular}
-\caption{Geometric mean probability ratios relative to the pooled prior for the 943 held-out expressions. The branch rows include the expressions carrying each branch label.}
+\caption{Geometric-mean probabilities under the branch-dependent prior relative to the pooled prior. The ratios summarise ten Katz variants. Formulas with multiple labels contribute to each applicable branch row and are counted once in the overall row.}
 \label{tab:prior-ratios}
 \end{table}
 
-Appendix~\ref{app:prior-probability-mixture} reports the comparison in which all applicable branch priors are combined before scoring.
+The ten variants share the same training and test sets within each fold. Their agreement shows how consistently the branch-dependent prior improves held-out probabilities across context settings. Appendix~\ref{app:prior-ablation} reports an exploratory ablation of the training weight and mixture share.
 
 \section{Discussion}\label{sec:discussion}
-The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The seven-branch comparison shows variation among the selected Feynman expressions. Its interpretation depends on how equations are assigned to branches, particularly in special relativity.
+The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The branch comparison shows variation among the selected expressions. Its interpretation depends on how equations are assigned to branches.
 
-The catalogue is limited to selected explicit expressions and excludes differential and integral forms. The exponential curve also captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. Equation resampling describes variability under repeated selection from the observed collection, and chapter resampling addresses some of the dependence among related formulas. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
+The decay-rate analysis uses a selection of explicit expressions. The exponential curve captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. The bootstrap intervals describe variability under resampling from the observed collection. Related equations from the same chapter may introduce dependence. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
 
-The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-informed model assigned higher probabilities to the held-out Feynman formulas on average. The gains varied substantially across branches, and the estimates describe this particular division of the catalogue. We chose the model design through exploratory comparisons on the same corpus. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
+The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-dependent prior assigned higher probabilities to the held-out formulas overall in every Katz variant. The largest average gain was in thermodynamics and kinetic theory. We chose the weighting and mixture through exploratory comparisons on overlapping formula collections. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
 
 \bibliographystyle{unsrtnat}
-\bibliography{refs}
+\begingroup
+\setlength{\bibsep}{2pt plus 1pt}
+\bibliography{refs,equation_sources}
+\endgroup
 
 \clearpage
 \appendix
@@ -330,82 +356,82 @@ Catalogue entry & Source \\\midrule
 \texttt{\detokenize{fr.pn_hypergeometric}} & \citep{perezromero2018} \\
 \end{longtable}
 
-\section{Supplementary decay-rate results and sensitivity checks}\label{app:sensitivity}
+\subsection{Sources for astrophysics, cosmology, and the fluid additions}\label{app:branch-sources}
 
-These checks ask how the decay-rate results change under alternative analysis choices. Resampling by chapter tests how much the uncertainty intervals depend on treating equations from the same chapter as a group. Changing branch assignments or equation-selection rules tests how much the fitted rates depend on which equations each branch contains.
+Table~\ref{tab:astro-sources} lists the source documents for the astrophysics and cosmology collection. The catalogue records the source and the page and equation or section for each expression. Table~\ref{tab:fluid-sources} identifies the source of each additional fluid and continuum mechanics formula. For formulas that are rearranged or specialised from the form in the source, the entries record the conventions used in the analysis.
 
-\subsection{Corpus and branch estimates}
-Table~\ref{tab:corpus} reports the estimates for each collection, and Table~\ref{tab:branch} reports the branch estimates.
+\begin{longtable}{@{}p{0.73\linewidth}rr@{}}
+\caption{Sources for the 143 astrophysics and cosmology expressions. Counts are for the full catalogue.}\label{tab:astro-sources}\\
+\toprule
+Source document & Reference & Formulas \\\midrule
+\endfirsthead
+\multicolumn{3}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+Source document & Reference & Formulas \\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+MIT 8.902, \textit{Astrophysics II} & \citep{vogelsberger2023} & 20 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/stellar.pdf}{Equations of Stellar Structure} & \citep{princetonast403} & 4 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/polytrop.pdf}{Polytropes} & \citep{princetonast403} & 7 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/radtrans.pdf}{Transfer of Radiation} & \citep{princetonast403} & 9 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/disk.pdf}{Accretion Disks} & \citep{princetonast403} & 9 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/wind.pdf}{Spherical Winds and Accretion} & \citep{princetonast403} & 2 \\
+\textit{Cosmology}, Chapter 1, The Expanding Universe & \citep{tongcosmology} & 8 \\
+\textit{Cosmology}, Chapter 2, The Hot Universe & \citep{tongcosmology} & 9 \\
+\textit{Cosmology}, Chapter 3, Structure Formation & \citep{tongcosmology} & 7 \\
+\textit{General Relativity}, Chapter 1, Geodesics in Spacetime & \citep{tonggr} & 6 \\
+\textit{General Relativity}, Chapter 5, When Gravity is Weak & \citep{tonggr} & 2 \\
+\textit{General Relativity}, Chapter 6, Black Holes & \citep{tonggr} & 3 \\
+Distance Measures in Cosmology & \citep{hogg2000} & 10 \\
+Lectures on Gravitational Lensing & \citep{narayan1997} & 9 \\
+A Universal Density Profile from Hierarchical Clustering & \citep{navarro1997} & 3 \\
+Transits and Occultations & \citep{winn2010} & 10 \\
+Binary and Millisecond Pulsars & \citep{lorimer2008} & 7 \\
+Radiative Processes in High Energy Astrophysics & \citep{ghisellini2012} & 9 \\
+The Global Schmidt Law in Star-Forming Galaxies & \citep{kennicutt1997} & 2 \\
+Large-Scale Bias and the Peak Background Split & \citep{sheth1999} & 3 \\
+Toward a Halo Mass Function for Precision Cosmology & \citep{tinker2008} & 1 \\
+The Basic Physics of the Binary Black Hole Merger GW150914 & \citep{ligo2016} & 3 \\
+\end{longtable}
 
-\begin{table}[H]\centering\small
-\resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
-Corpus & Expr. & Instances & Ranks & $\hat\beta$ & Boot.\ SE & Individual interval\\\midrule
-\tabinput{generated/corpus_table.tex}
-\bottomrule\end{tabular}}
-\caption{Corpus estimates from log least squares. Intervals are nominal individual 95\% equation-bootstrap intervals. The instances column counts all operator occurrences, including nullary types.}\label{tab:corpus}
-\end{table}
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.8\linewidth]{beta_by_corpus.pdf}
-\caption{Corpus estimates and nominal individual 95\% equation-bootstrap intervals.}\label{fig:corpus}
-\end{figure}
-
-\begin{table}[H]\centering\small
-\resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
-Branch & Expr. & Instances & Ranks & $\hat\beta$ & Boot.\ SE & Individual interval\\\midrule
-\tabinput{generated/branch_table.tex}
-\bottomrule\end{tabular}}
-\caption{Branch estimates and nominal individual 95\% equation-bootstrap intervals.}\label{tab:branch}
-\end{table}
-
-Figure~\ref{fig:rf} shows the distributions underlying these estimates. Each branch is ranked separately, and both the observed operator types and their ordering can differ. The fitted rates describe how concentrated the ranked frequencies are; identifying the operators responsible for these patterns requires examining their identities separately.
-
-\begin{figure}[H]\centering
-\includegraphics[width=\linewidth]{rank_frequency_branches.pdf}
-\caption{Observed rank--frequency distributions and fitted exponentials for the seven branches.}\label{fig:rf}
-\end{figure}
-
-\subsection{Source-chapter resampling}
-We resample whole chapters jointly across branches. For resampling, we place each chapter in a stratum using the most common Codex branch label among its retained equations. Ties follow the recorded branch order. Within each stratum, we sample the original number of chapters with replacement. Every equation from a selected chapter receives the same multiplicity, including equations assigned to other branches. This preserves dependence induced by the 54 chapters represented in more than one branch; the number of equations per branch can vary between replicates.
-
-The individual chapter-bootstrap intervals are [0.355, 0.473] for fluid and continuum mechanics and [0.287, 0.365] for quantum mechanics. Both are wider than their equation-bootstrap intervals, and they overlap slightly.
-\begin{figure}[H]\centering
-\includegraphics[width=0.85\linewidth]{chapter_bootstrap.pdf}
-\caption{Equation and joint chapter bootstrap intervals at the nominal individual 95\% level. Labels give the number of source chapters represented in each branch.}\label{fig:chapter}
-\end{figure}
-
-\subsection{Branch assignments and selection}
-We repeat the fits using only each formula's primary Codex label, excluding formulas flagged for averages or imaginary units, or excluding all formulas sourced from Volume~III. The last check uses the source references of both the lecture and benchmark formulas. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals.
-
-\begin{table}[H]\centering\scriptsize
-\begin{tabular}{llrrl}\toprule
-Specification & Branch & Expr. & $\hat\beta$ & Individual interval\\\midrule
-Primary Codex label only & SR & 83 & 0.442 & [0.326, 0.475] \\
- & QM & 211 & 0.313 & [0.278, 0.342] \\
- & EM & 296 & 0.336 & [0.323, 0.368] \\
- & Waves & 127 & 0.336 & [0.305, 0.362] \\
- & Classical & 113 & 0.367 & [0.306, 0.384] \\
- & Thermo & 89 & 0.392 & [0.361, 0.429] \\
- & Fluid & 48 & 0.405 & [0.362, 0.468] \\
-\midrule
-Notation-flagged expressions removed & SR & 87 & 0.445 & [0.330, 0.478] \\
- & QM & 170 & 0.318 & [0.292, 0.347] \\
- & EM & 379 & 0.355 & [0.336, 0.377] \\
- & Waves & 140 & 0.374 & [0.336, 0.399] \\
- & Classical & 108 & 0.373 & [0.322, 0.390] \\
- & Thermo & 92 & 0.397 & [0.365, 0.433] \\
- & Fluid & 51 & 0.405 & [0.358, 0.467] \\
-\midrule
-Volume III expressions removed & SR & 83 & 0.461 & [0.311, 0.480] \\
- & QM & 43 & 0.377 & [0.341, 0.436] \\
- & EM & 403 & 0.342 & [0.330, 0.369] \\
- & Waves & 146 & 0.343 & [0.311, 0.367] \\
- & Classical & 113 & 0.369 & [0.311, 0.381] \\
- & Thermo & 92 & 0.394 & [0.363, 0.431] \\
- & Fluid & 54 & 0.406 & [0.360, 0.458] \\
-\bottomrule\end{tabular}
-\caption{Sensitivity to label selection and formula inclusion. Each entry reports the fitted rate and its nominal individual 95\% equation-bootstrap interval. Waves denotes waves and optics. Fluid denotes fluid and continuum mechanics.}\label{tab:assignment}
-\end{table}
+\begin{longtable}{@{}p{0.60\linewidth}p{0.35\linewidth}@{}}
+\caption{Source locations for the 25 additional fluid and continuum mechanics formulas.}\label{tab:fluid-sources}\\
+\toprule
+Formula & Source location \\\midrule
+\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+Formula & Source location \\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Isentropic mass flow rate & Eq.~(10)~\citep{nasa-massflow} \\
+Isentropic nozzle area ratio & Eq.~(9)~\citep{nasa-isentropic} \\
+Squared downstream Mach number across a normal shock & $M_1^2$ relation~\citep{nasa-shock} \\
+Static pressure ratio across a normal shock & $p_1/p_0$ relation~\citep{nasa-shock} \\
+Blasius boundary-layer thickness at 99\% of the free-stream speed & Lecture 16, p.~5~\citep{mit-boundary2004} \\
+Blasius local wall shear stress & Lecture 16, p.~5~\citep{mit-boundary2004} \\
+Sequent depth ratio across a hydraulic jump & Eq.~(3)~\citep{usbr-stilling1954} \\
+Critical depth in a rectangular open channel & Ch.~2, Sec.~12~\citep{usbr-measurement} \\
+Washburn capillary penetration distance & Capillary penetration relation~\citep{washburn1921} \\
+Squared oscillation frequency of a liquid drop & Eq.~(1.2)~\citep{wang1996} \\
+Ferguson--Church grain settling speed & Eq.~(4)~\citep{ferguson2004} \\
+Thiem steady radial discharge & Eq.~(14)~\citep{trescott1976} \\
+Herschel--Bulkley shear stress & Eqs.~(3)--(4)~\citep{quan2022} \\
+Taylor--Aris pipe dispersion & Eq.~(17)~\citep{trusler2024} \\
+Landau--Levich film thickness & Eq.~(1.1)~\citep{jeong2022} \\
+Burgers vortex axial vorticity & Eq.~(5)~\citep{gallay2005} \\
+Boussinesq vertical stress from a point load & Eq.~(1)~\citep{shea1992} \\
+Hertzian circular contact radius & Eqs.~(2)--(3)~\citep{ciulli2022} \\
+Saffman lift on a sphere & Sec.~3.7, p.~44~\citep{feuillebois2004} \\
+Taylor--Culick film retraction speed & Sec.~1~\citep{savva2009} \\
+Turbulent buoyant plume volume flux & Eq.~(3.2)~\citep{limaneto2016} \\
+Soulsby--Whitehouse critical Shields parameter & Eq.~(2-132)~\citep{hec2021} \\
+Nusselt falling-film flow rate & Eq.~(2.1)~\citep{denner2018} \\
+Taylor small deformation of a drop in shear & Small-deformation theory~\citep{megias2004} \\
+Stokes oscillating-wall velocity & Lecture 16, p.~13~\citep{mit-marine2005} \\
+\end{longtable}
 
 \section{Bootstrap calibration}\label{app:calibration}
 A 95\% interval should contain the true decay rate about 95 times in 100 repetitions. To check this, we generate data with a known rate, fit each dataset, and count how often the bootstrap interval includes that rate. We generate 200 datasets in each of three scenarios. Each dataset has seven groups of equations, and we use 400 bootstrap replicates to calculate the intervals. All scenarios have population marginal operator frequencies following an exponential with rate $\beta=0.35$. The first uses identical distributions and independent equation count vectors. The second varies equation counts, operator vocabularies and expression lengths, with dependence within an equation introduced through a shared random probability vector. The third introduces a shared random probability vector within each chapter and resamples whole chapters, including a branch with only four chapters.
@@ -434,17 +460,57 @@ recovering Eq.~\eqref{eq:law}. The scaling of both parameters matters: if $b$ in
 
 This limiting relationship helps interpret comparisons of the Zipf--Mandelbrot and exponential models. Whether fitted parameters for a particular corpus approach this regime requires examining their values relative to the observed rank range. The limiting argument alone makes no claim about the empirical preference between the models.
 
-\section{Prior fitting and sensitivity checks}\label{app:prior-fitting}
+\clearpage
+\section{Katz context variants}\label{app:prior-fitting}
 
-One component, $P_{\mathrm{geom},d}$, takes the ratio of the shallow branch and pooled probabilities, raises it to the power $0.15$, and uses it to adjust the deeper pooled probabilities before normalising within each context. In each outer training set, three further group-based folds supply the validation predictions used to fit the mixture weights. We estimate the weights on validation predictions within the training set, giving each training family equal weight in the validation objective and regularising toward the pooled model. The fixed 25\% share comes from exploratory comparisons on this corpus.
+The tree history consists of the nearest available ancestor operators, with the left sibling's token occupying the last history slot for a right child. Slots beyond the root use a padding token. In the depth-augmented variants, the depth from the root is prepended to the history and capped at four. For each context, we normalise the conditional probabilities over the legal tokens and mix them with the uniform distribution over those tokens at a weight of 0.001.
 
-As a sensitivity check, we train and evaluate with only each expression's primary Codex label. On the same 943 formulas and six folds, this gives an overall probability ratio of 1.42.
+\begin{table}[H]\centering\small
+\begin{tabular}{rrr}
+\toprule
+History length & Ratio without depth & Ratio with depth \\
+\midrule
+3 & 1.189 & 1.191 \\
+4 & 1.181 & 1.198 \\
+5 & 1.238 & --- \\
+6 & 1.283 & --- \\
+7 & 1.293 & --- \\
+8 & 1.298 & --- \\
+9 & 1.298 & --- \\
+10 & 1.298 & --- \\
+\bottomrule
+\end{tabular}
+\caption{Overall geometric-mean probability ratios for each Katz context variant on the same six folds.}
+\label{tab:katz-variants}
+\end{table}
 
-\subsection{Averaging probabilities across branches}\label{app:prior-probability-mixture}
-When all branch labels of an expression are supplied together, we can average the probabilities from the corresponding priors,
-\begin{equation}
-P_{\mathrm{mix}}(g_i)=\frac{1}{|B_i|}\sum_{b\in B_i}P_b(g_i).
-\end{equation}
-The geometric mean of $P_{\mathrm{mix}}(g_i)/P_{\mathrm{pool}}(g_i)$ over the same 943 expressions is 1.41. This aggregation takes the arithmetic mean of the branch probabilities within each expression. It is at least as large as their geometric mean, which is the quantity used in the main comparison.
+\section{Training weight and mixture share}\label{app:prior-ablation}
+
+We varied the training weight $w$ for formulas carrying the relevant branch label and the mixture share $\alpha$ assigned to the weighted prior. We used the same six folds, training exclusions, and ten Katz variants as in Section~\ref{sec:priors}. We refitted the branch-weighted models for integer weights from 2 to 10, with $w=1$ corresponding to the pooled fit. For each weight, we used $P^{(w)}_{m,b}$ in place of $P^{(8)}_{m,b}$ in Equation~\eqref{eq:branch-prior} and varied $\alpha$ from 0 to 1 in steps of 0.001. The cases $w=1$ and $\alpha=0$ both give the pooled prior.
+
+Table~\ref{tab:prior-ablation} shows the overall geometric-mean probability ratio at selected mixture shares. With eightfold weighting, the ratio is 1.246 at the main setting of $\alpha=0.25$ and falls to 0.801 when the weighted model supplies the entire probability ($\alpha=1$). The highest overall ratio on the grid is 1.299 at $w=4$ and $\alpha=0.646$. This maximum is exploratory because we selected it on the same folds used for evaluation.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{rrrrrrr}
+\toprule
+& \multicolumn{6}{c}{Mixture share $\alpha$} \\
+\cmidrule(lr){2-7}
+Training weight $w$ & 0.00 & 0.10 & 0.25 & 0.50 & 0.75 & 1.00 \\
+\midrule
+1 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+2 & 1.000 & 1.070 & 1.127 & 1.191 & 1.233 & 1.253 \\
+3 & 1.000 & 1.117 & 1.192 & 1.263 & 1.289 & 1.250 \\
+4 & 1.000 & 1.142 & 1.224 & 1.289 & 1.293 & 1.176 \\
+5 & 1.000 & 1.156 & 1.238 & 1.293 & 1.275 & 1.078 \\
+6 & 1.000 & 1.164 & 1.244 & 1.288 & 1.251 & 0.979 \\
+7 & 1.000 & 1.169 & 1.246 & 1.280 & 1.226 & 0.888 \\
+8 & 1.000 & 1.172 & \textbf{1.246} & 1.270 & 1.201 & 0.801 \\
+9 & 1.000 & 1.173 & 1.244 & 1.260 & 1.177 & 0.723 \\
+10 & 1.000 & 1.174 & 1.242 & 1.250 & 1.156 & 0.657 \\
+\bottomrule
+\end{tabular}
+\caption{Overall geometric-mean probability ratios relative to the pooled prior at selected training weights and mixture shares. The bold entry marks the setting used in Section~\ref{sec:priors}.}
+\label{tab:prior-ablation}
+\end{table}
 
 \end{document}

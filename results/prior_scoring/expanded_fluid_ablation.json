@@ -1,0 +1,472 @@
+{
+  "design": {
+    "main_plan_sha256": "986e3b75ff21f995f65f50998bba3144824d8f366ce7e42d9e5da1e8a33f8bba",
+    "main_summary_sha256": "3051de8e393d22b1c7afa814eccc801e9b4c9c27b78a5ca98cb0a1de053accf9",
+    "main_scores_sha256": {
+      "h3": "4831c6b3e6ba40a2bddb9c6483212514cd1a33b20b4b4ef45418559921a2b231",
+      "h3-depth": "61fdac4cababb027373fb517a242770ade94b0e52bc5b1a36952bf7e0d64c313",
+      "h4": "3899c85be06bd32e3d9926e67557e395ac3b98a7ba87dc5a5a1aeb21b1142691",
+      "h4-depth": "3885b8264bf3cebd980184b8c149ebbdc0c9cbc540f0a6a412c5005b640ef35f",
+      "h5": "dd764769b99a0fa80c62a0b85336c63283d0bc1233df6e1cc9e54f445dcfeb3b",
+      "h6": "f4ee03530057d2dbf9ebd57dbc7b52e8da088b6724fec5a249aecef9a7c45036",
+      "h7": "3d0426ad985d7b5b9b9740bd260540149e9ad1aff7d16776fa9c888b9125926c",
+      "h8": "ccd7a5514d4cdc6dc05ccf5f5ae5b6787a63a340c47e00ed04ddd951cc07ed8c",
+      "h9": "ea9495429bd47ddd799a137e55eddc259f687d657ad8b2f4d96f1272f00ffc4e",
+      "h10": "4a67bdfa79b98ac93d7204657bea35013141a16b7ff8d182fcdaa0c14d19e847"
+    },
+    "driver_sha256": "38f589c4b4d0b598de800ed36f54ab4f90bdbadb680d80b5728bd8f1dc4f74ad",
+    "weights": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "mixture_grid": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "step": 0.001,
+      "size": 1001
+    },
+    "appendix_shares": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "seed": 8888,
+    "settings": {
+      "h3": [
+        3,
+        false
+      ],
+      "h3-depth": [
+        3,
+        true
+      ],
+      "h4": [
+        4,
+        false
+      ],
+      "h4-depth": [
+        4,
+        true
+      ],
+      "h5": [
+        5,
+        false
+      ],
+      "h6": [
+        6,
+        false
+      ],
+      "h7": [
+        7,
+        false
+      ],
+      "h8": [
+        8,
+        false
+      ],
+      "h9": [
+        9,
+        false
+      ],
+      "h10": [
+        10,
+        false
+      ]
+    },
+    "training_policy": "Keep the original representatives and held-out folds. Exclude test IDs and formulas in the same reviewed group as a test formula.",
+    "main_settings": {
+      "weight": 8,
+      "mixture_share": 0.25
+    },
+    "runtime": {
+      "baseline_plan_sha256": "45fbb0cebb26a3c731e0b43ad855df13d0b3c6663df65867645fd545a75f051a",
+      "baseline_summary_sha256": "dd74d6f78160141b03e8fd2ce63549464cded7bb03c6322c41953a3a4b6c9df6",
+      "candidate_table_sha256": "5d1a76758de4fd1046aafd4762eeefdba9318d47bd6d0fdfdff4b41698c82065",
+      "refit_driver_sha256": "8ca1616e471b03fc9f30d22697697e6d2cd5f68b6d08b4d201c0eb562749a4da",
+      "python": "3.12.3",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1"
+    }
+  },
+  "manifest_sha256": "ef271648659eb43308a0c8b71802396bd2200a7ec843c187740074c2b7c6bb94",
+  "grid_sha256": "db17c6b9f0cb1ace68beffc75a5e495aab7613db0dee8eeb0261ad54f9312962",
+  "table": {
+    "shares": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "rows": [
+      {
+        "weight": 1,
+        "overall_ratios": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "weight": 2,
+        "overall_ratios": [
+          1.0,
+          1.0699509682437256,
+          1.1270851404344702,
+          1.1914160953113053,
+          1.2330163437288824,
+          1.2525297662475572
+        ]
+      },
+      {
+        "weight": 3,
+        "overall_ratios": [
+          1.0,
+          1.1165363607937149,
+          1.1922522523005492,
+          1.2628752020751635,
+          1.2893031633939591,
+          1.2499032724908277
+        ]
+      },
+      {
+        "weight": 4,
+        "overall_ratios": [
+          1.0,
+          1.1418371675780377,
+          1.2236744427976005,
+          1.2885732991607082,
+          1.292843494987388,
+          1.1755495245449208
+        ]
+      },
+      {
+        "weight": 5,
+        "overall_ratios": [
+          1.0,
+          1.1555267305293584,
+          1.2376382508299069,
+          1.2925446327152128,
+          1.2748130543747704,
+          1.0776193371562865
+        ]
+      },
+      {
+        "weight": 6,
+        "overall_ratios": [
+          1.0,
+          1.1637624947738836,
+          1.2439975065042979,
+          1.2884553442847437,
+          1.2514706169782979,
+          0.9793924012594906
+        ]
+      },
+      {
+        "weight": 7,
+        "overall_ratios": [
+          1.0,
+          1.1686530681062006,
+          1.2460191514898555,
+          1.2801573201997754,
+          1.2260710307322673,
+          0.8880514002593011
+        ]
+      },
+      {
+        "weight": 8,
+        "overall_ratios": [
+          1.0,
+          1.171550454777819,
+          1.2457260176994427,
+          1.2702456574217158,
+          1.2009878272971701,
+          0.8011270773454601
+        ]
+      },
+      {
+        "weight": 9,
+        "overall_ratios": [
+          1.0,
+          1.1732582973153889,
+          1.2442476276741152,
+          1.2599754144737405,
+          1.1773338685236765,
+          0.7230590688083368
+        ]
+      },
+      {
+        "weight": 10,
+        "overall_ratios": [
+          1.0,
+          1.17434599589633,
+          1.24229289200677,
+          1.2502512602563585,
+          1.1562303418466768,
+          0.6568011017130706
+        ]
+      }
+    ]
+  },
+  "main_setting": {
+    "weight": 8,
+    "mixture_share": 0.25,
+    "ratio": 1.2457260176994427,
+    "by_branch": {
+      "QM": 1.1648164179934921,
+      "EM": 1.3172573130427356,
+      "Waves+optics": 1.0712833398634545,
+      "Mechanics": 1.1257849597369363,
+      "Thermo": 1.8816559093125578,
+      "Fluid+continuum": 1.1295542635697606,
+      "Astrophysics": 1.4868125430729526
+    },
+    "variants_above_one": {
+      "QM": 10,
+      "EM": 10,
+      "Waves+optics": 10,
+      "Mechanics": 10,
+      "Thermo": 10,
+      "Fluid+continuum": 10,
+      "Astrophysics": 10,
+      "Overall": 10
+    }
+  },
+  "weighted_fit_without_pooling": {
+    "weight": 8,
+    "mixture_share": 1.0,
+    "ratio": 0.8011270773454601,
+    "by_branch": {
+      "QM": 0.4661239805014565,
+      "EM": 0.8633261433479757,
+      "Waves+optics": 0.5214582801152549,
+      "Mechanics": 0.9471958482253727,
+      "Thermo": 1.8586718144494918,
+      "Fluid+continuum": 0.8291775702762364,
+      "Astrophysics": 1.3537172903216455
+    },
+    "variants_above_one": {
+      "QM": 0,
+      "EM": 0,
+      "Waves+optics": 0,
+      "Mechanics": 3,
+      "Thermo": 10,
+      "Fluid+continuum": 0,
+      "Astrophysics": 10,
+      "Overall": 0
+    }
+  },
+  "largest_overall_ratio_on_grid": {
+    "weight": 4,
+    "mixture_share": 0.646,
+    "ratio": 1.298557554183145,
+    "by_branch": {
+      "QM": 1.1817476656504828,
+      "EM": 1.4394533670136445,
+      "Waves+optics": 1.0420987105704245,
+      "Mechanics": 1.1476522575902606,
+      "Thermo": 1.9562876433082288,
+      "Fluid+continuum": 1.1498085484246516,
+      "Astrophysics": 1.5970030950683614
+    },
+    "variants_above_one": {
+      "QM": 10,
+      "EM": 10,
+      "Waves+optics": 9,
+      "Mechanics": 10,
+      "Thermo": 10,
+      "Fluid+continuum": 10,
+      "Astrophysics": 10,
+      "Overall": 10
+    }
+  },
+  "main_setting_log_ratios_by_variant": {
+    "h3": {
+      "QM": 0.09192658519720427,
+      "EM": 0.18127124423985405,
+      "Waves+optics": 0.03725797813727635,
+      "Mechanics": 0.056654109975441465,
+      "Thermo": 0.6982232043290706,
+      "Fluid+continuum": 0.14262798444639427,
+      "Astrophysics": 0.424002754789979,
+      "Overall": 0.1731959250565523
+    },
+    "h3-depth": {
+      "QM": 0.11583193379245516,
+      "EM": 0.20267172045730217,
+      "Waves+optics": 0.006502912865899036,
+      "Mechanics": 0.07721227703765457,
+      "Thermo": 0.8022258521666367,
+      "Fluid+continuum": 0.07568479634418336,
+      "Astrophysics": 0.35078834277025034,
+      "Overall": 0.17498391322079226
+    },
+    "h4": {
+      "QM": 0.09026545144506687,
+      "EM": 0.19238305142024945,
+      "Waves+optics": 0.043585244878832065,
+      "Mechanics": 0.09024445365796374,
+      "Thermo": 0.5640569432933088,
+      "Fluid+continuum": 0.1163154802557321,
+      "Astrophysics": 0.30202477736557903,
+      "Overall": 0.16605171798036397
+    },
+    "h4-depth": {
+      "QM": 0.11752515299142234,
+      "EM": 0.22537702309082103,
+      "Waves+optics": 0.038895783447890575,
+      "Mechanics": 0.10391607713340588,
+      "Thermo": 0.5338610352515796,
+      "Fluid+continuum": 0.11865759513925125,
+      "Astrophysics": 0.3113859096151711,
+      "Overall": 0.18066267354764753
+    },
+    "h5": {
+      "QM": 0.14577646658853763,
+      "EM": 0.27873913142004164,
+      "Waves+optics": 0.07515872187939343,
+      "Mechanics": 0.10807543023177284,
+      "Thermo": 0.5523726276620871,
+      "Fluid+continuum": 0.12923127264408352,
+      "Astrophysics": 0.35112507041892066,
+      "Overall": 0.21367962131763213
+    },
+    "h6": {
+      "QM": 0.18105522970525567,
+      "EM": 0.32714905535820277,
+      "Waves+optics": 0.07821275643188016,
+      "Mechanics": 0.13607571593015538,
+      "Thermo": 0.6342682641577583,
+      "Fluid+continuum": 0.12562248377197086,
+      "Astrophysics": 0.4380751772053153,
+      "Overall": 0.24923414782992276
+    },
+    "h7": {
+      "QM": 0.19319096219682494,
+      "EM": 0.33151738264338176,
+      "Waves+optics": 0.10414693389428853,
+      "Mechanics": 0.1492119658272971,
+      "Thermo": 0.6241053703245701,
+      "Fluid+continuum": 0.12559771738066425,
+      "Astrophysics": 0.4475280843710026,
+      "Overall": 0.25690192039558757
+    },
+    "h8": {
+      "QM": 0.19693955746852407,
+      "EM": 0.33700145229900424,
+      "Waves+optics": 0.10400461205940781,
+      "Mechanics": 0.15443757431305108,
+      "Thermo": 0.6315659052501283,
+      "Fluid+continuum": 0.1282012040791125,
+      "Astrophysics": 0.4529233156644865,
+      "Overall": 0.26102813742690445
+    },
+    "h9": {
+      "QM": 0.1966449103262013,
+      "EM": 0.3398013382863185,
+      "Waves+optics": 0.1004350055781756,
+      "Mechanics": 0.15447879498709527,
+      "Thermo": 0.6405566467188455,
+      "Fluid+continuum": 0.12817290872186232,
+      "Astrophysics": 0.44435491617211703,
+      "Overall": 0.26079311770597247
+    },
+    "h10": {
+      "QM": 0.1964786850783926,
+      "EM": 0.3396064192036612,
+      "Waves+optics": 0.10037317921212811,
+      "Mechanics": 0.154498944266175,
+      "Thermo": 0.6402860707310809,
+      "Fluid+continuum": 0.1281195360937862,
+      "Astrophysics": 0.4441376085606173,
+      "Overall": 0.26065389251082416
+    }
+  },
+  "fit_receipts": {
+    "h3": {
+      "sha256": "4e28af17413cb832b3bbc5f54948c09394c5711d2718bed5ded78e336ff69d75",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h3-depth": {
+      "sha256": "fa05361b3b7e2b431919d3e4728cca223707d1fa73eb0ef38164ebd2a33c0d98",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h4": {
+      "sha256": "647d3eb5770d59cbc300a807b1a31fe7e3293c9d9185c65e73434ddb2b4016f1",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h4-depth": {
+      "sha256": "40aa1e6d1af876c94f60c6253d808fafc1b73abf2e0d1083bccc02c4e7bd76c7",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h5": {
+      "sha256": "1a0711b1b137ca1b1d0d6852855f3d445b42d0711650b129a2ed0121bae6128e",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h6": {
+      "sha256": "00746e14b30700d1da5618831c1b7a34b1b6e2faf35b447e1a6f71c7568f7349",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h7": {
+      "sha256": "017d1855c361d8325d278d5d758033221d9bb537e0b46ed52281e3d3c8799cfb",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h8": {
+      "sha256": "6f8a668a429ff335348e6be29d7386051ca1a1ce1cdd4aa49dd507fd81fff3d6",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h9": {
+      "sha256": "2321d5139cca288b712b1c1a88cada82154bc1a6e16d3fbecb58902fbf39be35",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    },
+    "h10": {
+      "sha256": "aaecbff54ffde9a0f72dac3f59042e5ae7848bcb6411827b75dd963154ded994",
+      "scores_per_weight": 1273,
+      "pooled_max_abs_error": 0.0,
+      "main_blend_max_abs_error": 0.0,
+      "warnings": {}
+    }
+  }
+}

@@ -16,11 +16,17 @@ Redraw only the corpus figure from saved results:
 
 Redraw the branch figure, including comparison collections, from saved results:
 
-    .venv/bin/python scripts/analysis/exponential_bootstrap.py --branch-plot-only
+    .venv/bin/physics-priors-fit --branch-plot-only
+
+Refit the merged fluid-mechanics collection and redraw the branch figure:
+
+    .venv/bin/physics-priors-fit --fluid-branch-only
 """
 from __future__ import annotations
 
 import argparse
+from collections import Counter
+import csv
 import hashlib
 import json
 import time
@@ -37,7 +43,10 @@ import numpy as np  # noqa: E402
 
 from physics_priors import RANDOM_SEED  # noqa: E402
 from physics_priors import metalaw as M  # noqa: E402
-from physics_priors.catalog import entry_from_formula, record_as_entry, rewrite_units, scatter_records  # noqa: E402
+from physics_priors.catalog import (  # noqa: E402
+    entry_from_formula, load_feynman, load_feynman_lectures, load_wiki,
+    record_as_entry, rewrite_units, scatter_records,
+)
 from physics_priors.catalog_tools import feynman as FY  # noqa: E402
 from physics_priors.paths import PACKAGE_DIR, ROOT, code_hashes, require_checkout  # noqa: E402
 from physics_priors.exponential_fit import (  # noqa: E402
@@ -54,6 +63,7 @@ from physics_priors.exponential_fit import (  # noqa: E402
 OUT = ROOT / "results" / "exponential_fit"
 FIG = ROOT / "writeup" / "figures"
 GEN = ROOT / "writeup" / "generated"
+FLUID_ROSTER = ROOT / "data" / "fluid_branch.csv"
 ORDER = list(FY.ORDER)
 LONG = dict(FY.LONG)
 COLORS = {
@@ -131,6 +141,45 @@ def fit_group(matrix, threshold, n_boot, rng, clusters=None):
     summary = summarise_bootstrap(fit, betas, statuses)
     summary["n_equations"] = int(matrix.shape[0])
     return summary, betas, np.asarray(statuses, dtype=str)
+
+
+def fit_fluid_branch() -> dict:
+    """Fit the reviewed fluid collection with the manuscript's counting convention."""
+    feynman = {r.id: r for r in load_feynman() + load_feynman_lectures()}
+    wikipedia = {r.id: r for r in load_wiki()}
+    records_by_source = {"Feynman": feynman, "Wikipedia": wikipedia}
+    with FLUID_ROSTER.open(encoding="utf-8", newline="") as stream:
+        roster = list(csv.DictReader(stream))
+    if len(roster) != len({row["id"] for row in roster}):
+        raise ValueError("Fluid branch roster contains a repeated formula ID")
+
+    entries = []
+    for row in roster:
+        ident, source = row["id"], row["source"]
+        if source in records_by_source:
+            entries.append(record_as_entry(records_by_source[source][ident]))
+            continue
+        if source != "Sourced fluid additions":
+            raise ValueError(f"Unknown fluid formula source: {source}")
+        variables = set(row["variable_names"].split())
+        constants = set(row["constant_names"].split())
+        formula = row["formula"]
+        names = {key[5:] for key in M.count_operators(formula) if key.startswith("name:")}
+        if names != variables | constants or variables & constants:
+            raise ValueError(f"Incomplete variable and constant classification for {ident}")
+        counts = M.count_operators(formula, variables)
+        instances = sum(counts.values())
+        entries.append(M.EIEntry(
+            name=ident, formula=formula, n_variables=counts.pop(M.NULLARY_VARIABLE, 0),
+            n_numbers=counts.pop(M.NULLARY_NUMBER, 0), n_constants=counts.pop(M.NULLARY_CONSTANT, 0),
+            complexity_declared=instances, operator_counts=counts, repaired=False,
+        ))
+    summary, _, _ = fit_group(
+        matrix_from_entries(entries), PRIMARY_THRESHOLD, 10000, np.random.default_rng(RANDOM_SEED),
+    )
+    return {**summary, "seed": RANDOM_SEED,
+            "source_counts": dict(Counter(row["source"] for row in roster)),
+            "roster_sha256": sha256(FLUID_ROSTER)}
 
 
 def difference_block(order, summaries: dict[str, dict], draws: dict[str, np.ndarray]) -> dict:
@@ -284,40 +333,53 @@ def interval_marker(ax, x, y, interval, color, marker="o"):
     ax.plot(x, y, marker, color=color, ms=5)
 
 
-def plot_branches(payload) -> None:
-    """Compare seven branches with five reference collections using saved results."""
-    primary = payload["branches"]["none"]
-    corpora = payload["corpora"]["none"]
-    rows = [(LONG[key], primary[key], COLORS[key], "o") for key in ORDER]
-    rows.extend((label, corpora[key], "0.25", "D") for key, label in (
-        ("feynman", "Feynman benchmark"),
-        ("feynman_all", "Feynman benchmark + Lectures"),
-        ("fr", r"$f(R)$"),
-        ("inflation", "Encyclopaedia Inflationaris"),
-        ("wiki", "Wikipedia"),
-    ))
-    fig, ax = plt.subplots(figsize=(6.6, 6.5))
-    y = np.arange(len(rows), dtype=float)[::-1]
-    y[len(ORDER):] -= 0.6
-    for yy, (_label, summary, color, marker) in zip(y, rows):
-        lo, hi = summary["ci95"]
-        interval_marker(ax, summary["beta"], yy, (lo, hi), color, marker)
-        if lo is not None and hi is not None:
-            ax.text(1.02, yy, f"{summary['beta']:.3f}  [{lo:.3f}, {hi:.3f}]",
-                    transform=ax.get_yaxis_transform(), va="center", fontsize=8,
-                    clip_on=False)
-    ax.axhline((y[len(ORDER)-1] + y[len(ORDER)]) / 2, color="0.8", lw=0.8)
-    ax.set_yticks(y)
-    ax.set_yticklabels([f"{label} (n={summary['n_equations']})"
-                        for label, summary, _color, _marker in rows])
-    ax.set_xlabel(r"$\beta$  (nominal individual 95% bootstrap interval)")
-    ax.set_title("Feynman branches and comparison collections", fontsize=10)
+def plot_branches() -> None:
+    """Redraw the manuscript comparison using the saved branch and collection estimates."""
+    refs = json.loads((OUT / "branch_plot_reference.json").read_text())
+    fluid = json.loads((OUT / "fluid_branch.json").read_text())
+    if fluid["roster_sha256"] != sha256(FLUID_ROSTER):
+        raise ValueError("Fluid roster changed. Refit with --fluid-branch-only before redrawing the branch figure.")
+    groups = (
+        ("Seven physics branches", "#2a546f", "o", [
+            *refs["branches"], {"label": "Fluid and continuum mechanics", **fluid},
+        ]),
+        ("Single-branch collections", "#a15034", "s", refs["single_branch_collections"]),
+        ("Mixed-branch collections", "#555e68", "D", refs["mixed_branch_collections"]),
+    )
+    fig, ax = plt.subplots(figsize=(7.8, 5.7))
+    fig.subplots_adjust(left=0.395, right=0.79, bottom=0.095, top=0.96)
+    positions, labels = [], []
+    y = 0
+    for title, color, marker, rows in groups:
+        ax.text(0, y, title, transform=ax.get_yaxis_transform(),
+                va="center", fontsize=10, weight="bold", color=color)
+        y -= 1
+        for summary in sorted(rows, key=lambda row: row["beta"]):
+            lo, hi = summary["ci95"]
+            interval_marker(ax, summary["beta"], y, (lo, hi), color, marker)
+            ax.text(1.045, y, f"{summary['beta']:.3f}  [{lo:.3f}, {hi:.3f}]",
+                    transform=ax.get_yaxis_transform(), va="center", fontsize=8.6,
+                    color="#28323b", clip_on=False)
+            positions.append(y)
+            labels.append(f"{summary['label']} ({summary['n_equations']:,})")
+            y -= 1
+        y -= 0.5
+    ax.set_yticks(positions, labels)
+    ax.tick_params(axis="y", length=0, pad=8)
+    ax.spines["left"].set_visible(False)
+    ax.spines["bottom"].set_color("#aeb9c2")
+    ax.set_axisbelow(True)
+    ax.grid(axis="x", color="#e1e7eb", linewidth=0.7)
+    ax.set_xlim(0.24, 0.50)
+    ax.set_ylim(y + 0.85, 0.6)
+    ax.set_xticks([0.25, 0.30, 0.35, 0.40, 0.45, 0.50])
+    ax.set_xlabel(r"Fitted decay rate $\hat{\beta}$")
     save_fig(fig, "beta_by_branch")
 
 
 def plot_all(payload, rank_curves) -> None:
     primary = payload["branches"]["none"]
-    plot_branches(payload)
+    plot_branches()
 
     diff = payload["differences"]["none"]
     fig, ax = plt.subplots(figsize=(6.6, 6.2))
@@ -412,20 +474,23 @@ def main() -> int:
                         help="Redraw the corpus figure from saved summary.json without refitting")
     parser.add_argument("--branch-plot-only", action="store_true",
                         help="Redraw the branch and comparison figure from saved summary.json without refitting")
+    parser.add_argument("--fluid-branch-only", action="store_true",
+                        help="Refit only the merged fluid branch and redraw the manuscript comparison figure")
     args = parser.parse_args()
     require_checkout()
     if args.boot < 2:
         parser.error("--boot must be at least 2")
     global OUT
-    if args.corpus_plot_only or args.branch_plot_only:
+    if args.corpus_plot_only or args.branch_plot_only or args.fluid_branch_only:
         if args.boot != 10000:
-            parser.error("Plot-only options use the saved primary results; omit --boot")
-        payload = json.loads((OUT / "summary.json").read_text())
+            parser.error("Figure update options use the primary 10,000-replicate analysis; omit --boot")
         if args.corpus_plot_only:
-            plot_corpora(payload)
-        if args.branch_plot_only:
-            plot_branches(payload)
-        print(f"Updated requested figures from {OUT / 'summary.json'}")
+            plot_corpora(json.loads((OUT / "summary.json").read_text()))
+        if args.fluid_branch_only:
+            (OUT / "fluid_branch.json").write_text(json.dumps(fit_fluid_branch(), indent=2) + "\n")
+        if args.branch_plot_only or args.fluid_branch_only:
+            plot_branches()
+        print("Updated requested decay-rate figures.")
         return 0
     if args.boot != 10000:
         OUT = OUT / "diagnostics" / f"boot_{args.boot}"
@@ -719,6 +784,7 @@ def main() -> int:
     np.savez_compressed(OUT / "draws.npz", **{key: value for key, value in draws.items()},
                         **{f"status__{key}": value for key, value in statuses.items()})
     if n_boot == 10000:
+        (OUT / "fluid_branch.json").write_text(json.dumps(fit_fluid_branch(), indent=2) + "\n")
         write_tex(safe)
         plot_all(safe, rank_curves)
         plot_ei_subsets(subset_betas, corpora["none"]["fr"]["beta"])

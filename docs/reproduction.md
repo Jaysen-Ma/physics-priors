@@ -68,6 +68,8 @@ To redraw plots from the saved summary or run the separate interval-calibration 
 
 The saved decay-rate figures and data under `results/exponential_fit/` use the Codex labels. Within each bootstrap replicate, a formula receives one resampling count shared across all of its branches.
 
+The manuscript's main branch figure includes a merged fluid sample of 90 expressions. The [fluid roster](../data/fluid_branch.csv) gives the catalogue IDs for the Feynman and Wikipedia expressions, plus the transcriptions, sources, and variable and constant classifications for the 25 additions. Refit this branch alone with `physics-priors-fit --fluid-branch-only`. The command updates the [fluid decay-rate estimate](../results/exponential_fit/fluid_branch.json) and redraws the figure using the [saved comparison estimates](../results/exponential_fit/branch_plot_reference.json).
+
 ## Reproduce the SBI intervals
 
 Use a separate Python 3.12 environment for the simulation-based inference comparison in Section 3.2.1.
@@ -84,7 +86,21 @@ The command uses 100 Feynman benchmark expressions, the 41 released Wikipedia ex
 
 Each run writes a summary and a posterior density grid for each collection to `results/sbi/run/`. Use `--collection` to select one or more collections and `--output` to choose a new directory. Changing `--beta-min` or `--beta-max` changes the prior and regenerates the training simulations. The resulting posterior intervals describe uncertainty under the simulator and the chosen prior.
 
-## Compare priors on held-out formulas
+## Reproduce the seven-branch prior comparison
+
+Run from the checkout using the analysis environment installed above.
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/physics-priors-compare-seven-branches --workers 4
+```
+
+The [frozen fold plan](../data/priors/seven_branch_folds.json) records all 1,090 formulas, their source IDs, branch labels, reviewed groups, and the ordered expression trees supplied to the model. It lists the exact training and test IDs in each fold. The scorer verifies the plan and excludes every formula in a held-out formula's reviewed group from that fold's training set. Each formula appears in the test set once, together with all its labels. Formulas describing different physical relations can share an encoded tree.
+
+The command refits all ten model variants at eightfold branch weighting and a 25% whole-expression blend. It writes the paired log probabilities by formula and branch and compares the resulting ratios against the [Section 4 reference](../results/prior_scoring/expanded_fluid_cv.json). The output summary also records whether each score file has the archived checksum. Choose a new directory with `--output` for another run. The default is `.scratch/seven_branch_cv/`.
+
+To reproduce the [weight and mixture ablation](../results/prior_scoring/expanded_fluid_ablation.json), add `--ablation --output .scratch/seven_branch_ablation`. This refits the models for the whole weight sweep, verifies the reported appendix values, and saves the full grid.
+
+## Reproduce the earlier Feynman-only comparison
 
 ```bash
 OPENBLAS_NUM_THREADS=1 .venv/bin/physics-priors-compare

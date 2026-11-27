@@ -24,6 +24,7 @@ physics-priors-fit = "physics_priors.analysis.exponential_bootstrap:main"
 physics-priors-sbi-intervals = "physics_priors.analysis.sbi_intervals:main"
 physics-priors-calibrate = "physics_priors.analysis.exponential_coverage_check:main"
 physics-priors-compare = "physics_priors.analysis.prior_comparison:main"
+physics-priors-compare-seven-branches = "physics_priors.analysis.seven_branch_comparison:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

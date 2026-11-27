@@ -1,0 +1,118 @@
+{
+  "description": "Saved non-fluid estimates in the manuscript branch comparison.",
+  "feynman_summary_sha256": "fb3a128356f06fa97d0986a7eeb75ef2f83b74ecf4e9f35e045d0ad8fb4ceac9",
+  "branches": [
+    {
+      "label": "Astrophysics and cosmology",
+      "n_equations": 137,
+      "beta": 0.29167488366414435,
+      "ci95": [
+        0.2675235676242718,
+        0.31709095133721077
+      ]
+    },
+    {
+      "label": "Quantum mechanics",
+      "n_equations": 231,
+      "beta": 0.3279012203238312,
+      "ci95": [
+        0.30235774496535484,
+        0.35772017955928936
+      ]
+    },
+    {
+      "label": "Waves and optics",
+      "n_equations": 167,
+      "beta": 0.3478765281291955,
+      "ci95": [
+        0.3140089375722366,
+        0.37147233870454477
+      ]
+    },
+    {
+      "label": "Electromagnetism",
+      "n_equations": 450,
+      "beta": 0.35367658264896135,
+      "ci95": [
+        0.3318831652188403,
+        0.37249438140106833
+      ]
+    },
+    {
+      "label": "Mechanics",
+      "n_equations": 154,
+      "beta": 0.3685394067745574,
+      "ci95": [
+        0.31414109340894286,
+        0.3858600949135684
+      ]
+    },
+    {
+      "label": "Thermodynamics and kinetic theory",
+      "n_equations": 96,
+      "beta": 0.39872635730105693,
+      "ci95": [
+        0.3674510393344972,
+        0.43473694846581834
+      ]
+    }
+  ],
+  "single_branch_collections": [
+    {
+      "label": "$f(R)$ modified gravity, all forms",
+      "n_equations": 37,
+      "beta": 0.27039863223976873,
+      "ci95": [
+        0.2645187785444814,
+        0.34796132197849194
+      ]
+    },
+    {
+      "label": "$f(R)$ modified gravity, one of 16 variants",
+      "n_equations": 22,
+      "beta": 0.2979331460731783,
+      "ci95": [
+        0.27426825761848156,
+        0.37208259464765786
+      ]
+    },
+    {
+      "label": "Inflationary potentials",
+      "n_equations": 70,
+      "beta": 0.2668559316941156,
+      "ci95": [
+        0.2516014615538716,
+        0.2912711775389724
+      ]
+    }
+  ],
+  "mixed_branch_collections": [
+    {
+      "label": "Expanded Feynman",
+      "n_equations": 1016,
+      "beta": 0.35357588810550206,
+      "ci95": [
+        0.3322035542144993,
+        0.36575660725411757
+      ]
+    },
+    {
+      "label": "AI Feynman benchmark",
+      "n_equations": 100,
+      "beta": 0.34169717812850764,
+      "ci95": [
+        0.31932437122829965,
+        0.3710403935031843
+      ]
+    },
+    {
+      "label": "Wikipedia",
+      "n_equations": 76,
+      "beta": 0.31444315854776156,
+      "ci95": [
+        0.2840862746482775,
+        0.34395228455023213
+      ]
+    }
+  ]
+}
