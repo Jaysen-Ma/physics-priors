@@ -354,6 +354,7 @@
           <button type="button" data-corpus="leemis">Leemis</button>
           <button type="button" data-corpus="fr">f(R)</button>
           <button type="button" data-corpus="astrophysics">Astrophysics</button>
+          <button type="button" data-corpus="fluid_additions">Fluid additions</button>
         </nav>
         <nav class="seg" id="branches">
           <button type="button" class="on" data-branch="">All formulas</button>
@@ -471,6 +472,10 @@
       },
       astrophysics: {
         href: "./astrophysics.json",
+        label: "Catalogue JSON",
+      },
+      fluid_additions: {
+        href: "./fluid_additions.json",
         label: "Catalogue JSON",
       },
     };
@@ -853,7 +858,7 @@
       });
     }
 
-    const POOL_CORPORA = ["feynman", "feynman_lectures", "wiki", "inflation", "leemis", "fr", "astrophysics"];
+    const POOL_CORPORA = ["feynman", "feynman_lectures", "wiki", "inflation", "leemis", "fr", "astrophysics", "fluid_additions"];
     // The Feynman Lectures catalog is one JSON per volume; the page shows them as one corpus.
     const LECTURE_VOLUMES = ["feynman_lectures_v1", "feynman_lectures_v2", "feynman_lectures_v3"];
     let branchFilter = "";
