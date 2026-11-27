@@ -11,8 +11,6 @@
 \usepackage{microtype}
 \graphicspath{{figures/}}
 \input{generated/numbers.tex}
-% \input is not expandable inside tabular; the TeX primitive is.
-\makeatletter\newcommand{\tabinput}[1]{\@@input #1 }\makeatother
 
 \title{Branch-Dependent Priors for Symbolic Regression in Physics}
 % TODO(author): author name and affiliation (Chun Hin Ma?). Not filled in on purpose.
@@ -62,6 +60,10 @@ We curate a source-linked formula catalogue for inspection and reuse. It include
 
 We expand the AI Feynman benchmark with expressions from all three volumes of \textit{The Feynman Lectures on Physics}~\citep{feynman}. After selection and deduplication, we add \nLectAdded{} expressions, comprising 278 from Volume~I, 442 from Volume~II and 196 from Volume~III. The expanded Feynman collection contains \nFeynAll{} expressions.
 
+We curate 143 expressions in astrophysics and cosmology from 22 lecture-note documents and research papers. The collection covers stellar structure, radiation, orbital dynamics, compact objects, galaxies, gravitational lensing, and cosmology. It draws on lecture notes from MIT and Princeton and on sources for specific topics such as cosmological distances, dark-matter halo profiles, and exoplanet transits~\citep{vogelsberger2023,princetonast403,tongcosmology,hogg2000,navarro1997,winn2010}. We use 137 of these expressions for the decay-rate fit in Section~\ref{sec:results} and 103 for the prior comparison in Section~\ref{sec:prior-evaluation}.
+
+The fluid and continuum mechanics collection contains 90 expressions. We combine 47 from the expanded Feynman collection and 18 from Wikipedia's named-equation list with 25 expressions from additional sources~\citep{feynman,wikinamed}. The additions extend the coverage to topics such as compressible flow, capillarity, sediment transport, and elastic contact~\citep{nasa-isentropic,washburn1921,ferguson2004,ciulli2022}. The catalogue records the source location and the assumptions for each addition. Appendix~\ref{app:branch-sources} lists the sources for both collections.
+
 For modified gravity, the catalogue contains \nfR{} proposed curvature functions. It includes 16 variants of one template from P\'erez-Romero and Nesseris~\citep{sotiriou2010,perezromero2018}. We record these variants as a single family and use that grouping to assess how sensitive the fitted decay rate is to including several forms of the same template. Appendix~\ref{app:catalogue} lists the transcription sources.
 
 As a mathematical comparison, we also estimate the decay rate for \nLeemis{} probability density and mass functions from the univariate distributions documented by Leemis and McQueston~\citep{leemis2008}.
@@ -69,12 +71,16 @@ As a mathematical comparison, we also estimate the decay rate for \nLeemis{} pro
 \subsection{Expression selection and representation}
 For the Feynman Lectures additions, we select equations that give one quantity explicitly in terms of other quantities. We record the quantity on the left-hand side and analyse the expression on the right-hand side. We exclude right-hand sides that consist of a single symbol or number or contain derivatives, integrals, explicit summations, limits or unevaluated quantum-mechanical operators.
 
+The astrophysics catalogue records equalities, approximations, proportionalities, and six algebraic right-hand sides from differential equations. The decay-rate fit uses the equalities, approximations, and proportionalities. The fluid additions are explicit expressions. When we rearrange a source equation to isolate the quantity of interest, we record the rearrangement with the source reference.
+
 We follow the expression-tree representation and operator-counting conventions of Constantin et al. The counting scheme treats variables, numerical literals, and physical or mathematical constants as distinct types of leaves. Sections~II and~III of their paper give the operator definitions and describe the tree representation~\citep{constantin2026}.
 
 \subsection{Branch labels}
-After extracting expressions from the three volumes of \textit{The Feynman Lectures on Physics} and combining them with the AI Feynman benchmark, we use Codex with \texttt{gpt-6.2-sol} to assign branch labels to each expression. Codex uses the formula, the quantity it describes and its source context. An expression can receive more than one label. For example, a Lorentz transformation of an electric field can be labelled both electromagnetism and special relativity.
+After extracting expressions from the three volumes of \textit{The Feynman Lectures on Physics} and combining them with the AI Feynman benchmark, we use Codex with \texttt{gpt-6.2-sol} to assign branch labels to each expression. Codex uses the formula, the quantity it describes and its source context. An expression can receive more than one label. For example, a formula for the electric field of a wave after passing through a plate can be labelled both electromagnetism and waves and optics~\citep[Vol.~I, Eq.~(31.5)]{feynman}.
 
-We consider six physics branches covering mechanics, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics. Mechanics includes Newtonian and relativistic kinematics and dynamics. We reviewed each expression previously assigned to special relativity, classified it by subject, and retained special relativity as a framework tag. We record separate categories for expressions outside these branches and flag unresolved cases. Of the \nFeynAll{} expressions, 967 receive at least one branch label and 179 receive more than one. The collection-wide decay-rate fit counts each expression once. Each branch fit includes every expression carrying that branch's label.
+Within the expanded Feynman collection, we consider six physics branches covering mechanics, electromagnetism, waves and optics, thermodynamics and kinetic theory, quantum mechanics, and fluid and continuum mechanics. Mechanics includes Newtonian and relativistic kinematics and dynamics. We reviewed each expression previously assigned to special relativity, classified it by subject, and retained special relativity as a framework tag. We record separate categories for expressions outside these branches and flag unresolved cases. Of the \nFeynAll{} expressions, 967 receive at least one branch label and 179 receive more than one. The collection-wide decay-rate fit counts each expression once. Each branch fit includes every expression carrying that branch's label.
+
+Astrophysics and cosmology forms the seventh branch. We assign all astrophysics catalogue entries to that branch and give the 25 supplemental fluid formulas the fluid and continuum mechanics label. The Wikipedia formulas used in the branch analyses carry expression-level labels.
 
 \subsection{Public access}
 We make the \href{https://jaysen-ma.github.io/physics-priors/data/catalog/index.html}{formula catalogue} publicly available. Readers can search for formulas, trace them to their sources, inspect expression trees and operator counts, and explore how fitted decay rates vary with expression complexity.
@@ -191,7 +197,9 @@ The nominal 95\% bootstrap interval for fluid and continuum mechanics, $[0.327,0
 \caption{Fitted decay rates and nominal individual 95\% bootstrap intervals for seven physics branches and the comparison collections. The fluid estimate uses the merged collection. The reduced $f(R)$ fit retains the square-root variant from the 16-member family. Parentheses give the number of expressions in each fit.}\label{fig:main}
 \end{figure}
 
-We treat these comparisons as descriptive. The bootstrap intervals summarise uncertainty in the individual fits. How often differences at least this large would arise under a shared decay rate remains an open question for formal hypothesis testing. The observed variation motivates the next section, where we test whether adapting a pooled prior to a known physics branch gives higher prior probabilities to held-out equation forms from that branch.
+For the univariate distribution collection, the same fit gives $\hat{\beta}=\betaLeemis$ with a nominal 95\% bootstrap interval of $[\loLeemis,\hiLeemis]$.
+
+We treat the branch comparisons as descriptive. The bootstrap intervals summarise uncertainty in the individual fits. How often differences at least this large would arise under a shared decay rate remains an open question for formal hypothesis testing. The observed variation motivates the next section, where we test whether adapting a pooled prior to a known physics branch gives higher prior probabilities to held-out equation forms from that branch.
 
 \section{Branch-dependent priors for expression structure}\label{sec:priors}
 
@@ -275,12 +283,15 @@ The ten variants share the same training and test sets within each fold. Their a
 \section{Discussion}\label{sec:discussion}
 The lower inflationary decay rate persists after the tested changes to constant conventions. The similar rate in the $f(R)$ collection is consistent with explanations involving the narrow scope or hypothetical status of both collections. These features occur together, and the cause of the gap remains open. The branch comparison shows variation among the selected expressions. Its interpretation depends on how equations are assigned to branches.
 
-The catalogue is limited to selected explicit expressions and excludes differential and integral forms. The exponential curve also captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. Equation resampling describes variability under repeated selection from the observed collection, and chapter resampling addresses some of the dependence among related formulas. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
+The decay-rate analysis uses a selection of explicit expressions. The exponential curve captures the rare-operator tail poorly. Several operator types may occur once or twice, creating a plateau in the ranked frequencies. Their inclusion still affects the fit because log least squares gives each observed rank equal weight. The bootstrap intervals describe variability under resampling from the observed collection. Related equations from the same chapter may introduce dependence. The simulation in Appendix~\ref{app:calibration} finds that the intervals can miss the true rate more often than their nominal level suggests.
 
 The expression-prior comparison gives a more direct test of whether branch information is informative at the equation level. The branch-dependent prior assigned higher probabilities to the held-out formulas overall in every Katz variant. The largest average gain was in thermodynamics and kinetic theory. We chose the weighting and mixture through exploratory comparisons on overlapping formula collections. A larger independent collection of equation families would help establish how the gain transfers to other sources. Whether favouring forms familiar to a branch helps recover equations from measurements remains open.
 
 \bibliographystyle{unsrtnat}
-\bibliography{refs}
+\begingroup
+\setlength{\bibsep}{2pt plus 1pt}
+\bibliography{refs,equation_sources}
+\endgroup
 
 \clearpage
 \appendix
@@ -344,79 +355,82 @@ Catalogue entry & Source \\\midrule
 \texttt{\detokenize{fr.pn_hypergeometric}} & \citep{perezromero2018} \\
 \end{longtable}
 
-\section{Supplementary decay-rate results and sensitivity checks}\label{app:sensitivity}
+\subsection{Sources for astrophysics, cosmology, and the fluid additions}\label{app:branch-sources}
 
-These checks ask how the decay-rate results change under alternative analysis choices. Resampling by chapter tests how much the uncertainty intervals depend on treating equations from the same chapter as a group. Changing branch assignments or equation-selection rules tests how much the fitted rates depend on which equations each branch contains.
+Table~\ref{tab:astro-sources} lists the source documents for the astrophysics and cosmology collection. The catalogue records the source and the page and equation or section for each expression. Table~\ref{tab:fluid-sources} identifies the source of each additional fluid and continuum mechanics formula. For formulas that are rearranged or specialised from the form in the source, the entries record the conventions used in the analysis.
 
-\subsection{Corpus and branch estimates}
-Table~\ref{tab:corpus} reports the estimates for each collection. Table~\ref{tab:branch} gives the six Feynman-only branch estimates used in the sensitivity checks below. Figure~\ref{fig:main} reports the merged fluid collection.
+\begin{longtable}{@{}p{0.73\linewidth}rr@{}}
+\caption{Sources for the 143 astrophysics and cosmology expressions. Counts are for the full catalogue.}\label{tab:astro-sources}\\
+\toprule
+Source document & Reference & Formulas \\\midrule
+\endfirsthead
+\multicolumn{3}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+Source document & Reference & Formulas \\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+MIT 8.902, \textit{Astrophysics II} & \citep{vogelsberger2023} & 20 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/stellar.pdf}{Equations of Stellar Structure} & \citep{princetonast403} & 4 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/polytrop.pdf}{Polytropes} & \citep{princetonast403} & 7 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/radtrans.pdf}{Transfer of Radiation} & \citep{princetonast403} & 9 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/disk.pdf}{Accretion Disks} & \citep{princetonast403} & 9 \\
+Princeton AST 403, \href{https://www.astro.princeton.edu/~gk/A403/wind.pdf}{Spherical Winds and Accretion} & \citep{princetonast403} & 2 \\
+\textit{Cosmology}, Chapter 1, The Expanding Universe & \citep{tongcosmology} & 8 \\
+\textit{Cosmology}, Chapter 2, The Hot Universe & \citep{tongcosmology} & 9 \\
+\textit{Cosmology}, Chapter 3, Structure Formation & \citep{tongcosmology} & 7 \\
+\textit{General Relativity}, Chapter 1, Geodesics in Spacetime & \citep{tonggr} & 6 \\
+\textit{General Relativity}, Chapter 5, When Gravity is Weak & \citep{tonggr} & 2 \\
+\textit{General Relativity}, Chapter 6, Black Holes & \citep{tonggr} & 3 \\
+Distance Measures in Cosmology & \citep{hogg2000} & 10 \\
+Lectures on Gravitational Lensing & \citep{narayan1997} & 9 \\
+A Universal Density Profile from Hierarchical Clustering & \citep{navarro1997} & 3 \\
+Transits and Occultations & \citep{winn2010} & 10 \\
+Binary and Millisecond Pulsars & \citep{lorimer2008} & 7 \\
+Radiative Processes in High Energy Astrophysics & \citep{ghisellini2012} & 9 \\
+The Global Schmidt Law in Star-Forming Galaxies & \citep{kennicutt1997} & 2 \\
+Large-Scale Bias and the Peak Background Split & \citep{sheth1999} & 3 \\
+Toward a Halo Mass Function for Precision Cosmology & \citep{tinker2008} & 1 \\
+The Basic Physics of the Binary Black Hole Merger GW150914 & \citep{ligo2016} & 3 \\
+\end{longtable}
 
-\begin{table}[H]\centering\small
-\resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
-Corpus & Expr. & Instances & Ranks & $\hat\beta$ & Boot.\ SE & Individual interval\\\midrule
-\tabinput{generated/corpus_table.tex}
-\bottomrule\end{tabular}}
-\caption{Corpus estimates from log least squares. Intervals are nominal individual 95\% equation-bootstrap intervals. The instances column counts all operator occurrences, including nullary types.}\label{tab:corpus}
-\end{table}
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.8\linewidth]{beta_by_corpus.pdf}
-\caption{Corpus estimates and nominal individual 95\% equation-bootstrap intervals.}\label{fig:corpus}
-\end{figure}
-
-\begin{table}[H]\centering\small
-\resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
-Branch & Expr. & Instances & Ranks & $\hat\beta$ & Boot.\ SE & Individual interval\\\midrule
-\tabinput{generated/branch_table.tex}
-\bottomrule\end{tabular}}
-\caption{Feynman-only branch estimates and nominal individual 95\% equation-bootstrap intervals.}\label{tab:branch}
-\end{table}
-
-Figure~\ref{fig:rf} shows the distributions underlying these estimates. Each branch is ranked separately, and both the observed operator types and their ordering can differ. The fitted rates describe how concentrated the ranked frequencies are; identifying the operators responsible for these patterns requires examining their identities separately.
-
-\begin{figure}[H]\centering
-\includegraphics[width=\linewidth]{rank_frequency_branches.pdf}
-\caption{Observed rank--frequency distributions and fitted exponentials for the six Feynman branches.}\label{fig:rf}
-\end{figure}
-
-\subsection{Source-chapter resampling}
-We resample whole chapters jointly across branches. For resampling, we place each chapter in a stratum using the most common Codex branch label among its retained equations. Ties follow the recorded branch order. Within each stratum, we sample the original number of chapters with replacement. Every equation from a selected chapter receives the same multiplicity, including equations assigned to other branches. This preserves dependence induced by the 54 chapters represented in more than one branch; the number of equations per branch can vary between replicates.
-
-For the Feynman-only samples, the individual chapter-bootstrap intervals are [0.355, 0.476] for fluid and continuum mechanics and [0.294, 0.366] for quantum mechanics. Both are wider than their corresponding equation-bootstrap intervals, and they overlap slightly.
-\begin{figure}[H]\centering
-\includegraphics[width=0.85\linewidth]{chapter_bootstrap.pdf}
-\caption{Equation and joint chapter bootstrap intervals at the nominal individual 95\% level. Labels give the number of source chapters represented in each branch.}\label{fig:chapter}
-\end{figure}
-
-\subsection{Branch assignments and selection}
-We repeat the fits using only each formula's primary Codex label, excluding formulas flagged for averages or imaginary units, or excluding all formulas sourced from Volume~III. The last check uses the source references of both the lecture and benchmark formulas. Table~\ref{tab:assignment} reports the estimates and individual equation-bootstrap intervals.
-
-\begin{table}[H]\centering\scriptsize
-\begin{tabular}{llrrl}\toprule
-Specification & Branch & Expr. & $\hat\beta$ & Individual interval\\\midrule
-Primary Codex label only & QM & 212 & 0.313 & [0.277, 0.342] \\
- & EM & 330 & 0.340 & [0.327, 0.371] \\
- & Waves & 138 & 0.338 & [0.307, 0.364] \\
- & Mechanics & 150 & 0.373 & [0.317, 0.389] \\
- & Thermo & 89 & 0.392 & [0.361, 0.429] \\
- & Fluid & 48 & 0.405 & [0.361, 0.468] \\
-\midrule
-Notation-flagged expressions removed & QM & 172 & 0.313 & [0.291, 0.344] \\
- & EM & 383 & 0.356 & [0.336, 0.378] \\
- & Waves & 142 & 0.375 & [0.337, 0.400] \\
- & Mechanics & 145 & 0.371 & [0.320, 0.390] \\
- & Thermo & 92 & 0.397 & [0.364, 0.433] \\
- & Fluid & 51 & 0.405 & [0.359, 0.469] \\
-\midrule
-Volume III expressions removed & QM & 43 & 0.377 & [0.340, 0.436] \\
- & EM & 407 & 0.343 & [0.331, 0.370] \\
- & Waves & 148 & 0.344 & [0.311, 0.367] \\
- & Mechanics & 147 & 0.370 & [0.312, 0.384] \\
- & Thermo & 92 & 0.394 & [0.363, 0.431] \\
- & Fluid & 54 & 0.406 & [0.360, 0.456] \\
-\bottomrule\end{tabular}
-\caption{Sensitivity to label selection and formula inclusion. Each entry reports the fitted rate and its nominal individual 95\% equation-bootstrap interval. Waves denotes waves and optics. Fluid denotes fluid and continuum mechanics.}\label{tab:assignment}
-\end{table}
+\begin{longtable}{@{}p{0.60\linewidth}p{0.35\linewidth}@{}}
+\caption{Source locations for the 25 additional fluid and continuum mechanics formulas.}\label{tab:fluid-sources}\\
+\toprule
+Formula & Source location \\\midrule
+\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+Formula & Source location \\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Isentropic mass flow rate & Eq.~(10)~\citep{nasa-massflow} \\
+Isentropic nozzle area ratio & Eq.~(9)~\citep{nasa-isentropic} \\
+Squared downstream Mach number across a normal shock & $M_1^2$ relation~\citep{nasa-shock} \\
+Static pressure ratio across a normal shock & $p_1/p_0$ relation~\citep{nasa-shock} \\
+Blasius boundary-layer thickness at 99\% of the free-stream speed & Lecture 16, p.~5~\citep{mit-boundary2004} \\
+Blasius local wall shear stress & Lecture 16, p.~5~\citep{mit-boundary2004} \\
+Sequent depth ratio across a hydraulic jump & Eq.~(3)~\citep{usbr-stilling1954} \\
+Critical depth in a rectangular open channel & Ch.~2, Sec.~12~\citep{usbr-measurement} \\
+Washburn capillary penetration distance & Capillary penetration relation~\citep{washburn1921} \\
+Squared oscillation frequency of a liquid drop & Eq.~(1.2)~\citep{wang1996} \\
+Ferguson--Church grain settling speed & Eq.~(4)~\citep{ferguson2004} \\
+Thiem steady radial discharge & Eq.~(14)~\citep{trescott1976} \\
+Herschel--Bulkley shear stress & Eqs.~(3)--(4)~\citep{quan2022} \\
+Taylor--Aris pipe dispersion & Eq.~(17)~\citep{trusler2024} \\
+Landau--Levich film thickness & Eq.~(1.1)~\citep{jeong2022} \\
+Burgers vortex axial vorticity & Eq.~(5)~\citep{gallay2005} \\
+Boussinesq vertical stress from a point load & Eq.~(1)~\citep{shea1992} \\
+Hertzian circular contact radius & Eqs.~(2)--(3)~\citep{ciulli2022} \\
+Saffman lift on a sphere & Sec.~3.7, p.~44~\citep{feuillebois2004} \\
+Taylor--Culick film retraction speed & Sec.~1~\citep{savva2009} \\
+Turbulent buoyant plume volume flux & Eq.~(3.2)~\citep{limaneto2016} \\
+Soulsby--Whitehouse critical Shields parameter & Eq.~(2-132)~\citep{hec2021} \\
+Nusselt falling-film flow rate & Eq.~(2.1)~\citep{denner2018} \\
+Taylor small deformation of a drop in shear & Small-deformation theory~\citep{megias2004} \\
+Stokes oscillating-wall velocity & Lecture 16, p.~13~\citep{mit-marine2005} \\
+\end{longtable}
 
 \section{Bootstrap calibration}\label{app:calibration}
 A 95\% interval should contain the true decay rate about 95 times in 100 repetitions. To check this, we generate data with a known rate, fit each dataset, and count how often the bootstrap interval includes that rate. We generate 200 datasets in each of three scenarios. Each dataset has seven groups of equations, and we use 400 bootstrap replicates to calculate the intervals. All scenarios have population marginal operator frequencies following an exponential with rate $\beta=0.35$. The first uses identical distributions and independent equation count vectors. The second varies equation counts, operator vocabularies and expression lengths, with dependence within an equation introduced through a shared random probability vector. The third introduces a shared random probability vector within each chapter and resamples whole chapters, including a branch with only four chapters.
