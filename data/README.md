@@ -10,6 +10,7 @@ This folder holds the equation catalogs used by the analysis and the formula led
 | [catalog/feynman_lectures_v1.json](catalog/feynman_lectures_v1.json), [v2](catalog/feynman_lectures_v2.json), [v3](catalog/feynman_lectures_v3.json) | Expressions extracted from the three volumes of *The Feynman Lectures on Physics*. Lecture records carry chapter and equation references where available. |
 | [catalog/inflation.json](catalog/inflation.json) | Inflaton potentials from *Encyclopaedia Inflationaris*. |
 | [catalog/fr.json](catalog/fr.json) | Published modified-gravity functions. The 16 Pérez-Romero–Nesseris variants of the same template share a family ID. |
+| [catalog/astrophysics.json](catalog/astrophysics.json) | Source-linked astrophysics and cosmology formulas. See the [catalogue guide](astrophysics/README.md). |
 | [catalog/wiki.json](catalog/wiki.json) | The released Wikipedia equations and later additions, including a separate set of quantum-mechanics relations. |
 | [catalog/leemis.json](catalog/leemis.json) | Probability densities and mass functions from Leemis and McQueston. Some excluded entries have an empty formula and a note. |
 | [catalog/index.html](catalog/index.html) | The browser interface for the formula ledger. |
